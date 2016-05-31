@@ -1,0 +1,14 @@
+{
+  "name": "website",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.2.3",
+    "jquery.easing": "1.3.1"
+  }
+}
