@@ -7,7 +7,7 @@ const runSequence = require('run-sequence');
 const gulp        = require('gulp');
 const csso        = require('gulp-csso');
 const uglify      = require('gulp-uglify');
-const replace     = require('gulp-replace');
+const regexp      = require('gulp-regexp-sourcemaps');
 
 /**
  * 公開用にビルドし、データをまとめる
@@ -57,7 +57,7 @@ gulp.task('dist:css', function() {
 	if (!config.dist.csso.enable) {
 		// ソースマップを削除
 		return gulp.src($.dist(config.paths.css.dist) + '/**/*.css')
-			.pipe(replace(/\/\*#\ssourceMappingURL(.+)?\s\*\//gi, ''))
+			.pipe(regexp(/\/\*#\ssourceMappingURL(.+)?\s\*\//gi, ''))
 			.pipe(gulp.dest($.dist(config.paths.css.dist)));
 	}
 
