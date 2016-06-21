@@ -17,12 +17,6 @@ gulp.task('sass', ['sass:sass', 'sass:css']);
  */
 
 gulp.task('sass:sass', function() {
-
-	let prepend = '';
-	for (var i = 0; i < $.app(config.paths.css.dist).split('/').length; i++) {
-		prepend = prepend + '../';
-	}
-
 	return gulp.src($.app(config.paths.css.src) + '/**/*.scss')
 		.pipe(plumber({
 			errorHandler: notify.onError({
@@ -39,7 +33,6 @@ gulp.task('sass:sass', function() {
 		.pipe(pleeease(config.pleeease))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest($.app(config.paths.css.dist)));
-
 });
 
 /**
