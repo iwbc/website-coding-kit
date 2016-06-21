@@ -1,7 +1,7 @@
 'use strict';
 
 const $           = require('../func.js');
-const config      = require('../config.js');
+const config      = require('../../gulpconfig.js');
 const merge       = require('merge-stream');
 const gulp        = require('gulp');
 const spritesmith = require('gulp.spritesmith');

@@ -1,6 +1,6 @@
 'use strict';
 
-const config = require('./config.js');
+const config = require('../gulpconfig.js');
 
 module.exports = {
 	app  : function(path) {

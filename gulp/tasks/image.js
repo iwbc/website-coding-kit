@@ -1,7 +1,7 @@
 'use strict';
 
 const $        = require('../func.js');
-const config   = require('../config.js');
+const config   = require('../../gulpconfig.js');
 const pngquant = require('imagemin-pngquant');
 const gulp     = require('gulp');
 const imagemin = require('gulp-imagemin');

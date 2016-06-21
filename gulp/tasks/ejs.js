@@ -1,7 +1,7 @@
 'use strict';
 
 const $       = require('../func.js');
-const config  = require('../config.js');
+const config  = require('../../gulpconfig.js');
 const gulp    = require('gulp');
 const ejs     = require('gulp-ejs');
 const plumber = require('gulp-plumber');

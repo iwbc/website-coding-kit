@@ -1,7 +1,7 @@
 'use strict';
 
 const $           = require('../func.js');
-const config      = require('../config.js');
+const config      = require('../../gulpconfig.js');
 const browserSync = require('../browser-sync.js');
 const del         = require('del');
 const runSequence = require('run-sequence');
