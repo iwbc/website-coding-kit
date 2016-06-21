@@ -104,10 +104,12 @@ let dist = {
 // 以下は変更不要
 //////////////////////////////////////////////////////////////
 
-pleeease            = Object.assign(pleeease, { minifier : false, rebaseUrls : false });
-sass.options        = Object.assign(sass.options, { outputStyle : 'expanded' });
-spritesmith.path    = paths.app + '/' + paths.images.src + '/' + sprite_dir;
-spritesmith.options = Object.assign(spritesmith.options, { retinaSrcFilter : spritesmith.path + '/*@2x.png' });
+pleeease         = Object.assign(pleeease, { minifier : false, rebaseUrls : false });
+sass.options     = Object.assign(sass.options, { outputStyle : 'expanded' });
+spritesmith.path = paths.app + '/' + paths.images.src + '/' + sprite_dir;
+if (spritesmith.options.cssFormat == 'scss_retina') {
+	spritesmith.options = Object.assign(spritesmith.options, { retinaSrcFilter : spritesmith.path + '/*@2x.png' });
+}
 
 module.exports = {
 	paths       : paths,
