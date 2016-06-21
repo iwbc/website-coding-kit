@@ -1,7 +1,7 @@
 'use strict';
 
 const $          = require('../func.js');
-const config     = require('../config.js');
+const config     = require('../../gulpconfig.js');
 const bowerFiles = require('main-bower-files');
 const gulp       = require('gulp');
 const concat     = require('gulp-concat');
