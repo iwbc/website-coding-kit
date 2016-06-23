@@ -1,0 +1,40 @@
+:root {
+	font-size: $_base-font-size;
+}
+
+body {
+	font-family: $_font-family;
+	line-height: $_line-height;
+	color: $_text;
+}
+
+p, ul, ol, table, dl {
+	margin-bottom: 1em;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+a {
+	color: $_text-link;
+	text-decoration: none;
+	img {
+		transition: all .25s;
+	}
+	&:hover {
+		color: $_text-link-hover;
+		text-decoration: underline;
+		img {
+			opacity: .6;
+		}
+	}
+	&:visited {
+		color: $_text-link-visited;
+	}
+}
