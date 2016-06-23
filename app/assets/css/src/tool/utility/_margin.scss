@@ -1,0 +1,40 @@
+// px
+@for $i from 0 through 20 {
+	$num: $i * 5;
+	.u-m-#{$num} {
+		margin: #{$num}px !important;
+	}
+	.u-mt-#{$num} {
+		margin-top: #{$num}px !important;
+	}
+	.u-mr-#{$num} {
+		margin-right: #{$num}px !important;
+	}
+	.u-mb-#{$num} {
+		margin-bottom: #{$num}px !important;
+	}
+	.u-ml-#{$num} {
+		margin-left: #{$num}px !important;
+	}
+}
+
+// em
+@for $i from 1 through 8 {
+	$num: $i / 4;
+	$classnum: if($num * 100 >= 100, $num * 100, "0" + $num * 100);
+	.u-m-em-#{$classnum} {
+		margin: #{$num}em !important;
+	}
+	.u-mt-em-#{$classnum} {
+		margin-top: #{$num}em !important;
+	}
+	.u-mr-em-#{$classnum} {
+		margin-right: #{$num}em !important;
+	}
+	.u-mb-em-#{$classnum} {
+		margin-bottom: #{$num}em !important;
+	}
+	.u-ml-em-#{$classnum} {
+		margin-left: #{$num}em !important;
+	}
+}
