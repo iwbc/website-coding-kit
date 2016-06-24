@@ -68,7 +68,7 @@ gulp.task('watch', function() {
 	// CSS
 	// JS
 	watch([
-		config.paths.app + '/**/*.html',
+		config.paths.app + '/**/*.{html,php}',
 		$.app(config.paths.images.dist) + '/**/*',
 		$.app(config.paths.css.dist) + '/**/*.css',
 		$.app(config.paths.js) + '/**/*.js'
