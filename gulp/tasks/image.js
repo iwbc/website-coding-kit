@@ -1,11 +1,12 @@
 'use strict';
 
-const $        = require('../func.js');
-const config   = require('../../gulpconfig.js');
-const pngquant = require('imagemin-pngquant');
-const gulp     = require('gulp');
-const imagemin = require('gulp-imagemin');
-const changed  = require('gulp-changed');
+const $              = require('../func.js');
+const config         = require('../../gulpconfig.js');
+const pngquant       = require('imagemin-pngquant');
+const jpegrecompress = require('imagemin-jpeg-recompress');
+const gulp           = require('gulp');
+const imagemin       = require('gulp-imagemin');
+const changed        = require('gulp-changed');
 
 /**
  * 画像の最適化
@@ -21,9 +22,13 @@ gulp.task('image', function() {
 		.pipe(imagemin(
 			[
 				imagemin.gifsicle(),
-				imagemin.mozjpeg({ quality: 95 }),
 				imagemin.svgo(),
-				pngquant()
+				pngquant(),
+				jpegrecompress({
+					quality : 'high',
+					max     : 95,
+					min     : 60
+				})
 			],
 			{ verbose : true }
 		))
