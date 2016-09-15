@@ -1,27 +1,17 @@
 'use strict';
 
-const $       = require('../func.js');
-const config  = require('../../gulpconfig.js');
-const gulp    = require('gulp');
-const ejs     = require('gulp-ejs');
-const plumber = require('gulp-plumber');
-const notify  = require('gulp-notify');
+const gulp   = require('gulp');
+const config = require('../config.js');
+const $      = require('../load.js');
 
 /**
- * EJS
+ * EJSのコンパイル
  */
 
-gulp.task('ejs', function() {
-	return gulp.src([
-		config.paths.app + '/**/*.ejs',
-		'!' + config.paths.app + '/**/_*.ejs'
-	])
-		.pipe(plumber({
-			errorHandler: notify.onError({
-				'title'   : 'ERROR : EJS',
-				'message' : '<%= error.message %>'
-			})
-		}))
-		.pipe(ejs({}, { ext: '.html' }))
-		.pipe(gulp.dest(config.paths.app));
+gulp.task('ejs', () => {
+	return gulp.src(config.path.ejs.src)
+		.pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
+		.pipe($.ejs({}, { ext : '.html' }))
+		.pipe(gulp.dest(config.path.ejs.dest))
+		.pipe($.browser.stream());
 });
