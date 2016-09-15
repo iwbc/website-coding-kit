@@ -1,31 +1,21 @@
 'use strict';
 
-const $           = require('../func.js');
-const config      = require('../../gulpconfig.js');
-const merge       = require('merge-stream');
-const gulp        = require('gulp');
-const spritesmith = require('gulp.spritesmith');
-const plumber     = require('gulp-plumber');
-const notify      = require('gulp-notify');
+const gulp   = require('gulp');
+const ms     = require('merge-stream');
+const png    = require('imagemin-pngquant');
+const config = require('../config.js');
+const $      = require('../load.js');
 
 /**
- * Spite画像の作成
+ * スプライトの生成
  */
 
-gulp.task('sprite', function() {
+gulp.task('sprite', () => {
+	const data = gulp.src(config.path.sprite.src)
+		.pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
+		.pipe($.spritesmith(config.sprite));
+	const image = data.img.pipe(gulp.dest(config.path.sprite.dest.image));
+	const style = data.css.pipe(gulp.dest(config.path.sprite.dest.style));
 
-	let data = gulp.src(config.spritesmith.path + '/*.png')
-		.pipe(plumber({
-			errorHandler: notify.onError({
-				'title'   : 'ERROR : sprite',
-				'message' : '<%= error.message %>'
-			})
-		}))
-		.pipe(spritesmith(config.spritesmith.options));
-
-	let img = data.img.pipe(gulp.dest($.app(config.paths.images.src)));
-	let css = data.css.pipe(gulp.dest($.app(config.paths.css.src)));
-
-	return merge(img, css);
-
+	return ms(image, style);
 });

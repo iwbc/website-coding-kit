@@ -1,25 +1,22 @@
 'use strict';
 
-const $          = require('../func.js');
-const config     = require('../../gulpconfig.js');
-const bowerFiles = require('main-bower-files');
-const gulp       = require('gulp');
-const concat     = require('gulp-concat');
-const uglify     = require('gulp-uglify');
-const jsfy       = require('gulp-jsfy');
+const gulp   = require('gulp');
+const bower  = require('main-bower-files');
+const config = require('../config.js');
+const $      = require('../load.js');
 
 /**
- * Bowerパッケージのmainファイルを結合・圧縮しvendorディレクトリに配置
- * CSSファイルは、CSS全体をData URLに変換し、出力されるJSファイルに埋め込まれる
+ * Bowerパッケージのmainファイルを結合
+ * CSSファイルは、Data URIに変換し、出力されるJSファイルに埋め込まれる
  */
 
-gulp.task('bower', function() {
-	let files = bowerFiles().filter(function(value) {
+gulp.task('bower', () => {
+	const files = bower().filter(function(value) {
 		return /\.(js|css)$/.test(value);
 	});
 	return gulp.src(files)
-		.pipe(jsfy({ dataurl: true }))
-		.pipe(concat('libs.js'))
-		.pipe(uglify({preserveComments: 'some'}))
-		.pipe(gulp.dest($.app(config.paths.vendor)));
+		.pipe($.jsfy({ dataurl : true }))
+		.pipe($.concat('libs.js'))
+		.pipe($.uglify({ preserveComments : 'some' }))
+		.pipe(gulp.dest(config.path.bower.dest));
 });
