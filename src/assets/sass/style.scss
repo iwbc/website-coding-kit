@@ -1,47 +1,47 @@
-@charset 'utf-8';
+@charset "utf-8";
 
-/**
- * Foundation
- */
+// ====================================
+// Foundation
+// ====================================
 
-@import "foundations/_setting.scss";
-@import "foundations/_function.scss";
-@import "foundations/_mixin.scss";
-@import "foundations/_sprite.scss";
-@import "foundations/_font.scss";
-@import "foundations/_sanitize.scss";
-@import "foundations/_base.scss";
+@import "foundations/setting";
+@import "foundations/function";
+@import "foundations/mixin";
+@import "foundations/sprite";
+@import "foundations/font";
+@import "foundations/sanitize";
+@import "foundations/base";
 
-/**
- * Layout
- */
+// ====================================
+// Layout
+// ====================================
 
-@import "layouts/_header.scss";
-@import "layouts/_footer.scss";
+@import "layouts/header";
+@import "layouts/footer";
 
-/**
- * Module
- */
+// ====================================
+// Module
+// ====================================
 
-/**
- * Component
- */
+// ====================================
+// Component
+// ====================================
 
-/**
- * Page
- */
+// ====================================
+// Page
+// ====================================
 
-/**
- * Tool
- */
+// ====================================
+// Tool
+// ====================================
 
 // Helper
 
 
 // Utility
-@import "tools/utilities/_color.scss";
-@import "tools/utilities/_clearfix.scss";
-@import "tools/utilities/_padding.scss";
-@import "tools/utilities/_margin.scss";
-@import "tools/utilities/_display.scss";
-@import "tools/utilities/_position.scss";
+@import "tools/utilities/color";
+@import "tools/utilities/clearfix";
+@import "tools/utilities/padding";
+@import "tools/utilities/margin";
+@import "tools/utilities/display";
+@import "tools/utilities/position";

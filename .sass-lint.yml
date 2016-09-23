@@ -1,0 +1,13 @@
+rules:
+  empty-line-between-blocks: 0
+  indentation:
+    - 1
+    - size: tab
+  no-ids: 0
+  no-important: 0
+  no-transition-all: 0
+  property-sort-order: 0
+  quotes:
+    - 1
+    - style: double
+  single-line-per-selector: 0
