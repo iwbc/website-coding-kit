@@ -1,46 +1,46 @@
-/**
- * フォントサイズをpxからremに変換
- *
- * @param {num|str} $px remに変換したいフォントサイズ（px）
- * @param {num|str} $base-font-size 基準とするフォントサイズ（px）
- * @return {str} 変換結果（px）
- */
+// ====================================
+// フォントサイズをpxからremに変換
+//
+// @param {num|str} $px remに変換したいフォントサイズ（px）
+// @param {num|str} $base-font-size 基準とするフォントサイズ（px）
+// @return {str} 変換結果（px）
+// ====================================
 
 @function px2rem($px, $base-font-size) {
-	@if (type-of($px) == 'number' and not unitless($px)) {
+	@if (type-of($px) == "number" and not unitless($px)) {
 		$px: $px / ($px * 0 + 1);
 	}
-	@if (type-of($base-font-size) == 'number' and not unitless($base-font-size)) {
+	@if (type-of($base-font-size) == "number" and not unitless($base-font-size)) {
 		$base-font-size: $base-font-size / ($base-font-size * 0 + 1);
 	}
 	@return #{$px / $base-font-size}rem;
 }
 
-/**
- * pxから%に変換
- *
- * @param  {num|str} $px 変換対象の値（px）
- * @param  {num|str} $base 基準とする値（px）
- * @return {str} 変換結果（%）
- */
+// ====================================
+// pxから%に変換
+//
+// @param  {num|str} $px 変換対象の値（px）
+// @param  {num|str} $base 基準とする値（px）
+// @return {str} 変換結果（%）
+// ====================================
 
 @function px2per($px, $base) {
-	@if (type-of($px) == 'number' and not unitless($px)) {
+	@if (type-of($px) == "number" and not unitless($px)) {
 		$px: $px / ($px * 0 + 1);
 	}
-	@if (type-of($base) == 'number' and not unitless($base)) {
+	@if (type-of($base) == "number" and not unitless($base)) {
 		$base: $base / ($base * 0 + 1);
 	}
 	@return percentage($px / $base);
 }
 
-/**
- * $colorsから指定したキーの値を取得
- *
- * $param {str} $key $colorsのキー名
- * $return {color} カラーコード
- */
+// ====================================
+// $colorsから指定したキーの値を取得
+//
+// $param {str} $key $colorsのキー名
+// $return {color} カラーコード
+// ====================================
 
-@function getColor($key) {
+@function get-color($key) {
 	@return map-get($_colors, $key);
 }

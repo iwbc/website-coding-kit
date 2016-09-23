@@ -1,6 +1,6 @@
-/**
- * Media Queries
- */
+// ====================================
+// Media Queries
+// ====================================
 
 // タブレット
 @mixin mq-tab {
@@ -37,15 +37,17 @@
 	}
 }
 
-/**
- * Clearfix
- */
+// ====================================
+// Clearfix
+// ====================================
 
 @mixin clearfix {
-	*zoom: 1;
-	&:after {
-		content: "";
+	&::before,
+	&::after {
 		display: table;
+		content: " ";
+	}
+	&::after {
 		clear: both;
 	}
 }

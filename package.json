@@ -30,6 +30,7 @@
     "gulp-plumber": "1.1.0",
     "gulp-regexp-sourcemaps": "1.0.1",
     "gulp-sass": "2.3.2",
+    "gulp-sass-lint": "1.2.0",
     "gulp-sourcemaps": "1.6.0",
     "gulp-uglify": "2.0.0",
     "gulp.spritesmith": "6.2.1",

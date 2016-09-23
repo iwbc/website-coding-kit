@@ -64,8 +64,11 @@ module.exports = {
 					'android >= 4.4'
 				]
 			},
-			minifier   : false,
-			rebaseUrls : false
+			rem            : false,
+			pseudoElements : false,
+			opacity        : false,
+			minifier       : false,
+			rebaseUrls     : false
 		},
 		// gulp-sass
 		// Options -> https://github.com/sass/node-sass#options
@@ -125,7 +128,7 @@ module.exports = {
 		},
 		// Sass
 		style : {
-			src   : ['src/assets/sass/**/*.scss', '!src/assets/sass/**/_*.scss'],
+			src   : 'src/assets/sass/**/*.scss',
 			watch : 'src/assets/sass/**/*.scss',
 			dest  : 'dest/assets/css'
 		},
