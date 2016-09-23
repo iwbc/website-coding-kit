@@ -100,24 +100,6 @@ module.exports = {
 	},
 
 	/**
-	 * Sprite生成の設定
-	 */
-
-	// gulp.spritesmith
-	// Options -> https://github.com/twolfson/gulp.spritesmith
-	sprite : {
-		imgName         : 'sprite.png',
-		imgPath         : '../images/sprite.png',
-		retinaImgName   : 'sprite@2x.png',
-		retinaImgPath   : '../images/sprite@2x.png',
-		retinaSrcFilter : 'src/assets/images/_sprites/*@2x.png',
-		cssName         : '_sprite.scss',
-		cssFormat       : 'scss_retina',
-		algorithm       : 'binary-tree',
-		padding         : 6
-	},
-
-	/**
 	 * パスの設定
 	 */
 
@@ -142,16 +124,16 @@ module.exports = {
 		},
 		// Image
 		image : {
-			src   : ['src/assets/images/**/*', '!src/assets/images/_sprites', '!src/assets/images/_sprites/**/*'],
-			watch : ['src/assets/images/**/*', '!src/assets/images/_sprites', '!src/assets/images/_sprites/**/*'],
+			src   : 'src/assets/images/**/*',
+			watch : 'src/assets/images/**/*',
 			dest  : 'dest/assets/images'
 		},
 		// Sprite
 		sprite: {
-			src   : 'src/assets/images/_sprites/*.png',
-			watch : 'src/assets/images/_sprites/*.png',
+			src   : 'src/assets/sprites/*',
+			watch : 'src/assets/sprites/**/*',
 			dest  : {
-				style : 'src/assets/sass/foundations',
+				style : 'src/assets/sass/foundations/sprites',
 				image : 'src/assets/images'
 			}
 		},

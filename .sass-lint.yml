@@ -1,3 +1,6 @@
+files:
+  ignore:
+    - '**/foundations/sprites/*'
 rules:
   empty-line-between-blocks: 0
   indentation:
