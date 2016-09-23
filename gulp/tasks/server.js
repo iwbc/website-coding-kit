@@ -10,12 +10,12 @@ const $      = require('../load.js');
  */
 
 gulp.task('server', () => {
-	const default_options = {
+	const browsersync_def_options = {
 		server : {
 			baseDir : config.dest
 		}
 	};
-	let options = merge.recursive(true, default_options, config.server);
-	if (options.proxy) { delete options.server; }
-	return $.browser.init(options);
+	let browsersync_options = merge.recursive(true, browsersync_def_options, config.server.browsersync);
+	if (browsersync_options.proxy) { delete browsersync_options.server; }
+	return $.browser.init(browsersync_options);
 });
