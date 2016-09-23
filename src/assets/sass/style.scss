@@ -7,9 +7,11 @@
 @import "foundations/setting";
 @import "foundations/function";
 @import "foundations/mixin";
-@import "foundations/sprite";
 @import "foundations/font";
 @import "foundations/base";
+
+@import "foundations/sprites/mixin";
+// @import "foundations/sprites/sprite";
 
 // ====================================
 // Layouts
@@ -21,7 +23,7 @@
 // Modules
 // ====================================
 
-// @import "modules/module";
+@import "modules/sprite";
 
 // ====================================
 // Components
