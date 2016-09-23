@@ -21,3 +21,8 @@ $_colors: (
 // ブレークポイント
 $_breakpoint-tab-max: 1024px;
 $_breakpoint-sp-max: 599px;
+
+// SpriteCSS書き出し用変数
+// 基本変更しない
+$_sprites: (_: ()) !default;
+$_sprite-scales: (_: 0) !default;
