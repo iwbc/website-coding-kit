@@ -1,7 +1,6 @@
 'use strict';
 
 const gulp     = require('gulp');
-
 const config   = require('../config.js');
 const $        = require('../load.js');
 
