@@ -11,7 +11,6 @@ const $      = require('../load.js');
  */
 
 gulp.task('sprite', () => {
-
 	return gulp.src(config.path.sprite.src)
 		.pipe($.flatmap((stream, file) => {
 			if (!file.isDirectory()) { return stream; }
