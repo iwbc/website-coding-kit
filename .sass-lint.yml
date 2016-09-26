@@ -1,6 +1,7 @@
 files:
   ignore:
-    - '**/foundations/sprites/*'
+    - '**/vendors/**/*'
+    - '**/foundations/sprites/**/*'
 rules:
   empty-line-between-blocks: 0
   indentation:
@@ -14,4 +15,3 @@ rules:
     - 1
     - style: double
   single-line-per-selector: 0
-  
