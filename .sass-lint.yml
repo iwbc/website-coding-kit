@@ -14,3 +14,4 @@ rules:
     - 1
     - style: double
   single-line-per-selector: 0
+  
