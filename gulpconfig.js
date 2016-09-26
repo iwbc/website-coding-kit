@@ -51,6 +51,14 @@ module.exports = {
 	},
 
 	/**
+	 * Bowerの設定
+	 */
+
+	bower : {
+		output : 'libs.js'
+	},
+
+	/**
 	 * Sassの設定
 	 */
 
