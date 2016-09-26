@@ -37,6 +37,7 @@
     "gulp-sass-lint": "1.2.0",
     "gulp-sourcemaps": "1.6.0",
     "gulp-uglify": "2.0.0",
+    "gulp-watch": "4.3.9",
     "gulp.spritesmith": "6.2.1",
     "imagemin-jpeg-recompress": "5.1.0",
     "imagemin-pngquant": "5.0.0",
