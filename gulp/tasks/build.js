@@ -8,5 +8,5 @@ const run  = require('run-sequence');
  */
 
 gulp.task('build', ['clean'], (callback) => {
-	return run(['bower', 'sprite'], ['ejs', 'css', 'style', 'image', 'copy'], callback);
+	return run('sprite', ['bower', 'ejs', 'style', 'css', 'script', 'image', 'copy'], callback);
 });

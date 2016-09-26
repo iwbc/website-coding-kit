@@ -90,6 +90,18 @@ module.exports = {
 	},
 
 	/**
+	 * JSの設定
+	 */
+
+	script : {
+		// buble
+		// Options -> https://buble.surge.sh/guide/#using-the-javascript-api
+		buble : {
+			target: { ie: 9 }
+		}
+	},
+
+	/**
 	 * 画像軽量化の設定
 	 */
 
@@ -112,6 +124,10 @@ module.exports = {
 	 */
 
 	path : {
+		// Bower
+		bower : {
+			dest : 'dest/assets/vendor'
+		},
 		// EJS
 		ejs : {
 			src   : ['src/**/*.ejs', '!src/**/_*.ejs'],
@@ -130,6 +146,12 @@ module.exports = {
 			watch : 'src/assets/css/**/*.css',
 			dest  : 'dest/assets/css'
 		},
+		// JS
+		script : {
+			src   : 'src/assets/js/**/*.js',
+			watch : 'src/assets/js/**/*.js',
+			dest  : 'dest/assets/js'
+		},
 		// Image
 		image : {
 			src   : 'src/assets/images/**/*',
@@ -145,19 +167,11 @@ module.exports = {
 				image : 'src/assets/images'
 			}
 		},
-		// Bower
-		bower : {
-			dest : 'dest/assets/vendor'
-		},
 		// Copy
 		copy : [
 			{
 				src  : 'src/**/*.{html,php}',
 				dest : 'dest'
-			},
-			{
-				src  : 'src/assets/js/**/*.js',
-				dest : 'dest/assets/js'
 			},
 			{
 				src  : 'src/assets/fonts/**/*',
