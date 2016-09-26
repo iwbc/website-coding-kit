@@ -25,5 +25,6 @@ gulp.task('image', () => {
 				{ verbose : true }
 			)
 		))
-		.pipe(gulp.dest(config.path.image.dest));
+		.pipe(gulp.dest(config.path.image.dest))
+		.pipe($.browser.stream());
 });
