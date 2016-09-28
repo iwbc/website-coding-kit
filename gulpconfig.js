@@ -94,6 +94,11 @@ module.exports = {
 	 */
 
 	script : {
+		// rollup.js
+		// Options -> https://github.com/rollup/rollup/wiki/JavaScript-API
+		rollup : {
+			format : 'iife'
+		},
 		// buble
 		// Options -> https://buble.surge.sh/guide/#using-the-javascript-api
 		buble : {
