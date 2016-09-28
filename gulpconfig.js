@@ -38,15 +38,10 @@ module.exports = {
 		// Options -> https://www.browsersync.io/docs/options/
 		browsersync : {
 			notify    : false,
+			ghostMode : false,
 			// 動的サイトの場合は、別途XAMPP等でサーバーを用意し、以下のproxyにドメインを記述する
 			// 静的サイトの場合は、コメントアウトまたは削除する
 			// proxy     : 'example.com',
-			ghostMode : {
-				clicks   : false,
-				location : false,
-				forms    : false,
-				scroll   : false
-			}
 		}
 	},
 
