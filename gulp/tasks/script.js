@@ -1,30 +1,38 @@
 'use strict';
 
-const gulp   = require('gulp');
-const glob   = require('glob');
-const extend = require('extend');
-const buble  = require('rollup-plugin-buble');
-const config = require('../config.js');
-const $      = require('../load.js');
+const gulp    = require('gulp');
+const path    = require('path');
+const rollup  = require('rollup').rollup;
+const resolve = require('rollup-plugin-node-resolve');
+const cjs     = require('rollup-plugin-commonjs');
+const buble   = require('rollup-plugin-buble');
+const uglify  = require('rollup-plugin-uglify');
+const config  = require('../config.js');
+const $       = require('../load.js');
 
 /**
  * JSのモジュール依存解決、ES5へのトランスパイル
  */
 
 gulp.task('script', () => {
-	const entries = glob.sync(config.path.script.src, { ignore: '**/_*.js' });
-	const options = extend(config.script.rollup, {
-		entry   : entries,
-		plugins : [
-			buble(config.script.buble)
-		]
+	const module_name = path.basename(config.path.script.src, '.js');
+	let plugins = [
+		resolve(),
+		cjs(),
+		buble(config.script.buble)
+	];
+	if (config.build.js_minify) { plugins.push(uglify({ preserveComments : 'some' })); }
+
+	return rollup({
+		entry   : config.path.script.src,
+		plugins : plugins
+	}).then((bundle) => {
+		$.browser.reload();
+		return bundle.write({
+			format     : 'iife',
+			sourceMap  : config.build.sourcemap,
+			dest       : `${config.path.script.dest}/${module_name}.js`,
+			moduleName : module_name
+		});
 	});
-	return gulp.src(config.path.script.src)
-		.pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
-		.pipe($.if(config.build.sourcemap, $.sourcemaps.init()))
-		.pipe($.rollup(options))
-		.pipe($.if(config.build.js_minify, $.uglify({ preserveComments : 'some' })))
-		.pipe($.if(config.build.sourcemap, $.sourcemaps.write('./')))
-		.pipe(gulp.dest(config.path.script.dest))
-		.pipe($.browser.stream());
 });
