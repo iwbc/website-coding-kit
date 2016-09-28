@@ -17,7 +17,7 @@ gulp.task('sprite', () => {
 
 			const dirname       = file.path.split(path.sep).pop();
 			const relative_path = path.relative(config.path.style.dest, config.path.image.dest);
-			const is_retina     = /-2x$/.test(dirname);
+			const is_retina     = /2x$/.test(dirname);
 			const options    = {
 				cssTemplate        : 'gulp/templates/spritesmith.handlebars',
 				cssSpritesheetName : dirname,
