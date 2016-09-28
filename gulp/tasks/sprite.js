@@ -29,7 +29,7 @@ gulp.task('sprite', () => {
 				cssOpts            : {
 					scale  : is_retina ? .5 : 1
 				}
-			};
+			}
 
 			const data = gulp.src(`${file.path}/*.png`)
 				.pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
