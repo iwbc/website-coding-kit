@@ -42,6 +42,20 @@ module.exports = {
 			// 動的サイトの場合は、別途XAMPP等でサーバーを用意し、以下のproxyにドメインを記述する
 			// 静的サイトの場合は、コメントアウトまたは削除する
 			// proxy     : 'example.com',
+		},
+		// モックサーバー
+		// 特定パスへのリクエストをモックサーバに転送する
+		// browsersync.proxyが設定されている場合は使わない
+		mock : {
+			// モックの保存ディレクトリパス
+			path  : 'mock',
+			// リバースプロキシ
+			proxy : {
+				// 転送先
+				pass     : 'http://localhost:5000',
+				// 転送処理を行うパス
+				location : '/api'
+			}
 		}
 	},
 
