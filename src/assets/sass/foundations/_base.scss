@@ -25,13 +25,13 @@ a {
 	color: $_text-link;
 	text-decoration: none;
 	img {
-		transition: all .25s;
+		transition: all $_hover-transition-delay;
 	}
 	&:hover {
 		color: $_text-link-hover;
 		text-decoration: underline;
 		img {
-			opacity: .6;
+			opacity: $_hover-opacity;
 		}
 	}
 	&:visited {
