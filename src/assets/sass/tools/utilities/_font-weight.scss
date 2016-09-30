@@ -1,0 +1,12 @@
+@for $i from 2 through 20 {
+	$num: $i * 50;
+	.u-fweight-#{$num} {
+		font-weight: $num !important;
+	}
+}
+.u-fweight-nm {
+	font-weight: normal !important;
+}
+.u-fweight-bd {
+	font-weight: bold !important;
+}
