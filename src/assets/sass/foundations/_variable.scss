@@ -25,5 +25,5 @@ $_hover-transition-delay: .15s;
 
 // SpriteCSS書き出し用変数
 // 基本変更しない
-$_sprites: (_: ()) !default;
-$_sprite-scales: (_: 0) !default;
+$_sprites: (_: ());
+$_sprite-scales: (_: 0);
