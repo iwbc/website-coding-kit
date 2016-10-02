@@ -157,7 +157,7 @@ module.exports = {
 		},
 		// JS
 		script : {
-			src   : 'src/assets/js/main.js',
+			src   : 'src/assets/js/*.js',
 			watch : 'src/assets/js/**/*.js',
 			dest  : 'dest/assets/js'
 		},

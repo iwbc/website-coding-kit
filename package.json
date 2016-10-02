@@ -51,6 +51,7 @@
     "rollup-plugin-node-resolve": "2.0.0",
     "rollup-plugin-uglify": "1.0.1",
     "run-sequence": "1.2.2",
+    "through2": "2.0.1",
     "url": "0.11.0"
   },
   "private": true
