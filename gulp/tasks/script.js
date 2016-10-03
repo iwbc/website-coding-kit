@@ -6,6 +6,7 @@ const through2  = require('through2');
 const rollup    = require('rollup').rollup;
 const resolve   = require('rollup-plugin-node-resolve');
 const cjs       = require('rollup-plugin-commonjs');
+const string    = require('rollup-plugin-string');
 const buble     = require('rollup-plugin-buble');
 const uglify    = require('rollup-plugin-uglify');
 const config    = require('../config.js');
@@ -30,7 +31,11 @@ gulp.task('script:__rollup', () => {
 			let plugins = [
 				resolve(),
 				cjs(),
-				buble(config.script.buble)
+				string({
+					include: '**/*',
+					exclude: '**/*.js'
+				}),
+				buble(config.script.buble),
 			];
 			if (config.build.js_minify) { plugins.push(uglify({ preserveComments : 'some' })); }
 
