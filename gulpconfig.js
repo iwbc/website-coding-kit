@@ -179,7 +179,7 @@ module.exports = {
 		// Copy
 		copy : [
 			{
-				src  : 'src/**/*.{html,php}',
+				src  : ['src/**/*.{html,php}', '!src/assets/**/*'],
 				dest : 'dest'
 			},
 			{
