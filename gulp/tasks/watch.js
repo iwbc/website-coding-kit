@@ -9,12 +9,10 @@ const $      = require('../load.js');
  */
 
 gulp.task('watch', () => {
-	let copies = [];
-	config.path.copy.forEach((obj) => {
-		copies.push(obj.src);
-	});
-	$.watch(copies, () => {
-		gulp.start('copy');
+	config.path.copy.forEach((copy) => {
+		$.watch(copy.src, () => {
+			gulp.start('copy');
+		});
 	});
 	$.watch(config.path.ejs.watch, () => {
 		gulp.start('ejs');
