@@ -181,7 +181,7 @@ module.exports = {
 		// Copy
 		copy : [
 			{
-				src  : ['src/**/*.{html,php}', '!src/assets/**/*'],
+				src  : ['src/**/*.{html,php}', '!src/assets/js/**/*'],
 				dest : 'dest'
 			},
 			{
