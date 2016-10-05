@@ -18,14 +18,16 @@ module.exports = {
 
 	build : {
 		default : {
-			css_minify : false,
-			js_minify  : false,
-			sourcemap  : true
+			css_minify   : false,
+			js_minify    : false,
+			bower_minify : true,
+			sourcemap    : true
 		},
 		production : {
-			css_minify : false,
-			js_minify  : false,
-			sourcemap  : false
+			css_minify   : false,
+			js_minify    : false,
+			bower_minify : true,
+			sourcemap    : false
 		}
 	},
 
