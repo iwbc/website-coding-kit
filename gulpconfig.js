@@ -18,14 +18,16 @@ module.exports = {
 
 	build : {
 		default : {
-			css_minify : false,
-			js_minify  : false,
-			sourcemap  : true
+			css_minify   : false,
+			js_minify    : false,
+			bower_minify : true,
+			sourcemap    : true
 		},
 		production : {
-			css_minify : false,
-			js_minify  : false,
-			sourcemap  : false
+			css_minify   : false,
+			js_minify    : false,
+			bower_minify : true,
+			sourcemap    : false
 		}
 	},
 
@@ -179,7 +181,7 @@ module.exports = {
 		// Copy
 		copy : [
 			{
-				src  : 'src/**/*.{html,php}',
+				src  : ['src/**/*.{html,php}', '!src/assets/**/*'],
 				dest : 'dest'
 			},
 			{

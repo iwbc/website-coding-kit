@@ -17,6 +17,6 @@ gulp.task('bower', () => {
 	return gulp.src(files)
 		.pipe($.jsfy({ dataurl : true }))
 		.pipe($.concat(config.bower.output))
-		.pipe($.if(config.build.js_minify, $.uglify({ preserveComments : 'some' })))
+		.pipe($.if(config.build.bower_minify, $.uglify({ preserveComments : 'some' })))
 		.pipe(gulp.dest(config.path.bower.dest));
 });
