@@ -148,7 +148,7 @@ module.exports = {
 		// Sass
 		style : {
 			src   : 'src/assets/sass/**/*.scss',
-			watch : 'src/assets/sass/**/*.scss',
+			watch : 'src/assets/sass/**/*.{css,scss}',
 			dest  : 'dest/assets/css'
 		},
 		// CSS
