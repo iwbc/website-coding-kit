@@ -137,7 +137,7 @@ module.exports = {
 	path : {
 		// Bower
 		bower : {
-			dest : 'dest/assets/vendor'
+			dest : 'src/assets/vendor'
 		},
 		// EJS
 		ejs : {
