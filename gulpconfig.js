@@ -138,7 +138,7 @@ module.exports = {
 	path : {
 		// Bower
 		bower : {
-			dest : 'src/assets/vendor'
+			dest : 'src/assets/vendors'
 		},
 		// EJS
 		ejs : {
@@ -190,8 +190,8 @@ module.exports = {
 				dest : 'dest/assets/fonts'
 			},
 			{
-				src  : 'src/assets/vendor/**/*',
-				dest : 'dest/assets/vendor'
+				src  : 'src/assets/vendors/**/*',
+				dest : 'dest/assets/vendors'
 			}
 		]
 	}
