@@ -67,7 +67,9 @@ module.exports = {
 
 	bower : {
 		// 出力ファイル名（拡張子は含まない）
-		output : 'libs'
+		output : 'libs',
+		// 出力に含めないmainファイル
+		excludes: []
 	},
 
 	/**
