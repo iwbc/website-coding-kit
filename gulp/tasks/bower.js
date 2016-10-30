@@ -23,7 +23,9 @@ gulp.task('bower', () => {
 		.pipe(gulp.dest(config.path.bower.dest));
 
 	const css = gulp.src(css_files)
-		.pipe($.cssBase64())
+		.pipe($.cssBase64({
+			maxWeightResource : 104857600
+		}))
 		.pipe($.concat(`${config.bower.output}.css`))
 		.pipe($.if(config.build.bower_minify, $.csso()))
 		.pipe(gulp.dest(config.path.bower.dest));
