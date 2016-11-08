@@ -2,16 +2,30 @@
 // Media Queries
 // ====================================
 
-// タブレット
-@mixin mq-tab {
-	@media only screen and (max-width: $_breakpoint-tab-max) and (min-width: $_breakpoint-sp-max + 1) {
+// タブレット以上
+@mixin mq-md {
+	@media only screen and (min-width: $_breakpoint-sp-max + 1) {
+		@content;
+	}
+}
+
+// PC以上
+@mixin mq-lg {
+	@media only screen and (min-width: $_breakpoint-tab-max + 1) {
 		@content;
 	}
 }
 
 // スマートフォン
-@mixin mq-sp {
+@mixin mq-only-sm {
 	@media only screen and (max-width: $_breakpoint-sp-max) {
+		@content;
+	}
+}
+
+// タブレット
+@mixin mq-only-md {
+	@media only screen and (max-width: $_breakpoint-tab-max) and (min-width: $_breakpoint-sp-max + 1) {
 		@content;
 	}
 }
@@ -72,7 +86,7 @@
 
 @mixin sprite-image($sprite) {
 	$sprite-image: nth($sprite, 9);
-	background-image: url(#{$sprite-image});
+	background-image: url("#{$sprite-image}");
 	background-repeat: no-repeat;
 }
 

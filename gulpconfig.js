@@ -66,7 +66,10 @@ module.exports = {
 	 */
 
 	bower : {
-		output : 'libs.js'
+		// 出力ファイル名（拡張子は含まない）
+		output : 'libs',
+		// 出力に含めないmainファイル
+		excludes: []
 	},
 
 	/**
@@ -137,7 +140,7 @@ module.exports = {
 	path : {
 		// Bower
 		bower : {
-			dest : 'dest/assets/vendor'
+			dest : 'src/assets/vendors'
 		},
 		// EJS
 		ejs : {
@@ -148,7 +151,7 @@ module.exports = {
 		// Sass
 		style : {
 			src   : 'src/assets/sass/**/*.scss',
-			watch : 'src/assets/sass/**/*.scss',
+			watch : 'src/assets/sass/**/*.{css,scss}',
 			dest  : 'dest/assets/css'
 		},
 		// CSS
@@ -189,8 +192,8 @@ module.exports = {
 				dest : 'dest/assets/fonts'
 			},
 			{
-				src  : 'src/assets/vendor/**/*',
-				dest : 'dest/assets/vendor'
+				src  : 'src/assets/vendors/**/*',
+				dest : 'dest/assets/vendors'
 			}
 		]
 	}
