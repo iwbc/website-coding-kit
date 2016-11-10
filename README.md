@@ -2,7 +2,7 @@
 
 ### Dependencies
 
-- Node.js (>=4.4)
+- Node.js (>=4.x, <=5.x)
 - Gulp (>=3.9) `Option`
 - Bower (>=1.7) `Option`
 
