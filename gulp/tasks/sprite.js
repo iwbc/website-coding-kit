@@ -1,31 +1,42 @@
 'use strict';
 
-const $           = require('../func.js');
-const config      = require('../../gulpconfig.js');
-const merge       = require('merge-stream');
-const gulp        = require('gulp');
-const spritesmith = require('gulp.spritesmith');
-const plumber     = require('gulp-plumber');
-const notify      = require('gulp-notify');
+const gulp   = require('gulp');
+const path   = require('path');
+const ms     = require('merge-stream');
+const config = require('../config.js');
+const $      = require('../load.js');
 
 /**
- * Spite画像の作成
+ * スプライトの生成
  */
 
-gulp.task('sprite', function() {
+gulp.task('sprite', () => {
+	return gulp.src(config.path.sprite.src)
+		.pipe($.flatmap((stream, file) => {
+			if (!file.isDirectory()) { return stream; }
 
-	let data = gulp.src(config.spritesmith.path + '/*.png')
-		.pipe(plumber({
-			errorHandler: notify.onError({
-				'title'   : 'ERROR : sprite',
-				'message' : '<%= error.message %>'
-			})
-		}))
-		.pipe(spritesmith(config.spritesmith.options));
+			const dirname       = file.path.split(path.sep).pop();
+			const relative_path = path.relative(config.path.style.dest, config.path.image.dest);
+			const is_retina     = /2x$/.test(dirname);
+			const options    = {
+				cssTemplate        : 'gulp/templates/spritesmith.handlebars',
+				cssSpritesheetName : dirname,
+				imgName            : `${dirname}.png`,
+				cssName            : `_${dirname}.scss`,
+				imgPath            : `${relative_path}/${dirname}.png`,
+				algorithm          : 'binary-tree',
+				padding            : 6,
+				cssOpts            : {
+					scale  : is_retina ? .5 : 1
+				}
+			}
 
-	let img = data.img.pipe(gulp.dest($.app(config.paths.images.src)));
-	let css = data.css.pipe(gulp.dest($.app(config.paths.css.src)));
+			const data = gulp.src(`${file.path}/*.png`)
+				.pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
+				.pipe($.spritesmith(options));
+			const image = data.img.pipe(gulp.dest(config.path.sprite.dest.image));
+			const style = data.css.pipe(gulp.dest(config.path.sprite.dest.style));
 
-	return merge(img, css);
-
+			return ms(image, style);
+		}));
 });

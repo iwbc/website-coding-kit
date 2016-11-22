@@ -1,0 +1,47 @@
+files:
+  ignore:
+    - '**/vendors/**/*'
+    - '**/foundations/sprites/**/*'
+rules:
+  brace-style:
+    - 1
+    - style: stroustrup
+  class-name-format:
+    - 1
+    - convention: hyphenatedbem
+  empty-line-between-blocks: 0
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
+  indentation:
+    - 1
+    - size: tab
+  mixins-before-declarations:
+    - 1
+    - exclude:
+      - mq-md
+      - mq-lg
+      - mq-only-sm
+      - mq-only-md
+      - mq-range
+      - mq-min
+      - mq-max
+  nesting-depth:
+    - 1
+    - max-depth: 5
+  no-color-literals: 0
+  no-ids: 0
+  no-important: 0
+  no-misspelled-properties:
+    - 1
+    - extra-properties:
+      - overflow-scrolling
+  no-qualifying-elements: 0
+  no-transition-all: 0
+  no-vendor-prefixes: 0
+  placeholder-in-extend: 0
+  property-sort-order: 0
+  quotes:
+    - 1
+    - style: double
+  single-line-per-selector: 0

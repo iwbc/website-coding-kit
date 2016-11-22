@@ -1,0 +1,7 @@
+.u-cf {
+	overflow: hidden;
+}
+
+.u-cf-legacy {
+	@include clearfix;
+}
