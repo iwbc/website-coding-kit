@@ -1,0 +1,7 @@
+-
+  request:
+    url: /mock
+    method: GET
+  response:
+    status: 200
+    file: mock.json

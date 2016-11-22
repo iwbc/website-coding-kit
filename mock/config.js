@@ -1,3 +1,0 @@
-{
-    "simulated-lag": 500
-}
