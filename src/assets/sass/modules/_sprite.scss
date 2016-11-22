@@ -1,0 +1,7 @@
+@each $name, $sprite in $_sprites {
+	@each $image in $sprite {
+		.m-#{$name}-#{nth($image, 10)} {
+			@include sprite($image, map-get($_sprite-scales, $name));
+		}
+	}
+}

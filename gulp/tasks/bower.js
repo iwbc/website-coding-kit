@@ -1,25 +1,39 @@
 'use strict';
 
-const $          = require('../func.js');
-const config     = require('../../gulpconfig.js');
-const bowerFiles = require('main-bower-files');
-const gulp       = require('gulp');
-const concat     = require('gulp-concat');
-const uglify     = require('gulp-uglify');
-const jsfy       = require('gulp-jsfy');
+const gulp   = require('gulp');
+const ms     = require('merge-stream');
+const bower  = require('main-bower-files');
+const config = require('../config.js');
+const $      = require('../load.js');
 
 /**
- * Bowerパッケージのmainファイルを結合・圧縮しvendorディレクトリに配置
- * CSSファイルは、CSS全体をData URLに変換し、出力されるJSファイルに埋め込まれる
+ * BowerパッケージのmainファイルをJS/CSSそれぞれ結合し出力する
+ * CSSのurl(...)はdataURIに変換する
  */
 
-gulp.task('bower', function() {
-	let files = bowerFiles().filter(function(value) {
-		return /\.(js|css)$/.test(value);
-	});
-	return gulp.src(files)
-		.pipe(jsfy({ dataurl: true }))
-		.pipe(concat('libs.js'))
-		.pipe(uglify({preserveComments: 'some'}))
-		.pipe(gulp.dest($.app(config.paths.vendor)));
+gulp.task('bower', () => {
+
+	const regexp_excludes = new RegExp(`(${config.bower.excludes.join('|')})$`, 'i');
+	const js_files        = filterExcludes(bower().filter(value => /\.js$/.test(value)));
+	const css_files       = filterExcludes(bower().filter(value => /\.css$/.test(value)));
+
+	const js = gulp.src(js_files)
+		.pipe($.concat(`${config.bower.output}.js`))
+		.pipe($.if(config.build.bower_minify, $.uglify({ preserveComments : 'some' })))
+		.pipe(gulp.dest(config.path.bower.dest));
+
+	const css = gulp.src(css_files)
+		.pipe($.cssBase64({
+			maxWeightResource : 104857600
+		}))
+		.pipe($.concat(`${config.bower.output}.css`))
+		.pipe($.if(config.build.bower_minify, $.csso()))
+		.pipe(gulp.dest(config.path.bower.dest));
+
+	return ms(js, css);
+
+	function filterExcludes(files) {
+		if (!config.bower.excludes.length) { return files; }
+		return files.filter(value => !regexp_excludes.test(value));
+	}
 });

@@ -1,0 +1,43 @@
+// ====================================
+// フォントサイズをpxからremに変換
+//
+// @param {num|str} $px remに変換したいフォントサイズ（px）
+// @return {str} 変換結果（px）
+// ====================================
+
+@function px2rem($px) {
+	@if (type-of($px) == "number" and not unitless($px)) {
+		$px: $px / ($px * 0 + 1);
+	}
+	$_base-font-size: $_base-font-size / ($_base-font-size * 0 + 1);
+	@return #{$px / $_base-font-size}rem;
+}
+
+// ====================================
+// pxから%に変換
+//
+// @param  {num|str} $px 変換対象の値（px）
+// @param  {num|str} $base 基準とする値（px）
+// @return {str} 変換結果（%）
+// ====================================
+
+@function px2per($px, $base) {
+	@if (type-of($px) == "number" and not unitless($px)) {
+		$px: $px / ($px * 0 + 1);
+	}
+	@if (type-of($base) == "number" and not unitless($base)) {
+		$base: $base / ($base * 0 + 1);
+	}
+	@return percentage($px / $base);
+}
+
+// ====================================
+// $colorsから指定したキーの値を取得
+//
+// $param {str} $key $colorsのキー名
+// $return {color} カラーコード
+// ====================================
+
+@function get-color($key) {
+	@return map-get($_colors, $key);
+}

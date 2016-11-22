@@ -1,12 +1,12 @@
 'use strict';
 
-const runSequence = require('run-sequence');
-const gulp        = require('gulp');
+const gulp = require('gulp');
+const run  = require('run-sequence');
 
 /**
- * 開発タスクを開始する
+ * サーバ起動、ファイル監視
  */
 
-gulp.task('default', function() {
-	runSequence(['bower', 'ejs', 'sprite'], 'image', 'sass', 'server', 'watch');
+gulp.task('default', () => {
+	return run('server', 'watch');
 });
