@@ -45,18 +45,26 @@ module.exports = {
 			// 静的サイトの場合は、コメントアウトまたは削除する
 			// proxy     : 'example.com',
 		},
-		// モックサーバー
+		// モックサーバ
 		// 特定パスへのリクエストをモックサーバに転送する
-		// browsersync.proxyが設定されている場合は使わない
+		// browsersync.proxyが設定されている場合は無効
 		mock : {
-			// モックの保存ディレクトリパス
-			path  : 'mock',
-			// リバースプロキシ
+			// モックサーバの有無効
+			// true  : 有効
+			// false : 無効
+			enable   : true,
+			// stubcell
+			stubcell : {
+				// モックのエントリーポイントファイル
+				entry   : 'mock/entry.yml',
+				options : {
+					debug : true
+				}
+			},
+			// proxy-middleware
 			proxy : {
-				// 転送先
-				pass     : 'http://localhost:5000',
-				// 転送処理を行うパス
-				location : '/api'
+				pass     : 'http://localhost:5000/mock',
+				location : '/mock'
 			}
 		}
 	},
