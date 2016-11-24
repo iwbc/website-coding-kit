@@ -1,10 +1,13 @@
 # Website Coding Kit
 
+## 1.0.0-beta
+
 ### Dependencies
 
-- Node.js (>=5.x)
-- Gulp (>=3.9) `Option`
-- Bower (>=1.7) `Option`
+- [Node.js](https://nodejs.org/ja/) `>=5.x`
+- [yarn](https://yarnpkg.com/) `>=0.17`
+- [gulp.js](http://gulpjs.com/) `>=3.9` `Option`
+- [Bower](https://bower.io/) `>=1.7` `Option`
 
 ### Setup
 
