@@ -16,7 +16,7 @@ gulp.task('sprite', () => {
 			if (!file.isDirectory()) { return stream; }
 
 			const dirname       = file.path.split(path.sep).pop();
-			const relative_path = path.relative(config.path.style.dest, config.path.image.dest);
+			const relative_path = path.relative(config.path.style.dest.css, config.path.image.dest);
 			const is_retina     = /2x$/.test(dirname);
 			const options    = {
 				cssTemplate        : 'gulp/templates/spritesmith.handlebars',
@@ -27,7 +27,7 @@ gulp.task('sprite', () => {
 				algorithm          : 'binary-tree',
 				padding            : 6,
 				cssOpts            : {
-					scale  : is_retina ? .5 : 1
+					is_retina : is_retina
 				}
 			}
 
