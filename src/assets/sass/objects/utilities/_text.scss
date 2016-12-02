@@ -1,0 +1,9 @@
+// Text color
+@each $color-class, $color-code in $colors {
+	.u-text-#{$color-class} { color: $color-code !important; }
+}
+
+// Text align
+.u-text-left   { text-align: left !important; }
+.u-text-center { text-align: center !important; }
+.u-text-right  { text-align: right !important; }

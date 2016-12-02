@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+:root {
+	font-size: per($base-font-size, 16px);
+}
+
+body {
+	font-family: $base-font-family;
+	line-height: $base-line-height;
+	color: $base-text-color;
+}
+
+p, ul, ol, table, dl {
+	margin-bottom: 1em;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+a {
+	color: $base-text-link-color;
+	text-decoration: none;
+	img {
+		transition: all $base-hover-transition-delay;
+	}
+	&:hover {
+		color: $base-text-link-hover-color;
+		text-decoration: underline;
+		img {
+			opacity: $base-hover-opacity;
+		}
+	}
+	&:visited {
+		color: $base-text-link-visited-color;
+	}
+}

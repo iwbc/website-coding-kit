@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+////
+/// @group スプライト
+////
+
+/// スプライト用のCSSを出力する
+///
+/// @since 1.0.0
+///
+/// @param {string} $key
+/// 	スプライト名（フォルダ名-画像ファイル名）
+/// @param {number} $scale [1]
+/// 	スプライト画像の表示倍率
+///
+/// @example scss
+/// 	.element {
+/// 		@include sprite("icon-down");
+/// 	}
+///
+/// 	// CSS Output
+/// 	.element {
+/// 		background-image: url("../images/icon.png");
+///			background-repeat: no-repeat;
+///			background-position: 0px 0px;
+///			background-size: 262px 262px;
+///			width: 128px;
+///			height: 128px;
+///			display: inline-block;
+/// 	}
+
+@mixin sprite($key, $scale: 1) {
+	$sprite: map-get($_sprites, $key);
+	$properties: map-get($sprite, "properties");
+	$image: nth($properties, 9);
+	$offset-x: nth($properties, 3) * $scale;
+	$offset-y: nth($properties, 4) * $scale;
+	$sheet-width: nth($properties, 7) * $scale;
+	$sheet-height: nth($properties, 8) * $scale;
+	$width: nth($properties, 5) * $scale;
+	$height: nth($properties, 6) * $scale;
+	background-image: url("#{$image}");
+	background-repeat: no-repeat;
+	background-position: $offset-x $offset-y;
+	background-size: $sheet-width $sheet-height;
+	width: $width;
+	height: $height;
+	display: inline-block;
+}
+
+/// スプライト画像情報の参照用変数
+///
+/// @access private
+
+$_sprites: ();
