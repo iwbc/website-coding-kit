@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+@include test-module("foundations/functions/_unit.scss") {
+
+	@include test("rem") {
+		$actual: rem(16px);
+		$expect: 1rem;
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("per") {
+		$actual: per(100px, 1000px);
+		$expect: 10%;
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("vw") {
+		$actual: vw(32px);
+		$expect: 5vw;
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("vh") {
+		$actual: vh(32px);
+		$expect: 2.8169vh;
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("absolute-to-relative") {
+		$actual: absolute-to-relative(10,100);
+		$expect: .1;
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("absolute-to-relative / $is-percentage is true") {
+		$actual: absolute-to-relative(10,100, true);
+		$expect: 10;
+		@include assert-equal($actual, $expect);
+	}
+
+}

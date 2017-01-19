@@ -17,12 +17,18 @@ module.exports = {
 	 */
 
 	build : {
+		// 開発用ビルド
 		default : {
+			// CSSのMinify化
 			css_minify   : false,
+			// JSのMinify化
 			js_minify    : false,
+			// 統合済BowerパッケージのMinify化
 			bower_minify : true,
+			// SourceMapの出力
 			sourcemap    : true
 		},
+		// 本番用ビルド
 		production : {
 			css_minify   : false,
 			js_minify    : false,
@@ -41,6 +47,7 @@ module.exports = {
 		browsersync : {
 			notify    : false,
 			ghostMode : false,
+			directory : true
 			// 動的サイトの場合は、別途XAMPP等でサーバーを用意し、以下のproxyにドメインを記述する
 			// 静的サイトの場合は、コメントアウトまたは削除する
 			// proxy     : 'example.com',
@@ -108,6 +115,18 @@ module.exports = {
 			outputStyle : 'expanded',
 			indentType  : 'tab',
 			indentWidth : 1
+		},
+		// sassdoc
+		// http://sassdoc.com/configuration/
+		sassdoc : {
+			sort   : ['file', 'group', 'access<', 'line<'],
+			display : {
+				access    : ['public', 'private'],
+				alias     : false,
+				watermark : false
+			},
+			noUpdateNotifier : true,
+			verbose          : true
 		}
 	},
 
@@ -160,7 +179,10 @@ module.exports = {
 		style : {
 			src   : 'src/assets/sass/**/*.scss',
 			watch : 'src/assets/sass/**/*.{css,scss}',
-			dest  : 'dest/assets/css'
+			dest  : {
+				css     : 'dest/assets/css',
+				sassdoc : 'docs/sass'
+			}
 		},
 		// CSS
 		css : {

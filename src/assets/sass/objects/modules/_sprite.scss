@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+@each $key, $sprite in $_sprites {
+	.m-sprite_#{$key} {
+		$scale: if(map-get($sprite, "is-retina"), .5, 1);
+		@include sprite($key, $scale);
+	}
+}

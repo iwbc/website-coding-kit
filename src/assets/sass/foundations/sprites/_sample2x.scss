@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+// sass-lint:disable-all
+
+$_sprites: map-merge($_sprites, (
+	"sample2x-down": (
+		"sheet": "sample2x",
+		"properties": 0px 0px 0px 0px 128px 128px 262px 262px "../images/sample2x.png" "down",
+		"is-retina": true
+	)
+));
+$_sprites: map-merge($_sprites, (
+	"sample2x-left": (
+		"sheet": "sample2x",
+		"properties": 134px 0px -134px 0px 128px 128px 262px 262px "../images/sample2x.png" "left",
+		"is-retina": true
+	)
+));
+$_sprites: map-merge($_sprites, (
+	"sample2x-right": (
+		"sheet": "sample2x",
+		"properties": 0px 134px 0px -134px 128px 128px 262px 262px "../images/sample2x.png" "right",
+		"is-retina": true
+	)
+));
+$_sprites: map-merge($_sprites, (
+	"sample2x-up": (
+		"sheet": "sample2x",
+		"properties": 134px 134px -134px -134px 128px 128px 262px 262px "../images/sample2x.png" "up",
+		"is-retina": true
+	)
+));

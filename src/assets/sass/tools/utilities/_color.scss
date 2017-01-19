@@ -1,8 +1,0 @@
-@each $color-class, $color-code in $_colors {
-	.u-color-#{$color-class} {
-		color: $color-code !important;
-	}
-	.u-bg-#{$color-class} {
-		background-color: $color-code !important;
-	}
-}

@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+////
+/// @group ユーティリティ
+////
+
+/// 指定した色名のカラーコードを取得する
+///
+/// @since 1.0.0
+///
+/// @param {string} $key
+/// 	色名
+///
+/// @require {variable} $colors
+///
+/// @return {color}
+///
+/// @example scss
+/// 	$colors: ("black": #000, "white": #fff);
+/// 	@debug get-color("black"); // #000
+
+@function color($key) {
+	@return map-get($colors, $key);
+}
+
+/// 任意のマップから、指定したキーの次の要素のキーを取得する
+///
+/// @since 1.0.0
+///
+/// @param {map} $map
+/// 	マップ
+/// @param {string} $key
+/// 	キー
+///
+/// @return {string | null}
+/// 	指定したキーの要素が、最後の要素である場合は、`null`を返す
+///
+/// @example scss
+/// 	$map: ("A": 1, "B": 2, "C": 3);
+/// 	@debug map-get-next-key("B", $map); // C
+/// 	@debug map-get-next-key("C", $map); // null
+
+@function map-get-next-key($map, $key) {
+	$keys: map-keys($map);
+	$index: index($keys, $key);
+	@return if($index < length($keys), nth($keys, $index + 1), null);
+}
+
+/// 任意のマップから、指定したキーの前の要素のキーを取得する
+///
+/// @since 1.0.0
+///
+/// @param {map} $map
+/// 	マップ
+/// @param {string} $key
+/// 	キー
+///
+/// @return {string | null}
+/// 	指定したキーの要素が、最初の要素である場合は、`null`を返す
+///
+/// @example scss
+/// 	$map: ("A": 1, "B": 2, "C": 3);
+/// 	@debug map-get-prev-key("B", $map); // "A"
+/// 	@debug map-get-prev-key("A", $map); // null
+
+@function map-get-prev-key($map, $key) {
+	$keys: map-keys($map);
+	$index: index($keys, $key);
+	@return if($index > 1, nth($keys, $index - 1), null);
+}
+
+/// 数値から単位を取り除く
+///
+/// @since 1.0.0
+///
+/// @param {number} $number
+/// 	単位付きの数値
+///
+/// @return {number}
+///
+/// @example scss
+/// 	@debug strip-unit(12px); // 12
+
+@function strip-unit($number) {
+	@return $number / ($number * 0 + 1);
+}
