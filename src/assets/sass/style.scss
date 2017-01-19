@@ -1,61 +1,16 @@
 @charset "utf-8";
 
-// ====================================
-// Vendors
-// ====================================
+@import "foundations/_config.scss";
+@import "foundations/functions/_*.scss";
+@import "foundations/mixins/_*.scss";
+@import "foundations/sprites/_*.scss";
+@import "foundations/_font.scss";
+@import "foundations/_tag.scss";
 
-@import "vendors/sanitize";
+@import "layouts/bases/_*.scss";
+@import "layouts/commons/_*.scss";
 
-// ====================================
-// Foundations
-// ====================================
-
-@import "foundations/variable";
-@import "foundations/function";
-@import "foundations/mixin";
-@import "foundations/font";
-@import "foundations/base";
-// @import "foundations/sprites/sprite";
-
-// ====================================
-// Layouts
-// ====================================
-
-// @import "layouts/layout";
-
-// ====================================
-// Modules
-// ====================================
-
-@import "modules/sprite";
-
-// ====================================
-// Components
-// ====================================
-
-// @import "components/component";
-
-// ====================================
-// Pages
-// ====================================
-
-// @import "pages/page";
-
-// ====================================
-// Tools
-// ====================================
-
-// Helpers
-// @import "tools/helpers/helper";
-
-// Utilities
-@import "tools/utilities/font-weight";
-@import "tools/utilities/color";
-@import "tools/utilities/letter-spacing";
-@import "tools/utilities/align";
-@import "tools/utilities/padding";
-@import "tools/utilities/margin";
-@import "tools/utilities/display";
-@import "tools/utilities/visibility";
-@import "tools/utilities/position";
-@import "tools/utilities/clearfix";
+@import "objects/modules/_*.scss";
+// @import "objects/components/_*.scss";
+// @import "objects/pages/_*.scss";
+@import "objects/utilities/_*.scss";

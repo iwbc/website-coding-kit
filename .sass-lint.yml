@@ -1,7 +1,7 @@
 files:
   ignore:
-    - '**/vendors/**/*'
-    - '**/foundations/sprites/**/*'
+    - 'src/assets/sass/vendors/**/*'
+    - 'test/sass/**/*'
 rules:
   brace-style:
     - 1
@@ -9,6 +9,7 @@ rules:
   class-name-format:
     - 1
     - convention: hyphenatedbem
+  clean-import-paths: 0
   empty-line-between-blocks: 0
   force-attribute-nesting: 0
   force-element-nesting: 0

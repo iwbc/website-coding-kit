@@ -1,38 +1,137 @@
-# Website Coding Kit
+# Website Coding Kit v1.0.0
 
-## 1.0.0-beta
+## 動作要件
 
-### Dependencies
+Website Coding Kitの実行には以下のツールが必要です。  
+実行環境にインストールされていない場合は、各ツールのWebサイトからインストールしてください。
 
-- [Node.js](https://nodejs.org/ja/) `>=5.x`
-- [yarn](https://yarnpkg.com/) `>=0.17`
-- [gulp.js](http://gulpjs.com/) `>=3.9` `Option`
-- [Bower](https://bower.io/) `>=1.7` `Option`
+- [Node.js](https://nodejs.org/ja/) v5.0以上 `必須`
+- [Yarn](https://yarnpkg.com/) v0.17以上 `必須`
+- [Gulp](http://gulpjs.com/) v3.9以上
+- [Bower](https://bower.io/) v1.7以上
 
-### Setup
+## セットアップ
+
+プロジェクトの新規開始、またはプロジェクトのリポジトリをクローンして再開する場合には、以下のコマンドを実行して、Website Coding Kitのセットアップを行います。
 
 ```
 npm run init
 ```
 
-### Usage
+## 各種設定
 
-#### Build
+Website Coding Kitの動作設定は、`/gulpconfig.js`に記述されています。  
+基本的に変更する必要はありませんが、変更する場合は、当該ファイルのコメントを確認してください。
 
-**Run before you start development.**
+## 使い方
 
-```
+### ビルド
+
+以下のビルドを一括して行います。
+
+- スプライトシートの生成
+- Bowerパッケージの統合
+- EJS/Sass/JSのコンパイル
+- 画像の最適化
+- `/dest`ディレクトリへのファイルのコピーなど
+
+#### 開発用ビルド
+
+開発用のビルドを行います。  
+デフォルトの設定は、以下のとおりです。
+
+- CSS/JSのMinify化 : 無効
+- BowerパッケージのMinify化 : 有効
+- SourceMapの出力 : 有効
+
+**destディレクトリ内の状態を最新にするため、開発前やリポジトリをpullした後には、必ずビルドを行ってください。**
+
+```console
 npm run build
 ```
 
-Production Build
+#### 本番用ビルド
 
-```
+開発用ビルドコマンドに`-- --env=production`のオプションを付与することで、本番用のビルド設定に従ったビルドを行います。  
+デフォルトの設定は、以下のとおりです。
+
+- CSS/JSのMinify化 : 無効
+- BowerパッケージのMinify化 : 有効
+- SourceMapの出力 : 無効
+
+```console
 npm run build -- --env=production
 ```
 
-#### Watch file / Start server
+### ファイルの更新監視とWebサーバーの起動
 
-```
+ファイル更新監視の開始とWebサーバーの起動を行います。  
+ファイルの更新を検知すると、ビルドとページのリロードが行われます。
+
+```console
 npm run start
 ```
+
+### スプライトシートの生成
+
+`/src/assets/sprites`直下のディレクトリごとに、スプライトシートとスプライトシート用のSassファイルを出力します。
+
+#### 例
+  
+`/src/assets/sprites`ディレクトリに`sample2x`ディレクトリを作成し、この中に`down.png`と`up.png`を入れた場合は、`/src/assets/images`ディレクトリに`sample2x.png`というスプライトシートと、`/src/assets/sass/foundations/sprites`ディレクトリに`_sample2x.scss`ファイルが出力されます。
+
+Mixinまたはクラスを使用して、スプライト画像を表示できます。
+
+##### Mixinを使用する場合。
+
+```scss
+.element {
+	// @include sprite("{スプライトシートディレクトリ名}-{スプライト画像ファイル名}");
+	@include sprite("sample2x-down");
+}
+```
+
+##### クラスを使用する場合。
+
+```html
+<!-- m-sprite_{スプライトシートディレクトリ名}-{スプライト画像ファイル名} -->
+<span class="m-sprite_sample2x-down"></span>
+```
+
+## 主要ファイル構成
+
+```sh
+┣ dest/ # 公開用データディレクトリ。
+┣ docs/
+┃  ┗ sass/ # 組込済Sassファイルについてのドキュメントディレクトリ。
+┣ mock/ # モックサーバの設定ディレクトリ。
+┣ src/ # ソースデータディレクトリ。
+┃  ┣ assets/
+┃  ┃  ┣ css/
+┃  ┃  ┃  ┗ sanitize.css
+┃  ┃  ┣ fonts/ # Webフォントディレクトリ。
+┃  ┃  ┃  ┗ NotoSansCJKjp-* # 第一水準漢字までのサブセット化済みのNotoSansCJKjpのWebフォントファイル。
+┃  ┃  ┣ images/
+┃  ┃  ┣ js/
+┃  ┃  ┣ sass/ # 以下、FLOCSSベースのCSS設計ガイドラインに準拠しています。
+┃  ┃  ┃  ┣ foundations/
+┃  ┃  ┃  ┣ layouts/
+┃  ┃  ┃  ┣ objects/
+┃  ┃  ┃  ┣ vendors/ # ライブラリなど第三者制作のスタイルシートはここに保存します。
+┃  ┃  ┃  ┗ style.scss
+┃  ┃  ┣ sprites/
+┃  ┃  ┗ vendors/ # ライブラリなど第三者制作のスタイルシートはここに保存します。
+┃  ┃      ┗ libs.js # 各Bowerパッケージのmainファイルはこのファイルに統合されます。
+┃  ┗ index.ejs
+┗ gulpconfig.js # Website Coding Kitの動作設定ファイル。
+```
+
+## ドキュメント
+
+### SassDoc
+
+Website Coding Kitに組込済Sassファイルの仕様については、`/docs/sass/index.html`を確認してください。
+
+### FLOCSS
+
+Website Coding Kitに組込済のSassファイル構成は、FLOCSSベースのCSS設計ガイドラインに準拠しています。

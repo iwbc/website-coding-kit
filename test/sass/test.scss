@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+$base-viewport-width:  640px;
+$base-viewport-height: 1136px;
+$breakpoints: (
+	"xs": 0,
+	"sm": 480px,
+	"md": 768px,
+	"lg": 1024px,
+	"xl": 1440px
+);
+$base-font-size: 16px;
+$colors: (
+	"white": #fff,
+	"black": #000
+);
+
+@import "true";
+
+@import "../../src/assets/sass/foundations/functions/_breakpoint.scss";
+@import "../../src/assets/sass/foundations/functions/_unit.scss";
+@import "../../src/assets/sass/foundations/functions/_utility.scss";
+
+@import "../../src/assets/sass/foundations/mixins/_media.scss";
+@import "../../src/assets/sass/foundations/mixins/_sprite.scss";
+@import "../../src/assets/sass/foundations/mixins/_utility.scss";
+
+@import "sprites/icon2x.scss";
+
+@import "spec/foundation-function-breakpoint.scss";
+@import "spec/foundation-function-unit.scss";
+@import "spec/foundation-function-utility.scss";
+
+@import "spec/foundation-mixin-media.scss";
+@import "spec/foundation-mixin-sprite.scss";
+@import "spec/foundation-mixin-utility.scss";
