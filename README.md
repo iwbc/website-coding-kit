@@ -77,24 +77,38 @@ npm run start
 `/src/assets/sprites`直下のディレクトリごとに、スプライトシートとスプライトシート用のSassファイルを出力します。
 
 #### 例
-  
+
 `/src/assets/sprites`ディレクトリに`sample2x`ディレクトリを作成し、この中に`down.png`と`up.png`を入れた場合は、`/src/assets/images`ディレクトリに`sample2x.png`というスプライトシートと、`/src/assets/sass/foundations/sprites`ディレクトリに`_sample2x.scss`ファイルが出力されます。
 
-Mixinまたはクラスを使用して、スプライト画像を表示できます。
+Retina用のスプライトシートを生成する場合は、スプライトシートのディレクトリ名の末尾に`2x`を付与してください。
 
-##### Mixinを使用する場合。
+MixinまたはClassを使用して、スプライト画像を表示できます。
+
+##### Mixinを使用してスプライト画像を表示する
 
 ```scss
+// @include sprite("{スプライトシートディレクトリ名}-{スプライト画像ファイル名}", {表示倍率});
+
 .element {
-	// @include sprite("{スプライトシートディレクトリ名}-{スプライト画像ファイル名}");
+	// 否Retina用スプライトシートの画像を表示する（等倍表示）
 	@include sprite("sample2x-down");
+}
+
+.element2x {
+	// Retina用スプライトシートの画像を表示する（0.5倍表示）
+	@include sprite("sample2x-down", .5);
 }
 ```
 
-##### クラスを使用する場合。
+##### Classを使用してスプライト画像を表示する
 
 ```html
 <!-- m-sprite_{スプライトシートディレクトリ名}-{スプライト画像ファイル名} -->
+
+<!-- 否Retina用スプライトシートの画像を表示する（等倍表示） -->
+<span class="m-sprite_sample-down"></span>
+
+<!-- Retina用スプライトシートの画像を表示する（0.5倍表示） -->
 <span class="m-sprite_sample2x-down"></span>
 ```
 
@@ -110,21 +124,24 @@ Mixinまたはクラスを使用して、スプライト画像を表示できま
 ┃  ┃  ┣ css/
 ┃  ┃  ┃  ┗ sanitize.css
 ┃  ┃  ┣ fonts/ # Webフォントディレクトリ。
-┃  ┃  ┃  ┗ NotoSansCJKjp-* # 第一水準漢字までのサブセット化済みのNotoSansCJKjpのWebフォントファイル。
+┃  ┃  ┃  ┗ NotoSansCJKjp-* # 第一水準漢字までのサブセット化済みのNoto Sans JPのWebフォントファイル。
 ┃  ┃  ┣ images/
 ┃  ┃  ┣ js/
 ┃  ┃  ┣ sass/ # 以下、FLOCSSベースのCSS設計ガイドラインに準拠しています。
 ┃  ┃  ┃  ┣ foundations/
 ┃  ┃  ┃  ┣ layouts/
 ┃  ┃  ┃  ┣ objects/
-┃  ┃  ┃  ┣ vendors/ # ライブラリなど第三者制作のスタイルシートはここに保存します。
+┃  ┃  ┃  ┣ vendors/ # ライブラリなど第三者制作のスタイルはここに保存します。
 ┃  ┃  ┃  ┗ style.scss
 ┃  ┃  ┣ sprites/
-┃  ┃  ┗ vendors/ # ライブラリなど第三者制作のスタイルシートはここに保存します。
-┃  ┃      ┗ libs.js # 各Bowerパッケージのmainファイルはこのファイルに統合されます。
+┃  ┃  ┗ vendors/ # ライブラリなど第三者制作のJSはここに保存します。
+┃  ┃      ┗ libs.js # 各Bowerパッケージのmainファイルは、このファイルとして統合して出力されます。
 ┃  ┗ index.ejs
 ┗ gulpconfig.js # Website Coding Kitの動作設定ファイル。
 ```
+
+**Gitリポジトリで空のディレクトリを保持するため、`.gitkeep`ファイルだけが入っているディレクトリがあります。  
+何らかのファイルをこのディレクトリに追加した場合は、`.gitkeep`ファイルを削除してください。**
 
 ## ドキュメント
 
