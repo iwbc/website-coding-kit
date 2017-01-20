@@ -1,0 +1,371 @@
+@charset "utf-8";
+
+////
+//// @group 01. グリッド (Flexbox)
+////
+
+/// グリッドの設定
+
+$_grid-options: $base-grid-options;
+
+/// グリッドの設定を一時的に変更する<br>
+/// 設定の変更は、ネストしたスコープ内でのみ有効
+///
+/// @since 1.1.0
+///
+/// @param {map} $options
+/// 	`$base-grid-options`を参照
+///
+/// @require {variable} $base-grid-options
+/// @require {variable} $_grid-options
+///
+/// @example scss
+/// 	.row {
+/// 		@include grid(("gutters": false)) {
+/// 			@include row {
+/// 				.col {
+/// 					@include col;
+/// 				}
+/// 			}
+/// 		}
+/// 	}
+///
+/// 	// CSS Output
+/// 	.row {
+/// 		display: -ms-flexbox;
+/// 		display: flex;
+/// 	}
+/// 	.row .col {
+/// 		-ms-flex: 0 0 auto;
+/// 		    flex: 0 0 auto;
+/// 		max-width: 100%;
+/// 		-ms-flex-positive: 1;
+/// 		    flex-grow: 1;
+/// 		-ms-flex-preferred-size: 0;
+/// 		    flex-basis: 0;
+/// 		margin-left: 0%;
+/// 	}
+
+@mixin grid($options) {
+	$_grid-options: map-merge($base-grid-options, $options) !global;
+	@content;
+	$_grid-options: $base-grid-options !global;
+}
+
+/// コンテナーとして適用する
+///
+/// @since 1.1.0
+///
+/// @param {可変長引数} $options...
+/// 	コンテナーのオプション<br>
+/// 	値からFlexboxコンテナーのプロパティを適用
+/// 	<table class="item__parameters">
+/// 		<thead>
+/// 			<tr>
+/// 				<th>値</th>
+/// 				<th>プロパティ名</th>
+/// 				<th>プロパティ値</th>
+/// 			</tr>
+/// 		</thead>
+/// 		<tbody>
+/// 			<tr>
+/// 				<td>`row`</td>
+/// 				<td rowspan="2" style="vertical-align:middle;">flex-direction</td>
+/// 				<td>row</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`reverse`</td>
+/// 				<td>row-reverse</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`start`</td>
+/// 	            <td rowspan="5" style="vertical-align:middle;">justify-content</td>
+/// 				<td>flex-start</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`center`</td>
+/// 				<td>center</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`end`</td>
+/// 	            <td>flex-end</td>
+/// 			</tr>
+/// 			<tr>
+/// 	            <td>`between`</td>
+/// 				<td>space-between</td>
+/// 			</tr>
+/// 			<tr>
+/// 	            <td>`around`</td>
+/// 				<td>space-around</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`top`</td>
+/// 	            <td rowspan="5" style="vertical-align:middle;">align-items</td>
+/// 				<td>flex-start</td>
+/// 			</tr>
+/// 			<tr>
+/// 	            <td>`middle`</td>
+/// 				<td>center</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`bottom`</td>
+/// 				<td>flex-end</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`baseline`</td>
+/// 				<td>baseline</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`stretch`</td>
+/// 				<td>stretch</td>
+/// 			</tr>
+/// 		</tbody>
+/// 	</table>
+///
+/// @require {mixin} _row-flex-direction
+/// @require {mixin} _row-justify-content
+/// @require {mixin} _row-align-items
+/// @require {mixin} _gutters
+/// @require {variable} $_grid-options
+///
+/// @example scss
+/// 	.row {
+/// 		@include row(center, middle) {
+/// 			.col {
+/// 				@include col;
+/// 			}
+/// 		}
+/// 	}
+///
+/// 	// CSS Output
+/// 	.row {
+/// 		-ms-flex-pack: center;
+/// 		    justify-content: center;
+/// 		-ms-flex-align: center;
+/// 		    align-items: center;
+/// 		display: -ms-flexbox;
+/// 		display: flex;
+/// 		box-sizing: border-box;
+/// 		margin-right: -1%;
+/// 		margin-left: -1%;
+/// 	}
+/// 	.row .col {
+/// 		-ms-flex: 0 0 auto;
+/// 		    flex: 0 0 auto;
+/// 		max-width: 100%;
+/// 		-ms-flex-positive: 1;
+/// 		    flex-grow: 1;
+/// 		-ms-flex-preferred-size: 0;
+/// 		    flex-basis: 0;
+/// 		box-sizing: border-box;
+/// 		padding-right: 1%;
+/// 		padding-left: 1%;
+/// 	}
+
+@mixin row($options...) {
+	// sass-lint:disable mixins-before-declarations
+	display: flex;
+	@include _row-flex-direction($options);
+	@include _row-justify-content($options);
+	@include _row-align-items($options);
+	@include _gutters("row");
+	@content;
+}
+
+/// カラムとして適用する
+///
+/// @since 1.1.0
+///
+/// @param {string | number | null} $columns [null]
+/// 	カラムの幅として設定するグリッドカラム数<br>
+/// 	`null`の場合は自動で調整される
+/// @param {number | null} $offset [null]
+/// 	カラムのオフセットとして設定するグリッドカラム数
+/// @param {number | null} $order [null]
+/// 	カラムの順番
+///
+/// @require {mixin} _col-columns
+/// @require {mixin} _col-offset
+/// @require {mixin} _col-order
+/// @require {mixin} _gutters
+///
+/// @example scss
+/// 	.col-1 {
+/// 		@include col(8, 4, 2);
+/// 	}
+/// 	.col-2 {
+/// 		@include col(12, null, 1);
+/// 	}
+///
+/// 	// CSS Output
+/// 	.col-1 {
+/// 		-ms-flex: 0 0 auto;
+/// 		    flex: 0 0 auto;
+/// 		max-width: 33.33333%;
+/// 		-ms-flex-preferred-size: 33.33333%;
+/// 		    flex-basis: 33.33333%;
+/// 		margin-left: 16.66667%;
+/// 		-ms-flex-order: 2;
+/// 		    order: 2;
+/// 		box-sizing: border-box;
+/// 		padding-right: 1%;
+/// 		padding-left: 1%;
+/// 	}
+/// 	.col-2 {
+/// 		-ms-flex: 0 0 auto;
+/// 		    flex: 0 0 auto;
+/// 		max-width: 50%;
+/// 		-ms-flex-preferred-size: 50%;
+/// 		    flex-basis: 50%;
+/// 		-ms-flex-order: 1;
+/// 		    order: 1;
+/// 		box-sizing: border-box;
+/// 		padding-right: 1%;
+/// 		padding-left: 1%;
+/// 	}
+
+
+@mixin col($columns: null, $offset: null, $order: null) {
+	// sass-lint:disable mixins-before-declarations
+	flex: 0 0 auto;
+	@include _col-columns($columns);
+	@include _col-offset($offset);
+	@include _col-order($order);
+	@include _gutters("col");
+}
+
+/// Flexboxコンテナーのプロパティを適用
+///
+/// @since 1.1.0
+///
+/// @require {mixin} _flexbox-container-property
+///
+/// @access private
+
+@mixin _flexbox-container-property($name, $definition, $options) {
+	@each $key, $value in $definition {
+		@if (list-has($options, $key)) {
+			#{$name}: #{$value};
+		}
+	}
+}
+
+/// flex-direction
+///
+/// @since 1.1.0
+///
+/// @require {mixin} _flexbox-container-property
+///
+/// @access private
+
+@mixin _row-flex-direction($options) {
+	$definition: (
+		"row":     "row",
+		"reverse": "row-reverse"
+	);
+	@include _flexbox-container-property("flex-direction", $definition, $options);
+}
+
+/// justify-content
+///
+/// @since 1.1.0
+///
+/// @require {mixin} _flexbox-container-property
+///
+/// @access private
+
+@mixin _row-justify-content($options) {
+	$definition: (
+		"start":   "flex-start",
+		"center":  "center",
+		"end":     "flex-end",
+		"between": "space-between",
+		"around":  "space-around"
+	);
+	@include _flexbox-container-property("justify-content", $definition, $options);
+}
+
+/// align-items
+///
+/// @since 1.1.0
+///
+/// @require {mixin} _flexbox-container-property
+///
+/// @access private
+
+@mixin _row-align-items($options) {
+	$definition: (
+		"top":      "flex-start",
+		"middle":   "center",
+		"bottom":   "flex-end",
+		"baseline": "baseline",
+		"stretch":  "stretch"
+	);
+	@include _flexbox-container-property("align-items", $definition, $options);
+}
+
+/// カラム幅
+///
+/// @since 1.1.0
+///
+/// @require {variable} $_grid-options
+///
+/// @access private
+
+@mixin _col-columns($columns: null) {
+	@if $columns == null {
+		max-width: 100%;
+		flex-grow: 1;
+		flex-basis: 0;
+	}
+	@else {
+		$width: percentage($columns / map-get($_grid-options, "columns"));
+		max-width: $width;
+		flex-basis: $width;
+	}
+}
+
+/// カラムのオフセット
+///
+/// @since 1.1.0
+///
+/// @require {variable} $_grid-options
+///
+/// @access private
+
+@mixin _col-offset($offset: null) {
+	$offset: if($offset == null, null, percentage($offset / map-get($_grid-options, "columns")));
+	margin-left: $offset;
+}
+
+/// カラムの順番
+///
+/// @since 1.1.0
+///
+/// @access private
+
+@mixin _col-order($order: null) {
+	order: $order;
+}
+
+/// Gutters
+///
+/// @since 1.1.0
+///
+/// @require {variable} $_grid-options
+///
+/// @access private
+
+@mixin _gutters($type) {
+	@if map-get($_grid-options, "gutters") {
+		box-sizing: border-box;
+		@if $type == "row" {
+			margin-right: map-get($_grid-options, "gutter-width") / -2;
+			margin-left: map-get($_grid-options, "gutter-width") / -2;
+		}
+		@elseif $type == "col" {
+			padding-right: map-get($_grid-options, "gutter-width") / 2;
+			padding-left: map-get($_grid-options, "gutter-width") / 2;
+		}
+	}
+}

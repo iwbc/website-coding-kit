@@ -20,6 +20,8 @@ rules:
   mixins-before-declarations:
     - 1
     - exclude:
+      - grid
+      - row
       - mq-min
       - mq-max
   nesting-depth:
