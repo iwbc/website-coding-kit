@@ -1,14 +1,26 @@
 @charset "utf-8";
 
+//
+// Foundations
+//
+
 @import "foundations/_config.scss";
 @import "foundations/functions/_*.scss";
 @import "foundations/mixins/_*.scss";
-@import "foundations/sprites/_*.scss";
+// @import "foundations/sprites/_*.scss";
 @import "foundations/_font.scss";
 @import "foundations/_tag.scss";
 
+//
+// Layouts
+//
+
 @import "layouts/bases/_*.scss";
 @import "layouts/commons/_*.scss";
+
+//
+// Objects
+//
 
 @import "objects/modules/_*.scss";
 // @import "objects/components/_*.scss";

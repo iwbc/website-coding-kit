@@ -99,8 +99,8 @@
 /// 	@debug absolute-to-relative(10, 100, true) * 1%; // 10%
 
 @function absolute-to-relative($abs, $basis, $is-percentage: false) {
-	$abs:   strip-unit($abs);
-	$basis: strip-unit($basis);
+	$abs:      strip-unit($abs);
+	$basis:    strip-unit($basis);
 	$relative: $abs / $basis;
 	@return if($is-percentage, $relative * 100, $relative);
 }
