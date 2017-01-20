@@ -91,7 +91,7 @@ MixinまたはClassを使用して、スプライト画像を表示できます�
 
 .element {
 	// 否Retina用スプライトシートの画像を表示する（等倍表示）
-	@include sprite("sample2x-down");
+	@include sprite("sample-down");
 }
 
 .element2x {
