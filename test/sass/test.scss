@@ -2,6 +2,11 @@
 
 $base-viewport-width:  640px;
 $base-viewport-height: 1136px;
+$base-grid-options: (
+	"columns":      24,
+	"gutters":      true,
+	"gutter-width": 2%
+);
 $breakpoints: (
 	"xs": 0,
 	"sm": 480px,
@@ -21,6 +26,7 @@ $colors: (
 @import "../../src/assets/sass/foundations/functions/_unit.scss";
 @import "../../src/assets/sass/foundations/functions/_utility.scss";
 
+@import "../../src/assets/sass/foundations/mixins/_grid.scss";
 @import "../../src/assets/sass/foundations/mixins/_media.scss";
 @import "../../src/assets/sass/foundations/mixins/_sprite.scss";
 @import "../../src/assets/sass/foundations/mixins/_utility.scss";
@@ -31,6 +37,7 @@ $colors: (
 @import "specs/foundation-function-unit.scss";
 @import "specs/foundation-function-utility.scss";
 
+@import "specs/foundation-mixin-grid.scss";
 @import "specs/foundation-mixin-media.scss";
 @import "specs/foundation-mixin-sprite.scss";
 @import "specs/foundation-mixin-utility.scss";

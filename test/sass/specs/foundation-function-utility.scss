@@ -8,6 +8,84 @@
 		@include assert-equal($actual, $expect);
 	}
 
+	@include test("list-has / operation is AND") {
+		$list: ("A" "B" "C");
+		$actual: list-has($list, ("A" "B"));
+		$expect: true;
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("list-has / operation is AND / return is false") {
+		$list: ("A" "B" "C");
+		$actual: list-has($list, ("A" "Z"));
+		$expect: false;
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("list-has / operation is OR") {
+		$list: ("A" "B" "C");
+		$actual: list-has($list, ("A" "Z"), "OR");
+		$expect: true;
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("list-has / operation is OR / return is false") {
+		$list: ("A" "B" "C");
+		$actual: list-has($list, ("Y", "Z"), "OR");
+		$expect: false;
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("map-set") {
+		$map: (
+			"white": #fff,
+			"black": #000
+		);
+		$actual: map-set($map, "red", #f00);
+		$expect: (
+			"white": #fff,
+			"black": #000,
+			"red": #f00
+		);
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("map-deep-set") {
+		$map: (
+			"columns": 12,
+			"layouts": (
+				"small": 800px,
+				"medium": 1000px,
+				"large": 1200px
+			)
+		);
+		$actual: map-deep-set($map, "layouts", "xsmall", 600px);
+		$expect: (
+			"columns": 12,
+			"layouts": (
+				"small": 800px,
+				"medium": 1000px,
+				"large": 1200px,
+				"xsmall": 600px
+			)
+		);
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("map-deep-get") {
+		$map: (
+			"columns": 12,
+			"layouts": (
+				"small": 800px,
+				"medium": 1000px,
+				"large": 1200px
+			)
+		);
+		$actual: map-deep-get($map, "layouts", "small");
+		$expect: 800px;
+		@include assert-equal($actual, $expect);
+	}
+
 	@include test("map-get-next-key") {
 		$map: ("a": 1, "b": 2, "c": 3);
 		$actual: map-get-next-key($map, "b");

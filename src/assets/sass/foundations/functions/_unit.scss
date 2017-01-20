@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 ////
-/// @group 単位の変換
+/// @group ユーティリティ
 ////
 
 /// px単位の値をrem単位の値に変換する
@@ -9,7 +9,7 @@
 /// @since 1.0.0
 ///
 /// @param {number} $px
-/// 	変換対象値（単位は省略可）
+/// 	変換対象値 (単位は省略可)
 ///
 /// @require {function} absolute-to-relative
 /// @require {variable} $base-font-size
@@ -29,9 +29,9 @@
 /// @since 1.0.0
 ///
 /// @param {number} $px
-/// 	変換対象値（単位は省略可）
+/// 	変換対象値 (単位は省略可)
 /// @param {number} $basis
-/// 	変換基準値（単位は省略可）
+/// 	変換基準値 (単位は省略可)
 ///
 /// @require {function} absolute-to-relative
 ///
@@ -48,7 +48,7 @@
 ///
 /// @since 1.0.0
 ///
-/// @param {number} $px - 変換対象値（単位は省略可）
+/// @param {number} $px - 変換対象値 (単位は省略可)
 ///
 /// @require {function} absolute-to-relative
 /// @require {variable} $base-viewport-width
@@ -67,7 +67,7 @@
 ///
 /// @since 1.0.0
 ///
-/// @param {number} $px - 変換対象値（単位は省略可）
+/// @param {number} $px - 変換対象値 (単位は省略可)
 ///
 /// @require {function} absolute-to-relative
 /// @require {variable} $base-viewport-height
@@ -86,8 +86,8 @@
 ///
 /// @since 1.0.0
 ///
-/// @param {number} $abs - 変換対象値（単位は省略可）
-/// @param {number} $basis - 変換基準値（単位は省略可）
+/// @param {number} $abs - 変換対象値 (単位は省略可)
+/// @param {number} $basis - 変換基準値 (単位は省略可)
 /// @param {boolean} $is-percentage [false] - 百分率の形式で返す場合はtrueを指定する
 ///
 /// @require {function} strip-unit

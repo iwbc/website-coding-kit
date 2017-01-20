@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+@include test-module("foundations/mixin/_grid.scss") {
+
+	@include test("grid") {
+		@include assert {
+			@include output {
+				.row-1 {
+					@include grid(("gutters": false)) {
+						.col {
+							@include col;
+						}
+					}
+				}
+				.row-2 {
+					@include row {
+						.col-auto {
+							@include col;
+						}
+						.col-4 {
+							@include col(4);
+						}
+						.col-offset-4 {
+							@include col(null, 4)
+						}
+						.col-order-1 {
+							@include col(null, null, 1)
+						}
+					}
+				}
+			}
+			@include expect {
+				.row-1 .col {
+				    flex: 0 0 auto;
+					max-width: 100%;
+				    flex-grow: 1;
+				    flex-basis: 0;
+				}
+				.row-2 {
+					display: flex;
+					box-sizing: border-box;
+					margin-right: -1%;
+					margin-left: -1%;
+				}
+				.row-2 .col-auto {
+				    flex: 0 0 auto;
+					max-width: 100%;
+				    flex-grow: 1;
+				    flex-basis: 0;
+					box-sizing: border-box;
+					padding-right: 1%;
+					padding-left: 1%;
+				}
+				.row-2 .col-4 {
+				    flex: 0 0 auto;
+					max-width: 16.66667%;
+				    flex-basis: 16.66667%;
+					box-sizing: border-box;
+					padding-right: 1%;
+					padding-left: 1%;
+				}
+				.row-2 .col-offset-4 {
+				    flex: 0 0 auto;
+					max-width: 100%;
+				    flex-grow: 1;
+				    flex-basis: 0;
+					margin-left: 16.66667%;
+					box-sizing: border-box;
+					padding-right: 1%;
+					padding-left: 1%;
+				}
+				.row-2 .col-order-1 {
+					flex: 0 0 auto;
+					max-width: 100%;
+				    flex-grow: 1;
+				    flex-basis: 0;
+				    order: 1;
+					box-sizing: border-box;
+					padding-right: 1%;
+					padding-left: 1%;
+				}
+			}
+		}
+	}
+
+}
