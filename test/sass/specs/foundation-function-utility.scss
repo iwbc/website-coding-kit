@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+@include test-module("foundations/functions/_utility.scss") {
+
+	@include test("color") {
+		$actual: color("black");
+		$expect: #000;
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("strip-unit") {
+		$actual: strip-unit(12px);
+		$expect: 12;
+		@include assert-equal($actual, $expect);
+	}
+
+}

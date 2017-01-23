@@ -6,12 +6,12 @@
 		@include assert {
 			@include output {
 				.element {
-					@include sprite("icon2x-down");
+					@include sprite("test2x-down");
 				}
 			}
 			@include expect {
 				.element {
-					background-image: url("images/icon2x.png");
+					background-image: url("images/test2x.png");
 					background-repeat: no-repeat;
 					background-position: 0px 0px;
 					background-size: 262px 262px;
