@@ -23,6 +23,8 @@ $colors: (
 @import "true";
 
 @import "../../src/assets/sass/foundations/functions/_breakpoint.scss";
+@import "../../src/assets/sass/foundations/functions/_list.scss";
+@import "../../src/assets/sass/foundations/functions/_map.scss";
 @import "../../src/assets/sass/foundations/functions/_unit.scss";
 @import "../../src/assets/sass/foundations/functions/_utility.scss";
 
@@ -34,6 +36,8 @@ $colors: (
 @import "sprites/test2x.scss";
 
 @import "specs/foundation-function-breakpoint.scss";
+@import "specs/foundation-function-list.scss";
+@import "specs/foundation-function-map.scss";
 @import "specs/foundation-function-unit.scss";
 @import "specs/foundation-function-utility.scss";
 
