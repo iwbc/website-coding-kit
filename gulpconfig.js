@@ -119,9 +119,9 @@ module.exports = {
 		// sassdoc
 		// http://sassdoc.com/configuration/
 		sassdoc : {
-			sort   : ['file', 'group', 'access<', 'line<'],
+			sort    : ['group<', 'access<', 'line<'],
 			display : {
-				access    : ['public', 'private'],
+				access    : ['public'],
 				alias     : false,
 				watermark : false
 			},

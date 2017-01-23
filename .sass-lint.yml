@@ -20,11 +20,10 @@ rules:
   mixins-before-declarations:
     - 1
     - exclude:
-      - mq-md
-      - mq-lg
-      - mq-only-sm
-      - mq-only-md
-      - mq-range
+      - grid
+      - grid-set
+      - grid-reset
+      - row
       - mq-min
       - mq-max
   nesting-depth:
