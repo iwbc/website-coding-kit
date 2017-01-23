@@ -424,4 +424,5 @@
 $_grid-options: $base-grid-options;
 
 /// 多重ネスト時に親のグリッド設定を保持しておくための変数
+
 $_grid-options-history: ($_grid-options,);
