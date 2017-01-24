@@ -1,5 +1,5 @@
-@for $i from 2 through 20 {
-	$num: $i * 50;
+@for $i from 1 through 9 {
+	$num: $i * 100;
 	.u-fw-#{$num} {
 		font-weight: $num !important;
 	}
