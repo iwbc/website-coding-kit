@@ -8,6 +8,12 @@
 		@include assert-equal($actual, $expect);
 	}
 
+	@include test("explode") {
+		$actual: explode("2000-01-01", "-");
+		$expect: ("2000" "01" "01");
+		@include assert-equal($actual, $expect);
+	}
+
 	@include test("strip-unit") {
 		$actual: strip-unit(12px);
 		$expect: 12;
