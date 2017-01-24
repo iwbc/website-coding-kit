@@ -16,22 +16,17 @@ $base-viewport-width: 640px;
 
 $base-viewport-height: 1136px;
 
-/// グリッドの設定
+/// グリッドのカラム数
 ///
-/// @since 1.1.0
-///
-/// @prop {number} columns
-/// 	グリッドのカラム数
-/// @prop {boolean} gutters
-/// 	グリッドカラム間のスペースの有無
-/// @prop {number} gutter-width
-/// 	グリッドカラム間のスペースの幅
+/// @since 1.2.0
 
-$base-grid-options: (
-	"columns":      24,
-	"gutters":      true,
-	"gutter-width": 2%
-);
+$base-grid-columns: 24;
+
+/// グリッドアイテム間のスペースの幅
+///
+/// @since 1.2.0
+
+$base-grid-gutter-width: 2%;
 
 /// ブレークポイント
 ///
@@ -50,37 +45,43 @@ $breakpoints: (
 ///
 /// @since 1.0.0
 
-$base-font-size:               16px;
+$base-font-size: 16px;
 
 /// フォントファミリー
 ///
 /// @since 1.0.0
 
-$base-font-family:             "Noto Sans JP", "游ゴシック", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+$base-font-family: "Noto Sans JP", "游ゴシック", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+
+/// フォントウェイト
+///
+/// @since 1.1.0
+
+$base-font-weight: 400;
 
 /// 行間
 ///
 /// @since 1.0.0
 
-$base-line-height:             1.5;
+$base-line-height: 1.5;
 
 /// テキストカラー
 ///
 /// @since 1.0.0
 
-$base-text-color:              #333;
+$base-text-color: #333;
 
 /// テキストリンクカラー
 ///
 /// @since 1.0.0
 
-$base-text-link-color:         #04c;
+$base-text-link-color: #04c;
 
 /// マウスオーバー時のテキストリンクカラー
 ///
 /// @since 1.0.0
 
-$base-text-link-hover-color:   #04c;
+$base-text-link-hover-color: #04c;
 
 /// 訪問済みのテキストリンクカラー
 ///
@@ -92,7 +93,7 @@ $base-text-link-visited-color: #04c;
 ///
 /// @since 1.0.0
 
-$base-hover-opacity:          .75;
+$base-hover-opacity: .75;
 
 /// マウスオーバー時のアニメーションスピード
 ///

@@ -11,9 +11,6 @@
 /// @param {number} $px
 /// 	変換対象値 (単位は省略可)
 ///
-/// @require {function} absolute-to-relative
-/// @require {variable} $base-font-size
-///
 /// @return {number}
 ///
 /// @example scss
@@ -33,8 +30,6 @@
 /// @param {number} $basis
 /// 	変換基準値 (単位は省略可)
 ///
-/// @require {function} absolute-to-relative
-///
 /// @return {number}
 ///
 /// @example scss
@@ -49,9 +44,6 @@
 /// @since 1.0.0
 ///
 /// @param {number} $px - 変換対象値 (単位は省略可)
-///
-/// @require {function} absolute-to-relative
-/// @require {variable} $base-viewport-width
 ///
 /// @return {number}
 ///
@@ -68,9 +60,6 @@
 /// @since 1.0.0
 ///
 /// @param {number} $px - 変換対象値 (単位は省略可)
-///
-/// @require {function} absolute-to-relative
-/// @require {variable} $base-viewport-height
 ///
 /// @return {number}
 ///
@@ -89,8 +78,6 @@
 /// @param {number} $abs - 変換対象値 (単位は省略可)
 /// @param {number} $basis - 変換基準値 (単位は省略可)
 /// @param {boolean} $is-percentage [false] - 百分率の形式で返す場合はtrueを指定する
-///
-/// @require {function} strip-unit
 ///
 /// @return {number}
 ///
