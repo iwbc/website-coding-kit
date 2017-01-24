@@ -115,25 +115,25 @@
 /// @param {string | number | color | list} $values
 /// 	検索条件
 /// @param {string} $operation ["AND"]
-/// 	`$values`にリストを渡した場合の動作
-///     <table class="item__parameters">
-///         <thead>
-///             <tr>
-///                 <th>値</th>
-///                 <th>説明</th>
-///             </tr>
-///         </thead>
-///         <tbody>
-///             <tr>
-///                 <td>`"AND"`</td>
-///                 <td>`$values`の全てが`$list`に含まれる場合に`true`を返す</td>
-///             </tr>
-///             <tr>
-///                 <td>`"OR"`</td>
-///                 <td>`$values`のいずれかが`$list`に含まれる場合に`true`を返す</td>
-///             </tr>
-///         </tbody>
-///     </table>
+/// 	`$values`にリストを渡した場合の動作設定
+/// 	<table class="item__parameters">
+/// 		<thead>
+/// 			<tr>
+/// 				<th>値</th>
+/// 				<th>説明</th>
+/// 			</tr>
+/// 		</thead>
+/// 		<tbody>
+/// 			<tr>
+/// 				<td>`"AND"`</td>
+/// 				<td>`$values`の全てが`$list`に含まれる場合に`true`を返す</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`"OR"`</td>
+/// 				<td>`$values`のいずれかが`$list`に含まれる場合に`true`を返す</td>
+/// 			</tr>
+/// 		</tbody>
+/// 	</table>
 ///
 /// @return {boolean}
 ///
