@@ -1,9 +1,14 @@
-.u-display-n {
+@charset "utf-8";
+
+.u-display-none {
 	display: none !important;
 }
-.u-display-b {
+.u-display-block {
 	display: block !important;
 }
-.u-display-ib {
+.u-display-inline {
+	display: inline !important;
+}
+.u-display-inline-block {
 	display: inline-block !important;
 }
