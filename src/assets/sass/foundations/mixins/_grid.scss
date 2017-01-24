@@ -15,17 +15,17 @@
 /// 			<tr>
 /// 				<td>`direction`</td>
 /// 				<td><a href="#01. flexboxグリッド-mixin-grid-direction">`grid-direction()`</a></td>
-/// 				<td>`"normal"`</td>
+/// 				<td>`normal`</td>
 /// 			</tr>
 /// 			<tr>
 /// 				<td>`align`</td>
 /// 				<td><a href="#01. flexboxグリッド-mixin-grid-align">`grid-align()`</a></td>
-/// 				<td>`"start-top"`</td>
+/// 				<td>`start-top`</td>
 /// 			</tr>
 /// 			<tr>
 /// 				<td>`wrap`</td>
 /// 				<td><a href="#01. flexboxグリッド-mixin-grid-wrap">`grid-wrap()`</a></td>
-/// 				<td>`"nowrap"`</td>
+/// 				<td>`nowrap`</td>
 /// 			</tr>
 /// 			<tr>
 /// 				<td>`gutter`</td>
@@ -78,7 +78,7 @@
 /// 			<tr>
 /// 				<td>`columns`</td>
 /// 				<td><a href="#01. flexboxグリッド-mixin-grid-columns">`grid-columns()`</a></td>
-/// 				<td>`"auto"`</td>
+/// 				<td>`auto`</td>
 /// 			</tr>
 /// 			<tr>
 /// 				<td>`offset`</td>
@@ -177,7 +177,7 @@
 /// @since 1.2.0
 ///
 /// @param {string} $align
-/// 	`"{horizontal}-{vertical}"`のフォーマットで指定する<br>
+/// 	`{horizontal}-{vertical}`のフォーマットで指定する<br>
 /// 	いずれか片方だけの指定も可
 /// 	<table class="item__parameters">
 /// 		<thead><tr><th>タイプ</th><th colspan="2">オプション値</th><th>説明</th></tr></thead>
@@ -397,7 +397,7 @@
 /// 		<thead><tr><th>値</th><th>説明</th></tr></thead>
 /// 		<tbody>
 /// 			<tr>
-/// 				<td>`"auto"`</td>
+/// 				<td>`auto`</td>
 /// 				<td>内包するコンテンツに応じる</td>
 /// 			</tr>
 /// 			<tr>
@@ -491,11 +491,11 @@
 /// 	</thead>
 /// 	<tbody>
 /// 		<tr>
-/// 			<td>`"container"`</td>
+/// 			<td>`container`</td>
 /// 			<td>コンテナー用にスタイルを出力する</td>
 /// 		</tr>
 /// 		<tr>
-/// 			<td>`"item"`</td>
+/// 			<td>`item`</td>
 /// 			<td>アイテム用にスタイルを出力する</td>
 /// 		</tr>
 /// 	</tbody>
