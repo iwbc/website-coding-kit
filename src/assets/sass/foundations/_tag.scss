@@ -11,13 +11,6 @@ body {
 	color: $base-text-color;
 }
 
-p, ul, ol, table, dl {
-	margin-bottom: 1em;
-	&:last-child {
-		margin-bottom: 0;
-	}
-}
-
 img {
 	max-width: 100%;
 	height: auto;
@@ -28,7 +21,7 @@ a {
 	color: $base-text-link-color;
 	text-decoration: none;
 	img {
-		transition: all $base-hover-transition-delay;
+		transition: opacity $base-hover-transition-delay;
 	}
 	&:hover {
 		color: $base-text-link-hover-color;
