@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 @for $i from 1 through 10 {
 	$num: $i * .05;
 	.u-lspace-#{$num * 100} {
