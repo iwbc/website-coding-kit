@@ -114,7 +114,7 @@
 /// 	検索対象のリスト
 /// @param {string | number | color | list} $values
 /// 	検索条件
-/// @param {string} $operation ["AND"]
+/// @param {string} $operation [AND]
 /// 	`$values`にリストを渡した場合の動作設定
 /// 	<table class="item__parameters">
 /// 		<thead>
@@ -125,11 +125,11 @@
 /// 		</thead>
 /// 		<tbody>
 /// 			<tr>
-/// 				<td>`"AND"`</td>
+/// 				<td>`AND`</td>
 /// 				<td>`$values`の全てが`$list`に含まれる場合に`true`を返す</td>
 /// 			</tr>
 /// 			<tr>
-/// 				<td>`"OR"`</td>
+/// 				<td>`OR`</td>
 /// 				<td>`$values`のいずれかが`$list`に含まれる場合に`true`を返す</td>
 /// 			</tr>
 /// 		</tbody>
