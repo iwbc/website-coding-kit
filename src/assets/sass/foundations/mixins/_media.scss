@@ -12,9 +12,6 @@
 /// @param {string} $key
 /// 	ブレークポイント
 ///
-/// @require {function} $breakpoint-min
-/// @require {variable} $breakpoints
-///
 /// @example scss
 /// 	.element {
 /// 		@include mq-min("sm") {
@@ -48,10 +45,6 @@
 ///
 /// @param {string} $key
 /// 	ブレークポイント
-///
-/// @require {function} $breakpoint-max
-/// @require {variable} $breakpoints
-///
 ///
 /// @example scss
 /// 	.element {

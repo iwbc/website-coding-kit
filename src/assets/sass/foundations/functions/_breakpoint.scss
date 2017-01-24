@@ -11,9 +11,6 @@
 /// @param {string} $key
 /// 	$breakpointsのキー
 ///
-/// @require {function} strip-unit
-/// @require {variable} $breakpoints
-///
 /// @return {number | null}
 /// 	値が`0`の場合は`null`を返す
 ///
@@ -33,9 +30,6 @@
 ///
 /// @param {string} $key
 /// 	$breakpointsのキー
-///
-/// @require {function} map-get-next-key
-/// @require {variable} $breakpoints
 ///
 /// @return {number | null}
 /// 	指定したブレークポイントの要素が、最後の要素である場合は、`null`を返す
