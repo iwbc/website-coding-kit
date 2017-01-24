@@ -24,7 +24,12 @@
 		@include assert {
 			@include output {
 				.element {
-					@include grid-container("reverse", "center", "middle", "wrap-around", 4%);
+					@include grid-container((
+						"direction": "reverse",
+						"align": "center-middle",
+						"wrap": "wrap-around",
+						"gutter": 4%
+					));
 				}
 			}
 			@include expect {
@@ -64,7 +69,13 @@
 		@include assert {
 			@include output {
 				.element {
-					@include grid-item(6, 3, 1, 4%, 12);
+					@include grid-item((
+						"columns": 6,
+						"offset": 3,
+						"order": 1,
+						"gutter": 4%,
+						"grid-columns": 12
+					));
 				}
 			}
 			@include expect {
