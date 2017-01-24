@@ -2,11 +2,8 @@
 
 $base-viewport-width:  640px;
 $base-viewport-height: 1136px;
-$base-grid-options: (
-	"columns":      24,
-	"gutters":      true,
-	"gutter-width": 2%
-);
+$base-grid-columns: 24;
+$base-grid-gutter-width: 2%;
 $breakpoints: (
 	"xs": 0,
 	"sm": 480px,

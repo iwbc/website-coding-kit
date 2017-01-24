@@ -16,22 +16,17 @@ $base-viewport-width: 640px;
 
 $base-viewport-height: 1136px;
 
-/// グリッドの設定
+/// グリッドのカラム数
 ///
-/// @since 1.1.0
-///
-/// @prop {number} columns
-/// 	グリッドのカラム数
-/// @prop {boolean} gutters
-/// 	グリッドカラム間のスペースの有無
-/// @prop {number} gutter-width
-/// 	グリッドカラム間のスペースの幅
+/// @since 1.2.0
 
-$base-grid-options: (
-	"columns":      24,
-	"gutters":      true,
-	"gutter-width": 2%
-);
+$base-grid-columns: 24;
+
+/// グリッドアイテム間のスペースの幅
+///
+/// @since 1.2.0
+
+$base-grid-gutter-width: 2%;
 
 /// ブレークポイント
 ///
