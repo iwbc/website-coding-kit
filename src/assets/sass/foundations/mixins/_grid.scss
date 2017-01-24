@@ -227,7 +227,8 @@
 ///
 /// @param {string | number | null} $columns [null]
 /// 	カラムの幅として設定するグリッドカラム数<br>
-/// 	`null`の場合は自動で調整される
+/// 	`null`の場合は、コンテナーに応じて各カラムが均等に調整される<br>
+/// 	`auto`の場合は、カラムのコンテンツに応じて調整される
 /// @param {number | null} $offset [null]
 /// 	カラムのオフセットとして設定するグリッドカラム数
 /// @param {number | null} $order [null]
@@ -366,6 +367,9 @@
 		max-width: 100%;
 		flex-grow: 1;
 		flex-basis: 0;
+	}
+	@elseif $columns == "auto" {
+		max-width: 100%;
 	}
 	@else {
 		$width: percentage($columns / map-get($_grid-options, "columns"));
