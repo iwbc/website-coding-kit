@@ -8,20 +8,36 @@
 ///
 /// @since 1.2.0
 ///
-/// @param {string | null} $direction [null]
-/// 	<a href="#01. flexboxグリッド-mixin-grid-direction">`grid-direction()`</a>
-/// @param {string | null} $horizontal [null]
-/// 	<a href="#01. flexboxグリッド-mixin-grid-horizontal">`grid-horizontal()`</a>
-/// @param {string | null} $vertical [null]
-/// 	<a href="#01. flexboxグリッド-mixin-grid-vertical">`grid-vertical()`</a>
-/// @param {string | null} $wrap [null]
-/// 	<a href="#01. flexboxグリッド-mixin-grid-wrap">`grid-wrap()`</a>
-/// @param {string | null} $gutter-width [null]
-/// 	<a href="#01. flexboxグリッド-mixin-grid-gutters">`grid-gutters()`</a
+/// @param {map | null} $options [null]
+/// 	<table class="item__parameters" style="margin-top: -.4em">
+/// 		<thead><tr><th>オプション</th><th>説明</th><th>デフォルト値</th></tr></thead>
+/// 		<tbody>
+/// 			<tr>
+/// 				<td>`direction`</td>
+/// 				<td><a href="#01. flexboxグリッド-mixin-grid-direction">`grid-direction()`</a></td>
+/// 				<td>`"normal"`</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`align`</td>
+/// 				<td><a href="#01. flexboxグリッド-mixin-grid-align">`grid-align()`</a></td>
+/// 				<td>`"start-top"`</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`wrap`</td>
+/// 				<td><a href="#01. flexboxグリッド-mixin-grid-wrap">`grid-wrap()`</a></td>
+/// 				<td>`"nowrap"`</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`gutter`</td>
+/// 				<td><a href="#01. flexboxグリッド-mixin-grid-gutter">`grid-gutter()`</a></td>
+/// 				<td>`$base-grid-gutter`</td>
+/// 			</tr>
+/// 		</tbody>
+/// 	</table>
 ///
 /// @example scss
 /// 	.grid-container {
-/// 		@include grid-container(null, "center", "middle");
+/// 		@include grid-container(("align": "center-middle"));
 /// 	}
 ///
 /// 	// CSS Output
@@ -35,34 +51,61 @@
 ///			margin-left: -1%;
 /// 	}
 
-@mixin grid-container($direction: null, $horizontal: null, $vertical: null, $wrap: null, $gutter-width: null) {
+@mixin grid-container($options: null) {
 	// sass-lint:disable mixins-before-declarations
+	$default-options: (
+		"direction":  "normal",
+		"align":      "start-top",
+		"wrap":       "nowrap",
+		"gutter":     $base-grid-gutter
+	);
+	$options: map-merge($default-options, if($options == null, (), $options));
 	display: flex;
-	@include grid-direction($direction);
-	@include grid-horizontal($horizontal);
-	@include grid-vertical($vertical);
-	@include grid-wrap($wrap);
-	@include grid-gutters("container", $gutter-width);
+	@include grid-direction(map-get($options, "direction"));
+	@include grid-align(map-get($options, "align"));
+	@include grid-wrap(map-get($options, "wrap"));
+	@include grid-gutter("container", map-get($options, "gutter"));
 }
 
 /// グリッドアイテム
 ///
 /// @since 1.2.0
 ///
-/// @param {string | number | null} $columns [null]
-/// 	<a href="#01. flexboxグリッド-mixin-grid-columns">`grid-columns()`</a>
-/// @param {number | null} $offset [null]
-/// 	<a href="#01. flexboxグリッド-mixin-grid-offset">`grid-offset()`</a>
-/// @param {number | null} $order [null]
-/// 	<a href="#01. flexboxグリッド-mixin-grid-order">`grid-order()`</a>
-/// @param {number | null} $gutter-width [null]
-/// 	<a href="#01. flexboxグリッド-mixin-grid-gutters">`grid-gutters()`</a>
-/// @param {number} $grid-columns [$base-grid-columns]
-/// 	グリッドの総カラム数
+/// @param {map | null} $options [null]
+/// 	<table class="item__parameters" style="margin-top: -.4em">
+/// 		<thead><tr><th>オプション</th><th>説明</th><th>デフォルト値</th></tr></thead>
+/// 		<tbody>
+/// 			<tr>
+/// 				<td>`columns`</td>
+/// 				<td><a href="#01. flexboxグリッド-mixin-grid-columns">`grid-columns()`</a></td>
+/// 				<td>`"auto"`</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`offset`</td>
+/// 				<td><a href="#01. flexboxグリッド-mixin-grid-offset">`grid-offset()`</a></td>
+/// 				<td>`0`</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`order`</td>
+/// 				<td><a href="#01. flexboxグリッド-mixin-grid-order">`grid-order()`</a></td>
+/// 				<td>`0`</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`gutter`</td>
+/// 				<td><a href="#01. flexboxグリッド-mixin-grid-gutter">`grid-gutter()`</a></td>
+/// 				<td>`$base-grid-gutter`</td>
+/// 			</tr>
+/// 			<tr>
+/// 				<td>`grid-columns`</td>
+/// 				<td>グリッドの総カラム数</td>
+/// 				<td>`$base-grid-columns`</td>
+/// 			</tr>
+/// 		</tbody>
+/// 	</table>
 ///
 /// @example scss
 /// 	.grid-item {
-/// 		@include grid-item(12, 6);
+/// 		@include grid-item(("columns": 12, "offset": 6));
 /// 	}
 ///
 /// 	// CSS Output
@@ -75,20 +118,28 @@
 /// 		padding-left: 1%;
 /// 	}
 
-@mixin grid-item($columns: null, $offset: null, $order: null, $gutter-width: null, $grid-columns: $base-grid-columns) {
+@mixin grid-item($options: null) {
 	// sass-lint:disable mixins-before-declarations
+	$default-options: (
+		"columns":      "auto",
+		"offset":       0,
+		"order":        0,
+		"gutter":       $base-grid-gutter,
+		"grid-columns": $base-grid-columns
+	);
+	$options: map-merge($default-options, if($options == null, (), $options));
 	box-sizing: border-box;
-	@include grid-columns($columns, $grid-columns);
-	@include grid-offset($offset, $grid-columns);
-	@include grid-order($order);
-	@include grid-gutters("item", $gutter-width);
+	@include grid-columns(map-get($options, "columns"), map-get($options, "grid-columns"));
+	@include grid-offset(map-get($options, "offset"), map-get($options, "grid-columns"));
+	@include grid-order(map-get($options, "order"));
+	@include grid-gutter("item", map-get($options, "gutter"));
 }
 
 /// グリッドアイテムの並び順を設定する
 ///
 /// @since 1.2.0
 ///
-/// @param {string} $direction ["row"]
+/// @param {string} $direction
 /// 	<table class="item__parameters" style="margin-top: -.4em">
 /// 		<thead><tr><th>値</th><th>説明</th></tr></thead>
 /// 		<tbody>
@@ -113,8 +164,7 @@
 /// 		flex-direction: row-reverse;
 /// 	}
 
-@mixin grid-direction($direction: "row") {
-	$direction: if($direction == null, "normal", $direction);
+@mixin grid-direction($direction) {
 	$definition: (
 		"normal":  "row",
 		"reverse": "row-reverse"
@@ -122,117 +172,117 @@
 	flex-direction: unquote(map-get($definition, $direction));
 }
 
-/// justify-content
+/// justify-content and align-items
 ///
 /// @since 1.2.0
 ///
-/// @param {string} $horizontal ["start"]
-/// 	<table class="item__parameters" style="margin-top: -.4em">
-/// 		<thead><tr><th>値</th><th>説明</th></tr></thead>
+/// @param {string} $align
+/// 	`"{horizontal}-{vertical}"`のフォーマットで指定する<br>
+/// 	いずれか片方だけの指定も可
+/// 	<table class="item__parameters">
+/// 		<thead><tr><th>タイプ</th><th colspan="2">オプション値</th><th>説明</th></tr></thead>
 /// 		<tbody>
 /// 			<tr>
-/// 				<td>`top`</td>
+/// 				<td rowspan="5">`horizontal`</td>
+/// 				<td>`start`</td>
+/// 				<td>`(デフォルト)`</td>
 /// 				<td>`justify-content: flex-start`</td>
 /// 			</tr>
 /// 			<tr>
-/// 				<td>`middle`</td>
+/// 				<td colspan="2">`center`</td>
 /// 				<td>`justify-content: center`</td>
 /// 			</tr>
 /// 			<tr>
-/// 				<td>`bottom`</td>
+/// 				<td colspan="2">`end`</td>
 /// 				<td>`justify-content: flex-end`</td>
 /// 			</tr>
 /// 			<tr>
-/// 				<td>`baseline`</td>
+/// 				<td colspan="2">`between`</td>
 /// 				<td>`justify-content: space-between`</td>
 /// 			</tr>
 /// 			<tr>
-/// 				<td>`stretch`</td>
+/// 				<td colspan="2">`around`</td>
 /// 				<td>`justify-content: space-around`</td>
 /// 			</tr>
-/// 		</tbody>
-/// 	</table>
-///
-/// @example scss
-/// 	.grid-container {
-/// 		@include grid-horizontal("center");
-/// 	}
-///
-/// 	// CSS Outout
-/// 	.grid-container {
-/// 		justify-content: center;
-/// 	}
-
-@mixin grid-horizontal($horizontal: "start") {
-	$horizontal: if($horizontal == null, "start", $horizontal);
-	$definition: (
-		"start":   "flex-start",
-		"center":  "center",
-		"end":     "flex-end",
-		"between": "space-between",
-		"around":  "space-around"
-	);
-	justify-content: unquote(map-get($definition, $horizontal));
-}
-
-/// align-items
-///
-/// @since 1.2.0
-///
-/// @param {string} $vertical ["top"]
-/// 	<table class="item__parameters" style="margin-top: -.4em">
-/// 		<thead><tr><th>値</th><th>説明</th></tr></thead>
-/// 		<tbody>
 /// 			<tr>
+/// 				<td rowspan="5">`vertical`</td>
 /// 				<td>`top`</td>
+/// 				<td>`(デフォルト)`</td>
 /// 				<td>`align-items: flex-start`</td>
 /// 			</tr>
 /// 			<tr>
-/// 				<td>`middle`</td>
+/// 				<td colspan="2">`middle`</td>
 /// 				<td>`align-items: center`</td>
 /// 			</tr>
 /// 			<tr>
-/// 				<td>`bottom`</td>
+/// 				<td colspan="2">`bottom`</td>
 /// 				<td>`align-items: flex-end`</td>
 /// 			</tr>
 /// 			<tr>
-/// 				<td>`baseline`</td>
+/// 				<td colspan="2">`baseline`</td>
 /// 				<td>`align-items: baseline`</td>
 /// 			</tr>
 /// 			<tr>
-/// 				<td>`stretch`</td>
+/// 				<td colspan="2">`stretch`</td>
 /// 				<td>`align-items: stretch`</td>
 /// 			</tr>
 /// 		</tbody>
 /// 	</table>
 ///
 /// @example scss
-/// 	.grid-container {
-/// 		@include grid-vertical("bottom");
+/// 	.grid-continer {
+/// 		@inclide grid-align("center-middle");
+/// 	}
+/// 	.grid-continer-2 {
+/// 		@inclide grid-align("middle");
 /// 	}
 ///
-/// 	// CSS Outout
+/// 	// CSS Output
 /// 	.grid-container {
-/// 		align-items: flex-end;
+/// 		justify-content: center;
+/// 		align-items: center;
+/// 	}
+/// 	.grid-container-2 {
+/// 		justify-content: flex-start;
+/// 		align-items: center;
 /// 	}
 
-@mixin grid-vertical($vertical: "top") {
-	$vertical: if($vertical == null, "top", $vertical);
-	$definition: (
+@mixin grid-align($align) {
+	$definition-justify-content: (
+		"start":   "flex-start",
+		"center":  "center",
+		"end":     "flex-end",
+		"between": "space-between",
+		"around":  "space-around"
+	);
+	$definition-align-items: (
 		"top":      "flex-start",
 		"middle":   "center",
 		"bottom":   "flex-end",
 		"baseline": "baseline",
 		"stretch":  "stretch"
 	);
-	align-items: unquote(map-get($definition, $vertical));
+	$keys-justify-content: map-keys($definition-justify-content);
+	$justify-content: false;
+	$align-items: false;
+	$align: explode($align, "-");
+	@for $i from 1 through length($align) {
+		@if (has($keys-justify-content, nth($align, $i))) {
+			$justify-content: map-get($definition-justify-content, nth($align, $i));
+		}
+		@else {
+			$align-items: map-get($definition-align-items, nth($align, $i));
+		}
+	}
+	justify-content: if($justify-content, unquote($justify-content), flex-start);
+	align-items: if($align-items, unquote($align-items), flex-start);
 }
 
 /// flex-wrap and align-content
 ///
 /// @since 1.2.0
 ///
-/// @param {string} $wrap ["nowrap"]
+/// @param {string} $wrap
 /// 	<table class="item__parameters" style="margin-top: -.4em">
 /// 		<thead><tr><th>値</th><th>説明</th></tr></thead>
 /// 		<tbody>
@@ -306,8 +356,7 @@
 /// 		align-content: space-around;
 /// 	}
 
-@mixin grid-wrap($wrap: "nowrap") {
-	$wrap: if($wrap == null, "nowrap", $wrap);
+@mixin grid-wrap($wrap) {
 	@if $wrap == "nowrap" {
 		flex-wrap: nowrap;
 	}
@@ -343,7 +392,7 @@
 ///
 /// @since 1.2.0
 ///
-/// @param {string | number} $columns ["auto"]
+/// @param {string | number} $columns
 /// 	<table class="item__parameters" style="margin-top: -.4em">
 /// 		<thead><tr><th>値</th><th>説明</th></tr></thead>
 /// 		<tbody>
@@ -371,8 +420,7 @@
 ///			flex: 0 0 50%;
 ///		}
 
-@mixin grid-columns($columns: "auto", $grid-columns: $base-grid-columns) {
-	$columns: if($columns == null, "auto", $columns);
+@mixin grid-columns($columns, $grid-columns: $base-grid-columns) {
 	@if $columns == "auto" {
 		max-width: 100%;
 		flex: 0 0 auto;
@@ -388,7 +436,7 @@
 ///
 /// @since 1.2.0
 ///
-/// @param {number} $offset [0]
+/// @param {number} $offset
 /// 	オフセットさせるカラム数
 /// @param {number} $grid-columns [$base-grid-columns]
 /// 	グリッドの総カラム数
@@ -404,7 +452,6 @@
 ///		}
 
 @mixin grid-offset($offset: 0, $grid-columns: $base-grid-columns) {
-	$offset: if($offset == null, 0, $offset);
 	margin-left: if($offset == 0, 0, percentage($offset / $grid-columns));
 }
 
@@ -412,7 +459,7 @@
 ///
 /// @since 1.2.0
 ///
-/// @param {number} $order [0]
+/// @param {number} $order
 /// 	オーダー番号
 ///
 /// @example scss
@@ -425,12 +472,11 @@
 ///			order: 1;
 ///		}
 
-@mixin grid-order($order: 0) {
-	$order: if($order == null, 0, $order);
+@mixin grid-order($order) {
 	order: $order;
 }
 
-/// Gutters
+/// Gutter
 ///
 /// @since 1.2.0
 ///
@@ -454,15 +500,15 @@
 /// 		</tr>
 /// 	</tbody>
 /// </table>
-/// @param {number} $gutter-width [$base-grid-gutter-width]
+/// @param {number} $gutter [$base-grid-gutter]
 /// 	スペースの幅
 ///
 /// @example scss
 /// 	.grid-container {
-/// 		@include gutters("container", 30px);
+/// 		@include grid-gutter("container", 30px);
 /// 	}
 /// 	.grid-item {
-/// 		@include gutters("item", 30px);
+/// 		@include grid-gutter("item", 30px);
 /// 	}
 ///
 /// 	// CSS Output
@@ -475,14 +521,14 @@
 /// 		padding-right: 15px;
 /// 	}
 
-@mixin grid-gutters($type, $gutter-width: $base-grid-gutter-width) {
-	$gutter-width: if($gutter-width == null, $base-grid-gutter-width, $gutter-width);
+@mixin grid-gutter($type, $gutter: $base-grid-gutter) {
+	$gutter: if($gutter == null, $base-grid-gutter, $gutter);
 	@if $type == "container" {
-		margin-right: $gutter-width / -2;
-		margin-left: $gutter-width / -2;
+		margin-right: $gutter / -2;
+		margin-left: $gutter / -2;
 	}
 	@elseif $type == "item" {
-		padding-right: $gutter-width / 2;
-		padding-left: $gutter-width / 2;
+		padding-right: $gutter / 2;
+		padding-left: $gutter / 2;
 	}
 }
