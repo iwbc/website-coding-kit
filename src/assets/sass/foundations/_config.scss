@@ -40,18 +40,34 @@ $breakpoints: (
 	"xl": 1440px
 );
 
-/// フォントサイズ
-/// - 16px (一般的なブラウザのデフォルトフォントサイズ)を推奨
+/// Noto Sans CJK JPの設定<br>
+/// 書体を使用するウェイトを指定する<br>
+/// 不要な書体には`false`を指定する
 ///
-/// @since 1.0.0
+/// @since 1.2.0
 
-$base-font-size: 16px;
+$noto-sans-cjk-jp: (
+	"Thin":      false,
+	"Light":     false,
+	"DemiLight": 400,
+	"Reglar":    false,
+	"Medium":    700,
+	"Bold":      false,
+	"Black":     false
+);
 
 /// フォントファミリー
 ///
 /// @since 1.0.0
 
 $base-font-family: "Noto Sans CJK JP", "游ゴシック", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+
+/// フォントサイズ
+/// - 16px (一般的なブラウザのデフォルトフォントサイズ)を推奨
+///
+/// @since 1.0.0
+
+$base-font-size: 16px;
 
 /// フォントウェイト
 ///
@@ -101,14 +117,10 @@ $base-hover-opacity: .75;
 
 $base-hover-transition-delay: .15s;
 
-/// サイトでの使用色
+/// サイトでの使用色<br>
+/// キーに識別名、値にカラーコードを指定する
 ///
 /// @since 1.0.0
-///
-/// @example scss
-/// 	$colors: (
-/// 		"{ColorName}": {ColorCode}
-/// 	);
 
 $colors: (
 	"text":              $base-text-color,
