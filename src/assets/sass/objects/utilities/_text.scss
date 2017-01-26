@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 @each $color-class, $color-code in $colors {
 	.u-text-#{$color-class} { color: $color-code !important; }
