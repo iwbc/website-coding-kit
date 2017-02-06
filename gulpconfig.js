@@ -20,20 +20,23 @@ module.exports = {
 		// 開発用ビルド
 		default : {
 			// CSSのMinify化
-			css_minify   : false,
+			css_minify       : false,
 			// JSのMinify化
-			js_minify    : false,
+			js_minify        : false,
 			// 統合済BowerパッケージのMinify化
-			bower_minify : true,
+			bower_minify     : true,
+			// ModernizrのMinify化
+			modernizr_minify : true,
 			// SourceMapの出力
-			sourcemap    : true
+			sourcemap        : true
 		},
 		// 本番用ビルド
 		production : {
-			css_minify   : false,
-			js_minify    : false,
-			bower_minify : true,
-			sourcemap    : false
+			css_minify       : false,
+			js_minify        : false,
+			bower_minify     : true,
+			modernizr_minify : true,
+			sourcemap        : false
 		}
 	},
 
@@ -85,6 +88,22 @@ module.exports = {
 		output : 'libs',
 		// 出力に含めないmainファイル
 		excludes: []
+	},
+
+	/**
+	 * Modernizrの設定
+	 */
+
+	modernizr : {
+		// 出力ファイル名（拡張子は含まない）
+		output : 'modernizr',
+		// 設定
+		// Options -> https://github.com/Modernizr/customizr
+		settings : {
+			options : [
+				'setClasses'
+			]
+		}
 	},
 
 	/**
@@ -168,6 +187,11 @@ module.exports = {
 		// Bower
 		bower : {
 			dest : 'src/assets/vendors'
+		},
+		// Modernizr
+		modernizr : {
+			watch : ['src/assets/js/**/*.js', 'src/assets/sass/**/*.{css,scss}'],
+			dest  : 'src/assets/vendors'
 		},
 		// EJS
 		ejs : {
