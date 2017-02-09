@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 //
 // Foundations
@@ -16,8 +16,8 @@
 // Layouts
 //
 
-@import "layouts/bases/_*.scss";
 @import "layouts/commons/_*.scss";
+@import "layouts/bases/_*.scss";
 
 //
 // Objects
@@ -25,5 +25,6 @@
 
 @import "objects/modules/_*.scss";
 // @import "objects/components/_*.scss";
+// @import "objects/blocks/_*.scss";
 // @import "objects/pages/_*.scss";
 @import "objects/utilities/_*.scss";
