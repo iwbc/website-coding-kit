@@ -16,6 +16,7 @@
 - サイト固有の変数を記述するためのSassファイル`_variable.scss`をFoundationに追加
 - FlexboxグリッドのMixinを追加
 - Noto Sans CJK JPフォントの使用設定を追加
+- ObjectレイヤーにBlock子レイヤーを追加
 
 ## 1.0.0
 
