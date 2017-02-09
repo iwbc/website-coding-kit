@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 :root {
 	font-size: per($base-font-size, 16px);
@@ -6,7 +6,6 @@
 
 body {
 	font-family: $base-font-family;
-	font-weight: $base-font-weight;
 	line-height: $base-line-height;
 	color: $base-text-color;
 }

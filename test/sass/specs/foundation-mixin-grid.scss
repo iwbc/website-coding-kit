@@ -69,8 +69,7 @@
 		@include assert {
 			@include output {
 				.element {
-					@include grid-item((
-						"columns": 6,
+					@include grid-item(6, (
 						"offset": 3,
 						"order": 1,
 						"gutter": 4%,

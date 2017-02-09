@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 ////
 //// @group 01. Flexboxグリッド
@@ -71,15 +71,12 @@
 ///
 /// @since 1.2.0
 ///
+/// @param {string | number} $columns [auto]
+/// 	<a href="#01. flexboxグリッド-mixin-grid-columns">`grid-columns()`</a>
 /// @param {map | null} $options [null]
 /// 	<table class="item__parameters" style="margin-top: -.4em">
 /// 		<thead><tr><th>オプション</th><th>説明</th><th>デフォルト値</th></tr></thead>
 /// 		<tbody>
-/// 			<tr>
-/// 				<td>`columns`</td>
-/// 				<td><a href="#01. flexboxグリッド-mixin-grid-columns">`grid-columns()`</a></td>
-/// 				<td>`auto`</td>
-/// 			</tr>
 /// 			<tr>
 /// 				<td>`offset`</td>
 /// 				<td><a href="#01. flexboxグリッド-mixin-grid-offset">`grid-offset()`</a></td>
@@ -105,7 +102,7 @@
 ///
 /// @example scss
 /// 	.grid-item {
-/// 		@include grid-item(("columns": 12, "offset": 6));
+/// 		@include grid-item(12, ("offset": 6));
 /// 	}
 ///
 /// 	// CSS Output
@@ -118,10 +115,9 @@
 /// 		padding-left: 1%;
 /// 	}
 
-@mixin grid-item($options: null) {
+@mixin grid-item($columns: "auto", $options: null) {
 	// sass-lint:disable mixins-before-declarations
 	$default-options: (
-		"columns":      "auto",
 		"offset":       0,
 		"order":        0,
 		"gutter":       $base-grid-gutter,
@@ -129,7 +125,7 @@
 	);
 	$options: map-merge($default-options, if($options == null, (), $options));
 	box-sizing: border-box;
-	@include grid-columns(map-get($options, "columns"), map-get($options, "grid-columns"));
+	@include grid-columns($columns, map-get($options, "grid-columns"));
 	@include grid-offset(map-get($options, "offset"), map-get($options, "grid-columns"));
 	@include grid-order(map-get($options, "order"));
 	@include grid-gutter("item", map-get($options, "gutter"));
