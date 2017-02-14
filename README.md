@@ -15,7 +15,7 @@ Website Coding Kitの実行には以下のツールが必要です。
 プロジェクトの新規開始、またはプロジェクトのリポジトリをクローンして再開する場合には、以下のコマンドを実行して、Website Coding Kitのセットアップを行います。
 
 ```
-npm run init
+yarn run init
 ```
 
 ## 各種設定
@@ -47,7 +47,7 @@ Website Coding Kitの動作設定は、`/gulpconfig.js`に記述されていま�
 **destディレクトリ内の状態を最新にするため、開発前やリポジトリをpullした後には、必ずビルドを行ってください。**
 
 ```console
-npm run build
+yarn run build
 ```
 
 #### 本番用ビルド
@@ -60,7 +60,7 @@ npm run build
 - SourceMapの出力 : 無効
 
 ```console
-npm run build -- --env=production
+yarn run build -- --env=production
 ```
 
 ### ファイルの更新監視とWebサーバーの起動
@@ -69,7 +69,27 @@ npm run build -- --env=production
 ファイルの更新を検知すると、ビルドとページのリロードが行われます。
 
 ```console
-npm run start
+yarn run start
+```
+
+### Bowerパッケージのインストール
+
+Bowerパッケージをインストールするには、以下のコマンドを実行します。  
+※ Bowerがインストールされている必要があります。
+
+```
+bower install --save {package-name}
+yarn run bower
+```
+
+なお、出来るだけパッケージのバージョンを固定するために、`bower.json`に記述されているパッケージのバージョン表記の先頭から`^`を取り除くことを推奨します。
+
+### Modernizrのビルド
+
+設定およびJS/SCSSからModernizrのビルドを行うには、以下のコマンドを実行します。
+
+```console
+yarn run modernizr
 ```
 
 ### スプライトシートの生成

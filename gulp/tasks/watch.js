@@ -14,9 +14,6 @@ gulp.task('watch', () => {
 			gulp.start('copy');
 		});
 	});
-	$.watch(config.path.modernizr.watch, () => {
-		gulp.start('modernizr');
-	});
 	$.watch(config.path.ejs.watch, () => {
 		gulp.start('ejs');
 	});
