@@ -10,6 +10,17 @@ body {
 	color: $base-text-color;
 }
 
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+figcaption {
+	&:not(:first-child) {
+		margin-top: .5em;
+	}
+}
+
 img {
 	max-width: 100%;
 	height: auto;
