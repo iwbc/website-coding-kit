@@ -5,7 +5,7 @@
 		@font-face {
 			font-family: "Noto Sans CJK JP";
 			font-weight: $value;
-			src: url("../fonts/NotoSansCJKjp-#{$key}-Subsetted.woff2") format("woff2"), url("../fonts/NotoSansCJKjp-#{$key}-Subsetted.woff") format("woff");
+			src: url("../fonts/noto-sans-cjk-jp-#{to-lower-case($key)}-subsetted.woff2") format("woff2"), url("../fonts/noto-sans-cjk-jp-#{to-lower-case($key)}-subsetted.woff") format("woff");
 		}
 	}
 }
