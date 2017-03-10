@@ -8,6 +8,7 @@
     "test": "mocha ./test/sass/test.js",
     "init": "yarn && bower install && gulp build",
     "bower": "bower install && gulp bower",
+	"modernizr": "gulp modernizr",
     "start": "gulp",
     "build": "gulp build"
   },

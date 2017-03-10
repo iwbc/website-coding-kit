@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 ////
-/// @group ユーティリティ
+/// @group 10. 単位の変換
 ////
 
 /// px単位の値をrem単位の値に変換する
@@ -71,23 +71,19 @@
 	@return absolute-to-relative($px, $base-viewport-height, true) * 1vh;
 }
 
-/// 絶対単位の値から相対単位の値に変換する
+/// 数値から単位を取り除く
 ///
 /// @since 1.0.0
 ///
-/// @param {number} $abs - 変換対象値 (単位は省略可)
-/// @param {number} $basis - 変換基準値 (単位は省略可)
-/// @param {boolean} $is-percentage [false] - 百分率の形式で返す場合はtrueを指定する
+/// @param {number} $number
+/// 	単位付きの数値
 ///
 /// @return {number}
+/// 	単位を取り除いた数値
 ///
 /// @example scss
-/// 	@debug absolute-to-relative(10, 100) * 1em; // .1em
-/// 	@debug absolute-to-relative(10, 100, true) * 1%; // 10%
+/// 	@debug strip-unit(12px); // 12
 
-@function absolute-to-relative($abs, $basis, $is-percentage: false) {
-	$abs:      strip-unit($abs);
-	$basis:    strip-unit($basis);
-	$relative: $abs / $basis;
-	@return if($is-percentage, $relative * 100, $relative);
+@function strip-unit($number) {
+	@return $number / ($number * 0 + 1);
 }

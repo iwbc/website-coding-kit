@@ -6,8 +6,19 @@
 
 body {
 	font-family: $base-font-family;
-	line-height: $base-line-height;
+	line-height: $line-height;
 	color: $base-text-color;
+}
+
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+figcaption {
+	&:not(:first-child) {
+		margin-top: .5em;
+	}
 }
 
 img {

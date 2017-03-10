@@ -1,6 +1,12 @@
 @charset "UTF-8";
 
 //
+// Reset
+//
+
+@import "vendors/_sanitize.scss";
+
+//
 // Foundations
 //
 
@@ -16,8 +22,7 @@
 // Layouts
 //
 
-@import "layouts/commons/_*.scss";
-@import "layouts/bases/_*.scss";
+@import "layouts/_*.scss";
 
 //
 // Objects
