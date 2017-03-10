@@ -1,3 +1,24 @@
+## 1.4.0
+
+#### Breaking
+- Sassから$base-line-heightを削除し、\_variable.scssへ$line-heightとして追加
+- Sassに一本化するため、cssタスクを廃止（sanitize.cssは_sanitize.scssにリネームし、sass/vendorsディレクトリへ移動）
+- modernizrタスクのファイル監視による実行を廃止し、yarn run modernizrで手動で行うように変更
+- Layoutの子レイヤーを廃止
+
+#### New
+- white-space: normal/nowrapのクラスユーティリティを追加
+- figureとfigcaptionのデフォルトスタイルを追加
+- font-size: smaller/largerユーティリティクラスを追加
+
+#### Fix
+- copyタスクで正常にファイルがコピーされないことがある不具合を修正
+- NotoSansのサブセットに「・」（中黒）が含まれていなかったのを修正
+- NotoSansのフォントファイル名を変更
+
+#### Refactor
+- SassDocのユーティリティグループを分割
+
 ## 1.3.0
 
 #### General

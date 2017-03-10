@@ -1,4 +1,4 @@
-# Website Coding Kit v1.3.0
+# Website Coding Kit v1.4.0
 
 ## 動作要件
 
@@ -56,7 +56,7 @@ yarn run build
 デフォルトの設定は、以下のとおりです。
 
 - CSS/JSのMinify化 : 無効
-- BowerパッケージのMinify化 : 有効
+- Bowerパッケージ/ModernizrのMinify化 : 有効
 - SourceMapの出力 : 無効
 
 ```console
