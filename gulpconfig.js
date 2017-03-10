@@ -190,7 +190,6 @@ module.exports = {
 		},
 		// Modernizr
 		modernizr : {
-			watch : ['src/assets/js/**/*.js', 'src/assets/sass/**/*.{css,scss}'],
 			dest  : 'src/assets/vendors'
 		},
 		// EJS
@@ -202,17 +201,11 @@ module.exports = {
 		// Sass
 		style : {
 			src   : 'src/assets/sass/**/*.scss',
-			watch : 'src/assets/sass/**/*.{css,scss}',
+			watch : 'src/assets/sass/**/*.scss',
 			dest  : {
 				css     : 'dest/assets/css',
 				sassdoc : 'docs/sass'
 			}
-		},
-		// CSS
-		css : {
-			src   : 'src/assets/css/**/*.css',
-			watch : 'src/assets/css/**/*.css',
-			dest  : 'dest/assets/css'
 		},
 		// JS
 		script : {
