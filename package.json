@@ -8,10 +8,11 @@
     "test": "mocha ./test/sass/test.js",
     "init": "yarn && bower install && gulp build",
     "bower": "bower install && gulp bower",
-	"modernizr": "gulp modernizr",
+    "modernizr": "gulp modernizr",
     "start": "gulp",
     "build": "gulp build"
   },
+  "dependencies": {},
   "devDependencies": {
     "bower": "^1.8.0",
     "browser-sync": "^2.18.2",
@@ -24,6 +25,8 @@
     "gulp-csso": "^2.0.0",
     "gulp-ejs": "^2.3.0",
     "gulp-flatmap": "^1.0.0",
+    "gulp-iconfont": "^8.0.1",
+    "gulp-iconfont-css": "^2.1.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.1.1",
     "gulp-load-plugins": "^1.4.0",
@@ -60,6 +63,5 @@
     "through2": "^2.0.1",
     "url": "^0.11.0"
   },
-  "private": true,
-  "dependencies": {}
+  "private": true
 }
