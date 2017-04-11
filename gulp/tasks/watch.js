@@ -29,4 +29,7 @@ gulp.task('watch', () => {
 	$.watch(config.path.sprite.watch, () => {
 		gulp.start('sprite');
 	});
+	$.watch(config.path.iconfont.watch, () => {
+		gulp.start('iconfont');
+	});
 });

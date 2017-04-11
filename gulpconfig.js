@@ -180,6 +180,17 @@ module.exports = {
 	},
 
 	/**
+	 * Iconfontの設定
+	 */
+
+	iconfont : {
+		// CSSファイルからフォントファイルへの相対パス
+		font_path  : '../fonts/',
+		// フォントの出力先からSCSSファイル出力先への相対パス
+		style_path : '../sass/objects/utilities/_iconfont.scss'
+	},
+
+	/**
 	 * パスの設定
 	 */
 
@@ -227,6 +238,12 @@ module.exports = {
 				style : 'src/assets/sass/foundations/sprites',
 				image : 'src/assets/images'
 			}
+		},
+		// Iconfont
+		iconfont: {
+			src   : 'src/assets/iconfont/*.svg',
+			watch : 'src/assets/iconfont/*.svg',
+			dest  : 'src/assets/fonts'
 		},
 		// Copy
 		copy : [

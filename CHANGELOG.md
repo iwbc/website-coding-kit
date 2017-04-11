@@ -1,3 +1,14 @@
+## 1.5.0
+
+#### New
+- SVGからWebフォントの生成機能を追加
+
+#### Update
+- sanitize.cssを5.0.0にアップデート
+
+#### Change
+- .editorconfigにjsonファイルのルールを追加
+
 ## 1.4.0
 
 #### Breaking
