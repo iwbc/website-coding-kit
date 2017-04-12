@@ -1,7 +1,8 @@
 ## 1.5.1
 
 #### Fix
-- Iconfontの正規化オプションを有効化
+- Iconfontのnormalizeオプションを有効化
+- IconfontのSCSSテンプレートを変更
 
 ## 1.5.0
 

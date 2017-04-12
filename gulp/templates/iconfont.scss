@@ -36,6 +36,9 @@
 }
 
 @mixin <%= cssClass%>($filename, $insert: before, $extend: true) {
+	line-height: 1;
+	vertical-align: middle;
+	display: inline-block;
 	&:#{$insert} {
 		@if $extend {
 			@extend %<%= cssClass%>;
@@ -43,6 +46,7 @@
 			@include <%= cssClass%>-styles;
 		}
 		content: <%= cssClass%>-char($filename);
+		display: block;
 	}
 }
 
@@ -50,3 +54,8 @@
 	@include <%= cssClass%>(<%= glyph.fileName %>);
 }
 <% }); %>
+
+.u-iconfont-fixed {
+	width: 1.28571429em;
+	text-align: center;
+}
