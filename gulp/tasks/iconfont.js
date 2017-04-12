@@ -20,9 +20,11 @@ gulp.task('iconfont', () => {
 			cssClass   : 'u-iconfont'
 		}))
 		.pipe($.iconfont({
-			fontName           : font_name,
-			formats            : ['ttf', 'eot', 'woff', 'woff2', 'svg'],
-			normalize          : true
+			fontName       : font_name,
+			formats        : ['ttf', 'eot', 'woff', 'woff2', 'svg'],
+			prependUnicode : true,
+			normalize      : true,
+			timestamp      : 0
 		}))
 		.pipe(gulp.dest(config.path.iconfont.dest));
 });

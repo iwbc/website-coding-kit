@@ -1,4 +1,4 @@
-# Website Coding Kit v1.5.1
+# Website Coding Kit v1.5.2
 
 ## 動作要件
 
