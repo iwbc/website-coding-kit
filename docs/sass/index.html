@@ -466,9 +466,14 @@
 	$relative: $abs / $basis;
 	@return if($is-percentage, $relative * 100, $relative);
  }" data-collapsed="@function absolute-to-relative($abs, $basis, $is-percentage: false) { ... }"><code>@function absolute-to-relative($abs, $basis, $is-percentage: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>絶対単位の値から相対単位の値に変換する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$abs</code></th><td data-label="desc"><p>変換対象値 (単位は省略可)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$basis</code></th><td data-label="desc"><p>変換基準値 (単位は省略可)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$is-percentage</code></th><td data-label="desc"><p>百分率の形式で返す場合はtrueを指定する</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@debug absolute-to-relative(10, 100) * 1em; // .1em
-@debug absolute-to-relative(10, 100, true) * 1%; // 10%</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#10. 単位の変換-function-strip-unit"><code>strip-unit</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#10. 単位の変換-function-rem"><code>rem</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#10. 単位の変換-function-per"><code>per</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#10. 単位の変換-function-vw"><code>vw</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#10. 単位の変換-function-vh"><code>vh</code></a></li></ul></section></section><section class="main__sub-section" id="99. ユーティリティ-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="99. ユーティリティ-mixin-truncate"><h3 class="item__heading"><a class="item__name" href="#mixin-truncate">truncate</a></h3><span class="item__since">Since 1.5.2</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin truncate($lines, $bgcolor, $lheight: $base-line-height) { 
+@debug absolute-to-relative(10, 100, true) * 1%; // 10%</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#10. 単位の変換-function-strip-unit"><code>strip-unit</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#10. 単位の変換-function-rem"><code>rem</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#10. 単位の変換-function-per"><code>per</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#10. 単位の変換-function-vw"><code>vw</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#10. 単位の変換-function-vh"><code>vh</code></a></li></ul></section></section><section class="main__sub-section" id="99. ユーティリティ-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="99. ユーティリティ-mixin-truncate"><h3 class="item__heading"><a class="item__name" href="#mixin-truncate">truncate</a></h3><span class="item__since">Since 1.5.2</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin truncate($lines, $bgcolor, $lheight: $base-line-height, $fixed: false) { 
 	background-color: $bgcolor;
-	height: 1em * $lheight * $lines;
+	@if $fixed {
+		height: 1em * $lheight * $lines;
+	}
+	@else {
+		max-height: 1em * $lheight * $lines;
+	}
 	padding-right: 1em;
 	overflow: hidden;
 	position: relative;
@@ -485,20 +490,20 @@
 		content: &quot;&quot;;
 		background-color: inherit;
 		width: 1em;
-		height: 100%;
+		height: 1em * $lheight * $lines;
 		margin-left: -1em;
 		float: right;
-		position: relative;
-		right: -1em;
+		position: absolute;
+		right: 0;
 	}
- }" data-collapsed="@mixin truncate($lines, $bgcolor, $lheight: $base-line-height) { ... }"><code>@mixin truncate($lines, $bgcolor, $lheight: $base-line-height) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>複数行の文章を指定行数まで省略する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc"><p>最大行数</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bgcolor</code></th><td data-label="desc"><p>背景色</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$lheight</code></th><td data-label="desc"><p>line-heightの値</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$base-line-height</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.element {
+ }" data-collapsed="@mixin truncate($lines, $bgcolor, $lheight: $base-line-height, $fixed: false) { ... }"><code>@mixin truncate($lines, $bgcolor, $lheight: $base-line-height, $fixed: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>複数行の文章を指定行数まで省略する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc"><p>最大行数</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bgcolor</code></th><td data-label="desc"><p>背景色</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$lheight</code></th><td data-label="desc"><p>line-heightの値</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$base-line-height</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$fixed</code></th><td data-label="desc"><p>文章エリアの高さを最大行数分維持する</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.element {
 	@include truncate(2, #fff, 1.5);
 }
 
 // CSS Output
 .element {
 	background-color: #fff;
-	height: 3em;
+	max-height: 3em;
 	padding-right: 1em;
 	overflow: hidden;
 	position: relative;
@@ -515,11 +520,11 @@
 		content: &quot;&quot;;
 		background-color: inherit;
 		width: 1em;
-		height: 100%;
+		height: 3em;
 		margin-left: -1em;
 		float: right;
-		position: relative;
-		right: -1em;
+		position: absolute;
+		right: 0;
 	}
 }</code></pre></div></section><section class="main__item container item" id="99. ユーティリティ-mixin-clearfix"><h3 class="item__heading"><a class="item__name" href="#mixin-clearfix">clearfix</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin clearfix() { 
 	&amp;::before,
