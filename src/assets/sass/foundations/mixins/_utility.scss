@@ -4,6 +4,77 @@
 /// @group 99. ユーティリティ
 ////
 
+/// 複数行の文章を指定行数まで省略する
+///
+/// @since 1.5.2
+///
+/// @param {number} $lines
+/// 	最大行数
+/// @param {color} $bgcolor
+/// 	背景色
+/// @param {number} $lheight [$base-line-height]
+/// 	line-heightの値
+///
+/// @example scss
+/// 	.element {
+/// 		@include truncate(2, #fff, 1.5);
+/// 	}
+///
+/// 	// CSS Output
+/// 	.element {
+/// 		background-color: #fff;
+/// 		height: 3em;
+/// 		padding-right: 1em;
+/// 		overflow: hidden;
+/// 		position: relative;
+/// 		&::before {
+/// 			content: "…";
+/// 			font-weight: normal;
+/// 			width: 1em;
+/// 			display: inline-block;
+/// 			position: absolute;
+/// 			right: 0;
+/// 			bottom: 0;
+/// 		}
+/// 		&::after {
+/// 			content: "";
+/// 			background-color: inherit;
+/// 			width: 1em;
+/// 			height: 100%;
+/// 			margin-left: -1em;
+/// 			float: right;
+/// 			position: relative;
+/// 			right: -1em;
+/// 		}
+/// 	}
+
+@mixin truncate($lines, $bgcolor, $lheight: $base-line-height) {
+	background-color: $bgcolor;
+	height: 1em * $lheight * $lines;
+	padding-right: 1em;
+	overflow: hidden;
+	position: relative;
+	&::before {
+		content: "…";
+		font-weight: normal;
+		width: 1em;
+		display: inline-block;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+	&::after {
+		content: "";
+		background-color: inherit;
+		width: 1em;
+		height: 100%;
+		margin-left: -1em;
+		float: right;
+		position: relative;
+		right: -1em;
+	}
+}
+
 /// Clearfix
 ///
 /// @since 1.0.0
