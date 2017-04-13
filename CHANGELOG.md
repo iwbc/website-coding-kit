@@ -1,5 +1,12 @@
 ## 1.5.2
 
+#### New
+- [Sass] 文章を省略する「truncate」Mixinを追加
+
+#### Change
+- [Sass] :rootのfont-sizeをvw単位に変更
+- [Sass] $line-heightを$base-line-heightに移動
+
 #### Fix
 - Iconfontを生成する度に異なるファイルが生成されてしまう問題を修正
 
