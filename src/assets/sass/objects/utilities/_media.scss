@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@each $key, $breakpoint in $breakpoints {
+@each $key, $breakpoint in $_breakpoints {
 
 	$block: block inline inline-block;
 

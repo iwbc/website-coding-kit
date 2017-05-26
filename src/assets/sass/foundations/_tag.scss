@@ -1,16 +1,16 @@
 @charset "UTF-8";
 
 :root {
-	font-size: vw($base-font-size);
+	font-size: vw($_font-size);
 	@include mq-min("md") {
-		font-size: $base-font-size;
+		font-size: $_font-size;
 	}
 }
 
 body {
-	font-family: $base-font-family;
-	line-height: $base-line-height;
-	color: $base-text-color;
+	font-family: $_font-family;
+	line-height: $_line-height;
+	color: $_text-color;
 }
 
 figure {
@@ -31,19 +31,19 @@ img {
 }
 
 a {
-	color: $base-text-link-color;
+	color: $_text-link-color;
 	text-decoration: none;
 	img {
-		transition: opacity $base-hover-transition-delay;
+		transition: opacity $_transition-delay;
 	}
 	&:hover {
-		color: $base-text-link-hover-color;
+		color: $_text-link-hover-color;
 		text-decoration: underline;
 		img {
-			opacity: $base-hover-opacity;
+			opacity: $_opacity;
 		}
 	}
 	&:visited {
-		color: $base-text-link-visited-color;
+		color: $_text-link-visited-color;
 	}
 }

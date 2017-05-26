@@ -12,7 +12,7 @@
 /// 	最大行数
 /// @param {color} $bgcolor
 /// 	背景色
-/// @param {number} $lheight [$base-line-height]
+/// @param {number} $lheight [$_line-height]
 /// 	line-heightの値
 /// @param {boolean} $fixed [false]
 /// 	文章エリアの高さを最大行数分維持する
@@ -50,7 +50,7 @@
 /// 		}
 /// 	}
 
-@mixin truncate($lines, $bgcolor, $lheight: $base-line-height, $fixed: false) {
+@mixin truncate($lines, $bgcolor, $lheight: $_line-height, $fixed: false) {
 	background-color: $bgcolor;
 	@if $fixed {
 		height: 1em * $lheight * $lines;
