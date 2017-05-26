@@ -209,16 +209,23 @@ module.exports = {
 			dest  : 'dest/assets/images'
 		},
 		// Sprite
-		sprite: {
-			src   : 'src/assets/sprites/*',
-			watch : 'src/assets/sprites/**/*',
-			dest  : {
-				style : 'src/assets/sass/foundations/sprites',
-				image : 'src/assets/images'
+		sprite : {
+			png : {
+				src   : 'src/assets/sprites/png/*',
+				watch : 'src/assets/sprites/png/**/*',
+				dest  : {
+					style : 'src/assets/sass/foundations/sprites',
+					image : 'src/assets/images/sprites/png'
+				}
+			},
+			svg : {
+				src   : 'src/assets/sprites/svg/*',
+				watch : 'src/assets/sprites/svg/**/*',
+				dest  : 'dest/assets/images/sprites/svg'
 			}
 		},
 		// Iconfont
-		iconfont: {
+		iconfont : {
 			src   : 'src/assets/iconfont/*.svg',
 			watch : 'src/assets/iconfont/*.svg',
 			dest  : 'src/assets/fonts'

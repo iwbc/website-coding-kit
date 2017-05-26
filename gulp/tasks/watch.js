@@ -26,8 +26,11 @@ gulp.task('watch', () => {
 	$.watch(config.path.image.watch, () => {
 		gulp.start('image');
 	});
-	$.watch(config.path.sprite.watch, () => {
-		gulp.start('sprite');
+	$.watch(config.path.sprite.png.watch, () => {
+		gulp.start('sprite:png');
+	});
+	$.watch(config.path.sprite.svg.watch, () => {
+		gulp.start('sprite:svg');
 	});
 	$.watch(config.path.iconfont.watch, () => {
 		gulp.start('iconfont');
