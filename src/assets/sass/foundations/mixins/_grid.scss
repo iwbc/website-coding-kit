@@ -30,7 +30,7 @@
 /// 			<tr>
 /// 				<td>`gutter`</td>
 /// 				<td><a href="#01. flexboxグリッド-mixin-grid-gutter">`grid-gutter()`</a></td>
-/// 				<td>`$base-grid-gutter`</td>
+/// 				<td>`$_grid-gutter`</td>
 /// 			</tr>
 /// 		</tbody>
 /// 	</table>
@@ -57,7 +57,7 @@
 		"direction":  "normal",
 		"align":      "start-top",
 		"wrap":       "nowrap",
-		"gutter":     $base-grid-gutter
+		"gutter":     $_grid-gutter
 	);
 	$options: map-merge($default-options, if($options == null, (), $options));
 	display: flex;
@@ -90,12 +90,12 @@
 /// 			<tr>
 /// 				<td>`gutter`</td>
 /// 				<td><a href="#01. flexboxグリッド-mixin-grid-gutter">`grid-gutter()`</a></td>
-/// 				<td>`$base-grid-gutter`</td>
+/// 				<td>`$_grid-gutter`</td>
 /// 			</tr>
 /// 			<tr>
 /// 				<td>`grid-columns`</td>
 /// 				<td>グリッドの総カラム数</td>
-/// 				<td>`$base-grid-columns`</td>
+/// 				<td>`$_grid-columns`</td>
 /// 			</tr>
 /// 		</tbody>
 /// 	</table>
@@ -120,8 +120,8 @@
 	$default-options: (
 		"offset":       0,
 		"order":        0,
-		"gutter":       $base-grid-gutter,
-		"grid-columns": $base-grid-columns
+		"gutter":       $_grid-gutter,
+		"grid-columns": $_grid-columns
 	);
 	$options: map-merge($default-options, if($options == null, (), $options));
 	box-sizing: border-box;
@@ -398,11 +398,11 @@
 /// 			</tr>
 /// 			<tr>
 /// 				<td>`{number}`</td>
-/// 				<td>`$base-grid-columns`に対する割合</td>
+/// 				<td>`$_grid-columns`に対する割合</td>
 /// 			</tr>
 /// 		</tbody>
 /// 	</table>
-/// @param {number} $grid-columns [$base-grid-columns]
+/// @param {number} $grid-columns [$_grid-columns]
 /// 	グリッドの総カラム数
 ///
 /// @example scss
@@ -416,7 +416,7 @@
 ///			flex: 0 0 50%;
 ///		}
 
-@mixin grid-columns($columns, $grid-columns: $base-grid-columns) {
+@mixin grid-columns($columns, $grid-columns: $_grid-columns) {
 	@if $columns == "auto" {
 		max-width: 100%;
 		flex: 0 0 auto;
@@ -434,7 +434,7 @@
 ///
 /// @param {number} $offset
 /// 	オフセットさせるカラム数
-/// @param {number} $grid-columns [$base-grid-columns]
+/// @param {number} $grid-columns [$_grid-columns]
 /// 	グリッドの総カラム数
 ///
 /// @example scss
@@ -447,7 +447,7 @@
 ///			margin-left: 50%;
 ///		}
 
-@mixin grid-offset($offset: 0, $grid-columns: $base-grid-columns) {
+@mixin grid-offset($offset: 0, $grid-columns: $_grid-columns) {
 	margin-left: if($offset == 0, 0, percentage($offset / $grid-columns));
 }
 
@@ -496,7 +496,7 @@
 /// 		</tr>
 /// 	</tbody>
 /// </table>
-/// @param {number} $gutter [$base-grid-gutter]
+/// @param {number} $gutter [$_grid-gutter]
 /// 	スペースの幅
 ///
 /// @example scss
@@ -517,8 +517,8 @@
 /// 		padding-right: 15px;
 /// 	}
 
-@mixin grid-gutter($type, $gutter: $base-grid-gutter) {
-	$gutter: if($gutter == null, $base-grid-gutter, $gutter);
+@mixin grid-gutter($type, $gutter: $_grid-gutter) {
+	$gutter: if($gutter == null, $_grid-gutter, $gutter);
 	@if $type == "container" {
 		margin-right: $gutter / -2;
 		margin-left: $gutter / -2;

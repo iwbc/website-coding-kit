@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@each $key, $value in $noto-sans-cjk-jp {
+@each $key, $value in $_noto-sans-cjk-jp {
 	@if ($value != false) {
 		@font-face {
 			font-family: "Noto Sans CJK JP";
