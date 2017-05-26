@@ -1,12 +1,12 @@
-# Website Coding Kit v1.5.2
+# Website Coding Kit v2.0.0-dev
 
 ## 動作要件
 
 Website Coding Kitの実行には以下のツールが必要です。  
 実行環境にインストールされていない場合は、各ツールのWebサイトからインストールしてください。
 
-- [Node.js](https://nodejs.org/ja/) v5.0以上 `必須`
-- [Yarn](https://yarnpkg.com/) v0.21以上 `必須`
+- [Node.js](https://nodejs.org/ja/) v6.0以上 `必須`
+- [Yarn](https://yarnpkg.com/) v0.24以上 `必須`
 - [Gulp](http://gulpjs.com/) v3.9以上
 - [Bower](https://bower.io/) v1.7以上
 
@@ -138,7 +138,6 @@ MixinまたはClassを使用して、スプライト画像を表示できます�
 ┣ dest/ # 公開用データディレクトリ。
 ┣ docs/
 ┃  ┗ sass/ # 組込済Sassファイルについてのドキュメントディレクトリ。
-┣ mock/ # モックサーバの設定ディレクトリ。
 ┣ src/ # ソースデータディレクトリ。
 ┃  ┣ assets/
 ┃  ┃  ┣ css/
