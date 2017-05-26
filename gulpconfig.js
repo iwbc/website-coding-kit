@@ -50,32 +50,10 @@ module.exports = {
 		browsersync : {
 			notify    : false,
 			ghostMode : false,
-			directory : true
+			directory : false
 			// 動的サイトの場合は、別途XAMPP等でサーバーを用意し、以下のproxyにドメインを記述する
 			// 静的サイトの場合は、コメントアウトまたは削除する
 			// proxy     : 'example.com',
-		},
-		// モックサーバ
-		// 特定パスへのリクエストをモックサーバに転送する
-		// browsersync.proxyが設定されている場合は無効
-		mock : {
-			// モックサーバの有無効
-			// true  : 有効
-			// false : 無効
-			enable   : true,
-			// stubcell
-			stubcell : {
-				// モックのエントリーポイントファイル
-				entry   : 'mock/entry.yml',
-				options : {
-					debug : true
-				}
-			},
-			// proxy-middleware
-			proxy : {
-				pass     : 'http://localhost:5000/mock',
-				location : '/mock'
-			}
 		}
 	},
 
