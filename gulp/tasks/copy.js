@@ -15,7 +15,7 @@ gulp.task('copy', () => {
 		stream.add(gulp.src(obj.src).pipe(gulp.dest(obj.dest)));
 	});
 	stream.on('end', () => {
-		$.browser.stream();
+		$.browser.reload();
 	});
 	return stream;
 });
