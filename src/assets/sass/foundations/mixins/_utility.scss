@@ -24,6 +24,7 @@
 ///
 /// 	// CSS Output
 /// 	.element {
+/// 		line-height: 1.5;
 /// 		background-color: #fff;
 /// 		max-height: 3em;
 /// 		padding-right: 1em;
@@ -51,6 +52,7 @@
 /// 	}
 
 @mixin truncate($lines, $bgcolor, $lheight: $_line-height, $fixed: false) {
+	line-height: $lheight;
 	background-color: $bgcolor;
 	@if $fixed {
 		height: 1em * $lheight * $lines;
