@@ -15,7 +15,7 @@ Website Coding Kitの実行には以下のツールが必要です。
 プロジェクトの新規開始、またはプロジェクトのリポジトリをクローンして再開する場合には、以下のコマンドを実行して、Website Coding Kitのセットアップを行います。
 
 ```
-yarn run init
+yarn run setup
 ```
 
 ## 各種設定
