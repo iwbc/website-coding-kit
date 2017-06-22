@@ -32,7 +32,4 @@ gulp.task('watch', () => {
 	$.watch(config.path.sprite.svg.watch, () => {
 		gulp.start('sprite:svg');
 	});
-	$.watch(config.path.iconfont.watch, () => {
-		gulp.start('iconfont');
-	});
 });
