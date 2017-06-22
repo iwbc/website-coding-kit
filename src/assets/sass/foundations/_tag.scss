@@ -34,7 +34,7 @@ a {
 	color: $_text-link-color;
 	text-decoration: none;
 	img {
-		transition: opacity $_transition-delay;
+		transition: opacity $_transition-duration;
 	}
 	&:hover {
 		color: $_text-link-hover-color;
