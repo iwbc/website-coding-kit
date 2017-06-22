@@ -1,6 +1,6 @@
 {
   "name": "website-coding-kit",
-  "version": "1.5.2",
+  "version": "2.0.0-dev",
   "description": "Gulpによるフロントエンド開発の効率化キット",
   "author": "VANQ",
   "license": "MIT",
