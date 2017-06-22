@@ -27,17 +27,17 @@
 ///
 /// @param {number} $abs - 変換対象値 (単位は省略可)
 /// @param {number} $basis - 変換基準値 (単位は省略可)
-/// @param {boolean} $is-percentage [false] - 百分率の形式で返す場合はtrueを指定する
+/// @param {boolean} $percentage [false] - 百分率の形式（%の単位なし）で返す場合はtrueを指定する
 ///
 /// @return {number}
 ///
 /// @example scss
 /// 	@debug absolute-to-relative(10, 100) * 1em; // .1em
-/// 	@debug absolute-to-relative(10, 100, true) * 1%; // 10%
+/// 	@debug absolute-to-relative(10, 100, true); // 10
 
-@function absolute-to-relative($abs, $basis, $is-percentage: false) {
+@function absolute-to-relative($abs, $basis, $percentage: false) {
 	$abs:      strip-unit($abs);
 	$basis:    strip-unit($basis);
 	$relative: $abs / $basis;
-	@return if($is-percentage, $relative * 100, $relative);
+	@return if($percentage, $relative * 100, $relative);
 }

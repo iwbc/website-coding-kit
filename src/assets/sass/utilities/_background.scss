@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+@each $color-class, $color-code in $_colors {
+	.u_bg-#{$color-class} { background-color: $color-code !important; }
+}

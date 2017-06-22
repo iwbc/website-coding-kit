@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 @include test-module("foundations/functions/_list.scss") {
 
@@ -34,6 +34,12 @@
 		$list: ("A" "B" "C");
 		$actual: pop($list);
 		$expect: ("A" "B");
+		@include assert-equal($actual, $expect);
+	}
+
+	@include test("explode") {
+		$actual: explode("2000-01-01", "-");
+		$expect: ("2000" "01" "01");
 		@include assert-equal($actual, $expect);
 	}
 
