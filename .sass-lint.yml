@@ -6,9 +6,7 @@ rules:
   brace-style:
     - 1
     - style: stroustrup
-  class-name-format:
-    - 1
-    - convention: hyphenatedbem
+  class-name-format: 0
   clean-import-paths: 0
   empty-line-between-blocks: 0
   force-attribute-nesting: 0

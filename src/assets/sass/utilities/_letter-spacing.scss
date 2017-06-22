@@ -2,16 +2,16 @@
 
 @for $i from 1 through 10 {
 	$num: $i * .05;
-	.u-lspace-#{$num * 100} {
+	.u_ls-#{$num * 100} {
 		letter-spacing: #{$num}em !important;
 	}
 }
 @for $i from 1 through 10 {
 	$num: $i * .05;
-	.u-lspace-neg#{$num * 100} {
+	.u_ls-minus#{$num * 100} {
 		letter-spacing: -#{$num}em !important;
 	}
 }
-.u-lspace-normal {
+.u_ls-normal {
 	letter-spacing: normal !important;
 }

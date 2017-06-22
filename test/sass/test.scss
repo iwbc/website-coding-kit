@@ -1,18 +1,18 @@
 @charset "utf-8";
 
-$base-viewport-width:  640px;
-$base-viewport-height: 1136px;
-$base-grid-columns: 24;
-$base-grid-gutter: 2%;
-$breakpoints: (
+$_viewport-width:  640px;
+$_viewport-height: 1136px;
+$_grid-columns: 24;
+$_grid-gutter: 2%;
+$_breakpoints: (
 	"xs": 0,
 	"sm": 480px,
 	"md": 768px,
 	"lg": 1024px,
 	"xl": 1440px
 );
-$base-font-size: 16px;
-$colors: (
+$_font-size: 16px;
+$_colors: (
 	"white": #fff,
 	"black": #000
 );
@@ -22,6 +22,7 @@ $colors: (
 @import "../../src/assets/sass/foundations/functions/_breakpoint.scss";
 @import "../../src/assets/sass/foundations/functions/_list.scss";
 @import "../../src/assets/sass/foundations/functions/_map.scss";
+@import "../../src/assets/sass/foundations/functions/_string.scss";
 @import "../../src/assets/sass/foundations/functions/_unit.scss";
 @import "../../src/assets/sass/foundations/functions/_utility.scss";
 
@@ -35,6 +36,7 @@ $colors: (
 @import "specs/foundation-function-breakpoint.scss";
 @import "specs/foundation-function-list.scss";
 @import "specs/foundation-function-map.scss";
+@import "specs/foundation-function-string.scss";
 @import "specs/foundation-function-unit.scss";
 @import "specs/foundation-function-utility.scss";
 

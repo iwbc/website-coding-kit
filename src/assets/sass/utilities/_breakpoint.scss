@@ -4,38 +4,38 @@
 
 	$block: block inline inline-block;
 
-	.u-hide-#{$key} {
+	.u_bp-hide-#{$key} {
 		@include mq-min($key) {
 			@include mq-max($key) {
 				display: none !important;
 			}
 		}
 	}
-	.u-hide-lte-#{$key} {
+	.u_bp-hide-lte-#{$key} {
 		@include mq-max($key) {
 			display: none !important;
 		}
 	}
-	.u-hide-gte-#{$key} {
+	.u_bp-hide-gte-#{$key} {
 		@include mq-min($key) {
 			display: none !important;
 		}
 	}
 
 	@for $i from 1 through length($block) {
-		.u-show-#{$key}-#{nth($block, $i)} {
+		.u_bp-show-#{$key}-#{nth($block, $i)} {
 			@include mq-min($key) {
 				@include mq-max($key) {
 					display: nth($block, $i) !important;
 				}
 			}
 		}
-		.u-show-lte-#{$key}-#{nth($block, $i)} {
+		.u_bp-show-lte-#{$key}-#{nth($block, $i)} {
 			@include mq-max($key) {
 				display: nth($block, $i) !important;
 			}
 		}
-		.u-show-gte-#{$key}-#{nth($block, $i)} {
+		.u_bp-show-gte-#{$key}-#{nth($block, $i)} {
 			@include mq-min($key) {
 				display: nth($block, $i) !important;
 			}

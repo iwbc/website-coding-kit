@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 @include test-module("foundations/functions/_utility.scss") {
 
@@ -8,15 +8,15 @@
 		@include assert-equal($actual, $expect);
 	}
 
-	@include test("explode") {
-		$actual: explode("2000-01-01", "-");
-		$expect: ("2000" "01" "01");
+	@include test("absolute-to-relative") {
+		$actual: absolute-to-relative(10,100);
+		$expect: .1;
 		@include assert-equal($actual, $expect);
 	}
 
-	@include test("strip-unit") {
-		$actual: strip-unit(12px);
-		$expect: 12;
+	@include test("absolute-to-relative / $percentage is true") {
+		$actual: absolute-to-relative(10,100, true);
+		$expect: 10;
 		@include assert-equal($actual, $expect);
 	}
 
