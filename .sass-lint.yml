@@ -8,7 +8,9 @@ rules:
     - style: stroustrup
   class-name-format:
     - 1
-    - convention: ^[_a-z]((?!([^-_a-z0-9]|--)).)*$
+    -
+      allow-leading-underscore: false
+      convention: ^[_a-z](?:(?!([^-_a-z0-9]|--)).)*$
   clean-import-paths: 0
   empty-line-between-blocks: 0
   force-attribute-nesting: 0
