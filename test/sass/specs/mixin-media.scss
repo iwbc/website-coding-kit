@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@include test-module("foundations/mixin/_media.scss") {
+@include test-module("mixin/_media.scss") {
 
 	@include test("mq-min") {
 		@include assert {

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@include test-module("foundations/functions/_map.scss") {
+@include test-module("functions/_map.scss") {
 
 	@include test("map-set") {
 		$map: (

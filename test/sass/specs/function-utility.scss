@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@include test-module("foundations/functions/_utility.scss") {
+@include test-module("functions/_utility.scss") {
 
 	@include test("color") {
 		$actual: color("black");
