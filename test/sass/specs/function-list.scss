@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@include test-module("foundations/functions/_list.scss") {
+@include test-module("functions/_list.scss") {
 
 	@include test("first") {
 		$list: ("A" "B" "C");

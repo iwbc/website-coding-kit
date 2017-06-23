@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@include test-module("foundations/mixin/_sprite.scss") {
+@include test-module("mixin/_sprite.scss") {
 
 	@include test("sprite") {
 		@include assert {

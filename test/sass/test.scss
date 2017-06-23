@@ -19,28 +19,28 @@ $_colors: (
 
 @import "true";
 
-@import "../../src/assets/sass/foundations/functions/_breakpoint.scss";
-@import "../../src/assets/sass/foundations/functions/_list.scss";
-@import "../../src/assets/sass/foundations/functions/_map.scss";
-@import "../../src/assets/sass/foundations/functions/_string.scss";
-@import "../../src/assets/sass/foundations/functions/_unit.scss";
-@import "../../src/assets/sass/foundations/functions/_utility.scss";
+@import "../../src/assets/sass/configs/functions/_breakpoint.scss";
+@import "../../src/assets/sass/configs/functions/_list.scss";
+@import "../../src/assets/sass/configs/functions/_map.scss";
+@import "../../src/assets/sass/configs/functions/_string.scss";
+@import "../../src/assets/sass/configs/functions/_unit.scss";
+@import "../../src/assets/sass/configs/functions/_utility.scss";
 
-@import "../../src/assets/sass/foundations/mixins/_grid.scss";
-@import "../../src/assets/sass/foundations/mixins/_media.scss";
-@import "../../src/assets/sass/foundations/mixins/_sprite.scss";
-@import "../../src/assets/sass/foundations/mixins/_utility.scss";
+@import "../../src/assets/sass/configs/mixins/_grid.scss";
+@import "../../src/assets/sass/configs/mixins/_media.scss";
+@import "../../src/assets/sass/configs/mixins/_sprite.scss";
+@import "../../src/assets/sass/configs/mixins/_utility.scss";
 
 @import "sprites/test2x.scss";
 
-@import "specs/foundation-function-breakpoint.scss";
-@import "specs/foundation-function-list.scss";
-@import "specs/foundation-function-map.scss";
-@import "specs/foundation-function-string.scss";
-@import "specs/foundation-function-unit.scss";
-@import "specs/foundation-function-utility.scss";
+@import "specs/function-breakpoint.scss";
+@import "specs/function-list.scss";
+@import "specs/function-map.scss";
+@import "specs/function-string.scss";
+@import "specs/function-unit.scss";
+@import "specs/function-utility.scss";
 
-@import "specs/foundation-mixin-grid.scss";
-@import "specs/foundation-mixin-media.scss";
-@import "specs/foundation-mixin-sprite.scss";
-@import "specs/foundation-mixin-utility.scss";
+@import "specs/mixin-grid.scss";
+@import "specs/mixin-media.scss";
+@import "specs/mixin-sprite.scss";
+@import "specs/mixin-utility.scss";

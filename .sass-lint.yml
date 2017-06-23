@@ -1,5 +1,7 @@
 files:
   ignore:
+    - 'src/assets/sass/foundations/sprites/**/*'
+    - 'src/assets/sass/foundations/_reset.scss'
     - 'src/assets/sass/vendors/**/*'
     - 'test/sass/**/*'
 rules:
