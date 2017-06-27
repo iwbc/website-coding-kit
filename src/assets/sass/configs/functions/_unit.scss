@@ -9,16 +9,16 @@
 /// @since 1.0.0
 ///
 /// @param {number} $px
-/// 	変換対象値 (単位は省略可)
+///   変換対象値 (単位は省略可)
 ///
 /// @return {number}
 ///
 /// @example scss
-/// 	$_font-size: 16px;
-/// 	@debug rem(12px); // .75rem;
+///   $_font-size: 16px;
+///   @debug rem(12px); // .75rem;
 
 @function rem($px) {
-	@return absolute-to-relative($px, $_font-size) * 1rem;
+  @return absolute-to-relative($px, $_font-size) * 1rem;
 }
 
 /// px単位の値を%単位の値に変換する
@@ -26,17 +26,17 @@
 /// @since 1.0.0
 ///
 /// @param {number} $px
-/// 	変換対象値 (単位は省略可)
+///   変換対象値 (単位は省略可)
 /// @param {number} $basis
-/// 	変換基準値 (単位は省略可)
+///   変換基準値 (単位は省略可)
 ///
 /// @return {number}
 ///
 /// @example scss
-/// 	@debug per(100px, 1000px); // 10%
+///   @debug per(100px, 1000px); // 10%
 
 @function per($px, $basis) {
-	@return percentage(absolute-to-relative($px, $basis));
+  @return percentage(absolute-to-relative($px, $basis));
 }
 
 /// px単位の値をvw単位の値に変換する
@@ -48,11 +48,11 @@
 /// @return {number}
 ///
 /// @example scss
-/// 	$_viewport-width: 640px;
-/// 	@debug vw(32px); // 5vw
+///   $_viewport-width: 640px;
+///   @debug vw(32px); // 5vw
 
 @function vw($px) {
-	@return absolute-to-relative($px, $_viewport-width, true) * 1vw;
+  @return absolute-to-relative($px, $_viewport-width, true) * 1vw;
 }
 
 /// px単位の値をvh単位の値に変換する
@@ -64,11 +64,11 @@
 /// @return {number}
 ///
 /// @example scss
-/// 	$_viewport-height: 1136px;
-/// 	@debug vh(32px); // 2.8169vh
+///   $_viewport-height: 1136px;
+///   @debug vh(32px); // 2.8169vh
 
 @function vh($px) {
-	@return absolute-to-relative($px, $_viewport-height, true) * 1vh;
+  @return absolute-to-relative($px, $_viewport-height, true) * 1vh;
 }
 
 /// 数値から単位を取り除く
@@ -76,14 +76,14 @@
 /// @since 1.0.0
 ///
 /// @param {number} $number
-/// 	単位付きの数値
+///   単位付きの数値
 ///
 /// @return {number}
-/// 	単位を取り除いた数値
+///   単位を取り除いた数値
 ///
 /// @example scss
-/// 	@debug strip-unit(12px); // 12
+///   @debug strip-unit(12px); // 12
 
 @function strip-unit($number) {
-	@return $number / ($number * 0 + 1);
+  @return $number / ($number * 0 + 1);
 }

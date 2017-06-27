@@ -1,49 +1,49 @@
 @charset "UTF-8";
 
 :root {
-	font-size: vw($_font-size);
-	@include mq-min("md") {
-		font-size: $_font-size;
-	}
+  font-size: vw($_font-size);
+  @include mq-min("md") {
+    font-size: $_font-size;
+  }
 }
 
 body {
-	font-family: $_font-family;
-	line-height: $_line-height;
-	color: $_text-color;
+  font-family: $_font-family;
+  line-height: $_line-height;
+  color: $_text-color;
 }
 
 figure {
-	margin-left: 0;
-	margin-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 figcaption {
-	&:not(:first-child) {
-		margin-top: .5em;
-	}
+  &:not(:first-child) {
+    margin-top: .5em;
+  }
 }
 
 img {
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
 a {
-	color: $_text-link-color;
-	text-decoration: none;
-	img {
-		transition: opacity $_transition-duration;
-	}
-	&:hover {
-		color: $_text-link-hover-color;
-		text-decoration: underline;
-		img {
-			opacity: $_opacity;
-		}
-	}
-	&:visited {
-		color: $_text-link-visited-color;
-	}
+  color: $_text-link-color;
+  text-decoration: none;
+  img {
+    transition: opacity $_transition-duration;
+  }
+  &:hover {
+    color: $_text-link-hover-color;
+    text-decoration: underline;
+    img {
+      opacity: $_opacity;
+    }
+  }
+  &:visited {
+    color: $_text-link-visited-color;
+  }
 }

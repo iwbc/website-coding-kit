@@ -9,79 +9,79 @@
 /// @since 1.5.2
 ///
 /// @param {number} $lines
-/// 	最大行数
+///   最大行数
 /// @param {color} $bgcolor
-/// 	背景色
+///   背景色
 /// @param {number} $lheight [$_line-height]
-/// 	line-heightの値
+///   line-heightの値
 /// @param {boolean} $fixed [false]
-/// 	文章エリアの高さを最大行数分維持する
+///   文章エリアの高さを最大行数分維持する
 ///
 /// @example scss
-/// 	.element {
-/// 		@include truncate(2, #fff, 1.5);
-/// 	}
+///   .element {
+///     @include truncate(2, #fff, 1.5);
+///   }
 ///
-/// 	// CSS Output
-/// 	.element {
-/// 		line-height: 1.5;
-/// 		background-color: #fff;
-/// 		max-height: 3em;
-/// 		padding-right: 1em;
-/// 		overflow: hidden;
-/// 		position: relative;
-/// 		&::before {
-/// 			content: "…";
-/// 			font-weight: normal;
-/// 			width: 1em;
-/// 			display: inline-block;
-/// 			position: absolute;
-/// 			right: 0;
-/// 			bottom: 0;
-/// 		}
-/// 		&::after {
-/// 			content: "";
-/// 			background-color: inherit;
-/// 			width: 1em;
-/// 			height: 3em;
-/// 			margin-left: -1em;
-/// 			float: right;
-/// 			position: absolute;
-/// 			right: 0;
-/// 		}
-/// 	}
+///   // CSS Output
+///   .element {
+///     line-height: 1.5;
+///     background-color: #fff;
+///     max-height: 3em;
+///     padding-right: 1em;
+///     overflow: hidden;
+///     position: relative;
+///     &::before {
+///       content: "…";
+///       font-weight: normal;
+///       width: 1em;
+///       display: inline-block;
+///       position: absolute;
+///       right: 0;
+///       bottom: 0;
+///     }
+///     &::after {
+///       content: "";
+///       background-color: inherit;
+///       width: 1em;
+///       height: 3em;
+///       margin-left: -1em;
+///       float: right;
+///       position: absolute;
+///       right: 0;
+///     }
+///   }
 
 @mixin truncate($lines, $bgcolor, $lheight: $_line-height, $fixed: false) {
-	line-height: $lheight;
-	background-color: $bgcolor;
-	@if $fixed {
-		height: 1em * $lheight * $lines;
-	}
-	@else {
-		max-height: 1em * $lheight * $lines;
-	}
-	padding-right: 1em;
-	overflow: hidden;
-	position: relative;
-	&::before {
-		content: "…";
-		font-weight: normal;
-		width: 1em;
-		display: inline-block;
-		position: absolute;
-		right: 0;
-		bottom: 0;
-	}
-	&::after {
-		content: "";
-		background-color: inherit;
-		width: 1em;
-		height: 1em * $lheight * $lines;
-		margin-left: -1em;
-		float: right;
-		position: absolute;
-		right: 0;
-	}
+  line-height: $lheight;
+  background-color: $bgcolor;
+  @if $fixed {
+    height: 1em * $lheight * $lines;
+  }
+  @else {
+    max-height: 1em * $lheight * $lines;
+  }
+  padding-right: 1em;
+  overflow: hidden;
+  position: relative;
+  &::before {
+    content: "…";
+    font-weight: normal;
+    width: 1em;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &::after {
+    content: "";
+    background-color: inherit;
+    width: 1em;
+    height: 1em * $lheight * $lines;
+    margin-left: -1em;
+    float: right;
+    position: absolute;
+    right: 0;
+  }
 }
 
 /// Clearfix
@@ -89,26 +89,26 @@
 /// @since 1.0.0
 ///
 /// @example scss
-/// 	.element {
-/// 		@include clearfix;
-/// 	}
+///   .element {
+///     @include clearfix;
+///   }
 ///
-/// 	// CSS Output
-/// 	.element::before, .element::after {
-///			display: table;
-/// 		content: " ";
-///		}
-///		.element::after {
-///			clear: both;
-///		}
+///   // CSS Output
+///   .element::before, .element::after {
+///      display: table;
+///     content: " ";
+///    }
+///    .element::after {
+///      clear: both;
+///    }
 
 @mixin clearfix {
-	&::before,
-	&::after {
-		display: table;
-		content: " ";
-	}
-	&::after {
-		clear: both;
-	}
+  &::before,
+  &::after {
+    display: table;
+    content: " ";
+  }
+  &::after {
+    clear: both;
+  }
 }

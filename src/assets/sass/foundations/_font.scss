@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 @each $key, $value in $_noto-sans-cjk-jp {
-	@if ($value != false) {
-		@font-face {
-			font-family: "Noto Sans CJK JP";
-			font-weight: $value;
-			src: url("../fonts/noto-sans-cjk-jp-#{to-lower-case($key)}-subsetted.woff2") format("woff2"), url("../fonts/noto-sans-cjk-jp-#{to-lower-case($key)}-subsetted.woff") format("woff");
-		}
-	}
+  @if ($value != false) {
+    @font-face {
+      font-family: "Noto Sans CJK JP";
+      font-weight: $value;
+      src: url("../fonts/noto-sans-cjk-jp-#{to-lower-case($key)}-subsetted.woff2") format("woff2"), url("../fonts/noto-sans-cjk-jp-#{to-lower-case($key)}-subsetted.woff") format("woff");
+    }
+  }
 }

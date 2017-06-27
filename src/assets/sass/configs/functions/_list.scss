@@ -9,17 +9,17 @@
 /// @since 1.1.0
 ///
 /// @param {list} $list
-/// 	取得対象のリスト
+///   取得対象のリスト
 ///
 /// @return {*}
-/// 	リストの最初の値
+///   リストの最初の値
 ///
 /// @example scss
-/// 	$list: ("A" "B" "C");
-/// 	@debug first($list); // "A"
+///   $list: ("A" "B" "C");
+///   @debug first($list); // "A"
 
 @function first($list) {
-	@return nth($list, 1);
+  @return nth($list, 1);
 }
 
 /// リストの最後の値を取得する
@@ -27,17 +27,17 @@
 /// @since 1.1.0
 ///
 /// @param {list} $list
-/// 	取得対象のリスト
+///   取得対象のリスト
 ///
 /// @return {*}
-/// 	リストの最後の値
+///   リストの最後の値
 ///
 /// @example scss
-/// 	$list: ("A" "B" "C");
-/// 	@debug last($list); // "C"
+///   $list: ("A" "B" "C");
+///   @debug last($list); // "C"
 
 @function last($list) {
-	@return nth($list, length($list));
+  @return nth($list, length($list));
 }
 
 /// リストの先頭に値を追加する
@@ -45,21 +45,21 @@
 /// @since 1.1.0
 ///
 /// @param {list} $list
-/// 	追加対象のリスト
+///   追加対象のリスト
 /// @param {*} $value
-/// 	追加する値
+///   追加する値
 ///
 /// @return {list}
-/// 	追加後のリスト
+///   追加後のリスト
 ///
 /// @example scss
-/// 	$list: ("A" "B" "C");
-/// 	@debug prepend($list, "Z"); // ("Z" "A" "B" "C")
+///   $list: ("A" "B" "C");
+///   @debug prepend($list, "Z"); // ("Z" "A" "B" "C")
 
 @function prepend($list, $value) {
-	$result: ();
-	$result: append($result, $value);
-	@return join($result, $list);
+  $result: ();
+  $result: append($result, $value);
+  @return join($result, $list);
 }
 
 /// リストの最初の値を削除する
@@ -67,21 +67,21 @@
 /// @since 1.1.0
 ///
 /// @param {list} $list
-/// 	削除対象のリスト
+///   削除対象のリスト
 ///
 /// @return {list}
-/// 	削除後のリスト
+///   削除後のリスト
 ///
 /// @example scss
-/// 	$list: ("A" "B" "C");
-/// 	@debug shift($list); // ("B" "C")
+///   $list: ("A" "B" "C");
+///   @debug shift($list); // ("B" "C")
 
 @function shift($list) {
-	$result: ();
-	@for $i from 2 through length($list) {
-		$result: append($result, nth($list, $i));
-	}
-	@return $result;
+  $result: ();
+  @for $i from 2 through length($list) {
+    $result: append($result, nth($list, $i));
+  }
+  @return $result;
 }
 
 /// リストの最後の値を削除する
@@ -89,21 +89,21 @@
 /// @since 1.1.0
 ///
 /// @param {list} $list
-/// 	削除対象のリスト
+///   削除対象のリスト
 ///
 /// @return {list}
-/// 	削除後のリスト
+///   削除後のリスト
 ///
 /// @example scss
-/// 	$list: ("A" "B" "C");
-/// 	@debug pop($list); // ("A" "B")
+///   $list: ("A" "B" "C");
+///   @debug pop($list); // ("A" "B")
 
 @function pop($list) {
-	$result: ();
-	@for $i from 1 through length($list) - 1 {
-		$result: append($result, nth($list, $i));
-	}
-	@return $result;
+  $result: ();
+  @for $i from 1 through length($list) - 1 {
+    $result: append($result, nth($list, $i));
+  }
+  @return $result;
 }
 
 /// 文字列を分割し、リストで返す
@@ -111,35 +111,35 @@
 /// @since 1.2.0
 ///
 /// @param {string} $string
-/// 	分割対象の文字列
+///   分割対象の文字列
 /// @param {string} $separator
-/// 	区切り文字
+///   区切り文字
 ///
 /// @return {list}
 ///
 /// @example scss
-/// 	@debug explode("2000-01-01", "-"); // ("2000" "01" "01")
+///   @debug explode("2000-01-01", "-"); // ("2000" "01" "01")
 
 @function explode($string, $separator) {
-	$list: ();
-	$sum: str-length($string);
+  $list: ();
+  $sum: str-length($string);
 
-	@for $i from 1 through $sum {
-		$str: str-index($string, $separator);
+  @for $i from 1 through $sum {
+    $str: str-index($string, $separator);
 
-		@if str-length($string) >= 1 and $str == null {
-			$list: append($list, $string);
-			$string: "";
-		}
+    @if str-length($string) >= 1 and $str == null {
+      $list: append($list, $string);
+      $string: "";
+    }
 
-		@if type-of($str) == "number" {
-			$each: str-slice($string, 0, ($str - 1));
-			$list: append($list, $each);
-			$string: str-slice($string, ($str + 1), $sum);
-		}
-	}
+    @if type-of($str) == "number" {
+      $each: str-slice($string, 0, ($str - 1));
+      $list: append($list, $each);
+      $string: str-slice($string, ($str + 1), $sum);
+    }
+  }
 
-	@return $list;
+  @return $list;
 }
 
 /// リストに指定した値が含まれているか確認する
@@ -147,56 +147,56 @@
 /// @since 1.1.0
 ///
 /// @param {list} $list
-/// 	検索対象のリスト
+///   検索対象のリスト
 /// @param {string | number | color | list} $values
-/// 	検索条件
+///   検索条件
 /// @param {string} $operation [AND]
-/// 	`$values`にリストを渡した場合の動作設定
-/// 	<table class="item__parameters">
-/// 		<thead>
-/// 			<tr>
-/// 				<th>値</th>
-/// 				<th>説明</th>
-/// 			</tr>
-/// 		</thead>
-/// 		<tbody>
-/// 			<tr>
-/// 				<td>`AND`</td>
-/// 				<td>`$values`の全てが`$list`に含まれる場合に`true`を返す</td>
-/// 			</tr>
-/// 			<tr>
-/// 				<td>`OR`</td>
-/// 				<td>`$values`のいずれかが`$list`に含まれる場合に`true`を返す</td>
-/// 			</tr>
-/// 		</tbody>
-/// 	</table>
+///   `$values`にリストを渡した場合の動作設定
+///   <table class="item__parameters">
+///     <thead>
+///       <tr>
+///         <th>値</th>
+///         <th>説明</th>
+///       </tr>
+///     </thead>
+///     <tbody>
+///       <tr>
+///         <td>`AND`</td>
+///         <td>`$values`の全てが`$list`に含まれる場合に`true`を返す</td>
+///       </tr>
+///       <tr>
+///         <td>`OR`</td>
+///         <td>`$values`のいずれかが`$list`に含まれる場合に`true`を返す</td>
+///       </tr>
+///     </tbody>
+///   </table>
 ///
 /// @return {boolean}
 ///
 /// @example scss
-/// 	$list: ("A" "B" "C");
-/// 	@debug has($list, "A"); // true
-/// 	@debug has($list, ("A" "B")); // true
-/// 	@debug has($list, ("A" "Z")); // false
-/// 	@debug has($list, ("A" "Z"), "OR"); // true
-/// 	@debug has($list, ("Y" "Z"), "OR"); // false
+///   $list: ("A" "B" "C");
+///   @debug has($list, "A"); // true
+///   @debug has($list, ("A" "B")); // true
+///   @debug has($list, ("A" "Z")); // false
+///   @debug has($list, ("A" "Z"), "OR"); // true
+///   @debug has($list, ("Y" "Z"), "OR"); // false
 
 @function has($list, $values, $operation: "AND") {
-	$operation: to-upper-case($operation);
-	@if ($operation == "AND") {
-		@each $value in $values {
-			@if index($list, $value) == null {
-				@return false;
-			}
-		}
-		@return true;
-	}
-	@elseif ($operation == "OR") {
-		@each $value in $values {
-			@if index($list, $value) {
-				@return true;
-			}
-		}
-		@return false;
-	}
+  $operation: to-upper-case($operation);
+  @if ($operation == "AND") {
+    @each $value in $values {
+      @if index($list, $value) == null {
+        @return false;
+      }
+    }
+    @return true;
+  }
+  @elseif ($operation == "OR") {
+    @each $value in $values {
+      @if index($list, $value) {
+        @return true;
+      }
+    }
+    @return false;
+  }
 }

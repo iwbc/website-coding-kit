@@ -2,28 +2,28 @@
 
 @include test-module("functions/_string.scss") {
 
-	@include test("capitalize / separated words by space to camelcase") {
-		$actual: capitalize("hello world");
-		$expect: "helloWorld";
-		@include assert-equal($actual, $expect);
-	}
+  @include test("capitalize / separated words by space to camelcase") {
+    $actual: capitalize("hello world");
+    $expect: "helloWorld";
+    @include assert-equal($actual, $expect);
+  }
 
-	@include test("capitalize / separated words by hyphen to camelcase") {
-		$actual: capitalize("hello-world");
-		$expect: "helloWorld";
-		@include assert-equal($actual, $expect);
-	}
+  @include test("capitalize / separated words by hyphen to camelcase") {
+    $actual: capitalize("hello-world");
+    $expect: "helloWorld";
+    @include assert-equal($actual, $expect);
+  }
 
-	@include test("capitalize / separated words by underscore to camelcase") {
-		$actual: capitalize("hello_world");
-		$expect: "helloWorld";
-		@include assert-equal($actual, $expect);
-	}
+  @include test("capitalize / separated words by underscore to camelcase") {
+    $actual: capitalize("hello_world");
+    $expect: "helloWorld";
+    @include assert-equal($actual, $expect);
+  }
 
-	@include test("capitalize / separated words to pascalcase") {
-		$actual: capitalize("hello world", true);
-		$expect: "HelloWorld";
-		@include assert-equal($actual, $expect);
-	}
+  @include test("capitalize / separated words to pascalcase") {
+    $actual: capitalize("hello world", true);
+    $expect: "HelloWorld";
+    @include assert-equal($actual, $expect);
+  }
 
 }

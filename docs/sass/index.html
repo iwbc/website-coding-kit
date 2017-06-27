@@ -1,548 +1,532 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Website-coding-kit - v2.0.0-dev</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Website-coding-kit - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>Gulpによるフロントエンド開発の効率化キット</p>
 "><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Website-coding-kit - 2.0.0-dev</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="01. flexboxグリッド"><a href="#01. flexboxグリッド">01. flexboxグリッド</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="01. flexboxグリッド-mixin"><a href="#01. flexboxグリッド-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="01. flexboxグリッド" data-name="grid-container" data-type="mixin"><a href="#01. flexboxグリッド-mixin-grid-container">grid-container</a></li><li class="sidebar__item sassdoc__item" data-group="01. flexboxグリッド" data-name="grid-item" data-type="mixin"><a href="#01. flexboxグリッド-mixin-grid-item">grid-item</a></li><li class="sidebar__item sassdoc__item" data-group="01. flexboxグリッド" data-name="grid-direction" data-type="mixin"><a href="#01. flexboxグリッド-mixin-grid-direction">grid-direction</a></li><li class="sidebar__item sassdoc__item" data-group="01. flexboxグリッド" data-name="grid-align" data-type="mixin"><a href="#01. flexboxグリッド-mixin-grid-align">grid-align</a></li><li class="sidebar__item sassdoc__item" data-group="01. flexboxグリッド" data-name="grid-wrap" data-type="mixin"><a href="#01. flexboxグリッド-mixin-grid-wrap">grid-wrap</a></li><li class="sidebar__item sassdoc__item" data-group="01. flexboxグリッド" data-name="grid-columns" data-type="mixin"><a href="#01. flexboxグリッド-mixin-grid-columns">grid-columns</a></li><li class="sidebar__item sassdoc__item" data-group="01. flexboxグリッド" data-name="grid-offset" data-type="mixin"><a href="#01. flexboxグリッド-mixin-grid-offset">grid-offset</a></li><li class="sidebar__item sassdoc__item" data-group="01. flexboxグリッド" data-name="grid-order" data-type="mixin"><a href="#01. flexboxグリッド-mixin-grid-order">grid-order</a></li><li class="sidebar__item sassdoc__item" data-group="01. flexboxグリッド" data-name="grid-gutter" data-type="mixin"><a href="#01. flexboxグリッド-mixin-grid-gutter">grid-gutter</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="02. メディアクエリー"><a href="#02. メディアクエリー">02. メディアクエリー</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="02. メディアクエリー-function"><a href="#02. メディアクエリー-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="02. メディアクエリー" data-name="breakpoint-min" data-type="function"><a href="#02. メディアクエリー-function-breakpoint-min">breakpoint-min</a></li><li class="sidebar__item sassdoc__item" data-group="02. メディアクエリー" data-name="breakpoint-max" data-type="function"><a href="#02. メディアクエリー-function-breakpoint-max">breakpoint-max</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="02. メディアクエリー-mixin"><a href="#02. メディアクエリー-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="02. メディアクエリー" data-name="mq-min" data-type="mixin"><a href="#02. メディアクエリー-mixin-mq-min">mq-min</a></li><li class="sidebar__item sassdoc__item" data-group="02. メディアクエリー" data-name="mq-max" data-type="mixin"><a href="#02. メディアクエリー-mixin-mq-max">mq-max</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="03. スプライト"><a href="#03. スプライト">03. スプライト</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="03. スプライト-mixin"><a href="#03. スプライト-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="03. スプライト" data-name="sprite" data-type="mixin"><a href="#03. スプライト-mixin-sprite">sprite</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="10. 文字列の変換"><a href="#10. 文字列の変換">10. 文字列の変換</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="10. 文字列の変換-function"><a href="#10. 文字列の変換-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="10. 文字列の変換" data-name="capitalize" data-type="function"><a href="#10. 文字列の変換-function-capitalize">capitalize</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="11. 単位の変換"><a href="#11. 単位の変換">11. 単位の変換</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="11. 単位の変換-function"><a href="#11. 単位の変換-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="11. 単位の変換" data-name="rem" data-type="function"><a href="#11. 単位の変換-function-rem">rem</a></li><li class="sidebar__item sassdoc__item" data-group="11. 単位の変換" data-name="per" data-type="function"><a href="#11. 単位の変換-function-per">per</a></li><li class="sidebar__item sassdoc__item" data-group="11. 単位の変換" data-name="vw" data-type="function"><a href="#11. 単位の変換-function-vw">vw</a></li><li class="sidebar__item sassdoc__item" data-group="11. 単位の変換" data-name="vh" data-type="function"><a href="#11. 単位の変換-function-vh">vh</a></li><li class="sidebar__item sassdoc__item" data-group="11. 単位の変換" data-name="strip-unit" data-type="function"><a href="#11. 単位の変換-function-strip-unit">strip-unit</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="50. リスト"><a href="#50. リスト">50. リスト</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="50. リスト-function"><a href="#50. リスト-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="50. リスト" data-name="first" data-type="function"><a href="#50. リスト-function-first">first</a></li><li class="sidebar__item sassdoc__item" data-group="50. リスト" data-name="last" data-type="function"><a href="#50. リスト-function-last">last</a></li><li class="sidebar__item sassdoc__item" data-group="50. リスト" data-name="prepend" data-type="function"><a href="#50. リスト-function-prepend">prepend</a></li><li class="sidebar__item sassdoc__item" data-group="50. リスト" data-name="shift" data-type="function"><a href="#50. リスト-function-shift">shift</a></li><li class="sidebar__item sassdoc__item" data-group="50. リスト" data-name="pop" data-type="function"><a href="#50. リスト-function-pop">pop</a></li><li class="sidebar__item sassdoc__item" data-group="50. リスト" data-name="explode" data-type="function"><a href="#50. リスト-function-explode">explode</a></li><li class="sidebar__item sassdoc__item" data-group="50. リスト" data-name="has" data-type="function"><a href="#50. リスト-function-has">has</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="51. マップ"><a href="#51. マップ">51. マップ</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="51. マップ-function"><a href="#51. マップ-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="51. マップ" data-name="map-set" data-type="function"><a href="#51. マップ-function-map-set">map-set</a></li><li class="sidebar__item sassdoc__item" data-group="51. マップ" data-name="map-deep-set" data-type="function"><a href="#51. マップ-function-map-deep-set">map-deep-set</a></li><li class="sidebar__item sassdoc__item" data-group="51. マップ" data-name="map-deep-get" data-type="function"><a href="#51. マップ-function-map-deep-get">map-deep-get</a></li><li class="sidebar__item sassdoc__item" data-group="51. マップ" data-name="map-get-next-key" data-type="function"><a href="#51. マップ-function-map-get-next-key">map-get-next-key</a></li><li class="sidebar__item sassdoc__item" data-group="51. マップ" data-name="map-get-prev-key" data-type="function"><a href="#51. マップ-function-map-get-prev-key">map-get-prev-key</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="99. ユーティリティ"><a href="#99. ユーティリティ">99. ユーティリティ</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="99. ユーティリティ-function"><a href="#99. ユーティリティ-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="99. ユーティリティ" data-name="color" data-type="function"><a href="#99. ユーティリティ-function-color">color</a></li><li class="sidebar__item sassdoc__item" data-group="99. ユーティリティ" data-name="absolute-to-relative" data-type="function"><a href="#99. ユーティリティ-function-absolute-to-relative">absolute-to-relative</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="99. ユーティリティ-mixin"><a href="#99. ユーティリティ-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="99. ユーティリティ" data-name="truncate" data-type="mixin"><a href="#99. ユーティリティ-mixin-truncate">truncate</a></li><li class="sidebar__item sassdoc__item" data-group="99. ユーティリティ" data-name="clearfix" data-type="mixin"><a href="#99. ユーティリティ-mixin-clearfix">clearfix</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="01. flexboxグリッド"><div class="container">01. flexboxグリッド</div></h1><section class="main__sub-section" id="01. flexboxグリッド-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="01. flexboxグリッド-mixin-grid-container"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-container">grid-container</a></h3><span class="item__since">Since 1.2.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-container($options: null) { 
-	// sass-lint:disable mixins-before-declarations
-	$default-options: (
-		&quot;direction&quot;:  &quot;normal&quot;,
-		&quot;align&quot;:      &quot;start-top&quot;,
-		&quot;wrap&quot;:       &quot;nowrap&quot;,
-		&quot;gutter&quot;:     $_grid-gutter
-	);
-	$options: map-merge($default-options, if($options == null, (), $options));
-	display: flex;
-	@include grid-direction(map-get($options, &quot;direction&quot;));
-	@include grid-align(map-get($options, &quot;align&quot;));
-	@include grid-wrap(map-get($options, &quot;wrap&quot;));
-	@include grid-gutter(&quot;container&quot;, map-get($options, &quot;gutter&quot;));
+  // sass-lint:disable mixins-before-declarations
+  $default-options: (
+    &quot;direction&quot;:  &quot;normal&quot;,
+    &quot;align&quot;:      &quot;start-top&quot;,
+    &quot;wrap&quot;:       &quot;nowrap&quot;,
+    &quot;gutter&quot;:     $_grid-gutter
+  );
+  $options: map-merge($default-options, if($options == null, (), $options));
+  display: flex;
+  @include grid-direction(map-get($options, &quot;direction&quot;));
+  @include grid-align(map-get($options, &quot;align&quot;));
+  @include grid-wrap(map-get($options, &quot;wrap&quot;));
+  @include grid-gutter(&quot;container&quot;, map-get($options, &quot;gutter&quot;));
  }" data-collapsed="@mixin grid-container($options: null) { ... }"><code>@mixin grid-container($options: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>グリッドコンテナー</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$options</code></th><td data-label="desc"><table class="item__parameters" style="margin-top: -.4em"><thead><tr><th>オプション</th><th>説明</th><th>デフォルト値</th></tr></thead><tbody><tr><td><code>direction</code></td><td><a href="#01. flexboxグリッド-mixin-grid-direction"><code>grid-direction()</code></a></td><td><code>normal</code></td></tr><tr><td><code>align</code></td><td><a href="#01. flexboxグリッド-mixin-grid-align"><code>grid-align()</code></a></td><td><code>start-top</code></td></tr><tr><td><code>wrap</code></td><td><a href="#01. flexboxグリッド-mixin-grid-wrap"><code>grid-wrap()</code></a></td><td><code>nowrap</code></td></tr><tr><td><code>gutter</code></td><td><a href="#01. flexboxグリッド-mixin-grid-gutter"><code>grid-gutter()</code></a></td><td><code>$_grid-gutter</code></td></tr></tbody></table></td><td data-label="type"><code>Map</code> or <code>Null</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-container {
-	@include grid-container((&quot;align&quot;: &quot;center-middle&quot;));
+  @include grid-container((&quot;align&quot;: &quot;center-middle&quot;));
 }
 
 // CSS Output
 .grid-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: nowrap;
-	margin-right: -1%;
-	margin-left: -1%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: nowrap;
+   margin-right: -1%;
+   margin-left: -1%;
 }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-direction"><code>grid-direction</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-align"><code>grid-align</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-wrap"><code>grid-wrap</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-gutter"><code>grid-gutter</code></a></li></ul></section><section class="main__item container item" id="01. flexboxグリッド-mixin-grid-item"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-item">grid-item</a></h3><span class="item__since">Since 1.2.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-item($columns: auto, $options: null) { 
-	// sass-lint:disable mixins-before-declarations
-	$default-options: (
-		&quot;offset&quot;:       0,
-		&quot;order&quot;:        0,
-		&quot;gutter&quot;:       $_grid-gutter,
-		&quot;grid-columns&quot;: $_grid-columns
-	);
-	$options: map-merge($default-options, if($options == null, (), $options));
-	box-sizing: border-box;
-	@include grid-columns($columns, map-get($options, &quot;grid-columns&quot;));
-	@include grid-offset(map-get($options, &quot;offset&quot;), map-get($options, &quot;grid-columns&quot;));
-	@include grid-order(map-get($options, &quot;order&quot;));
-	@include grid-gutter(&quot;item&quot;, map-get($options, &quot;gutter&quot;));
+  // sass-lint:disable mixins-before-declarations
+  $default-options: (
+    &quot;offset&quot;:       0,
+    &quot;order&quot;:        0,
+    &quot;gutter&quot;:       $_grid-gutter,
+    &quot;grid-columns&quot;: $_grid-columns
+  );
+  $options: map-merge($default-options, if($options == null, (), $options));
+  box-sizing: border-box;
+  @include grid-columns($columns, map-get($options, &quot;grid-columns&quot;));
+  @include grid-offset(map-get($options, &quot;offset&quot;), map-get($options, &quot;grid-columns&quot;));
+  @include grid-order(map-get($options, &quot;order&quot;));
+  @include grid-gutter(&quot;item&quot;, map-get($options, &quot;gutter&quot;));
  }" data-collapsed="@mixin grid-item($columns: auto, $options: null) { ... }"><code>@mixin grid-item($columns: auto, $options: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>グリッドアイテム</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc"><p><a href="#01. flexboxグリッド-mixin-grid-columns"><code>grid-columns()</code></a></p></td><td data-label="type"><code>String</code> or <code>Number</code></td><td data-label="default"><code>auto</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$options</code></th><td data-label="desc"><table class="item__parameters" style="margin-top: -.4em"><thead><tr><th>オプション</th><th>説明</th><th>デフォルト値</th></tr></thead><tbody><tr><td><code>offset</code></td><td><a href="#01. flexboxグリッド-mixin-grid-offset"><code>grid-offset()</code></a></td><td><code>0</code></td></tr><tr><td><code>order</code></td><td><a href="#01. flexboxグリッド-mixin-grid-order"><code>grid-order()</code></a></td><td><code>0</code></td></tr><tr><td><code>gutter</code></td><td><a href="#01. flexboxグリッド-mixin-grid-gutter"><code>grid-gutter()</code></a></td><td><code>$_grid-gutter</code></td></tr><tr><td><code>grid-columns</code></td><td>グリッドの総カラム数</td><td><code>$_grid-columns</code></td></tr></tbody></table></td><td data-label="type"><code>Map</code> or <code>Null</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-item {
-	@include grid-item(12, (&quot;offset&quot;: 6));
+  @include grid-item(12, (&quot;offset&quot;: 6));
 }
 
 // CSS Output
 .grid-item {
-	max-width: 50%;
-	flex: 0 0 50%;
-	margin-left: 25%;
-	order: 0;
-	padding-right: 1%;
-	padding-left: 1%;
+  max-width: 50%;
+  flex: 0 0 50%;
+  margin-left: 25%;
+  order: 0;
+  padding-right: 1%;
+  padding-left: 1%;
 }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-columns"><code>grid-columns</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-offset"><code>grid-offset</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-order"><code>grid-order</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-gutter"><code>grid-gutter</code></a></li></ul></section><section class="main__item container item" id="01. flexboxグリッド-mixin-grid-direction"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-direction">grid-direction</a></h3><span class="item__since">Since 1.2.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-direction($direction) { 
-	$definition: (
-		&quot;normal&quot;:  &quot;row&quot;,
-		&quot;reverse&quot;: &quot;row-reverse&quot;
-	);
-	flex-direction: unquote(map-get($definition, $direction));
+  $definition: (
+    &quot;normal&quot;:  &quot;row&quot;,
+    &quot;reverse&quot;: &quot;row-reverse&quot;
+  );
+  flex-direction: unquote(map-get($definition, $direction));
  }" data-collapsed="@mixin grid-direction($direction) { ... }"><code>@mixin grid-direction($direction) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>グリッドアイテムの並び順を設定する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$direction</code></th><td data-label="desc"><table class="item__parameters" style="margin-top: -.4em"><thead><tr><th>値</th><th>説明</th></tr></thead><tbody><tr><td><code>normal</code></td><td><code>flex-direction: row</code></td></tr><tr><td><code>reverse</code></td><td><code>flex-direction: row-reverse</code></td></tr></tbody></table></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-container {
-	@include grid-direction(&quot;reverse&quot;);
+  @include grid-direction(&quot;reverse&quot;);
 }
 
 // CSS Outout
 .grid-container {
-	flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-container"><code>grid-container</code></a></li></ul></section><section class="main__item container item" id="01. flexboxグリッド-mixin-grid-align"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-align">grid-align</a></h3><span class="item__since">Since 1.2.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-align($align) { 
-	$definition-justify-content: (
-		&quot;start&quot;:   &quot;flex-start&quot;,
-		&quot;center&quot;:  &quot;center&quot;,
-		&quot;end&quot;:     &quot;flex-end&quot;,
-		&quot;between&quot;: &quot;space-between&quot;,
-		&quot;around&quot;:  &quot;space-around&quot;
-	);
-	$definition-align-items: (
-		&quot;top&quot;:      &quot;flex-start&quot;,
-		&quot;middle&quot;:   &quot;center&quot;,
-		&quot;bottom&quot;:   &quot;flex-end&quot;,
-		&quot;baseline&quot;: &quot;baseline&quot;,
-		&quot;stretch&quot;:  &quot;stretch&quot;
-	);
-	$keys-justify-content: map-keys($definition-justify-content);
-	$justify-content: false;
-	$align-items: false;
-	$align: explode($align, &quot;-&quot;);
-	@for $i from 1 through length($align) {
-		@if (has($keys-justify-content, nth($align, $i))) {
-			$justify-content: map-get($definition-justify-content, nth($align, $i));
-		}
-		@else {
-			$align-items: map-get($definition-align-items, nth($align, $i));
-		}
-	}
-	justify-content: if($justify-content, unquote($justify-content), flex-start);
-	align-items: if($align-items, unquote($align-items), flex-start);
+  $definition-justify-content: (
+    &quot;start&quot;:   &quot;flex-start&quot;,
+    &quot;center&quot;:  &quot;center&quot;,
+    &quot;end&quot;:     &quot;flex-end&quot;,
+    &quot;between&quot;: &quot;space-between&quot;,
+    &quot;around&quot;:  &quot;space-around&quot;
+  );
+  $definition-align-items: (
+    &quot;top&quot;:      &quot;flex-start&quot;,
+    &quot;middle&quot;:   &quot;center&quot;,
+    &quot;bottom&quot;:   &quot;flex-end&quot;,
+    &quot;baseline&quot;: &quot;baseline&quot;,
+    &quot;stretch&quot;:  &quot;stretch&quot;
+  );
+  $keys-justify-content: map-keys($definition-justify-content);
+  $justify-content: false;
+  $align-items: false;
+  $align: explode($align, &quot;-&quot;);
+  @for $i from 1 through length($align) {
+    @if (has($keys-justify-content, nth($align, $i))) {
+      $justify-content: map-get($definition-justify-content, nth($align, $i));
+    }
+    @else {
+      $align-items: map-get($definition-align-items, nth($align, $i));
+    }
+  }
+  justify-content: if($justify-content, unquote($justify-content), flex-start);
+  align-items: if($align-items, unquote($align-items), flex-start);
  }" data-collapsed="@mixin grid-align($align) { ... }"><code>@mixin grid-align($align) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>justify-content and align-items</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$align</code></th><td data-label="desc"><p><code>{horizontal}-{vertical}</code>のフォーマットで指定する<br>いずれか片方だけの指定も可<table class="item__parameters"><thead><tr><th>タイプ</th><th colspan="2">オプション値</th><th>説明</th></tr></thead><tbody><tr><td rowspan="5"><code>horizontal</code></td><td><code>start</code></td><td><code>(デフォルト)</code></td><td><code>justify-content: flex-start</code></td></tr><tr><td colspan="2"><code>center</code></td><td><code>justify-content: center</code></td></tr><tr><td colspan="2"><code>end</code></td><td><code>justify-content: flex-end</code></td></tr><tr><td colspan="2"><code>between</code></td><td><code>justify-content: space-between</code></td></tr><tr><td colspan="2"><code>around</code></td><td><code>justify-content: space-around</code></td></tr><tr><td rowspan="5"><code>vertical</code></td><td><code>top</code></td><td><code>(デフォルト)</code></td><td><code>align-items: flex-start</code></td></tr><tr><td colspan="2"><code>middle</code></td><td><code>align-items: center</code></td></tr><tr><td colspan="2"><code>bottom</code></td><td><code>align-items: flex-end</code></td></tr><tr><td colspan="2"><code>baseline</code></td><td><code>align-items: baseline</code></td></tr><tr><td colspan="2"><code>stretch</code></td><td><code>align-items: stretch</code></td></tr></tbody></table></p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-continer {
-	@inclide grid-align(&quot;center-middle&quot;);
+  @inclide grid-align(&quot;center-middle&quot;);
 }
 .grid-continer-2 {
-	@inclide grid-align(&quot;middle&quot;);
+  @inclide grid-align(&quot;middle&quot;);
 }
 
 // CSS Output
 .grid-container {
-	justify-content: center;
-	align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .grid-container-2 {
-	justify-content: flex-start;
-	align-items: center;
+  justify-content: flex-start;
+  align-items: center;
 }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#50. リスト-function-explode"><code>explode</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#50. リスト-function-has"><code>has</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-container"><code>grid-container</code></a></li></ul></section><section class="main__item container item" id="01. flexboxグリッド-mixin-grid-wrap"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-wrap">grid-wrap</a></h3><span class="item__since">Since 1.2.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-wrap($wrap) { 
-	@if $wrap == &quot;nowrap&quot; {
-		flex-wrap: nowrap;
-	}
-	@elseif $wrap == &quot;wrap&quot; {
-		flex-wrap: wrap;
-		align-content: flex-start;
-	}
-	@elseif $wrap == &quot;wrap-reverse&quot; {
-		flex-wrap: wrap-reverse;
-		align-content: flex-start;
-	}
-	@else {
-		$definition: (
-			&quot;start&quot;:   &quot;flex-start&quot;,
-			&quot;center&quot;:  &quot;center&quot;,
-			&quot;end&quot;:     &quot;flex-end&quot;,
-			&quot;between&quot;: &quot;space-between&quot;,
-			&quot;around&quot;:  &quot;space-around&quot;
-		);
-		$wrap: explode($wrap, &quot;-&quot;);
-		@if length($wrap) == 3 {
-			flex-wrap: wrap-reverse;
-			align-content: unquote(map-get($definition, nth($wrap, 3)));
-		}
-		@else {
-			flex-wrap: wrap;
-			align-content: unquote(map-get($definition, nth($wrap, 2)));
-		}
-	}
+  @if $wrap == &quot;nowrap&quot; {
+    flex-wrap: nowrap;
+  }
+  @elseif $wrap == &quot;wrap&quot; {
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+  @elseif $wrap == &quot;wrap-reverse&quot; {
+    flex-wrap: wrap-reverse;
+    align-content: flex-start;
+  }
+  @else {
+    $definition: (
+      &quot;start&quot;:   &quot;flex-start&quot;,
+      &quot;center&quot;:  &quot;center&quot;,
+      &quot;end&quot;:     &quot;flex-end&quot;,
+      &quot;between&quot;: &quot;space-between&quot;,
+      &quot;around&quot;:  &quot;space-around&quot;
+    );
+    $wrap: explode($wrap, &quot;-&quot;);
+    @if length($wrap) == 3 {
+      flex-wrap: wrap-reverse;
+      align-content: unquote(map-get($definition, nth($wrap, 3)));
+    }
+    @else {
+      flex-wrap: wrap;
+      align-content: unquote(map-get($definition, nth($wrap, 2)));
+    }
+  }
  }" data-collapsed="@mixin grid-wrap($wrap) { ... }"><code>@mixin grid-wrap($wrap) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>flex-wrap and align-content</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$wrap</code></th><td data-label="desc"><table class="item__parameters" style="margin-top: -.4em"><thead><tr><th>値</th><th>説明</th></tr></thead><tbody><tr><td><code>nowrap</code></td><td><code>flex-wrap: nowrap</code></td></tr><tr><td><code>wrap</code><br><code>wrap-reverse</code><br><code>wrap-start</code><br><code>wrap-reverse-start</code></td><td><code>flex-wrap: wrap | wrap-reverse</code><br><code>align-content: flex-start</code></td></tr><tr><td><code>wrap-center</code><br><code>wrap-reverse-center</code></td><td><code>flex-wrap: wrap | wrap-reverse</code><br><code>align-content: center</code></td></tr><tr><td><code>wrap-end</code><br><code>wrap-reverse-end</code></td><td><code>flex-wrap: wrap | wrap-reverse</code><br><code>align-content: flex-end</code></td></tr><tr><td><code>wrap-between</code><br><code>wrap-reverse-between</code></td><td><code>flex-wrap: wrap | wrap-reverse</code><br><code>align-content: space-between</code></td></tr><tr><td><code>wrap-around</code><br><code>wrap-reverse-around</code></td><td><code>flex-wrap: wrap | wrap-reverse</code><br><code>align-content: space-around</code></td></tr></tbody></table></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-container {
-	@include grid-wrap(&quot;wrap-reverse-center&quot;);
+  @include grid-wrap(&quot;wrap-reverse-center&quot;);
 }
 
 // CSS Outout
 .grid-container {
-	flex-wrap: wrap-reverse;
-	align-content: space-around;
+  flex-wrap: wrap-reverse;
+  align-content: space-around;
 }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#50. リスト-function-explode"><code>explode</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-container"><code>grid-container</code></a></li></ul></section><section class="main__item container item" id="01. flexboxグリッド-mixin-grid-columns"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-columns">grid-columns</a></h3><span class="item__since">Since 1.2.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-columns($columns, $grid-columns: $_grid-columns) { 
-	@if $columns == &quot;auto&quot; {
-		max-width: 100%;
-		flex: 0 0 auto;
-	}
-	@else {
-		$width: percentage($columns / $grid-columns);
-		max-width: $width;
-		flex: 0 0 $width;
-	}
+  @if $columns == &quot;auto&quot; {
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+  @else {
+    $width: percentage($columns / $grid-columns);
+    max-width: $width;
+    flex: 0 0 $width;
+  }
  }" data-collapsed="@mixin grid-columns($columns, $grid-columns: $_grid-columns) { ... }"><code>@mixin grid-columns($columns, $grid-columns: $_grid-columns) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>グリッドアイテムの幅</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc"><table class="item__parameters" style="margin-top: -.4em"><thead><tr><th>値</th><th>説明</th></tr></thead><tbody><tr><td><code>auto</code></td><td>内包するコンテンツに応じる</td></tr><tr><td><code>{number}</code></td><td><code>$_grid-columns</code>に対する割合</td></tr></tbody></table></td><td data-label="type"><code>String</code> or <code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$grid-columns</code></th><td data-label="desc"><p>グリッドの総カラム数</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$_grid-columns</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-item {
-	@include grid-columns(12);
+  @include grid-columns(12);
 }
 
 // CSS Output
 .grid-item {
-	max-width: 50%;
-	flex: 0 0 50%;
+  max-width: 50%;
+  flex: 0 0 50%;
 }</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-item"><code>grid-item</code></a></li></ul></section><section class="main__item container item" id="01. flexboxグリッド-mixin-grid-offset"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-offset">grid-offset</a></h3><span class="item__since">Since 1.2.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-offset($offset, $grid-columns: $_grid-columns) { 
-	margin-left: if($offset == 0, 0, percentage($offset / $grid-columns));
+  margin-left: if($offset == 0, 0, percentage($offset / $grid-columns));
  }" data-collapsed="@mixin grid-offset($offset, $grid-columns: $_grid-columns) { ... }"><code>@mixin grid-offset($offset, $grid-columns: $_grid-columns) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>グリッドアイテムのオフセット</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$offset</code></th><td data-label="desc"><p>オフセットさせるカラム数</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$grid-columns</code></th><td data-label="desc"><p>グリッドの総カラム数</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$_grid-columns</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-item {
-	@include grid-offset(12);
+  @include grid-offset(12);
 }
 
 // CSS Output
 .grid-item {
-	margin-left: 50%;
+  margin-left: 50%;
 }</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-item"><code>grid-item</code></a></li></ul></section><section class="main__item container item" id="01. flexboxグリッド-mixin-grid-order"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-order">grid-order</a></h3><span class="item__since">Since 1.2.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-order($order) { 
-	order: $order;
+  order: $order;
  }" data-collapsed="@mixin grid-order($order) { ... }"><code>@mixin grid-order($order) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>カラムの順番</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$order</code></th><td data-label="desc"><p>オーダー番号</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-item {
-	@include grid-order(1);
+  @include grid-order(1);
 }
 
 // CSS Output
 .grid-item {
-	order: 1;
+  order: 1;
 }</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-item"><code>grid-item</code></a></li></ul></section><section class="main__item container item" id="01. flexboxグリッド-mixin-grid-gutter"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-gutter">grid-gutter</a></h3><span class="item__since">Since 1.2.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-gutter($type, $gutter: $_grid-gutter) { 
-	$gutter: if($gutter == null, $_grid-gutter, $gutter);
-	@if $type == &quot;container&quot; {
-		margin-right: $gutter / -2;
-		margin-left: $gutter / -2;
-	}
-	@elseif $type == &quot;item&quot; {
-		padding-right: $gutter / 2;
-		padding-left: $gutter / 2;
-	}
+  $gutter: if($gutter == null, $_grid-gutter, $gutter);
+  @if $type == &quot;container&quot; {
+    margin-right: $gutter / -2;
+    margin-left: $gutter / -2;
+  }
+  @elseif $type == &quot;item&quot; {
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+  }
  }" data-collapsed="@mixin grid-gutter($type, $gutter: $_grid-gutter) { ... }"><code>@mixin grid-gutter($type, $gutter: $_grid-gutter) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Gutter</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$type</code></th><td data-label="desc"><p>動作設定</p><table class="item__parameters"><thead><tr><th>値</th><th>説明</th></tr></thead><tbody><tr><td><code>container</code></td><td>コンテナー用にスタイルを出力する</td></tr><tr><td><code>item</code></td><td>アイテム用にスタイルを出力する</td></tr></tbody></table></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>スペースの幅</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$_grid-gutter</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-container {
-	@include grid-gutter(&quot;container&quot;, 30px);
+  @include grid-gutter(&quot;container&quot;, 30px);
 }
 .grid-item {
-	@include grid-gutter(&quot;item&quot;, 30px);
+  @include grid-gutter(&quot;item&quot;, 30px);
 }
 
 // CSS Output
 .grid-container {
-	margin-left: -15px;
-	margin-right: -15px;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 .grid-item {
-	padding-left: 15px;
-	padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-container"><code>grid-container</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-item"><code>grid-item</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="02. メディアクエリー"><div class="container">02. メディアクエリー</div></h1><section class="main__sub-section" id="02. メディアクエリー-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="02. メディアクエリー-function-breakpoint-min"><h3 class="item__heading"><a class="item__name" href="#function-breakpoint-min">breakpoint-min</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function breakpoint-min($key) { 
-	$min: map-get($_breakpoints, $key);
-	@return if(strip-unit($min) != 0, $min, null);
+  $min: map-get($_breakpoints, $key);
+  @return if(strip-unit($min) != 0, $min, null);
  }" data-collapsed="@function breakpoint-min($key) { ... }"><code>@function breakpoint-min($key) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>指定したブレークポイントの最小値を取得する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$key</code></th><td data-label="desc"><p>$_breakpointsのキー</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> or <code>Null</code> &mdash;<p>値が<code>0</code>の場合は<code>null</code>を返す</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$_breakpoints: (&quot;sm&quot;: 0, &quot;md&quot;: 768px, &quot;lg&quot;: 1024px);
 @debug breakpoint-min(&quot;md&quot;); // 768px
 @debug breakpoint-min(&quot;sm&quot;); // null</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#11. 単位の変換-function-strip-unit"><code>strip-unit</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#02. メディアクエリー-mixin-mq-min"><code>mq-min</code></a></li></ul></section><section class="main__item container item" id="02. メディアクエリー-function-breakpoint-max"><h3 class="item__heading"><a class="item__name" href="#function-breakpoint-max">breakpoint-max</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function breakpoint-max($key) { 
-	$next: map-get-next-key($_breakpoints, $key);
-	@return if($next != null, map-get($_breakpoints, $next) - 1, null);
+  $next: map-get-next-key($_breakpoints, $key);
+  @return if($next != null, map-get($_breakpoints, $next) - 1, null);
  }" data-collapsed="@function breakpoint-max($key) { ... }"><code>@function breakpoint-max($key) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>指定したブレークポイントの最大値 (次のブレークポイントの最小値から-1したもの)を取得する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$key</code></th><td data-label="desc"><p>$_breakpointsのキー</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> or <code>Null</code> &mdash;<p>指定したブレークポイントの要素が、最後の要素である場合は、<code>null</code>を返す</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$_breakpoints: (&quot;sm&quot;: 0, &quot;md&quot;: 768px, &quot;lg&quot;: 1024px);
 @debug breakpoint-min(&quot;md&quot;); // 1023px
 @debug breakpoint-min(&quot;lg&quot;); // null</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#51. マップ-function-map-get-next-key"><code>map-get-next-key</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#02. メディアクエリー-mixin-mq-max"><code>mq-max</code></a></li></ul></section></section><section class="main__sub-section" id="02. メディアクエリー-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="02. メディアクエリー-mixin-mq-min"><h3 class="item__heading"><a class="item__name" href="#mixin-mq-min">mq-min</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin mq-min($key) { 
-	$min: breakpoint-min($key);
-	@if $min {
-		@media (min-width: $min) {
-			@content;
-		}
-	}
-	@else {
-		@content;
-	}
+  $min: breakpoint-min($key);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
  }" data-collapsed="@mixin mq-min($key) { ... }"><code>@mixin mq-min($key) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>ブラウザ幅またはviewportの幅が、指定したブレークポイントの最小値以上の場合にのみ、スタイルを適用する<br>指定したブレークポイントの最小値が0の場合は、すべてにスタイルを適用する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$key</code></th><td data-label="desc"><p>ブレークポイント</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.element {
-	@include mq-min(&quot;sm&quot;) {
-		width: 100%;
-	}
+  @include mq-min(&quot;sm&quot;) {
+    width: 100%;
+  }
 }
 
 // CSS Output
 @media (min-width: 480px) {
-	.element {
-		width: 100%;
-	}
+  .element {
+    width: 100%;
+  }
 }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#02. メディアクエリー-function-breakpoint-min"><code>breakpoint-min</code></a></li></ul></p></section><section class="main__item container item" id="02. メディアクエリー-mixin-mq-max"><h3 class="item__heading"><a class="item__name" href="#mixin-mq-max">mq-max</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin mq-max($key) { 
-	$max: breakpoint-max($key);
-	@if $max {
-		@media (max-width: $max) {
-			@content;
-		}
-	}
-	@else {
-		@content;
-	}
+  $max: breakpoint-max($key);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
  }" data-collapsed="@mixin mq-max($key) { ... }"><code>@mixin mq-max($key) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>ブラウザ幅またはviewportの幅が、指定したブレークポイントの最大値未満の場合にのみ、スタイルを適用する<br>指定したブレークポイントの最大値がない場合、すべてにスタイルを適用する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$key</code></th><td data-label="desc"><p>ブレークポイント</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.element {
-	@include mq-max(&quot;sm&quot;) {
-		width: 100%;
-	}
+  @include mq-max(&quot;sm&quot;) {
+    width: 100%;
+  }
 }
 
 // CSS Output
 @media (max-width: 767px) {
-	.element {
-		width: 100%;
-	}
+  .element {
+    width: 100%;
+  }
 }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#02. メディアクエリー-function-breakpoint-max"><code>breakpoint-max</code></a></li></ul></p></section></section></section><section class="main__section"><h1 class="main__heading" id="03. スプライト"><div class="container">03. スプライト</div></h1><section class="main__sub-section" id="03. スプライト-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="03. スプライト-mixin-sprite"><h3 class="item__heading"><a class="item__name" href="#mixin-sprite">sprite</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin sprite($key, $scale: 1) { 
-	$sprite: map-get($_sprites, $key);
-	$properties: map-get($sprite, &quot;properties&quot;);
-	$image: nth($properties, 9);
-	$offset-x: nth($properties, 3) * $scale;
-	$offset-y: nth($properties, 4) * $scale;
-	$sheet-width: nth($properties, 7) * $scale;
-	$sheet-height: nth($properties, 8) * $scale;
-	$width: nth($properties, 5) * $scale;
-	$height: nth($properties, 6) * $scale;
-	background-image: url(&quot;#{$image}&quot;);
-	background-repeat: no-repeat;
-	background-position: $offset-x $offset-y;
-	background-size: $sheet-width $sheet-height;
-	width: $width;
-	height: $height;
-	display: inline-block;
+  $sprite: map-get($_sprites, $key);
+  $properties: map-get($sprite, &quot;properties&quot;);
+  $image: nth($properties, 9);
+  $offset-x: nth($properties, 3) * $scale;
+  $offset-y: nth($properties, 4) * $scale;
+  $sheet-width: nth($properties, 7) * $scale;
+  $sheet-height: nth($properties, 8) * $scale;
+  $width: nth($properties, 5) * $scale;
+  $height: nth($properties, 6) * $scale;
+  background-image: url(&quot;#{$image}&quot;);
+  background-repeat: no-repeat;
+  background-position: $offset-x $offset-y;
+  background-size: $sheet-width $sheet-height;
+  width: $width;
+  height: $height;
+  display: inline-block;
  }" data-collapsed="@mixin sprite($key, $scale: 1) { ... }"><code>@mixin sprite($key, $scale: 1) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>スプライト用のCSSを出力する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$key</code></th><td data-label="desc"><p>スプライト名 (フォルダ名-画像ファイル名)</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$scale</code></th><td data-label="desc"><p>スプライト画像の表示倍率</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>1</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.element {
-	@include sprite(&quot;icon-down&quot;);
+  @include sprite(&quot;icon-down&quot;);
 }
 
 // CSS Output
 .element {
-	background-image: url(&quot;../images/icon.png&quot;);
-	background-repeat: no-repeat;
-	background-position: 0px 0px;
-	background-size: 262px 262px;
-	width: 128px;
-	height: 128px;
-	display: inline-block;
+  background-image: url(&quot;../images/icon.png&quot;);
+   background-repeat: no-repeat;
+   background-position: 0px 0px;
+   background-size: 262px 262px;
+   width: 128px;
+   height: 128px;
+   display: inline-block;
 }</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="10. 文字列の変換"><div class="container">10. 文字列の変換</div></h1><section class="main__sub-section" id="10. 文字列の変換-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="10. 文字列の変換-function-capitalize"><h3 class="item__heading"><a class="item__name" href="#function-capitalize">capitalize</a></h3><span class="item__since">Since 2.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function capitalize($words, $pascalcase: false, $separators: (&quot; &quot;, &quot;-&quot;, &quot;_&quot;)) { 
 
-	$capitalized: &quot;&quot;;
-	$capital: $pascalcase;
+  $capitalized: &quot;&quot;;
+  $capital: $pascalcase;
 
-	@for $i from 1 through str-length($words) {
-		$letter: str-slice($words, $i, $i);
-		@if (has($separators, $letter)) {
-			$capital: true;
-		}
-		@else {
-			$capitalized: $capitalized + if($capital, to-upper-case($letter), $letter);
-			$capital: false;
-		}
-	}
+  @for $i from 1 through str-length($words) {
+    $letter: str-slice($words, $i, $i);
+    @if (has($separators, $letter)) {
+      $capital: true;
+    }
+    @else {
+      $capitalized: $capitalized + if($capital, to-upper-case($letter), $letter);
+      $capital: false;
+    }
+  }
 
-	@return $capitalized;
+  @return $capitalized;
  }" data-collapsed="@function capitalize($words, $pascalcase: false, $separators: (&quot; &quot;, &quot;-&quot;, &quot;_&quot;)) { ... }"><code>@function capitalize($words, $pascalcase: false, $separators: (&quot; &quot;, &quot;-&quot;, &quot;_&quot;)) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>区切り文字で区切られた文字列をキャメルケースまたはパスカルケースに変換する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$words</code></th><td data-label="desc"><p>区切り文字で区切られた文字列</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$pascalcase</code></th><td data-label="desc"><p>キャメルケースではなく、パスカルケースに変換する</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$separators</code></th><td data-label="desc"><p>区切り文字</p></td><td data-label="type"><code>List</code></td><td data-label="default"><code>(&quot; &quot;, &quot;-&quot;, &quot;_&quot;)</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@debug capitalize(&quot;hello world&quot;); // helloWorld
 @debug capitalize(&quot;hello world&quot;, true); // HelloWorld</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#50. リスト-function-has"><code>has</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="11. 単位の変換"><div class="container">11. 単位の変換</div></h1><section class="main__sub-section" id="11. 単位の変換-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="11. 単位の変換-function-rem"><h3 class="item__heading"><a class="item__name" href="#function-rem">rem</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function rem($px) { 
-	@return absolute-to-relative($px, $_font-size) * 1rem;
+  @return absolute-to-relative($px, $_font-size) * 1rem;
  }" data-collapsed="@function rem($px) { ... }"><code>@function rem($px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>px単位の値をrem単位の値に変換する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$px</code></th><td data-label="desc"><p>変換対象値 (単位は省略可)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$_font-size: 16px;
 @debug rem(12px); // .75rem;</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#99. ユーティリティ-function-absolute-to-relative"><code>absolute-to-relative</code></a></li></ul></section><section class="main__item container item" id="11. 単位の変換-function-per"><h3 class="item__heading"><a class="item__name" href="#function-per">per</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function per($px, $basis) { 
-	@return percentage(absolute-to-relative($px, $basis));
+  @return percentage(absolute-to-relative($px, $basis));
  }" data-collapsed="@function per($px, $basis) { ... }"><code>@function per($px, $basis) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>px単位の値を%単位の値に変換する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$px</code></th><td data-label="desc"><p>変換対象値 (単位は省略可)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$basis</code></th><td data-label="desc"><p>変換基準値 (単位は省略可)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@debug per(100px, 1000px); // 10%</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#99. ユーティリティ-function-absolute-to-relative"><code>absolute-to-relative</code></a></li></ul></section><section class="main__item container item" id="11. 単位の変換-function-vw"><h3 class="item__heading"><a class="item__name" href="#function-vw">vw</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function vw($px) { 
-	@return absolute-to-relative($px, $_viewport-width, true) * 1vw;
+  @return absolute-to-relative($px, $_viewport-width, true) * 1vw;
  }" data-collapsed="@function vw($px) { ... }"><code>@function vw($px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>px単位の値をvw単位の値に変換する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$px</code></th><td data-label="desc"><p>変換対象値 (単位は省略可)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$_viewport-width: 640px;
 @debug vw(32px); // 5vw</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#99. ユーティリティ-function-absolute-to-relative"><code>absolute-to-relative</code></a></li></ul></section><section class="main__item container item" id="11. 単位の変換-function-vh"><h3 class="item__heading"><a class="item__name" href="#function-vh">vh</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function vh($px) { 
-	@return absolute-to-relative($px, $_viewport-height, true) * 1vh;
+  @return absolute-to-relative($px, $_viewport-height, true) * 1vh;
  }" data-collapsed="@function vh($px) { ... }"><code>@function vh($px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>px単位の値をvh単位の値に変換する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$px</code></th><td data-label="desc"><p>変換対象値 (単位は省略可)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$_viewport-height: 1136px;
 @debug vh(32px); // 2.8169vh</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#99. ユーティリティ-function-absolute-to-relative"><code>absolute-to-relative</code></a></li></ul></section><section class="main__item container item" id="11. 単位の変換-function-strip-unit"><h3 class="item__heading"><a class="item__name" href="#function-strip-unit">strip-unit</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function strip-unit($number) { 
-	@return $number / ($number * 0 + 1);
+  @return $number / ($number * 0 + 1);
  }" data-collapsed="@function strip-unit($number) { ... }"><code>@function strip-unit($number) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>数値から単位を取り除く</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$number</code></th><td data-label="desc"><p>単位付きの数値</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>単位を取り除いた数値</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@debug strip-unit(12px); // 12</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#02. メディアクエリー-function-breakpoint-min"><code>breakpoint-min</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#99. ユーティリティ-function-absolute-to-relative"><code>absolute-to-relative</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="50. リスト"><div class="container">50. リスト</div></h1><section class="main__sub-section" id="50. リスト-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="50. リスト-function-first"><h3 class="item__heading"><a class="item__name" href="#function-first">first</a></h3><span class="item__since">Since 1.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function first($list) { 
-	@return nth($list, 1);
+  @return nth($list, 1);
  }" data-collapsed="@function first($list) { ... }"><code>@function first($list) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>リストの最初の値を取得する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$list</code></th><td data-label="desc"><p>取得対象のリスト</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline">Any type &mdash;<p>リストの最初の値</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$list: (&quot;A&quot; &quot;B&quot; &quot;C&quot;);
 @debug first($list); // &quot;A&quot;</code></pre></div></section><section class="main__item container item" id="50. リスト-function-last"><h3 class="item__heading"><a class="item__name" href="#function-last">last</a></h3><span class="item__since">Since 1.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function last($list) { 
-	@return nth($list, length($list));
+  @return nth($list, length($list));
  }" data-collapsed="@function last($list) { ... }"><code>@function last($list) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>リストの最後の値を取得する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$list</code></th><td data-label="desc"><p>取得対象のリスト</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline">Any type &mdash;<p>リストの最後の値</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$list: (&quot;A&quot; &quot;B&quot; &quot;C&quot;);
 @debug last($list); // &quot;C&quot;</code></pre></div></section><section class="main__item container item" id="50. リスト-function-prepend"><h3 class="item__heading"><a class="item__name" href="#function-prepend">prepend</a></h3><span class="item__since">Since 1.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function prepend($list, $value) { 
-	$result: ();
-	$result: append($result, $value);
-	@return join($result, $list);
+  $result: ();
+  $result: append($result, $value);
+  @return join($result, $list);
  }" data-collapsed="@function prepend($list, $value) { ... }"><code>@function prepend($list, $value) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>リストの先頭に値を追加する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$list</code></th><td data-label="desc"><p>追加対象のリスト</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>追加する値</p></td><td data-label="type"><code>Any</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>List</code> &mdash;<p>追加後のリスト</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$list: (&quot;A&quot; &quot;B&quot; &quot;C&quot;);
 @debug prepend($list, &quot;Z&quot;); // (&quot;Z&quot; &quot;A&quot; &quot;B&quot; &quot;C&quot;)</code></pre></div></section><section class="main__item container item" id="50. リスト-function-shift"><h3 class="item__heading"><a class="item__name" href="#function-shift">shift</a></h3><span class="item__since">Since 1.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function shift($list) { 
-	$result: ();
-	@for $i from 2 through length($list) {
-		$result: append($result, nth($list, $i));
-	}
-	@return $result;
+  $result: ();
+  @for $i from 2 through length($list) {
+    $result: append($result, nth($list, $i));
+  }
+  @return $result;
  }" data-collapsed="@function shift($list) { ... }"><code>@function shift($list) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>リストの最初の値を削除する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$list</code></th><td data-label="desc"><p>削除対象のリスト</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>List</code> &mdash;<p>削除後のリスト</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$list: (&quot;A&quot; &quot;B&quot; &quot;C&quot;);
 @debug shift($list); // (&quot;B&quot; &quot;C&quot;)</code></pre></div></section><section class="main__item container item" id="50. リスト-function-pop"><h3 class="item__heading"><a class="item__name" href="#function-pop">pop</a></h3><span class="item__since">Since 1.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function pop($list) { 
-	$result: ();
-	@for $i from 1 through length($list) - 1 {
-		$result: append($result, nth($list, $i));
-	}
-	@return $result;
+  $result: ();
+  @for $i from 1 through length($list) - 1 {
+    $result: append($result, nth($list, $i));
+  }
+  @return $result;
  }" data-collapsed="@function pop($list) { ... }"><code>@function pop($list) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>リストの最後の値を削除する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$list</code></th><td data-label="desc"><p>削除対象のリスト</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>List</code> &mdash;<p>削除後のリスト</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$list: (&quot;A&quot; &quot;B&quot; &quot;C&quot;);
 @debug pop($list); // (&quot;A&quot; &quot;B&quot;)</code></pre></div></section><section class="main__item container item" id="50. リスト-function-explode"><h3 class="item__heading"><a class="item__name" href="#function-explode">explode</a></h3><span class="item__since">Since 1.2.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function explode($string, $separator) { 
-	$list: ();
-	$sum: str-length($string);
+  $list: ();
+  $sum: str-length($string);
 
-	@for $i from 1 through $sum {
-		$str: str-index($string, $separator);
+  @for $i from 1 through $sum {
+    $str: str-index($string, $separator);
 
-		@if str-length($string) &gt;= 1 and $str == null {
-			$list: append($list, $string);
-			$string: &quot;&quot;;
-		}
+    @if str-length($string) &gt;= 1 and $str == null {
+      $list: append($list, $string);
+      $string: &quot;&quot;;
+    }
 
-		@if type-of($str) == &quot;number&quot; {
-			$each: str-slice($string, 0, ($str - 1));
-			$list: append($list, $each);
-			$string: str-slice($string, ($str + 1), $sum);
-		}
-	}
+    @if type-of($str) == &quot;number&quot; {
+      $each: str-slice($string, 0, ($str - 1));
+      $list: append($list, $each);
+      $string: str-slice($string, ($str + 1), $sum);
+    }
+  }
 
-	@return $list;
+  @return $list;
  }" data-collapsed="@function explode($string, $separator) { ... }"><code>@function explode($string, $separator) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>文字列を分割し、リストで返す</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$string</code></th><td data-label="desc"><p>分割対象の文字列</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$separator</code></th><td data-label="desc"><p>区切り文字</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>List</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@debug explode(&quot;2000-01-01&quot;, &quot;-&quot;); // (&quot;2000&quot; &quot;01&quot; &quot;01&quot;)</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-align"><code>grid-align</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-wrap"><code>grid-wrap</code></a></li></ul></section><section class="main__item container item" id="50. リスト-function-has"><h3 class="item__heading"><a class="item__name" href="#function-has">has</a></h3><span class="item__since">Since 1.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function has($list, $values, $operation: AND) { 
-	$operation: to-upper-case($operation);
-	@if ($operation == &quot;AND&quot;) {
-		@each $value in $values {
-			@if index($list, $value) == null {
-				@return false;
-			}
-		}
-		@return true;
-	}
-	@elseif ($operation == &quot;OR&quot;) {
-		@each $value in $values {
-			@if index($list, $value) {
-				@return true;
-			}
-		}
-		@return false;
-	}
+  $operation: to-upper-case($operation);
+  @if ($operation == &quot;AND&quot;) {
+    @each $value in $values {
+      @if index($list, $value) == null {
+        @return false;
+      }
+    }
+    @return true;
+  }
+  @elseif ($operation == &quot;OR&quot;) {
+    @each $value in $values {
+      @if index($list, $value) {
+        @return true;
+      }
+    }
+    @return false;
+  }
  }" data-collapsed="@function has($list, $values, $operation: AND) { ... }"><code>@function has($list, $values, $operation: AND) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>リストに指定した値が含まれているか確認する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$list</code></th><td data-label="desc"><p>検索対象のリスト</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$values</code></th><td data-label="desc"><p>検索条件</p></td><td data-label="type"><code>String</code> or <code>Number</code> or <code>Color</code> or <code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$operation</code></th><td data-label="desc"><p><code>$values</code>にリストを渡した場合の動作設定<table class="item__parameters"><thead><tr><th>値</th><th>説明</th></tr></thead><tbody><tr><td><code>AND</code></td><td><code>$values</code>の全てが<code>$list</code>に含まれる場合に<code>true</code>を返す</td></tr><tr><td><code>OR</code></td><td><code>$values</code>のいずれかが<code>$list</code>に含まれる場合に<code>true</code>を返す</td></tr></tbody></table></p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>AND</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Boolean</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$list: (&quot;A&quot; &quot;B&quot; &quot;C&quot;);
 @debug has($list, &quot;A&quot;); // true
 @debug has($list, (&quot;A&quot; &quot;B&quot;)); // true
 @debug has($list, (&quot;A&quot; &quot;Z&quot;)); // false
 @debug has($list, (&quot;A&quot; &quot;Z&quot;), &quot;OR&quot;); // true
 @debug has($list, (&quot;Y&quot; &quot;Z&quot;), &quot;OR&quot;); // false</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#01. flexboxグリッド-mixin-grid-align"><code>grid-align</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#10. 文字列の変換-function-capitalize"><code>capitalize</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="51. マップ"><div class="container">51. マップ</div></h1><section class="main__sub-section" id="51. マップ-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="51. マップ-function-map-set"><h3 class="item__heading"><a class="item__name" href="#function-map-set">map-set</a></h3><span class="item__since">Since 1.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function map-set($map, $key, $value) { 
-	@return map-merge($map, ($key: $value));
+  @return map-merge($map, ($key: $value));
  }" data-collapsed="@function map-set($map, $key, $value) { ... }"><code>@function map-set($map, $key, $value) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>マップの要素の値を変更する<br>更対象の要素が存在しない場合、新たに要素を追加する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$map</code></th><td data-label="desc"><p>操作対象のマップ</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$key</code></th><td data-label="desc"><p>変更対象要素のキー</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>変更対象要素に設定する値</p></td><td data-label="type"><code>Any</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Map</code> &mdash;<p>要素の値を変更、または要素を追加したマップ</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$map: (
-	&quot;white&quot;: #fff,
-	&quot;black&quot;: #000
+  &quot;white&quot;: #fff,
+  &quot;black&quot;: #000
 );
 @debug map-set($map, &quot;black&quot;, #333);
 // (
-// 	&quot;white&quot;: #fff,
-// 	&quot;black&quot;: #333
+//   &quot;white&quot;: #fff,
+//   &quot;black&quot;: #333
 // );</code></pre></div></section><section class="main__item container item" id="51. マップ-function-map-deep-set"><h3 class="item__heading"><a class="item__name" href="#function-map-deep-set">map-deep-set</a></h3><span class="item__since">Since 1.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function map-deep-set($map, $keys...) { 
-	$map-list: ();
-	$map-list: append($map-list, $map);
-	$result: null;
-	@if length($keys) == 2 {
-		@return map-merge($map, (nth($keys, 1): nth($keys, -1)));
-	}
-	@for $i from 1 through length($keys) - 2 {
-		$map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
-	}
-	@for $i from length($map-list) through 1 {
-		$result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
-	}
-	@return $result;
- }" data-collapsed="@function map-deep-set($map, $keys...) { ... }"><code>@function map-deep-set($map, $keys...) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>多次元構造のマップの、要素の値を変更する<br>変更対象の要素が存在しない場合、新たに要素を追加する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$map</code></th><td data-label="desc"><p>操作対象のマップ</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$keys...</code></th><td data-label="desc"><p>目的の要素までのキーを、1次元目から順に指定する<br>可変長引数の最後の値は、変更対象要素に設定する値となる</p></td><td data-label="type"><code>可変長引数</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Map</code> &mdash;<p>要素の値を変更、または要素を追加したマップ</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$map: (
-	&quot;columns&quot;: 12,
-	&quot;layouts&quot;: (
-		&quot;small&quot;: 800px,
-		&quot;medium&quot;: 1000px,
-		&quot;large&quot;: 1200px
-	)
-);
-@debug map-deep-set($map, &quot;layouts&quot;, &quot;small&quot;, 600px);
-// (
-// 	&quot;columns&quot;: 12,
-// 	&quot;layouts&quot;: (
-// 		&quot;small&quot;: 600px,
-// 		&quot;medium&quot;: 1000px,
-// 		&quot;large&quot;: 1200px
-// 	)
-// );</code></pre></div></section><section class="main__item container item" id="51. マップ-function-map-deep-get"><h3 class="item__heading"><a class="item__name" href="#function-map-deep-get">map-deep-get</a></h3><span class="item__since">Since 1.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function map-deep-get($map, $keys...) { 
-	@each $key in $keys {
-		$map: map-get($map, $key);
-	}
-	@return $map;
+  $map-list: ();
+  $map-list: append($map-list, $map);
+  $result: null;
+  @if length($keys) == 2 {
+    @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+  }
+  @for $i from 1 through length($keys) - 2 {
+    $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+  }
+  @for $i from length($map-list) through 1 {
+    $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
+  }
+  @return $result;
+ }" data-collapsed="@function map-deep-set($map, $keys...) { ... }"><code>@function map-deep-set($map, $keys...) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>多次元構造のマップの、要素の値を変更する<br>変更対象の要素が存在しない場合、新たに要素を追加する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$map</code></th><td data-label="desc"><p>操作対象のマップ</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$keys...</code></th><td data-label="desc"><p>目的の要素までのキーを、1次元目から順に指定する<br>可変長引数の最後の値は、変更対象要素に設定する値となる</p><p>@return {map} 要素の値を変更、または要素を追加したマップ</p><p>@example scss $map: ( &quot;columns&quot;: 12, &quot;layouts&quot;: ( &quot;small&quot;: 800px, &quot;medium&quot;: 1000px, &quot;large&quot;: 1200px ) ); @debug map-deep-set($map, &quot;layouts&quot;, &quot;small&quot;, 600px); // ( // &quot;columns&quot;: 12, // &quot;layouts&quot;: ( // &quot;small&quot;: 600px, // &quot;medium&quot;: 1000px, // &quot;large&quot;: 1200px // ) // );</p></td><td data-label="type"><code>可変長引数</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table></section><section class="main__item container item" id="51. マップ-function-map-deep-get"><h3 class="item__heading"><a class="item__name" href="#function-map-deep-get">map-deep-get</a></h3><span class="item__since">Since 1.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function map-deep-get($map, $keys...) { 
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
  }" data-collapsed="@function map-deep-get($map, $keys...) { ... }"><code>@function map-deep-get($map, $keys...) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>多次元構造のマップから、要素の値を取得する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$map</code></th><td data-label="desc"><p>操作対象のマップ</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$keys...</code></th><td data-label="desc"><p>目的の要素までのキーを、1次元目から順に指定する</p></td><td data-label="type"><code>可変長引数</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline">Any type &mdash;<p>要素の値</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$map: (
-	&quot;columns&quot;: 12,
-	&quot;layouts&quot;: (
-		&quot;small&quot;: 800px,
-		&quot;medium&quot;: 1000px,
-		&quot;large&quot;: 1200px
-	)
+  &quot;columns&quot;: 12,
+  &quot;layouts&quot;: (
+    &quot;small&quot;: 800px,
+    &quot;medium&quot;: 1000px,
+    &quot;large&quot;: 1200px
+  )
 );
 @debug map-deep-get($map, &quot;layouts&quot;, &quot;small&quot;); // 800px</code></pre></div></section><section class="main__item container item" id="51. マップ-function-map-get-next-key"><h3 class="item__heading"><a class="item__name" href="#function-map-get-next-key">map-get-next-key</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function map-get-next-key($map, $key) { 
-	$keys: map-keys($map);
-	$index: index($keys, $key);
-	@return if($index &lt; length($keys), nth($keys, $index + 1), null);
+  $keys: map-keys($map);
+  $index: index($keys, $key);
+  @return if($index &lt; length($keys), nth($keys, $index + 1), null);
  }" data-collapsed="@function map-get-next-key($map, $key) { ... }"><code>@function map-get-next-key($map, $key) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>マップから、指定したキーの次の要素のキーを取得する<br>指定したキーが、マップの最後の要素である場合は、<code>null</code>を返す</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$map</code></th><td data-label="desc"><p>操作対象のマップ</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$key</code></th><td data-label="desc"><p>取得対象要素の前の要素のキー</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> or <code>Null</code> &mdash;<p>取得対象要素のキー、または<code>null</code></p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$map: (&quot;A&quot;: 1, &quot;B&quot;: 2, &quot;C&quot;: 3);
 @debug map-get-next-key(&quot;B&quot;, $map); // C
 @debug map-get-next-key(&quot;C&quot;, $map); // null</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#02. メディアクエリー-function-breakpoint-max"><code>breakpoint-max</code></a></li></ul></section><section class="main__item container item" id="51. マップ-function-map-get-prev-key"><h3 class="item__heading"><a class="item__name" href="#function-map-get-prev-key">map-get-prev-key</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function map-get-prev-key($map, $key) { 
-	$keys: map-keys($map);
-	$index: index($keys, $key);
-	@return if($index &gt; 1, nth($keys, $index - 1), null);
+  $keys: map-keys($map);
+  $index: index($keys, $key);
+  @return if($index &gt; 1, nth($keys, $index - 1), null);
  }" data-collapsed="@function map-get-prev-key($map, $key) { ... }"><code>@function map-get-prev-key($map, $key) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>マップから、指定したキーの前の要素のキーを取得する<br>指定したキーが、マップの最初の要素である場合は、<code>null</code>を返す</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$map</code></th><td data-label="desc"><p>操作対象のマップ</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$key</code></th><td data-label="desc"><p>取得対象要素の次の要素のキー</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> or <code>Null</code> &mdash;<p>取得対象要素のキー、または<code>null</code></p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$map: (&quot;A&quot;: 1, &quot;B&quot;: 2, &quot;C&quot;: 3);
 @debug map-get-prev-key(&quot;B&quot;, $map); // &quot;A&quot;
 @debug map-get-prev-key(&quot;A&quot;, $map); // null</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="99. ユーティリティ"><div class="container">99. ユーティリティ</div></h1><section class="main__sub-section" id="99. ユーティリティ-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="99. ユーティリティ-function-color"><h3 class="item__heading"><a class="item__name" href="#function-color">color</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function color($key) { 
-	@return map-get($_colors, $key);
+  @return map-get($_colors, $key);
  }" data-collapsed="@function color($key) { ... }"><code>@function color($key) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>指定した色名のカラーコードを取得する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$key</code></th><td data-label="desc"><p>色名</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Color</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$_colors: (&quot;black&quot;: #000, &quot;white&quot;: #fff);
 @debug get-color(&quot;black&quot;); // #000</code></pre></div></section><section class="main__item container item" id="99. ユーティリティ-function-absolute-to-relative"><h3 class="item__heading"><a class="item__name" href="#function-absolute-to-relative">absolute-to-relative</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function absolute-to-relative($abs, $basis, $percentage: false) { 
-	$abs:      strip-unit($abs);
-	$basis:    strip-unit($basis);
-	$relative: $abs / $basis;
-	@return if($percentage, $relative * 100, $relative);
+  $abs:      strip-unit($abs);
+  $basis:    strip-unit($basis);
+  $relative: $abs / $basis;
+  @return if($percentage, $relative * 100, $relative);
  }" data-collapsed="@function absolute-to-relative($abs, $basis, $percentage: false) { ... }"><code>@function absolute-to-relative($abs, $basis, $percentage: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>絶対単位の値から相対単位の値に変換する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$abs</code></th><td data-label="desc"><p>変換対象値 (単位は省略可)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$basis</code></th><td data-label="desc"><p>変換基準値 (単位は省略可)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$percentage</code></th><td data-label="desc"><p>百分率の形式（%の単位なし）で返す場合はtrueを指定する</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@debug absolute-to-relative(10, 100) * 1em; // .1em
 @debug absolute-to-relative(10, 100, true); // 10</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#11. 単位の変換-function-strip-unit"><code>strip-unit</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#11. 単位の変換-function-rem"><code>rem</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#11. 単位の変換-function-per"><code>per</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#11. 単位の変換-function-vw"><code>vw</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#11. 単位の変換-function-vh"><code>vh</code></a></li></ul></section></section><section class="main__sub-section" id="99. ユーティリティ-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="99. ユーティリティ-mixin-truncate"><h3 class="item__heading"><a class="item__name" href="#mixin-truncate">truncate</a></h3><span class="item__since">Since 1.5.2</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin truncate($lines, $bgcolor, $lheight: $_line-height, $fixed: false) { 
-	line-height: $lheight;
-	background-color: $bgcolor;
-	@if $fixed {
-		height: 1em * $lheight * $lines;
-	}
-	@else {
-		max-height: 1em * $lheight * $lines;
-	}
-	padding-right: 1em;
-	overflow: hidden;
-	position: relative;
-	&amp;::before {
-		content: &quot;…&quot;;
-		font-weight: normal;
-		width: 1em;
-		display: inline-block;
-		position: absolute;
-		right: 0;
-		bottom: 0;
-	}
-	&amp;::after {
-		content: &quot;&quot;;
-		background-color: inherit;
-		width: 1em;
-		height: 1em * $lheight * $lines;
-		margin-left: -1em;
-		float: right;
-		position: absolute;
-		right: 0;
-	}
+  line-height: $lheight;
+  background-color: $bgcolor;
+  @if $fixed {
+    height: 1em * $lheight * $lines;
+  }
+  @else {
+    max-height: 1em * $lheight * $lines;
+  }
+  padding-right: 1em;
+  overflow: hidden;
+  position: relative;
+  &amp;::before {
+    content: &quot;…&quot;;
+    font-weight: normal;
+    width: 1em;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &amp;::after {
+    content: &quot;&quot;;
+    background-color: inherit;
+    width: 1em;
+    height: 1em * $lheight * $lines;
+    margin-left: -1em;
+    float: right;
+    position: absolute;
+    right: 0;
+  }
  }" data-collapsed="@mixin truncate($lines, $bgcolor, $lheight: $_line-height, $fixed: false) { ... }"><code>@mixin truncate($lines, $bgcolor, $lheight: $_line-height, $fixed: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>複数行の文章を指定行数まで省略する</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc"><p>最大行数</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bgcolor</code></th><td data-label="desc"><p>背景色</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$lheight</code></th><td data-label="desc"><p>line-heightの値</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$_line-height</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$fixed</code></th><td data-label="desc"><p>文章エリアの高さを最大行数分維持する</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.element {
-	@include truncate(2, #fff, 1.5);
+  @include truncate(2, #fff, 1.5);
 }
 
 // CSS Output
 .element {
-	line-height: 1.5;
-	background-color: #fff;
-	max-height: 3em;
-	padding-right: 1em;
-	overflow: hidden;
-	position: relative;
-	&amp;::before {
-		content: &quot;…&quot;;
-		font-weight: normal;
-		width: 1em;
-		display: inline-block;
-		position: absolute;
-		right: 0;
-		bottom: 0;
-	}
-	&amp;::after {
-		content: &quot;&quot;;
-		background-color: inherit;
-		width: 1em;
-		height: 3em;
-		margin-left: -1em;
-		float: right;
-		position: absolute;
-		right: 0;
-	}
+  line-height: 1.5;
+  background-color: #fff;
+  max-height: 3em;
+  padding-right: 1em;
+  overflow: hidden;
+  position: relative;
+  &amp;::before {
+    content: &quot;…&quot;;
+    font-weight: normal;
+    width: 1em;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &amp;::after {
+    content: &quot;&quot;;
+    background-color: inherit;
+    width: 1em;
+    height: 3em;
+    margin-left: -1em;
+    float: right;
+    position: absolute;
+    right: 0;
+  }
 }</code></pre></div></section><section class="main__item container item" id="99. ユーティリティ-mixin-clearfix"><h3 class="item__heading"><a class="item__name" href="#mixin-clearfix">clearfix</a></h3><span class="item__since">Since 1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin clearfix() { 
-	&amp;::before,
-	&amp;::after {
-		display: table;
-		content: &quot; &quot;;
-	}
-	&amp;::after {
-		clear: both;
-	}
+  &amp;::before,
+  &amp;::after {
+    display: table;
+    content: &quot; &quot;;
+  }
+  &amp;::after {
+    clear: both;
+  }
  }" data-collapsed="@mixin clearfix() { ... }"><code>@mixin clearfix() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Clearfix</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.element {
-	@include clearfix;
+  @include clearfix;
 }
 
 // CSS Output
 .element::before, .element::after {
-	display: table;
-	content: &quot; &quot;;
-}
-.element::after {
-	clear: both;
-}</code></pre></div></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><span class="project-info__name">Website-coding-kit</span><!-- Version --> <span class="project-info__version">- v2.0.0-dev</span><!-- License --> <span class="project-info__license">, under MIT</span></div></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
+   display: table;
+  content: &quot; &quot;;
+ }
+ .element::after {
+   clear: both;
+ }</code></pre></div></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><span class="project-info__name">Website-coding-kit</span><!-- Version --> <span class="project-info__version">- v2.0.0-dev</span><!-- License --> <span class="project-info__license">, under MIT</span></div></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

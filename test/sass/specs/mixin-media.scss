@@ -2,42 +2,42 @@
 
 @include test-module("mixin/_media.scss") {
 
-	@include test("mq-min") {
-		@include assert {
-			@include output {
-				.element {
-					@include mq-min("sm") {
-						width: 100%;
-					}
-				}
-			}
-			@include expect {
-				@media (min-width: 480px) {
-					.element {
-						width: 100%;
-					}
-				}
-			}
-		}
-	}
+  @include test("mq-min") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-min("sm") {
+            width: 100%;
+          }
+        }
+      }
+      @include expect {
+        @media (min-width: 480px) {
+          .element {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 
-	@include test("mq-max") {
-		@include assert {
-			@include output {
-				.element {
-					@include mq-max("sm") {
-						width: 100%;
-					}
-				}
-			}
-			@include expect {
-				@media (max-width: 767px) {
-					.element {
-						width: 100%;
-					}
-				}
-			}
-		}
-	}
+  @include test("mq-max") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-max("sm") {
+            width: 100%;
+          }
+        }
+      }
+      @include expect {
+        @media (max-width: 767px) {
+          .element {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 
 }

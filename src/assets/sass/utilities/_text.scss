@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @each $color-class, $color-code in $_colors {
-	.u_t-#{$color-class} { color: $color-code !important; }
+  .u_t-#{$color-class} { color: $color-code !important; }
 }
 
 .u_t-left   { text-align: left !important; }
