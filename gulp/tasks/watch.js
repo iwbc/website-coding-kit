@@ -9,27 +9,27 @@ const $      = require('../load.js');
  */
 
 gulp.task('watch', () => {
-	config.path.copy.forEach((copy) => {
-		$.watch(copy.src, () => {
-			gulp.start('copy');
-		});
-	});
-	$.watch(config.path.ejs.watch, () => {
-		gulp.start('ejs');
-	});
-	$.watch(config.path.style.watch, () => {
-		gulp.start('style');
-	});
-	$.watch(config.path.script.watch, () => {
-		gulp.start('script');
-	});
-	$.watch(config.path.image.watch, () => {
-		gulp.start('image');
-	});
-	$.watch(config.path.sprite.png.watch, () => {
-		gulp.start('sprite:png');
-	});
-	$.watch(config.path.sprite.svg.watch, () => {
-		gulp.start('sprite:svg');
-	});
+  config.path.copy.forEach((copy) => {
+    $.watch(copy.src, () => {
+      gulp.start('copy');
+    });
+  });
+  $.watch(config.path.ejs.watch, () => {
+    gulp.start('ejs');
+  });
+  $.watch(config.path.style.watch, () => {
+    gulp.start('style');
+  });
+  $.watch(config.path.script.watch, () => {
+    gulp.start('script');
+  });
+  $.watch(config.path.image.watch, () => {
+    gulp.start('image');
+  });
+  $.watch(config.path.sprite.png.watch, () => {
+    gulp.start('sprite:png');
+  });
+  $.watch(config.path.sprite.svg.watch, () => {
+    gulp.start('sprite:svg');
+  });
 });

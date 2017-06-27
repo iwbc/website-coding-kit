@@ -8,10 +8,10 @@ let config     = require('../gulpconfig.js');
  */
 
 const argv = minimist(process.argv.slice(2), {
-	string  : ['env'],
-	default : {
-		env : 'development'
-	}
+  string  : ['env'],
+  default : {
+    env : 'development'
+  }
 });
 
 config.ENV     = argv.env;

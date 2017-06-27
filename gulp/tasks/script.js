@@ -17,43 +17,43 @@ const $         = require('../load.js');
  */
 
 gulp.task('script', ['script:__rollup'], () => {
-	$.browser.reload();
+  $.browser.reload();
 });
 
 gulp.task('script:__rollup', () => {
-	return gulp.src(config.path.script.src)
-		.pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
-		.pipe(through2.obj((file, encoding, callback) => {
+  return gulp.src(config.path.script.src)
+    .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
+    .pipe(through2.obj((file, encoding, callback) => {
 
-			if (file.isDirectory()) { callback(); }
+      if (file.isDirectory()) { callback(); }
 
-			const module_name = path.basename(file.path, '.js');
-			let plugins = [
-				resolve(),
-				cjs(),
-				string({
-					include: '**/*',
-					exclude: '**/*.js'
-				}),
-				buble(config.script.buble),
-			];
-			if (config.build.js_minify) { plugins.push(uglify({ preserveComments : 'some' })); }
+      const module_name = path.basename(file.path, '.js');
+      let plugins = [
+        resolve(),
+        cjs(),
+        string({
+          include: '**/*',
+          exclude: '**/*.js'
+        }),
+        buble(config.script.buble),
+      ];
+      if (config.build.js_minify) { plugins.push(uglify({ preserveComments : 'some' })); }
 
-			rollup({
-				entry: file.path,
-				plugins: plugins
-			}).then((bundle) => {
-				bundle.write({
-					format     : 'iife',
-					sourceMap  : config.build.sourcemap,
-					dest       : `${config.path.script.dest}/${module_name}.js`,
-					moduleName : module_name
-				}).then(() => {
-					callback(null, file);
-				});
-			}).catch((err) => {
-				callback(err);
-			});
+      rollup({
+        entry: file.path,
+        plugins: plugins
+      }).then((bundle) => {
+        bundle.write({
+          format     : 'iife',
+          sourceMap  : config.build.sourcemap,
+          dest       : `${config.path.script.dest}/${module_name}.js`,
+          moduleName : module_name
+        }).then(() => {
+          callback(null, file);
+        });
+      }).catch((err) => {
+        callback(err);
+      });
 
-		}));
+    }));
 });
