@@ -9,9 +9,9 @@ const config = require('../config.js');
  */
 
 gulp.task('clean', del.bind(null,
-	[
-		`${config.dest}/*`,
-		`!${config.dest}/.git`
-	],
-	{ dot: true }
+  [
+    `${config.dest}/*`,
+    `!${config.dest}/.git`
+  ],
+  { dot: true }
 ));

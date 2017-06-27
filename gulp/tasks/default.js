@@ -8,5 +8,5 @@ const run  = require('run-sequence');
  */
 
 gulp.task('default', () => {
-	return run('server', 'watch');
+  return run('server', 'watch');
 });
