@@ -1,30 +1,30 @@
 @charset "UTF-8";
 
 $_sprites: map-merge($_sprites, (
-	"test2x-down": (
-		"sheet": "test2x",
-		"properties": 0px 0px 0px 0px 128px 128px 262px 262px "images/test2x.png" "down",
-		"is-retina": true
-	)
+  "test2x-down": (
+    "sheet": "test2x",
+    "properties": 0px 0px 0px 0px 128px 128px 262px 262px "images/test2x.png" "down",
+    "is-retina": true
+  )
 ));
 $_sprites: map-merge($_sprites, (
-	"test2x-left": (
-		"sheet": "test2x",
-		"properties": 134px 0px -134px 0px 128px 128px 262px 262px "images/test2x.png" "left",
-		"is-retina": true
-	)
+  "test2x-left": (
+    "sheet": "test2x",
+    "properties": 134px 0px -134px 0px 128px 128px 262px 262px "images/test2x.png" "left",
+    "is-retina": true
+  )
 ));
 $_sprites: map-merge($_sprites, (
-	"test2x-right": (
-		"sheet": "test2x",
-		"properties": 0px 134px 0px -134px 128px 128px 262px 262px "images/test2x.png" "right",
-		"is-retina": true
-	)
+  "test2x-right": (
+    "sheet": "test2x",
+    "properties": 0px 134px 0px -134px 128px 128px 262px 262px "images/test2x.png" "right",
+    "is-retina": true
+  )
 ));
 $_sprites: map-merge($_sprites, (
-	"test2x-up": (
-		"sheet": "test2x",
-		"properties": 134px 134px -134px -134px 128px 128px 262px 262px "images/test2x.png" "up",
-		"is-retina": true
-	)
+  "test2x-up": (
+    "sheet": "test2x",
+    "properties": 134px 134px -134px -134px 128px 128px 262px 262px "images/test2x.png" "up",
+    "is-retina": true
+  )
 ));

@@ -2,82 +2,82 @@
 
 @include test-module("functions/_map.scss") {
 
-	@include test("map-set") {
-		$map: (
-			"white": #fff,
-			"black": #000
-		);
-		$actual: map-set($map, "red", #f00);
-		$expect: (
-			"white": #fff,
-			"black": #000,
-			"red": #f00
-		);
-		@include assert-equal($actual, $expect);
-	}
+  @include test("map-set") {
+    $map: (
+      "white": #fff,
+      "black": #000
+    );
+    $actual: map-set($map, "red", #f00);
+    $expect: (
+      "white": #fff,
+      "black": #000,
+      "red": #f00
+    );
+    @include assert-equal($actual, $expect);
+  }
 
-	@include test("map-deep-set") {
-		$map: (
-			"columns": 12,
-			"layouts": (
-				"small": 800px,
-				"medium": 1000px,
-				"large": 1200px
-			)
-		);
-		$actual: map-deep-set($map, "layouts", "xsmall", 600px);
-		$expect: (
-			"columns": 12,
-			"layouts": (
-				"small": 800px,
-				"medium": 1000px,
-				"large": 1200px,
-				"xsmall": 600px
-			)
-		);
-		@include assert-equal($actual, $expect);
-	}
+  @include test("map-deep-set") {
+    $map: (
+      "columns": 12,
+      "layouts": (
+        "small": 800px,
+        "medium": 1000px,
+        "large": 1200px
+      )
+    );
+    $actual: map-deep-set($map, "layouts", "xsmall", 600px);
+    $expect: (
+      "columns": 12,
+      "layouts": (
+        "small": 800px,
+        "medium": 1000px,
+        "large": 1200px,
+        "xsmall": 600px
+      )
+    );
+    @include assert-equal($actual, $expect);
+  }
 
-	@include test("map-deep-get") {
-		$map: (
-			"columns": 12,
-			"layouts": (
-				"small": 800px,
-				"medium": 1000px,
-				"large": 1200px
-			)
-		);
-		$actual: map-deep-get($map, "layouts", "small");
-		$expect: 800px;
-		@include assert-equal($actual, $expect);
-	}
+  @include test("map-deep-get") {
+    $map: (
+      "columns": 12,
+      "layouts": (
+        "small": 800px,
+        "medium": 1000px,
+        "large": 1200px
+      )
+    );
+    $actual: map-deep-get($map, "layouts", "small");
+    $expect: 800px;
+    @include assert-equal($actual, $expect);
+  }
 
-	@include test("map-get-next-key") {
-		$map: ("a": 1, "b": 2, "c": 3);
-		$actual: map-get-next-key($map, "b");
-		$expect: "c";
-		@include assert-equal($actual, $expect);
-	}
+  @include test("map-get-next-key") {
+    $map: ("a": 1, "b": 2, "c": 3);
+    $actual: map-get-next-key($map, "b");
+    $expect: "c";
+    @include assert-equal($actual, $expect);
+  }
 
-	@include test("map-get-next-key / return is null") {
-		$map: ("a": 1, "b": 2, "c": 3);
-		$actual: map-get-next-key($map, "c");
-		$expect: null;
-		@include assert-equal($actual, $expect);
-	}
+  @include test("map-get-next-key / return is null") {
+    $map: ("a": 1, "b": 2, "c": 3);
+    $actual: map-get-next-key($map, "c");
+    $expect: null;
+    @include assert-equal($actual, $expect);
+  }
 
-	@include test("map-get-prev-key") {
-		$map: ("a": 1, "b": 2, "c": 3);
-		$actual: map-get-prev-key($map, "b");
-		$expect: "a";
-		@include assert-equal($actual, $expect);
-	}
+  @include test("map-get-prev-key") {
+    $map: ("a": 1, "b": 2, "c": 3);
+    $actual: map-get-prev-key($map, "b");
+    $expect: "a";
+    @include assert-equal($actual, $expect);
+  }
 
-	@include test("map-get-prev-key / return is null") {
-		$map: ("a": 1, "b": 2, "c": 3);
-		$actual: map-get-prev-key($map, "a");
-		$expect: null;
-		@include assert-equal($actual, $expect);
-	}
+  @include test("map-get-prev-key / return is null") {
+    $map: ("a": 1, "b": 2, "c": 3);
+    $actual: map-get-prev-key($map, "a");
+    $expect: null;
+    @include assert-equal($actual, $expect);
+  }
 
 }

@@ -9,16 +9,16 @@
 /// @since 1.0.0
 ///
 /// @param {string} $key
-/// 	色名
+///   色名
 ///
 /// @return {color}
 ///
 /// @example scss
-/// 	$_colors: ("black": #000, "white": #fff);
-/// 	@debug get-color("black"); // #000
+///   $_colors: ("black": #000, "white": #fff);
+///   @debug get-color("black"); // #000
 
 @function color($key) {
-	@return map-get($_colors, $key);
+  @return map-get($_colors, $key);
 }
 
 /// 絶対単位の値から相対単位の値に変換する
@@ -32,12 +32,12 @@
 /// @return {number}
 ///
 /// @example scss
-/// 	@debug absolute-to-relative(10, 100) * 1em; // .1em
-/// 	@debug absolute-to-relative(10, 100, true); // 10
+///   @debug absolute-to-relative(10, 100) * 1em; // .1em
+///   @debug absolute-to-relative(10, 100, true); // 10
 
 @function absolute-to-relative($abs, $basis, $percentage: false) {
-	$abs:      strip-unit($abs);
-	$basis:    strip-unit($basis);
-	$relative: $abs / $basis;
-	@return if($percentage, $relative * 100, $relative);
+  $abs:      strip-unit($abs);
+  $basis:    strip-unit($basis);
+  $relative: $abs / $basis;
+  @return if($percentage, $relative * 100, $relative);
 }

@@ -20,7 +20,7 @@ rules:
   force-pseudo-nesting: 0
   indentation:
     - 1
-    - size: tab
+    - size: 2
   mixins-before-declarations:
     - 1
     - exclude:

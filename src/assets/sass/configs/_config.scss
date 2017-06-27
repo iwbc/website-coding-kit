@@ -33,11 +33,11 @@ $_grid-gutter: 2%;
 /// @since 1.0.0
 
 $_breakpoints: (
-	"xs": 0,
-	"sm": 480px,
-	"md": 768px,
-	"lg": 1024px,
-	"xl": 1440px
+  "xs": 0,
+  "sm": 480px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1440px
 );
 
 /// Noto Sans CJK JPの設定<br>
@@ -47,13 +47,13 @@ $_breakpoints: (
 /// @since 1.2.0
 
 $_noto-sans-cjk-jp: (
-	"Thin":      false,
-	"Light":     false,
-	"DemiLight": 400,
-	"Regular":   false,
-	"Medium":    700,
-	"Bold":      false,
-	"Black":     false
+  "Thin":      false,
+  "Light":     false,
+  "DemiLight": 400,
+  "Regular":   false,
+  "Medium":    700,
+  "Bold":      false,
+  "Black":     false
 );
 
 /// フォントファミリー
@@ -117,10 +117,10 @@ $_transition-duration: .15s;
 /// @since 1.0.0
 
 $_colors: (
-	"text":              $_text-color,
-	"text-link":         $_text-link-color,
-	"text-link-hover":   $_text-link-hover-color,
-	"text-link-visited": $_text-link-visited-color,
-	"white":             #fff,
-	"black":             #000
+  "text":              $_text-color,
+  "text-link":         $_text-link-color,
+  "text-link-hover":   $_text-link-hover-color,
+  "text-link-visited": $_text-link-visited-color,
+  "white":             #fff,
+  "black":             #000
 );

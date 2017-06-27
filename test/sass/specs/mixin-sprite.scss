@@ -2,25 +2,25 @@
 
 @include test-module("mixin/_sprite.scss") {
 
-	@include test("sprite") {
-		@include assert {
-			@include output {
-				.element {
-					@include sprite("test2x-down");
-				}
-			}
-			@include expect {
-				.element {
-					background-image: url("images/test2x.png");
-					background-repeat: no-repeat;
-					background-position: 0px 0px;
-					background-size: 262px 262px;
-					width: 128px;
-					height: 128px;
-					display: inline-block;
-				}
-			}
-		}
-	}
+  @include test("sprite") {
+    @include assert {
+      @include output {
+        .element {
+          @include sprite("test2x-down");
+        }
+      }
+      @include expect {
+        .element {
+          background-image: url("images/test2x.png");
+          background-repeat: no-repeat;
+          background-position: 0px 0px;
+          background-size: 262px 262px;
+          width: 128px;
+          height: 128px;
+          display: inline-block;
+        }
+      }
+    }
+  }
 
 }

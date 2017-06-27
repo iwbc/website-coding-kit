@@ -1,28 +1,28 @@
 @charset "UTF-8";
 
 @for $i from 0 through 20 {
-	$num: $i * 5;
-	.u_m-#{$num} {
-		margin: #{$num}px !important;
-	}
-	.u_my-#{$num} {
-		margin-top: #{$num}px !important;
-		margin-bottom: #{$num}px !important;
-	}
-	.u_mx-#{$num} {
-		margin-right: #{$num}px !important;
-		margin-left: #{$num}px !important;
-	}
-	.u_mt-#{$num} {
-		margin-top: #{$num}px !important;
-	}
-	.u_mr-#{$num} {
-		margin-right: #{$num}px !important;
-	}
-	.u_mb-#{$num} {
-		margin-bottom: #{$num}px !important;
-	}
-	.u_ml-#{$num} {
-		margin-left: #{$num}px !important;
-	}
+  $num: $i * 5;
+  .u_m-#{$num} {
+    margin: #{$num}px !important;
+  }
+  .u_my-#{$num} {
+    margin-top: #{$num}px !important;
+    margin-bottom: #{$num}px !important;
+  }
+  .u_mx-#{$num} {
+    margin-right: #{$num}px !important;
+    margin-left: #{$num}px !important;
+  }
+  .u_mt-#{$num} {
+    margin-top: #{$num}px !important;
+  }
+  .u_mr-#{$num} {
+    margin-right: #{$num}px !important;
+  }
+  .u_mb-#{$num} {
+    margin-bottom: #{$num}px !important;
+  }
+  .u_ml-#{$num} {
+    margin-left: #{$num}px !important;
+  }
 }

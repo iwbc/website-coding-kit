@@ -5,16 +5,16 @@ $_viewport-height: 1136px;
 $_grid-columns: 24;
 $_grid-gutter: 2%;
 $_breakpoints: (
-	"xs": 0,
-	"sm": 480px,
-	"md": 768px,
-	"lg": 1024px,
-	"xl": 1440px
+  "xs": 0,
+  "sm": 480px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1440px
 );
 $_font-size: 16px;
 $_colors: (
-	"white": #fff,
-	"black": #000
+  "white": #fff,
+  "black": #000
 );
 
 @import "true";
