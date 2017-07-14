@@ -19,17 +19,17 @@ gulp.task('sprite:png', () => {
 
       const dirname       = file.path.split(path.sep).pop();
       const relative_path = path.relative(config.path.style.dest.css, config.path.image.dest);
-      const is_retina     = /2x$/.test(dirname);
-      const options    = {
+      const scale         = /@(\d)x$/.exec(dirname);
+      const options       = {
         cssTemplate        : 'gulp/templates/spritesmith.handlebars',
-        cssSpritesheetName : dirname,
+        cssSpritesheetName : dirname.replace(/@(\dx)$/, '-$1'),
         imgName            : `${dirname}.png`,
         cssName            : `_${dirname}.scss`,
         imgPath            : `${relative_path}/${dirname}.png`,
         algorithm          : 'binary-tree',
         padding            : 6,
         cssOpts            : {
-          is_retina : is_retina
+          scale : scale ? scale[1] : 1
         }
       }
 
