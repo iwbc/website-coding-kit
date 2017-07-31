@@ -23,8 +23,6 @@ module.exports = {
       css_minify       : false,
       // JSのMinify化
       js_minify        : false,
-      // 統合済BowerパッケージのMinify化
-      bower_minify     : true,
       // ModernizrのMinify化
       modernizr_minify : true,
       // SourceMapの出力
@@ -34,7 +32,6 @@ module.exports = {
     production : {
       css_minify       : false,
       js_minify        : false,
-      bower_minify     : true,
       modernizr_minify : true,
       sourcemap        : false
     }
@@ -55,17 +52,6 @@ module.exports = {
       // 静的サイトの場合は、コメントアウトまたは削除する
       // proxy     : 'example.com',
     }
-  },
-
-  /**
-   * Bowerの設定
-   */
-
-  bower : {
-    // 出力ファイル名（拡張子は含まない）
-    output : 'libs',
-    // 出力に含めないmainファイル
-    excludes: []
   },
 
   /**
@@ -162,10 +148,6 @@ module.exports = {
    */
 
   path : {
-    // Bower
-    bower : {
-      dest : 'src/assets/vendors'
-    },
     // Modernizr
     modernizr : {
       dest  : 'src/assets/vendors'
