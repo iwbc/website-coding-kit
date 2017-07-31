@@ -20,20 +20,23 @@ module.exports = {
     // 開発用ビルド
     default : {
       // CSSのMinify化
-      css_minify       : false,
+      css_minify : false,
       // JSのMinify化
-      js_minify        : false,
-      // ModernizrのMinify化
-      modernizr_minify : true,
+      js_minify  : false,
       // SourceMapの出力
-      sourcemap        : true
+      sourcemaps : {
+        css : true,
+        js  : 'source-map'
+      }
     },
     // 本番用ビルド
     production : {
-      css_minify       : false,
-      js_minify        : false,
-      modernizr_minify : true,
-      sourcemap        : false
+      css_minify : true,
+      js_minify  : true,
+      sourcemaps : {
+        css : false,
+        js  : false
+      }
     }
   },
 
@@ -51,22 +54,6 @@ module.exports = {
       // 動的サイトの場合は、別途XAMPP等でサーバーを用意し、以下のproxyにドメインを記述する
       // 静的サイトの場合は、コメントアウトまたは削除する
       // proxy     : 'example.com',
-    }
-  },
-
-  /**
-   * Modernizrの設定
-   */
-
-  modernizr : {
-    // 出力ファイル名（拡張子は含まない）
-    output : 'modernizr',
-    // 設定
-    // Options -> https://github.com/Modernizr/customizr
-    settings : {
-      options : [
-        'setClasses'
-      ]
     }
   },
 
@@ -96,8 +83,8 @@ module.exports = {
     // Options -> https://github.com/sass/node-sass#options
     sass : {
       outputStyle : 'expanded',
-      indentType  : 'tab',
-      indentWidth : 1
+      indentType  : 'space',
+      indentWidth : 2
     },
     // sassdoc
     // http://sassdoc.com/configuration/
@@ -110,18 +97,6 @@ module.exports = {
       },
       noUpdateNotifier : true,
       verbose          : true
-    }
-  },
-
-  /**
-   * JSの設定
-   */
-
-  script : {
-    // buble
-    // Options -> https://buble.surge.sh/guide/#using-the-javascript-api
-    buble  : {
-      target: { ie: 9 }
     }
   },
 
@@ -148,10 +123,6 @@ module.exports = {
    */
 
   path : {
-    // Modernizr
-    modernizr : {
-      dest  : 'src/assets/vendors'
-    },
     // EJS
     ejs : {
       src   : ['src/**/*.ejs', '!src/**/_*.ejs'],
@@ -166,12 +137,6 @@ module.exports = {
         css     : 'dest/assets/css',
         sassdoc : 'docs/sass'
       }
-    },
-    // JS
-    script : {
-      src   : 'src/assets/js/*.js',
-      watch : 'src/assets/js/**/*.js',
-      dest  : 'dest/assets/js'
     },
     // Image
     image : {

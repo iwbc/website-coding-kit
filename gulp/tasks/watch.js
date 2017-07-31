@@ -20,9 +20,6 @@ gulp.task('watch', () => {
   $.watch(config.path.style.watch, () => {
     gulp.start('style');
   });
-  $.watch(config.path.script.watch, () => {
-    gulp.start('script');
-  });
   $.watch(config.path.image.watch, () => {
     gulp.start('image');
   });

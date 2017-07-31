@@ -53,7 +53,6 @@ yarn run build
 デフォルトの設定は、以下のとおりです。
 
 - CSS/JSのMinify化 : 無効
-- ModernizrのMinify化 : 有効
 - SourceMapの出力 : 無効
 
 ```console
@@ -67,14 +66,6 @@ yarn run build -- --env=production
 
 ```console
 yarn run start
-```
-
-### Modernizrのビルド
-
-設定およびJS/SCSSからModernizrのビルドを行うには、以下のコマンドを実行します。
-
-```console
-yarn run modernizr
 ```
 
 ### PNG/SVGスプライトシートの生成
