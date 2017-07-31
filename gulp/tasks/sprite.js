@@ -7,7 +7,7 @@ const config = require('../config.js');
 const $      = require('../load.js');
 
 /**
- * スプライトの生成
+ * PNGスプライトの生成
  */
 
 gulp.task('sprite', ['sprite:png', 'sprite:svg']);
@@ -31,7 +31,7 @@ gulp.task('sprite:png', () => {
         cssOpts            : {
           scale : scale ? scale[1] : 1
         }
-      }
+      };
 
       const data = gulp.src(`${file.path}/*.png`)
         .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
@@ -42,6 +42,10 @@ gulp.task('sprite:png', () => {
       return ms(image, style);
     }));
 });
+
+/**
+ * SVGスプライトの生成
+ */
 
 gulp.task('sprite:svg', () => {
   return gulp.src(config.path.sprite.svg.src)

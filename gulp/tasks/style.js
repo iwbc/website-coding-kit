@@ -21,12 +21,12 @@ gulp.task('style', () => {
     .pipe($.sassLint())
         .pipe($.sassLint.format())
         .pipe($.sassLint.failOnError())
-    .pipe($.if(config.build.sourcemap, $.sourcemaps.init()))
+    .pipe($.if(config.build.sourcemaps.css, $.sourcemaps.init()))
     .pipe($.sassGlob())
     .pipe($.sass(config.style.sass))
     .pipe($.pleeease(config.style.pleeease))
     .pipe($.if(config.build.css_minify, $.csso()))
-    .pipe($.if(config.build.sourcemap, $.sourcemaps.write()))
+    .pipe($.if(config.build.sourcemaps.css, $.sourcemaps.write()))
     .pipe(gulp.dest(config.path.style.dest.css))
     .pipe($.browser.stream());
 
