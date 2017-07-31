@@ -8,7 +8,6 @@ Website Coding Kitの実行には以下のツールが必要です。
 - [Node.js](https://nodejs.org/ja/) v6.0以上 `必須`
 - [Yarn](https://yarnpkg.com/) v0.24以上 `必須`
 - [Gulp](http://gulpjs.com/) v3.9以上
-- [Bower](https://bower.io/) v1.7以上
 
 ## セットアップ
 
@@ -30,7 +29,6 @@ Website Coding Kitの動作設定は、`/gulpconfig.js`に記述されていま�
 以下のビルドを一括して行います。
 
 - PNG/SVGスプライトシートの生成
-- Bowerパッケージの統合
 - EJS/Sass/JSのコンパイル
 - 画像の最適化
 - `/dest`ディレクトリへのファイルのコピーなど
@@ -41,7 +39,6 @@ Website Coding Kitの動作設定は、`/gulpconfig.js`に記述されていま�
 デフォルトの設定は、以下のとおりです。
 
 - CSS/JSのMinify化 : 無効
-- BowerパッケージのMinify化 : 有効
 - SourceMapの出力 : 有効
 
 **destディレクトリ内の状態を最新にするため、開発前やリポジトリをpullした後には、必ずビルドを行ってください。**
@@ -56,7 +53,7 @@ yarn run build
 デフォルトの設定は、以下のとおりです。
 
 - CSS/JSのMinify化 : 無効
-- Bowerパッケージ/ModernizrのMinify化 : 有効
+- ModernizrのMinify化 : 有効
 - SourceMapの出力 : 無効
 
 ```console
@@ -71,18 +68,6 @@ yarn run build -- --env=production
 ```console
 yarn run start
 ```
-
-### Bowerパッケージのインストール
-
-Bowerパッケージをインストールするには、以下のコマンドを実行します。  
-※ Bowerがインストールされている必要があります。
-
-```
-bower install --save {package-name}
-yarn run bower
-```
-
-なお、出来るだけパッケージのバージョンを固定するために、`bower.json`に記述されているパッケージのバージョン表記の先頭から`^`を取り除くことを推奨します。
 
 ### Modernizrのビルド
 
@@ -162,7 +147,6 @@ MixinまたはClassを使用して、スプライト画像を表示できます�
 ┃  ┃  ┃  ┣ png/
 ┃  ┃  ┃  ┗ svg/
 ┃  ┃  ┗ vendors/ # ライブラリなど第三者制作のJSはここに保存します。
-┃  ┃      ┗ libs.js # 各Bowerパッケージのmainファイルは、このファイルとして統合して出力されます。
 ┃  ┗ index.ejs
 ┗ gulpconfig.js # Website Coding Kitの動作設定ファイル。
 ```
