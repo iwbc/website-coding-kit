@@ -1,7 +1,7 @@
 'use strict';
 
 const minimist = require('minimist');
-let config     = require('../gulpconfig.js');
+let config     = require('../gulp.config.js');
 
 /**
  * コマンドの引数から設定の書き換え

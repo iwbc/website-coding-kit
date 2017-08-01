@@ -25,7 +25,7 @@ gulp.task('style', () => {
     .pipe($.sassGlob())
     .pipe($.sass(config.style.sass))
     .pipe($.pleeease(config.style.pleeease))
-    .pipe($.if(config.build.css_minify, $.csso()))
+    .pipe($.if(config.build.minify.css, $.csso()))
     .pipe($.if(config.build.sourcemaps.css, $.sourcemaps.write()))
     .pipe(gulp.dest(config.path.style.dest.css))
     .pipe($.browser.stream());
