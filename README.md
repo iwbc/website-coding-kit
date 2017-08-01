@@ -6,7 +6,7 @@ Website Coding Kitの実行には以下のツールが必要です。
 実行環境にインストールされていない場合は、各ツールのWebサイトからインストールしてください。
 
 - [Node.js](https://nodejs.org/ja/) v6.0以上 `必須`
-- [Yarn](https://yarnpkg.com/) v0.24以上 `必須`
+- [Yarn](https://yarnpkg.com/) v0.27.5以上 `必須`
 - [Gulp](http://gulpjs.com/) v3.9以上
 
 ## セットアップ
