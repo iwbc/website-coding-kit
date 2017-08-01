@@ -29,7 +29,7 @@ const moduleRules = [
       use      : [{
         loader  : 'css-loader',
         options : {
-          minimize : config.build.js_minify
+          minimize : config.build.minify.js
         }
       }]
     })
@@ -87,7 +87,7 @@ const plugins = () => {
   if (config.ENV !== 'development') {
     plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
   }
-  if (config.build.js_minify) {
+  if (config.build.minify.js) {
     plugins.push(new webpack.optimize.UglifyJsPlugin({
       sourceMap : config.build.sourcemaps.js ? true : false
     }));
