@@ -2,7 +2,6 @@
 
 const gulp    = require('gulp');
 const extend  = require('extend');
-const history = require('connect-history-api-fallback');
 const config  = require('../config.js');
 const $       = require('../load.js');
 
@@ -14,10 +13,9 @@ gulp.task('server', () => {
 
   let bs_options = extend(true, {
     server: {
-      baseDir    : config.dest,
-      index      : 'index.html',
-      routes     : {},
-      middleware : [history()]
+      baseDir : config.dest,
+      index   : 'index.html',
+      routes  : {}
     }
   }, config.server.browsersync);
 
