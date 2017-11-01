@@ -10,7 +10,7 @@ const src  = 'src';
  * 出力先ディレクトリパス
  */
 
-const dest = 'dest';
+const dest = 'public';
 
 /**
  * build タスク
@@ -185,6 +185,7 @@ const path = {
  */
 
 module.exports = {
+  src    : src,
   dest   : dest,
   build  : build,
   server : server,
