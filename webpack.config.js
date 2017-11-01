@@ -1,13 +1,13 @@
 'use strict';
 
-const path                   = require('path');
-const webpack                = require('webpack');
-const ExtractTextPlugin      = require('extract-text-webpack-plugin');
-const config                 = require('./gulp/config.js');
+const path              = require('path');
+const webpack           = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const config            = require('./gulp/config.js');
 
-const src     = path.join(__dirname, 'src/assets/js');
-const dest    = path.join(__dirname, 'dest/assets/js');
-const vendors = path.relative(dest, path.join(__dirname, 'dest/assets/vendors'));
+const src     = path.join(__dirname, `${config.src}/assets/js`);
+const dest    = path.join(__dirname, `${config.dest}/assets/js`);
+const vendors = path.relative(dest, path.join(__dirname, `${config.dest}/assets/vendors`));
 
 /**
  * Entry points
