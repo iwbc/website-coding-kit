@@ -1,13 +1,13 @@
-# [WIP] Website Coding Kit v2.0.0-dev
+# Website Coding Kit v2.0.0-dev
 
 ## 動作要件
 
 Website Coding Kitの実行には以下のツールが必要です。  
 実行環境にインストールされていない場合は、各ツールのWebサイトからインストールしてください。
 
-- [Node.js](https://nodejs.org/ja/) v6.0以上 `必須`
-- [Yarn](https://yarnpkg.com/) v0.27.5以上 `必須`
-- [Gulp](http://gulpjs.com/) v3.9以上
+- [Node.js](https://nodejs.org/ja/) v6.0 - 7.x `必須`
+- [Yarn](https://yarnpkg.com/) v1.3.2 - `必須`
+- [Gulp](http://gulpjs.com/) v3.9 -
 
 ## セットアップ
 
@@ -31,7 +31,7 @@ Website Coding Kitの動作設定は、`/gulpconfig.js`に記述されていま�
 - PNG/SVGスプライトシートの生成
 - EJS/Sass/JSのコンパイル
 - 画像の最適化
-- `/dest`ディレクトリへのファイルのコピーなど
+- 公開用データディレクトリへのファイルのコピーなど
 
 #### 開発用ビルド
 
@@ -41,7 +41,7 @@ Website Coding Kitの動作設定は、`/gulpconfig.js`に記述されていま�
 - CSS/JSのMinify化 : 無効
 - SourceMapの出力 : 有効
 
-**destディレクトリ内の状態を最新にするため、開発前やリポジトリをpullした後には、必ずビルドを行ってください。**
+**公開用データディレクトリ内の状態を最新にするため、開発前やリポジトリをpullした後には、必ずビルドを行ってください。**
 
 ```console
 yarn run build
