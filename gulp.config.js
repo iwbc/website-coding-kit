@@ -158,7 +158,7 @@ const path = {
     svg : {
       src   : `${src}/assets/sprites/svg/*`,
       watch : `${src}/assets/sprites/svg/**/*`,
-      dest  : `${src}/assets/images/sprites/svg`
+      dest  : `${dest}/assets/images/sprites/svg`
     }
   },
   // 処理せずdestへコピーするファイル
