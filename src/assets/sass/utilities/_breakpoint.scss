@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+@each $key, $breakpoint in $_breakpoints {
+
+  $block: block inline inline-block;
+
+  .u_bp-hide-#{$key} {
+    @include mq-min($key) {
+      @include mq-max($key) {
+        display: none !important;
+      }
+    }
+  }
+  .u_bp-hide-lte-#{$key} {
+    @include mq-max($key) {
+      display: none !important;
+    }
+  }
+  .u_bp-hide-gte-#{$key} {
+    @include mq-min($key) {
+      display: none !important;
+    }
+  }
+
+  @for $i from 1 through length($block) {
+    $key-block: #{$key}-#{nth($block, $i)};
+    .u_bp-show-#{$key-block} {
+      @include mq-min($key) {
+        @include mq-max($key) {
+          display: nth($block, $i) !important;
+        }
+      }
+    }
+    .u_bp-show-lte-#{$key-block} {
+      @include mq-max($key) {
+        display: nth($block, $i) !important;
+      }
+    }
+    .u_bp-show-gte-#{$key-block} {
+      @include mq-min($key) {
+        display: nth($block, $i) !important;
+      }
+    }
+  }
+}

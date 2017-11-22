@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+////
+/// @group 02. メディアクエリー
+////
+
+/// ブラウザ幅またはviewportの幅が、指定したブレークポイントの最小値以上の場合にのみ、スタイルを適用する<br>
+/// 指定したブレークポイントの最小値が0の場合は、すべてにスタイルを適用する
+///
+/// @since 1.0.0
+///
+/// @param {string} $key
+///   ブレークポイント
+///
+/// @example scss
+///   .element {
+///     @include mq-min("sm") {
+///       width: 100%;
+///     }
+///   }
+///
+///   // CSS Output
+///   @media (min-width: 480px) {
+///     .element {
+///       width: 100%;
+///     }
+///   }
+
+@mixin mq-min($key) {
+  $min: breakpoint-min($key);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
+/// ブラウザ幅またはviewportの幅が、指定したブレークポイントの最大値未満の場合にのみ、スタイルを適用する<br>
+/// 指定したブレークポイントの最大値がない場合、すべてにスタイルを適用する
+///
+/// @since 1.0.0
+///
+/// @param {string} $key
+///   ブレークポイント
+///
+/// @example scss
+///   .element {
+///     @include mq-max("sm") {
+///       width: 100%;
+///     }
+///   }
+///
+///   // CSS Output
+///   @media (max-width: 767px) {
+///     .element {
+///       width: 100%;
+///     }
+///   }
+
+@mixin mq-max($key) {
+  $max: breakpoint-max($key);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
