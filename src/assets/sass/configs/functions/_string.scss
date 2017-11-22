@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+////
+/// @group 10. 文字列の変換
+////
+
+/// 区切り文字で区切られた文字列をキャメルケースまたはパスカルケースに変換する
+///
+/// @since 2.0.0
+///
+/// @param {string} $words
+///   区切り文字で区切られた文字列
+/// @param {boolean} $pascalcase [false]
+///   キャメルケースではなく、パスカルケースに変換する
+/// @param {list} $separators [(" ", "-", "_")]
+///   区切り文字
+///
+/// @return {string}
+///
+/// @example scss
+///   @debug capitalize("hello world"); // helloWorld
+///   @debug capitalize("hello world", true); // HelloWorld
+
+@function capitalize($words, $pascalcase: false, $separators: (" ", "-", "_")) {
+
+  $capitalized: "";
+  $capital: $pascalcase;
+
+  @for $i from 1 through str-length($words) {
+    $letter: str-slice($words, $i, $i);
+    @if (has($separators, $letter)) {
+      $capital: true;
+    }
+    @else {
+      $capitalized: $capitalized + if($capital, to-upper-case($letter), $letter);
+      $capital: false;
+    }
+  }
+
+  @return $capitalized;
+}

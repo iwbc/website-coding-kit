@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+////
+/// @group 02. メディアクエリー
+////
+
+/// 指定したブレークポイントの最小値を取得する
+///
+/// @since 1.0.0
+///
+/// @param {string} $key
+///   $_breakpointsのキー
+///
+/// @return {number | null}
+///   値が`0`の場合は`null`を返す
+///
+/// @example scss
+///   $_breakpoints: ("sm": 0, "md": 768px, "lg": 1024px);
+///   @debug breakpoint-min("md"); // 768px
+///   @debug breakpoint-min("sm"); // null
+
+@function breakpoint-min($key) {
+  $min: map-get($_breakpoints, $key);
+  @return if(strip-unit($min) != 0, $min, null);
+}
+
+/// 指定したブレークポイントの最大値 (次のブレークポイントの最小値から-1したもの)を取得する
+///
+/// @since 1.0.0
+///
+/// @param {string} $key
+///   $_breakpointsのキー
+///
+/// @return {number | null}
+///   指定したブレークポイントの要素が、最後の要素である場合は、`null`を返す
+///
+/// @example scss
+///   $_breakpoints: ("sm": 0, "md": 768px, "lg": 1024px);
+///   @debug breakpoint-min("md"); // 1023px
+///   @debug breakpoint-min("lg"); // null
+
+@function breakpoint-max($key) {
+  $next: map-get-next-key($_breakpoints, $key);
+  @return if($next != null, map-get($_breakpoints, $next) - 1, null);
+}

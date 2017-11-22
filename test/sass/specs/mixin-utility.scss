@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+@include test-module("mixin/_utility.scss") {
+
+  @include test("clearfix") {
+    @include assert {
+      @include output {
+        .element {
+          @include clearfix;
+        }
+      }
+      @include expect {
+        .element::before, .element::after {
+          display: table;
+          content: " ";
+        }
+        .element::after {
+          clear: both;
+        }
+      }
+    }
+  }
+
+}

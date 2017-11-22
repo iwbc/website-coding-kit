@@ -1,5 +1,7 @@
 files:
   ignore:
+    - 'src/assets/sass/foundations/sprites/**/*'
+    - 'src/assets/sass/foundations/_reset.scss'
     - 'src/assets/sass/vendors/**/*'
     - 'test/sass/**/*'
 rules:
@@ -8,7 +10,9 @@ rules:
     - style: stroustrup
   class-name-format:
     - 1
-    - convention: hyphenatedbem
+    -
+      allow-leading-underscore: false
+      convention: ^[_a-z](?:(?!([^-_a-z0-9]|--)).)*$
   clean-import-paths: 0
   empty-line-between-blocks: 0
   force-attribute-nesting: 0
@@ -16,7 +20,7 @@ rules:
   force-pseudo-nesting: 0
   indentation:
     - 1
-    - size: tab
+    - size: 2
   mixins-before-declarations:
     - 1
     - exclude:
