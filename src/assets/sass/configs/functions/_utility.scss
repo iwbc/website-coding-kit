@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+////
+/// @group 99. ユーティリティ
+////
+
+/// 指定した色名のカラーコードを取得する
+///
+/// @since 1.0.0
+///
+/// @param {string} $key
+///   色名
+///
+/// @return {color}
+///
+/// @example scss
+///   $_colors: ("black": #000, "white": #fff);
+///   @debug get-color("black"); // #000
+
+@function color($key) {
+  @return map-get($_colors, $key);
+}
+
+/// 絶対単位の値から相対単位の値に変換する
+///
+/// @since 1.0.0
+///
+/// @param {number} $abs - 変換対象値 (単位は省略可)
+/// @param {number} $basis - 変換基準値 (単位は省略可)
+/// @param {boolean} $percentage [false] - 百分率の形式（%の単位なし）で返す場合はtrueを指定する
+///
+/// @return {number}
+///
+/// @example scss
+///   @debug absolute-to-relative(10, 100) * 1em; // .1em
+///   @debug absolute-to-relative(10, 100, true); // 10
+
+@function absolute-to-relative($abs, $basis, $percentage: false) {
+  $abs:      strip-unit($abs);
+  $basis:    strip-unit($basis);
+  $relative: $abs / $basis;
+  @return if($percentage, $relative * 100, $relative);
+}

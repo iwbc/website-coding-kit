@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+@include test-module("functions/_list.scss") {
+
+  @include test("first") {
+    $list: ("A" "B" "C");
+    $actual: first($list);
+    $expect: "A";
+    @include assert-equal($actual, $expect);
+  }
+
+  @include test("last") {
+    $list: ("A" "B" "C");
+    $actual: last($list);
+    $expect: "C";
+    @include assert-equal($actual, $expect);
+  }
+
+  @include test("prepend") {
+    $list: ("A" "B" "C");
+    $actual: prepend($list, "Z");
+    $expect: ("Z" "A" "B" "C");
+    @include assert-equal($actual, $expect);
+  }
+
+  @include test("shift") {
+    $list: ("A" "B" "C");
+    $actual: shift($list);
+    $expect: ("B" "C");
+    @include assert-equal($actual, $expect);
+  }
+
+  @include test("pop") {
+    $list: ("A" "B" "C");
+    $actual: pop($list);
+    $expect: ("A" "B");
+    @include assert-equal($actual, $expect);
+  }
+
+  @include test("explode") {
+    $actual: explode("2000-01-01", "-");
+    $expect: ("2000" "01" "01");
+    @include assert-equal($actual, $expect);
+  }
+
+  @include test("has / operation is AND") {
+    $list: ("A" "B" "C");
+    $actual: has($list, ("A" "B"));
+    $expect: true;
+    @include assert-equal($actual, $expect);
+  }
+
+  @include test("has / operation is AND / return is false") {
+    $list: ("A" "B" "C");
+    $actual: has($list, ("A" "Z"));
+    $expect: false;
+    @include assert-equal($actual, $expect);
+  }
+
+  @include test("has / operation is OR") {
+    $list: ("A" "B" "C");
+    $actual: has($list, ("A" "Z"), "OR");
+    $expect: true;
+    @include assert-equal($actual, $expect);
+  }
+
+  @include test("has / operation is OR / return is false") {
+    $list: ("A" "B" "C");
+    $actual: has($list, ("Y", "Z"), "OR");
+    $expect: false;
+    @include assert-equal($actual, $expect);
+  }
+
+}

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@for $i from 1 through 9 {
+  $num: $i * 100;
+  .u_fw-#{$num} {
+    font-weight: $num !important;
+  }
+}
+.u_fw-normal {
+  font-weight: normal !important;
+}
+.u_fw-bold   {
+  font-weight: bold !important;
+}

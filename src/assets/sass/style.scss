@@ -1,35 +1,54 @@
 @charset "UTF-8";
 
 //
-// Reset
+// Config
 //
 
-@import "vendors/_sanitize.scss";
+@import "configs/_config.scss";
+@import "configs/_variable.scss";
+@import "configs/functions/_*.scss";
+@import "configs/mixins/_*.scss";
 
 //
-// Foundations
+// Foundation
 //
 
-@import "foundations/_config.scss";
-@import "foundations/functions/_*.scss";
-@import "foundations/mixins/_*.scss";
-// @import "foundations/sprites/_*.scss";
-@import "foundations/_variable.scss";
+@import "foundations/_reset.scss";
 @import "foundations/_font.scss";
 @import "foundations/_tag.scss";
 
 //
-// Layouts
+// Layout
 //
 
 @import "layouts/_*.scss";
 
 //
-// Objects
+// Object / Module
 //
 
 @import "objects/modules/_*.scss";
-// @import "objects/components/_*.scss";
-// @import "objects/blocks/_*.scss";
-// @import "objects/pages/_*.scss";
-@import "objects/utilities/_*.scss";
+
+//
+// Object / Component
+//
+
+@import "objects/components/_*.scss";
+
+//
+// Object / Package
+//
+
+@import "objects/packages/_*.scss";
+
+//
+// Page
+//
+
+@import "pages/_*.scss";
+
+//
+// Utility
+//
+
+@import "utilities/_*.scss";
