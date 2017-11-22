@@ -1,3 +1,26 @@
+## 2.0.0
+
+#### Breaking
+
+- Stubcellのモックサーバ機能を廃止
+- Sassのファイル構成を変更
+- iconfontタスクを廃止
+- Bowerを廃止
+- JSのビルドツールをrollup/bubleからwebpack/babelに変更
+
+
+#### Change
+
+- Sassのグローバル変数名を_からはじめるよう変更
+- yarn run initコマンドをyarn run setupに変更
+- インデントルールをスペース2個に変更
+- PNG Spriteのディレクトリ名ルールを変更
+- destディレクトリ名をpublicに変更
+
+#### New
+
+- SVG Spriteの生成機能を追加
+
 ## 1.5.2
 
 #### New
