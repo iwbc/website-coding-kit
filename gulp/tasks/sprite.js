@@ -2,7 +2,9 @@
 
 const gulp   = require('gulp');
 const path   = require('path');
+const buffer = require('vinyl-buffer');
 const ms     = require('merge-stream');
+const png    = require('imagemin-pngquant');
 const config = require('../config.js');
 const $      = require('../load.js');
 
@@ -36,7 +38,13 @@ gulp.task('sprite:png', () => {
       const data = gulp.src(`${file.path}/*.png`)
         .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
         .pipe($.spritesmith(options));
-      const image = data.img.pipe(gulp.dest(config.path.sprite.png.dest.image));
+      const image = data.img
+        .pipe(buffer())
+        .pipe($.if(
+          config.image.enable,
+          $.imagemin([ png() ], { verbose : true })
+        ))
+        .pipe(gulp.dest(config.path.sprite.png.dest.image));
       const style = data.css.pipe(gulp.dest(config.path.sprite.png.dest.style));
 
       return ms(image, style);

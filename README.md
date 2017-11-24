@@ -1,4 +1,4 @@
-# Website Coding Kit v2.0.0
+# Website Coding Kit v2.0.1
 
 ## 動作要件
 
@@ -19,7 +19,7 @@ yarn run setup
 
 ## 各種設定
 
-Website Coding Kitの動作設定は、`/gulpconfig.js`に記述されています。  
+Website Coding Kitの動作設定は、`/gulp.config.js`に記述されています。  
 基本的に変更する必要はありませんが、変更する場合は、当該ファイルのコメントを確認してください。
 
 ## 使い方
@@ -70,49 +70,64 @@ yarn run start
 
 ### PNG/SVGスプライトシートの生成
 
-#### PNG
+#### PNGスプライトシート
 
 `/src/assets/sprites/png`直下のディレクトリごとに、スプライトシートとスプライトシート用のSassファイルを出力します。
 
 ##### 例
 
-`/src/assets/sprites/png`ディレクトリに`sample2x`ディレクトリを作成し、この中に`down.png`と`up.png`を入れた場合は、`/src/assets/images/sprites/png`ディレクトリに`sample2x.png`というスプライトシートと、`/src/assets/sass/foundations/sprites`ディレクトリに`_sample2x.scss`ファイルが出力されます。
+`/src/assets/sprites/png`ディレクトリに`sample@2x`ディレクトリを作成し、この中に`down.png`と`up.png`を入れた場合は、`/public/assets/images/sprites/png`ディレクトリに`sample2x.png`というスプライトシートと、`/src/assets/sass/foundations/sprites`ディレクトリに`_sample@2x.scss`ファイルが出力されます。
 
-Retina用のスプライトシートを生成する場合は、スプライトシートのディレクトリ名の末尾に`2x`を付与してください。
-
-MixinまたはClassを使用して、スプライト画像を表示できます。
+Retina用のスプライトシートを生成する場合は、スプライトシートのディレクトリ名の末尾に`@2x`を付与してください。  
+`@2x`を`@3x`のようにすることで、更に高解像度なディスプレイにも対応可能です。
 
 ###### Mixinを使用してスプライト画像を表示する
 
 ```scss
-// @include sprite("{スプライトシートディレクトリ名}-{スプライト画像ファイル名}", {表示倍率});
+// @include sprite("{スプライトシート名}-{倍率}-{スプライト名}");
 
 .element {
-	// 否Retina用スプライトシートの画像を表示する（等倍表示）
 	@include sprite("sample-down");
 }
 
-.element2x {
-	// Retina用スプライトシートの画像を表示する（0.5倍表示）
-	@include sprite("sample2x-down", .5);
+// Retina用
+.element-2x {
+	@include sprite("sample-2x-down");
 }
 ```
 
 ###### Classを使用してスプライト画像を表示する
 
 ```html
-<!-- m-sprite_{スプライトシートディレクトリ名}-{スプライト画像ファイル名} -->
+<!-- m_sprite-{スプライトシート名}-{倍率}-{スプライト名} -->
 
-<!-- 否Retina用スプライトシートの画像を表示する（等倍表示） -->
-<span class="m-sprite_sample-down"></span>
+<span class="m_sprite-sample-down"></span>
 
-<!-- Retina用スプライトシートの画像を表示する（0.5倍表示） -->
-<span class="m-sprite_sample2x-down"></span>
+<!-- Retina用 -->
+<span class="m_sprite-sample-2x-down"></span>
 ```
 
-#### SVG
+#### SVGスプライトシート
 
 `/src/assets/sprites/svg`直下のディレクトリごとに、スプライトシートを出力します。
+
+##### 例
+
+`/src/assets/sprites/svg`ディレクトリに`sample`ディレクトリを作成し、この中に`down.svg`と`up.svg`を入れた場合は、`/public/assets/images/sprites/svg`ディレクトリに`sample.svg`というSVGスプライトシートファイルが出力されます。
+
+###### SVGスプライト画像を表示する
+
+```html
+<!-- <title>は省略可 -->
+<!-- <use :xlink:href="{スプライトシートのファイルパス}#{スプライト画像名}" /> -->
+
+<svg>
+  <title>Image title</title>
+  <use :xlink:href="/public/assets/images/sprites/svg/sample.svg#down" />
+</svg>
+```
+
+- IE11は、use要素によるSVGの表示に対応していないため、[svg4everybody](https://github.com/jonathantneal/svg4everybody)が別途必要です。
 
 ## 主要ファイル構成
 
@@ -139,7 +154,7 @@ MixinまたはClassを使用して、スプライト画像を表示できます�
 ┃  ┃  ┃  ┗ svg/
 ┃  ┃  ┗ vendors/ # ライブラリなど第三者制作のJSはここに保存します。
 ┃  ┗ index.ejs
-┗ gulpconfig.js # Website Coding Kitの動作設定ファイル。
+┗ gulp.config.js # Website Coding Kitの動作設定ファイル。
 ```
 
 **Gitリポジトリで空のディレクトリを保持するため、`.gitkeep`ファイルだけが入っているディレクトリがあります。  
@@ -153,4 +168,4 @@ Website Coding Kitに組込済Sassファイルの仕様については、`/docs/
 
 ### FLOCSS
 
-Website Coding Kitに組込済のSassファイル構成は、FLOCSSベースのCSS設計ガイドラインに準拠しています。
+Website Coding Kitに組込済のSassファイル構成は、[FLOCSSベースのCSS設計ガイドライン](https://github.com/vanquishing/guide-css-design)に準拠しています。
