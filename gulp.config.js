@@ -152,7 +152,7 @@ const path = {
       watch : `${src}/assets/sprites/png/**/*`,
       dest  : {
         style : `${src}/assets/sass/foundations/sprites`,
-        image : `${src}/assets/images/sprites/png`
+        image : `${dest}/assets/images/sprites/png`
       }
     },
     svg : {

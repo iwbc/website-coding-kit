@@ -9,18 +9,16 @@
 /// @since 1.0.0
 ///
 /// @param {string} $key
-///   スプライト名 (フォルダ名-画像ファイル名)
-/// @param {number} $scale [1]
-///   スプライト画像の表示倍率
+///   スプライト名 (スプライトシート名-倍率-スプライト名)
 ///
 /// @example scss
 ///   .element {
-///     @include sprite("icon-down");
+///     @include sprite("icons-2x-caret-down");
 ///   }
 ///
 ///   // CSS Output
 ///   .element {
-///     background-image: url("../images/icon.png");
+///     background-image: url("../images/icons@2x.png");
 ///      background-repeat: no-repeat;
 ///      background-position: 0px 0px;
 ///      background-size: 262px 262px;
@@ -29,9 +27,10 @@
 ///      display: inline-block;
 ///   }
 
-@mixin sprite($key, $scale: 1) {
+@mixin sprite($key) {
   $sprite: map-get($_sprites, $key);
   $properties: map-get($sprite, "properties");
+  $scale: 1 / map-get($sprite, "scale");
   $image: nth($properties, 9);
   $offset-x: nth($properties, 3) * $scale;
   $offset-y: nth($properties, 4) * $scale;
