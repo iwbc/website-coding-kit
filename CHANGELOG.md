@@ -1,3 +1,13 @@
+## 2.1.0
+
+#### Breaking
+
+- [Sass] sprite mixinの第二引数`$scale`を廃止（倍率は生成時の設定に従うよう変更）
+
+#### Change
+
+- PNGスプライトシートの出力先をpublicに変更
+
 ## 2.0.0
 
 #### Breaking
