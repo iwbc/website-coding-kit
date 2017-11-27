@@ -168,4 +168,4 @@ Website Coding Kitに組込済Sassファイルの仕様については、`/docs/
 
 ### FLOCSS
 
-Website Coding Kitに組込済のSassファイル構成は、[FLOCSSベースのCSS設計ガイドライン](https://github.com/vanquishing/guide-css-design)に準拠しています。
+Website Coding Kitに組込済のSassファイル構成は、[FLOCSSベースのCSS設計ガイドライン](https://github.com/iwbc/guide-css-design)に準拠しています。
