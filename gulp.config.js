@@ -72,8 +72,7 @@ const style = {
       browsers : [
         'last 3 versions',
         'ie >= 11',
-        'ios >= 10',
-        'android >= 4.4'
+        'ios >= 10'
       ]
     },
     rem            : false,
