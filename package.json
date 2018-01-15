@@ -6,7 +6,7 @@
   "license": "WTFPL",
   "scripts": {
     "test": "mocha ./test/sass/test.js",
-    "setup": "yarn && gulp build",
+    "setup": "yarn install --prefer-offline",
     "start": "gulp",
     "build": "gulp build"
   },
