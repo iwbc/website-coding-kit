@@ -5,8 +5,7 @@
           "browsers": [
             "last 3 versions",
             "ie >= 11",
-            "ios >= 9",
-            "android >= 4.4"
+            "ios >= 10"
           ]
         }
     }]
