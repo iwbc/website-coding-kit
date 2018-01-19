@@ -6,17 +6,17 @@
     @include assert {
       @include output {
         .element {
-          @include sprite("test2x-down");
+          @include sprite("test-2x-wordpress");
         }
       }
       @include expect {
         .element {
-          background-image: url("images/test2x.png");
+          background-image: url("../images/test@2x.png");
           background-repeat: no-repeat;
-          background-position: 0px 0px;
-          background-size: 262px 262px;
-          width: 128px;
-          height: 128px;
+          background-position: -105px -70px;
+          background-size: 137px 102px;
+          width: 32px;
+          height: 32px;
           display: inline-block;
         }
       }
