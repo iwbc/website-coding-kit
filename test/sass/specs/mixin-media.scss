@@ -40,4 +40,42 @@
     }
   }
 
+  @include test("mq-ori / landscape") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-ori("ls") {
+            width: 100%;
+          }
+        }
+      }
+      @include expect {
+        @media (orientation: landscape) {
+          .element {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @include test("mq-ori / portrait") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-ori("pr") {
+            width: 100%;
+          }
+        }
+      }
+      @include expect {
+        @media (orientation: portrait) {
+          .element {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
 }
