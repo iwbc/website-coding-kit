@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 $_viewport-width:  640px;
 $_viewport-height: 1136px;
@@ -31,7 +31,7 @@ $_colors: (
 @import "../../src/assets/sass/configs/mixins/_sprite.scss";
 @import "../../src/assets/sass/configs/mixins/_utility.scss";
 
-@import "sprites/test2x.scss";
+@import "sprites/test@2x.scss";
 
 @import "specs/function-breakpoint.scss";
 @import "specs/function-list.scss";

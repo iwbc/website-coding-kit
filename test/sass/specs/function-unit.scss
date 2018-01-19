@@ -23,7 +23,7 @@
   @include test("vh") {
     $actual: vh(32px);
     $expect: 2.8169vh;
-    @include assert-equal($actual, $expect);
+    @include assert-equal($actual, $expect, null, true);
   }
 
   @include test("strip-unit") {
