@@ -71,3 +71,54 @@
     @content;
   }
 }
+
+/// デバイスの向きが指定した向きと一致する場合にのみ、スタイルを適用する
+///
+/// @since 2.3.0
+///
+/// @param {string} $orientation
+///   向き
+///   <table class="item__parameters">
+///     <thead>
+///       <tr>
+///         <th>値</th>
+///         <th>説明</th>
+///       </tr>
+///     </thead>
+///     <tbody>
+///       <tr>
+///         <td>`ls`</td>
+///         <td>`Landscape`のときにスタイルを適用する</td>
+///       </tr>
+///       <tr>
+///         <td>`pr`</td>
+///         <td>`Portrait`のときにスタイルを適用する</td>
+///       </tr>
+///     </tbody>
+///   </table>
+///
+/// @example scss
+///   .element {
+///     @include mq-ori("ls") {
+///       width: 100%;
+///     }
+///   }
+///
+///   // CSS Output
+///   @media (orientation: landscape) {
+///     .element {
+///       width: 100%;
+///     }
+///   }
+
+@mixin mq-ori($orientation) {
+  @if $orientation == "ls" {
+    $orientation: landscape;
+  }
+  @else if $orientation == "pr" {
+    $orientation: portrait;
+  }
+  @media (orientation: $orientation) {
+    @content;
+  }
+}

@@ -26,6 +26,7 @@ rules:
     - exclude:
       - mq-min
       - mq-max
+      - mq-ori
   nesting-depth:
     - 1
     - max-depth: 5
