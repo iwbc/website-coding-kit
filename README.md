@@ -123,7 +123,7 @@ Retina用のスプライトシートを生成する場合は、スプライト�
 
 <svg>
   <title>Image title</title>
-  <use :xlink:href="/public/assets/images/sprites/svg/sample.svg#down" />
+  <use xlink:href="/public/assets/images/sprites/svg/sample.svg#down" />
 </svg>
 ```
 
