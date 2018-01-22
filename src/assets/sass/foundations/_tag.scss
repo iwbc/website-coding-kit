@@ -47,3 +47,10 @@ a {
     color: $_text-link-visited-color;
   }
 }
+
+button {
+  font-family: $_font-family;
+  line-height: $_line-height;
+  color: $_text-color;
+  cursor: pointer;
+}
