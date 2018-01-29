@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/iwbc/website-coding-kit/compare/2.3.1...2.4.0) (2018-01-29)
+
+
+### Bug Fixes
+
+* **sass:** :rootのfont-sizeにvwを使用しないよう修正 ([5f18265](https://github.com/iwbc/website-coding-kit/commit/5f18265))
+
+
+### Features
+
+* **gulp:** EJSに環境変数(__path)を追加 ([be58841](https://github.com/iwbc/website-coding-kit/commit/be58841))
+
+
+
 <a name="2.3.1"></a>
 ## [2.3.1](https://github.com/iwbc/website-coding-kit/compare/2.3.0...2.3.1) (2018-01-22)
 
