@@ -171,8 +171,7 @@ const path = {
     }, {
       src  : `${src}/assets/vendors/**/*`,
       dest : `${dest}/assets/vendors`
-    },
-    {
+    }, {
       src  : `${src}/*.{png,svg,ico,xml,json,txt}`,
       dest : dest
     }
