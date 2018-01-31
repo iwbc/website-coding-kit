@@ -11,7 +11,7 @@ const config = require('../config.js');
 gulp.task('clean', del.bind(null,
   [
     `${config.dest}/*`,
-    `!${config.dest}/.git`,
+    `!${config.dest}/.git*`,
     config.path.sprite.png.dest.style
   ],
   { dot: true }
