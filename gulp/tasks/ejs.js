@@ -14,19 +14,18 @@ gulp.task('ejs', () => {
     .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
     .pipe($.data((file) => {
       const src      = path.join(global.projectPath, config.src);
-      const filename = file.path.replace(src, '');
-      const dirname  = path.dirname(filename);
-      const basename = path.basename(filename);
-      const extname  = path.extname(filename);
-      const relative = path.relative(dirname, '/');
+      const filePath = file.path.replace(src, '');
+      const dirPath  = path.dirname(filePath);
+      const extName  = path.extname(filePath);
+      const relative = path.relative(dirPath, '/');
       return {
-        __path : {
-          filename : filename.replace(/\\/g, '/'),
-          dirname  : dirname.replace(/\\/g, '/'),
-          basename : basename,
-          extname  : extname,
-          relative : relative ? relative.replace(/\\/g, '/') + '/' : ''
-        }
+        __env          : config.ENV,
+        __filePath     : filePath,
+        __dirPath      : dirPath,
+        __fileName     : path.basename(filePath),
+        __baseName     : path.basename(filePath, extName),
+        __extName      : extName,
+        __relativePath : relative ? relative.replace(/\\/g, '/') + '/' : './'
       }
     }))
     .pipe($.ejs({}, {}, { ext : '.html' })).on('error', function() { this.emit('end'); })
