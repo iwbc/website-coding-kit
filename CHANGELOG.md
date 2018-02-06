@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.5.0"></a>
+# [2.5.0](https://github.com/iwbc/website-coding-kit/compare/2.4.1...2.5.0) (2018-02-06)
+
+
+### Features
+
+* **ejs:** EJSの環境変数を追加および変更 ([1e2c067](https://github.com/iwbc/website-coding-kit/commit/1e2c067))
+
+
+
 <a name="2.4.1"></a>
 ## [2.4.1](https://github.com/iwbc/website-coding-kit/compare/2.4.0...2.4.1) (2018-01-31)
 
