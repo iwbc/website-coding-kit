@@ -166,9 +166,6 @@ const path = {
       src  : [ `${src}/**/*.{html,php}`, `!${src}/assets/js/**/*` ],
       dest : dest
     }, {
-      src  : `${src}/assets/fonts/**/*`,
-      dest : `${dest}/assets/fonts`
-    }, {
       src  : `${src}/assets/vendors/**/*`,
       dest : `${dest}/assets/vendors`
     }, {
