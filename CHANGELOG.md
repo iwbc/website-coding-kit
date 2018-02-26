@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.6.0"></a>
+# [2.6.0](https://github.com/iwbc/website-coding-kit/compare/2.5.0...2.6.0) (2018-02-26)
+
+
+### Features
+
+* **sass:** Noto Sans CJK JPの機能を廃止 ([ed49019](https://github.com/iwbc/website-coding-kit/commit/ed49019))
+
+
+
 <a name="2.5.0"></a>
 # [2.5.0](https://github.com/iwbc/website-coding-kit/compare/2.4.1...2.5.0) (2018-02-06)
 
