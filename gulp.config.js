@@ -28,7 +28,9 @@ const build = {
     sourcemaps : {
       css : true,
       js  : 'source-map' // webpack Devtool -> https://webpack.js.org/configuration/devtool/#devtool
-    }
+    },
+    // 画像の最適化
+    optimizeImages : false
   },
   // 本番用ビルド
   production : {
@@ -39,7 +41,8 @@ const build = {
     sourcemaps : {
       css : false,
       js  : false
-    }
+    },
+    optimizeImages : true
   }
 };
 
@@ -107,8 +110,6 @@ const style = {
  */
 
 const image = {
-  // 画像最適化の有無効
-  enable : true,
   // imagemin-jpeg-recompress
   // Options -> https://github.com/imagemin/imagemin-jpeg-recompress
   jpegrecompress : {
