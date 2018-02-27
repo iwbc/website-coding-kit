@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.7.0"></a>
+# [2.7.0](https://github.com/iwbc/website-coding-kit/compare/2.6.0...2.7.0) (2018-02-27)
+
+
+### Features
+
+* **gulp:** libs.js/libs.cssの出力先を変更 ([a430aa7](https://github.com/iwbc/website-coding-kit/commit/a430aa7))
+* **gulp:** 画像最適化の有無効設定をbuild設定側に移動 ([c5f9346](https://github.com/iwbc/website-coding-kit/commit/c5f9346))
+
+
+
 <a name="2.6.0"></a>
 # [2.6.0](https://github.com/iwbc/website-coding-kit/compare/2.5.0...2.6.0) (2018-02-26)
 
