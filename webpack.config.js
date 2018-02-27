@@ -7,7 +7,6 @@ const config            = require('./gulp/config.js');
 
 const src     = path.join(__dirname, `${config.src}/assets/js`);
 const dest    = path.join(__dirname, `${config.dest}/assets/js`);
-const vendors = path.relative(dest, path.join(__dirname, `${config.dest}/assets/vendors`));
 
 /**
  * Entry points
@@ -40,7 +39,7 @@ const moduleRules = [
       loader  : 'url-loader',
       options : {
         limit : 8192,
-        name  : path.join(vendors, '[name].[hash:7].[ext]')
+        name  : '[name].[hash:7].[ext]'
       }
     }]
   }, {
@@ -50,7 +49,7 @@ const moduleRules = [
       loader  : 'url-loader',
       options : {
         limit : 8192,
-        name  : path.join(vendors, '[name].[hash:7].[ext]')
+        name  : '[name].[hash:7].[ext]'
       }
     }]
   }, {
@@ -82,7 +81,7 @@ const plugins = () => {
         return module.context && module.context.indexOf('node_modules') !== -1;
       }
     }),
-    new ExtractTextPlugin('css/libs.css')
+    new ExtractTextPlugin('libs.css')
   ];
   if (config.ENV !== 'development') {
     plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
