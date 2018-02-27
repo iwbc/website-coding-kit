@@ -14,7 +14,7 @@ gulp.task('image', () => {
   return gulp.src(config.path.image.src)
     .pipe($.changed(config.path.image.dest))
     .pipe($.if(
-      config.image.enable,
+      config.build.optimizeImages,
       $.imagemin(
         [
           $.imagemin.gifsicle(),
