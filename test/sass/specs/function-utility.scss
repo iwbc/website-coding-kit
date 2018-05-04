@@ -8,6 +8,12 @@
     @include assert-equal($actual, $expect);
   }
 
+  @include test("z") {
+    $actual: z("header");
+    $expect: 1000;
+    @include assert-equal($actual, $expect);
+  }
+
   @include test("absolute-to-relative") {
     $actual: absolute-to-relative(10,100);
     $expect: .1;

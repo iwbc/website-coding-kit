@@ -16,6 +16,10 @@ $_colors: (
   "white": #fff,
   "black": #000
 );
+$_z-indexes: (
+  "header": 1000,
+  "modal":  10000
+);
 
 @import "true";
 
