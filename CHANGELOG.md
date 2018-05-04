@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.8.0"></a>
+# [2.8.0](https://github.com/iwbc/website-coding-kit/compare/2.7.0...2.8.0) (2018-05-04)
+
+
+### Features
+
+* **sass:** z-index管理用の変数と関数を追加 ([a906644](https://github.com/iwbc/website-coding-kit/commit/a906644))
+* **sass): z-index管理用の変数と関数を追加feat(sass:** color関数の関数名をcに変更 ([5121eb2](https://github.com/iwbc/website-coding-kit/commit/5121eb2))
+
+
+
 <a name="2.7.0"></a>
 # [2.7.0](https://github.com/iwbc/website-coding-kit/compare/2.6.0...2.7.0) (2018-02-27)
 
