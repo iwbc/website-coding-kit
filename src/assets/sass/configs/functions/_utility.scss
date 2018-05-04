@@ -9,15 +9,15 @@
 /// @since 1.0.0
 ///
 /// @param {string} $key
-///   色名
+///   $_colors変数のキー（色名）
 ///
 /// @return {color}
 ///
 /// @example scss
 ///   $_colors: ("black": #000, "white": #fff);
-///   @debug get-color("black"); // #000
+///   @debug c("black"); // #000
 
-@function color($key) {
+@function c($key) {
   @return map-get($_colors, $key);
 }
 
