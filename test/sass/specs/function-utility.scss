@@ -2,8 +2,8 @@
 
 @include test-module("functions/_utility.scss") {
 
-  @include test("color") {
-    $actual: color("black");
+  @include test("c") {
+    $actual: c("black");
     $expect: #000;
     @include assert-equal($actual, $expect);
   }
