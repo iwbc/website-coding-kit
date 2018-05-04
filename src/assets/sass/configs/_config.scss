@@ -108,3 +108,12 @@ $_colors: (
   "white":             #fff,
   "black":             #000
 );
+
+/// z-index管理用変数<br>
+/// キーに識別名、値にz-index値を指定する
+///
+/// @since 2.8.0
+
+$_z-indexes: (
+  "example": 100
+);
