@@ -14,6 +14,20 @@
     @include assert-equal($actual, $expect);
   }
 
+  @include test("z / addition") {
+    $actual: z("header", 1);
+    $expect: 1001;
+    @include assert-equal($actual, $expect);
+  }
+
+
+  @include test("z / subtraction") {
+    $actual: z("header", -1);
+    $expect: 999;
+    @include assert-equal($actual, $expect);
+  }
+
+
   @include test("absolute-to-relative") {
     $actual: absolute-to-relative(10,100);
     $expect: .1;
