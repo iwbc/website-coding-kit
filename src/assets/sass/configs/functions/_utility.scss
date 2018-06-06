@@ -27,15 +27,17 @@
 ///
 /// @param {string} $key
 ///   $_z-indexes変数のキー
+/// @param {number} $index
+///   加減算値
 ///
 /// @return {color}
 ///
 /// @example scss
 ///   $_z-indexes: ("header": 1000, "overlay": 10000);
-///   @debug z("black"); // #000
+///   @debug z("header", 1); // 1001
 
-@function z($key) {
-  @return map-get($_z-indexes, $key);
+@function z($key, $index: 0) {
+  @return map-get($_z-indexes, $key) + $index;
 }
 
 /// 絶対単位の値から相対単位の値に変換する
