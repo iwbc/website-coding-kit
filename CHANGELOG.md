@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.9.0"></a>
+# [2.9.0](https://github.com/iwbc/website-coding-kit/compare/2.8.0...2.9.0) (2018-06-30)
+
+
+### Bug Fixes
+
+* meta format-detectionをひとつに統合 ([7397f77](https://github.com/iwbc/website-coding-kit/commit/7397f77))
+
+
+### Features
+
+* **sass:** z-index管理用関数に加減算用引数を追加 ([42a8f23](https://github.com/iwbc/website-coding-kit/commit/42a8f23))
+
+
+
 <a name="2.8.0"></a>
 # [2.8.0](https://github.com/iwbc/website-coding-kit/compare/2.7.0...2.8.0) (2018-05-04)
 
