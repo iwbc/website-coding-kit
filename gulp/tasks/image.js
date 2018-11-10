@@ -18,7 +18,7 @@ gulp.task('image', () => {
       $.imagemin(
         [
           $.imagemin.gifsicle(),
-          $.imagemin.svgo(),
+          $.imagemin.svgo(config.image.svgo),
           png(),
           jpeg(config.image.jpegrecompress)
         ],

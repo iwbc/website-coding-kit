@@ -5,8 +5,8 @@ const webpack           = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config            = require('./gulp/config.js');
 
-const src     = path.join(__dirname, `${config.src}/assets/js`);
-const dest    = path.join(__dirname, `${config.dest}/assets/js`);
+const src  = path.join(__dirname, `${config.src}/assets/js`);
+const dest = path.join(__dirname, `${config.dest}/assets/js`);
 
 /**
  * Entry points
