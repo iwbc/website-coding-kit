@@ -49,14 +49,14 @@ yarn run build
 
 #### 本番用ビルド
 
-開発用ビルドコマンドに`-- --env=production`のオプションを付与することで、本番用のビルド設定に従ったビルドを行います。  
+開発用ビルドコマンドに`--env=production`のオプションを付与することで、本番用のビルド設定に従ったビルドを行います。  
 デフォルトの設定は、以下のとおりです。
 
 - CSS/JSのMinify化 : 無効
 - SourceMapの出力 : 無効
 
 ```console
-yarn run build -- --env=production
+yarn run build --env=production
 ```
 
 ### ファイルの更新監視とWebサーバーの起動
