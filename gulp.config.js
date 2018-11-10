@@ -110,6 +110,14 @@ const style = {
  */
 
 const image = {
+  // imagemin-svgo
+  // https://www.npmjs.com/package/imagemin-svgo
+  // Options -> https://www.npmjs.com/package/svgo
+  svgo : {
+    plugins : [
+      { collapseGroups: false }
+    ]
+  },
   // imagemin-jpeg-recompress
   // Options -> https://github.com/imagemin/imagemin-jpeg-recompress
   jpegrecompress : {
