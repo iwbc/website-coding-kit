@@ -7,7 +7,7 @@
   "scripts": {
     "test": "mocha ./test/sass/test.js",
     "setup": "yarn install --prefer-offline",
-    "start": "gulp",
+    "dev": "gulp",
     "build": "gulp build"
   },
   "dependencies": {

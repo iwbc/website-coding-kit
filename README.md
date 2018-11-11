@@ -14,7 +14,7 @@ Website Coding Kitの実行には以下のツールが必要です。
 プロジェクトの新規開始、またはプロジェクトのリポジトリをクローンして再開する場合には、以下のコマンドを実行して、Website Coding Kitのセットアップを行います。
 
 ```
-yarn run setup
+yarn setup
 ```
 
 ## 各種設定
@@ -44,7 +44,7 @@ Website Coding Kitの動作設定は、`/gulp.config.js`に記述されていま
 **公開用データディレクトリ内の状態を最新にするため、開発前やリポジトリをpullした後には、必ずビルドを行ってください。**
 
 ```console
-yarn run build
+yarn build
 ```
 
 #### 本番用ビルド
@@ -56,7 +56,7 @@ yarn run build
 - SourceMapの出力 : 無効
 
 ```console
-yarn run build --env=production
+yarn build --env=production
 ```
 
 ### ファイルの更新監視とWebサーバーの起動
@@ -65,7 +65,7 @@ yarn run build --env=production
 ファイルの更新を検知すると、ビルドとページのリロードが行われます。
 
 ```console
-yarn run start
+yarn dev
 ```
 
 ### PNG/SVGスプライトシートの生成
