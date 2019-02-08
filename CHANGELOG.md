@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0-alpha.0"></a>
+# [3.0.0-alpha.0](https://github.com/iwbc/website-coding-kit/compare/2.9.0...3.0.0-alpha.0) (2019-02-08)
+
+
+### Bug Fixes
+
+* **gulp:** SVG画像が正しく最適化されないことがある問題に対処 ([f35f97b](https://github.com/iwbc/website-coding-kit/commit/f35f97b))
+
+
+### build
+
+* babel-loaderとwebpack以外を最新バージョンにアップデート ([6cac35d](https://github.com/iwbc/website-coding-kit/commit/6cac35d))
+
+
+### Features
+
+* **sass:** いくつかの基本スタイルを追加 ([c2c05e4](https://github.com/iwbc/website-coding-kit/commit/c2c05e4))
+
+
+### BREAKING CHANGES
+
+* Node.js v6のサポートを終了し、新たにv10のサポート開始
+
+
+
 <a name="2.9.0"></a>
 # [2.9.0](https://github.com/iwbc/website-coding-kit/compare/2.8.0...2.9.0) (2018-06-30)
 
