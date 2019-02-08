@@ -1,34 +1,38 @@
 'use strict';
 
-const gulp              = require('gulp');
-const path              = require('path');
-const webpack           = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const config            = require('../../webpack.config.js');
-const $                 = require('../load.js');
+const gulp    = require('gulp');
+const webpack = require('webpack');
+const config  = require('../../webpack.config');
+const $       = require('../load');
 
-let is_watching = false;
+let watch = false;
 
 /**
  * JSのモジュール依存解決、ES5へのトランスパイル
  */
 
-gulp.task('script', (callback) => {
-  webpack(config, (err, stats) => {
-    console.log(stats.toString({
-      chunks  : false,
-      modules : false,
-      colors  : true
-    }));
-    $.browser.reload();
-    if (!is_watching) {
-      is_watching = true;
-      callback();
-    }
+gulp.task('script', async () => {
+  await new Promise((resolve) => {
+    const wp = webpack(config);
+    const callback = (err, stats) => {
+      if (err) {
+        reject(new $.util.PluginError('script', err.message));
+      }
+      else {
+        console.log(stats.toString({
+          chunks  : false,
+          modules : false,
+          colors  : true
+        }));
+        $.browser.reload();
+        resolve();
+      }
+    };
+    watch ? wp.watch(200, callback) : wp.run(callback);
   });
 });
 
-gulp.task('script:watch', () => {
-  config.watch = true;
-  gulp.start('script');
+gulp.task('script:watch', async () => {
+  watch = true;
+  await gulp.task('script')();
 });

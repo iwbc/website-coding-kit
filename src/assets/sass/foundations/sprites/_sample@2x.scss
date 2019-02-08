@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+$_sprites: map-merge($_sprites, (
+  "sample-2x-down": (
+    "sheet": "sample-2x",
+    "properties": 0px 0px 0px 0px 48px 48px 102px 48px "../images/sample@2x.png" "down",
+    "scale": 2
+  )
+));
+$_sprites: map-merge($_sprites, (
+  "sample-2x-up": (
+    "sheet": "sample-2x",
+    "properties": 54px 0px -54px 0px 48px 48px 102px 48px "../images/sample@2x.png" "up",
+    "scale": 2
+  )
+));

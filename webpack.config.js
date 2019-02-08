@@ -114,7 +114,7 @@ module.exports = {
   plugins      : plugins(),
   watch        : false,
   watchOptions : {
-    exclude : /(node_modules)/
+    ignored : /(node_modules)/
   },
   devtool : config.build.sourcemaps.js
 };

@@ -3,16 +3,15 @@
 const gulp   = require('gulp');
 const png    = require('imagemin-pngquant');
 const jpeg   = require('imagemin-jpeg-recompress');
-const config = require('../config.js');
-const $      = require('../load.js');
+const config = require('../config');
+const $      = require('../load');
 
 /**
  * 画像の最適化
  */
 
 gulp.task('image', () => {
-  return gulp.src(config.path.image.src)
-    .pipe($.changed(config.path.image.dest))
+  return gulp.src(config.path.image.src, { since: gulp.lastRun('image') })
     .pipe($.if(
       config.build.optimizeImages,
       $.imagemin(

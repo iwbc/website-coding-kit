@@ -2,8 +2,8 @@
 
 const path   = require('path');
 const gulp   = require('gulp');
-const config = require('../config.js');
-const $      = require('../load.js');
+const config = require('../config');
+const $      = require('../load');
 
 /**
  * EJSのコンパイル

@@ -5,14 +5,12 @@ const path   = require('path');
 const buffer = require('vinyl-buffer');
 const ms     = require('merge-stream');
 const png    = require('imagemin-pngquant');
-const config = require('../config.js');
-const $      = require('../load.js');
+const config = require('../config');
+const $      = require('../load');
 
 /**
  * PNGスプライトの生成
  */
-
-gulp.task('sprite', ['sprite:png', 'sprite:svg']);
 
 gulp.task('sprite:png', () => {
   return gulp.src(config.path.sprite.png.src)
@@ -83,3 +81,9 @@ gulp.task('sprite:svg', () => {
         .pipe(gulp.dest(config.path.sprite.svg.dest));
     }));
 });
+
+/**
+ * PNG/SVGスプライトの生成
+ */
+
+gulp.task('sprite', gulp.parallel('sprite:png', 'sprite:svg'));
