@@ -2,8 +2,8 @@
 
 const gulp   = require('gulp');
 const ms     = require('merge-stream');
-const config = require('../config.js');
-const $      = require('../load.js');
+const config = require('../config');
+const $      = require('../load');
 
 /**
  * 指定ファイルを指定ディレクトリにコピー
