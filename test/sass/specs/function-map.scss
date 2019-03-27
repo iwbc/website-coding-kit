@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 @include test-module("functions/_map.scss") {
 
   @include test("map-set") {
