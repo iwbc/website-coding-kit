@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 @each $key, $sprite in $_sprites {
   .m_sprite-#{$key} {
     @include sprite($key, 1 / map-get($sprite, "scale"));

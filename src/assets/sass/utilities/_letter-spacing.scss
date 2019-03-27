@@ -1,13 +1,11 @@
-@charset "UTF-8";
-
 @for $i from 1 through 10 {
-  $num: $i * .05;
+  $num: $i * 0.05;
   .u_ls-#{$num * 100} {
     letter-spacing: #{$num}em !important;
   }
 }
 @for $i from 1 through 10 {
-  $num: $i * .05;
+  $num: $i * 0.05;
   .u_ls-minus#{$num * 100} {
     letter-spacing: -#{$num}em !important;
   }
