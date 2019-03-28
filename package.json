@@ -20,7 +20,7 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.2",
-    "css-loader": "^2.1.0",
+    "css-loader": "^1.0.1",
     "del": "^3.0.0",
     "extend": "^3.0.0",
     "extract-text-webpack-plugin": "^3.0.0",
