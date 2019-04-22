@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0-alpha.1"></a>
+# [3.0.0-alpha.1](https://github.com/iwbc/website-coding-kit/compare/3.0.0-alpha.0...3.0.0-alpha.1) (2019-04-22)
+
+
+### Bug Fixes
+
+* **image:** 画像ファイルの更新監視中に新しく画像を追加したとき、正しく処理されない不具合を修正 ([77fe65d](https://github.com/iwbc/website-coding-kit/commit/77fe65d))
+* **webpack:** cssファイルをimportできない不具合を修正 ([c508a85](https://github.com/iwbc/website-coding-kit/commit/c508a85))
+
+
+
 <a name="3.0.0-alpha.0"></a>
 # [3.0.0-alpha.0](https://github.com/iwbc/website-coding-kit/compare/2.9.0...3.0.0-alpha.0) (2019-02-08)
 
