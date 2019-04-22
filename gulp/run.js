@@ -11,13 +11,13 @@ requireDir('./tasks', { recursive: true });
 
 gulp.task('watch', () => {
   config.path.copy.forEach((copy) => {
-    gulp.watch(copy.src, gulp.task('copy'));
+    gulp.watch(copy.src, gulp.series('copy'));
   });
-  gulp.watch(config.path.ejs.watch, gulp.task('ejs'));
-  gulp.watch(config.path.style.watch, gulp.task('style'));
-  gulp.watch(config.path.image.watch, gulp.task('image'));
-  gulp.watch(config.path.sprite.png.watch, gulp.task('sprite:png'));
-  gulp.watch(config.path.sprite.svg.watch, gulp.task('sprite:svg'));
+  gulp.watch(config.path.ejs.watch, gulp.series('ejs'));
+  gulp.watch(config.path.style.watch, gulp.series('style'));
+  gulp.watch(config.path.image.watch, gulp.series('image'));
+  gulp.watch(config.path.sprite.png.watch, gulp.series('sprite:png'));
+  gulp.watch(config.path.sprite.svg.watch, gulp.series('sprite:svg'));
 });
 
 /**

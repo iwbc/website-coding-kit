@@ -11,7 +11,14 @@ const $      = require('../load');
  */
 
 gulp.task('image', () => {
-  return gulp.src(config.path.image.src, { since: gulp.lastRun('image') })
+  return gulp.src(config.path.image.src, {
+    since : (file) => {
+      if (gulp.lastRun('image') <= file.stat.ctime) {
+        return false;
+      }
+      return gulp.lastRun('image');
+    }
+  })
     .pipe($.if(
       config.build.optimizeImages,
       $.imagemin(
