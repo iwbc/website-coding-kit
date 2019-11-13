@@ -68,22 +68,12 @@ const server = {
  */
 
 const style = {
-  // gulp-pleeease
-  // Options -> http://pleeease.io/docs/
-  pleeease : {
-    autoprefixer : {
-      browsers : [
-        'last 3 versions',
-        'ie >= 11',
-        'ios >= 10'
-      ]
-    },
-    rem            : false,
-    pseudoElements : false,
-    opacity        : false,
-    minifier       : false,
-    rebaseUrls     : false
-  },
+  // PostCSS
+  // https://github.com/postcss/postcss
+  postcss : [
+    require('postcss-easings'),
+    require('autoprefixer')
+  ],
   // gulp-sass
   // Options -> https://github.com/sass/node-sass#options
   sass : {
