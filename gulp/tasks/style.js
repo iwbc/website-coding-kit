@@ -23,7 +23,7 @@ gulp.task('style', () => {
         .pipe($.sassLint.failOnError())
     .pipe($.sassGlob())
     .pipe($.sass(config.style.sass))
-    .pipe($.pleeease(config.style.pleeease))
+    .pipe($.postcss(config.style.postcss))
     .pipe($.if(config.build.minify.css, $.csso()))
     .pipe(gulp.dest(config.path.style.dest.css, { sourcemaps: '.' }))
     .pipe($.browser.stream());
