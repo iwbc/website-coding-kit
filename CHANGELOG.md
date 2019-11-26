@@ -1,6 +1,18 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [3.0.0-alpha.2](https://github.com/iwbc/website-coding-kit/compare/3.0.0-alpha.1...3.0.0-alpha.2) (2019-11-26)
+
+
+### Features
+
+* **release:** standard-versionをローカルインストール ([d7fdae6](https://github.com/iwbc/website-coding-kit/commit/d7fdae622cbdba694a9e104d55092bcc0393ec17))
+
+
+### Bug Fixes
+
+* **gulp:** gulp-pleeeaseをgulp-postcssに変更 ([bb2c22d](https://github.com/iwbc/website-coding-kit/commit/bb2c22d757fa2b8c7f61ab12482be4bb64d8d7b6))
 
 <a name="3.0.0-alpha.1"></a>
 # [3.0.0-alpha.1](https://github.com/iwbc/website-coding-kit/compare/3.0.0-alpha.0...3.0.0-alpha.1) (2019-04-22)
