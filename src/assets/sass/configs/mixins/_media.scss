@@ -70,6 +70,33 @@
   }
 }
 
+/// デバイスピクセル比が指定値以上の場合にのみ、スタイルを適用する
+///
+/// @since 3.0.0
+///
+/// @param {number} $x
+///   デバイスピクセル比
+///
+/// @example scss
+///   .element {
+///     @include mq-res(2) {
+///       background-image: url("image@2x.jpg");
+///     }
+///   }
+///
+///   // CSS Output
+///   @media (min-resolution: 2dppx) {
+///     .element {
+///       background-image: url("image@2x.jpg");
+///     }
+///   }
+
+@mixin mq-res($x) {
+  @media (min-resolution: #{$x}dppx) {
+    @content;
+  }
+}
+
 /// デバイスの向きが指定した向きと一致する場合にのみ、スタイルを適用する
 ///
 /// @since 2.3.0

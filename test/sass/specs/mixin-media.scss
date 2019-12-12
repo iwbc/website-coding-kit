@@ -38,6 +38,25 @@
     }
   }
 
+  @include test("mq-res") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-res(2) {
+            background-image: url("image@2x.jpg");
+          }
+        }
+      }
+      @include expect {
+        @media (min-resolution: 2dppx) {
+          .element {
+            background-image: url("image@2x.jpg");
+          }
+        }
+      }
+    }
+  }
+
   @include test("mq-ori / landscape") {
     @include assert {
       @include output {
