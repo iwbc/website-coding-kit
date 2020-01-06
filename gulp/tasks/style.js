@@ -18,9 +18,6 @@ gulp.task('style', () => {
 
   const css = gulp.src(config.path.style.src, { sourcemaps: config.build.sourcemaps.css })
     .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
-    .pipe($.sassLint())
-        .pipe($.sassLint.format())
-        .pipe($.sassLint.failOnError())
     .pipe($.sassGlob())
     .pipe($.sass(config.style.sass))
     .pipe($.postcss(config.style.postcss))
