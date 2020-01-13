@@ -1,6 +1,6 @@
 {
   "name": "website-coding-kit",
-  "version": "3.0.0-alpha.2",
+  "version": "3.0.0",
   "description": "Gulpによるフロントエンド開発の効率化キット",
   "author": "VANQ",
   "license": "WTFPL",

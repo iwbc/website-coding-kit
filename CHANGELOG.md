@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/iwbc/website-coding-kit/compare/3.0.0-alpha.2...3.0.0) (2020-01-13)
+
+
+### Features
+
+* **scss:** mq-res Mixin（media min-resolution）を追加 ([a9bcb88](https://github.com/iwbc/website-coding-kit/commit/a9bcb8860bb6b3fc191f075e9ad65c50a2a5e860))
+
+
+### Feature Updates
+
+* CSSのlinterをsass-lintからstylelintに変更 ([85c0300](https://github.com/iwbc/website-coding-kit/commit/85c0300660735c7cb99c73eab67c8b4bdef07a9f))
+
 ## [3.0.0-alpha.2](https://github.com/iwbc/website-coding-kit/compare/3.0.0-alpha.1...3.0.0-alpha.2) (2019-11-26)
 
 
