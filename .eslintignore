@@ -1,2 +1,4 @@
-**/*
-!src/
+/gulp/**/*
+/test/**/*
+/*.js
+src/assets/vendors/**/*
