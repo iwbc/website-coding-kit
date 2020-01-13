@@ -168,7 +168,7 @@ const path = {
       src  : `${src}/assets/vendors/**/*`,
       dest : `${dest}/assets/vendors`
     }, {
-      src  : `${src}/*.{png,svg,ico,xml,json,txt}`,
+      src  : [ `${src}/*.{png,svg,ico,xml,json,txt}`, `!${src}/jsconfig.json` ],
       dest : dest
     }
   ]
