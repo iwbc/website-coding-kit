@@ -30,6 +30,8 @@ const build = {
       js  : 'source-map' // webpack Devtool -> https://webpack.js.org/configuration/devtool/#devtool
     },
     // 画像の最適化
+    // 特定の拡張子の画像だけを処理対象にする場合は、配列で記述する
+    // ex) optimizeImages : ['.jpg', '.png']
     optimizeImages : false
   },
   // 本番用ビルド

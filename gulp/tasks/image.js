@@ -1,5 +1,6 @@
 'use strict';
 
+const path   = require('path');
 const gulp   = require('gulp');
 const png    = require('imagemin-pngquant');
 const jpeg   = require('imagemin-jpeg-recompress');
@@ -11,6 +12,16 @@ const $      = require('../load');
  */
 
 gulp.task('image', () => {
+  const condition = (file) => {
+    if (file.isDirectory()) {
+      return false
+    }
+    if (Array.isArray(config.build.optimizeImages)) {
+      return config.build.optimizeImages.includes(path.extname(file.basename))
+    }
+    return config.build.optimizeImages
+  }
+
   return gulp.src(config.path.image.src, {
     since : (file) => {
       if (gulp.lastRun('image') <= file.stat.ctime) {
@@ -20,13 +31,13 @@ gulp.task('image', () => {
     }
   })
     .pipe($.if(
-      config.build.optimizeImages,
+      condition,
       $.imagemin(
         [
-          $.imagemin.gifsicle(),
-          $.imagemin.svgo(config.image.svgo),
+          jpeg(config.image.jpegrecompress),
           png(),
-          jpeg(config.image.jpegrecompress)
+          $.imagemin.gifsicle(),
+          $.imagemin.svgo(config.image.svgo)
         ],
         { verbose : true }
       )
