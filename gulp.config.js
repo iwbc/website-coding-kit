@@ -92,6 +92,7 @@ const style = {
       alias     : false,
       watermark : false
     },
+    privatePrefix    : '^__',
     noUpdateNotifier : true,
     verbose          : true
   }
