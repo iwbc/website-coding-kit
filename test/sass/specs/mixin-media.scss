@@ -19,6 +19,63 @@
     }
   }
 
+  @include test("mq-min / mediatype") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-min("sm", "print, screen") {
+            width: 100%;
+          }
+        }
+      }
+      @include expect {
+        @media print, screen and (min-width: 480px) {
+          .element {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @include test("mq-min / print min width") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-min("md") {
+            width: 100%;
+          }
+        }
+      }
+      @include expect {
+        @media print, screen and (min-width: 769px) {
+          .element {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @include test("mq-min / mediatype and print min width") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-min("md", "all") {
+            width: 100%;
+          }
+        }
+      }
+      @include expect {
+        @media (min-width: 769px) {
+          .element {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
   @include test("mq-max") {
     @include assert {
       @include output {
@@ -29,7 +86,64 @@
         }
       }
       @include expect {
-        @media (max-width: 767px) {
+        @media (max-width: 768px) {
+          .element {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @include test("mq-max / mediatype") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-max("sm", "print, screen") {
+            width: 100%;
+          }
+        }
+      }
+      @include expect {
+        @media print, screen and (max-width: 768px) {
+          .element {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @include test("mq-max / print min width") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-max("md") {
+            width: 100%;
+          }
+        }
+      }
+      @include expect {
+        @media print, screen and (max-width: 1023px) {
+          .element {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @include test("mq-max / mediatype and print min width") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-max("md", "all") {
+            width: 100%;
+          }
+        }
+      }
+      @include expect {
+        @media (max-width: 1023px) {
           .element {
             width: 100%;
           }
@@ -48,7 +162,26 @@
         }
       }
       @include expect {
-        @media (min-resolution: 2dppx) {
+        @media screen and (min-resolution: 2dppx) {
+          .element {
+            background-image: url("image@2x.jpg");
+          }
+        }
+      }
+    }
+  }
+
+  @include test("mq-res / mediatype") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-res(2, "print, screen") {
+            background-image: url("image@2x.jpg");
+          }
+        }
+      }
+      @include expect {
+        @media print, screen and (min-resolution: 2dppx) {
           .element {
             background-image: url("image@2x.jpg");
           }
@@ -65,10 +198,20 @@
             width: 100%;
           }
         }
+        .element2 {
+          @include mq-ori("landscape") {
+            width: 100%;
+          }
+        }
       }
       @include expect {
-        @media (orientation: landscape) {
+        @media screen and (orientation: landscape) {
           .element {
+            width: 100%;
+          }
+        }
+        @media screen and (orientation: landscape) {
+          .element2 {
             width: 100%;
           }
         }
@@ -84,9 +227,38 @@
             width: 100%;
           }
         }
+        .element2 {
+          @include mq-ori("portrait") {
+            width: 100%;
+          }
+        }
       }
       @include expect {
-        @media (orientation: portrait) {
+        @media screen and (orientation: portrait) {
+          .element {
+            width: 100%;
+          }
+        }
+        @media screen and (orientation: portrait) {
+          .element2 {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @include test("mq-ori / mediatype") {
+    @include assert {
+      @include output {
+        .element {
+          @include mq-ori("ls", "print, screen") {
+            width: 100%;
+          }
+        }
+      }
+      @include expect {
+        @media print, screen and (orientation: landscape) {
           .element {
             width: 100%;
           }

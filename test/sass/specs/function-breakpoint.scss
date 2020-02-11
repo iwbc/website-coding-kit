@@ -2,7 +2,7 @@
 
   @include test("breakpoint-min") {
     $actual: breakpoint-min("md");
-    $expect: 768px;
+    $expect: 769px;
     @include assert-equal($actual, $expect);
   }
 
