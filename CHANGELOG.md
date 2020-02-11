@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/iwbc/website-coding-kit/compare/3.0.0...3.0.1) (2020-02-11)
+
+
+### Feature Updates
+
+* メディアクエリの各ミックスインの印刷対応と任意のメディアタイプで出力できるよう第2引数を追加 ([803b178](https://github.com/iwbc/website-coding-kit/commit/803b17816df0a4eed4c768a0c7cdb9734c40b6b4))
+* 設定のoptimizeImagesに配列で指定することで、指定した拡張子の画像のみを最適化処理の対象とすることができるよう改修 ([1d44858](https://github.com/iwbc/website-coding-kit/commit/1d4485815c9c82e9521607d08e58dec790002164))
+
 ## [3.0.0](https://github.com/iwbc/website-coding-kit/compare/3.0.0-alpha.2...3.0.0) (2020-01-13)
 
 
