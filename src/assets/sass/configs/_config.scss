@@ -3,32 +3,22 @@
 ////
 
 /// pxからvwへ変換する際の基準値
-///
-/// @since 1.0.0
 
 $_viewport-width: 640px;
 
 /// pxからvhへ変換する際の基準値
-///
-/// @since 1.0.0
 
 $_viewport-height: 1136px;
 
 /// グリッドのカラム数
-///
-/// @since 1.2.0
 
 $_grid-columns: 24;
 
 /// グリッドアイテム間のスペースの幅
-///
-/// @since 1.2.0
 
 $_grid-gutter: 2%;
 
 /// ブレークポイント
-///
-/// @since 1.0.0
 
 $_breakpoints: (
   "xs": 0,
@@ -45,64 +35,44 @@ $_breakpoints: (
 $_print-min-width: 769px;
 
 /// フォントファミリー
-///
-/// @since 1.0.0
 
 $_font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 
 /// フォントサイズ
 /// - 16px (一般的なブラウザのデフォルトフォントサイズ)を推奨
-///
-/// @since 1.0.0
 
 $_font-size: 16px;
 
 /// 行間
-///
-/// @since 1.5.2
 
 $_line-height: 1.5;
 
 /// テキストカラー
-///
-/// @since 1.0.0
 
 $_text-color: #333;
 
 /// テキストリンクカラー
-///
-/// @since 1.0.0
 
 $_text-link-color: #04c;
 
 /// マウスオーバー時のテキストリンクカラー
-///
-/// @since 1.0.0
 
 $_text-link-hover-color: #04c;
 
 /// 訪問済みのテキストリンクカラー
-///
-/// @since 1.0.0
 
 $_text-link-visited-color: #04c;
 
 /// マウスオーバー時などの不透明度
-///
-/// @since 1.0.0
 
 $_opacity: .75;
 
 /// アニメーションスピード
-///
-/// @since 1.0.0
 
 $_transition-duration: .15s;
 
 /// サイトでの使用色<br>
 /// キーに識別名、値にカラーコードを指定する
-///
-/// @since 1.0.0
 
 $_colors: (
   "text":              $_text-color,
@@ -115,8 +85,6 @@ $_colors: (
 
 /// z-index管理用変数<br>
 /// キーに識別名、値にz-index値を指定する
-///
-/// @since 2.8.0
 
 $_z-indexes: (
   "example": 100

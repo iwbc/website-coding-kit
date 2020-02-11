@@ -4,8 +4,6 @@
 
 /// グリッドコンテナー
 ///
-/// @since 1.2.0
-///
 /// @param {map | null} $options [null]
 ///   <table class="item__parameters" style="margin-top: -.4em">
 ///     <thead><tr><th>オプション</th><th>説明</th><th>デフォルト値</th></tr></thead>
@@ -66,8 +64,6 @@
 }
 
 /// グリッドアイテム
-///
-/// @since 1.2.0
 ///
 /// @param {string | number} $columns [auto]
 ///   <a href="#01. flexboxグリッド-mixin-grid-columns">`grid-columns()`</a>
@@ -131,8 +127,6 @@
 
 /// グリッドアイテムの並び順を設定する
 ///
-/// @since 1.2.0
-///
 /// @param {string} $direction
 ///   <table class="item__parameters" style="margin-top: -.4em">
 ///     <thead><tr><th>値</th><th>説明</th></tr></thead>
@@ -167,8 +161,6 @@
 }
 
 /// justify-content and align-items
-///
-/// @since 1.2.0
 ///
 /// @param {string} $align
 ///   `{horizontal}-{vertical}`のフォーマットで指定する<br>
@@ -273,8 +265,6 @@
 }
 
 /// flex-wrap and align-content
-///
-/// @since 1.2.0
 ///
 /// @param {string} $wrap
 ///   <table class="item__parameters" style="margin-top: -.4em">
@@ -384,8 +374,6 @@
 
 /// グリッドアイテムの幅
 ///
-/// @since 1.2.0
-///
 /// @param {string | number} $columns
 ///   <table class="item__parameters" style="margin-top: -.4em">
 ///     <thead><tr><th>値</th><th>説明</th></tr></thead>
@@ -428,8 +416,6 @@
 
 /// グリッドアイテムのオフセット
 ///
-/// @since 1.2.0
-///
 /// @param {number} $offset
 ///   オフセットさせるカラム数
 /// @param {number} $grid-columns [$_grid-columns]
@@ -451,8 +437,6 @@
 
 /// カラムの順番
 ///
-/// @since 1.2.0
-///
 /// @param {number} $order
 ///   オーダー番号
 ///
@@ -471,8 +455,6 @@
 }
 
 /// Gutter
-///
-/// @since 1.2.0
 ///
 /// @param {string} $type
 ///   動作設定
