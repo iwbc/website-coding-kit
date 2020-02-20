@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.2](https://github.com/iwbc/website-coding-kit/compare/3.0.1...3.0.2) (2020-02-20)
+
+
+### Feature Updates
+
+* **ejs:**  ejs.data.jsに記述したパラメータをejsの変数として使用できるよう改修 ([ebf2803](https://github.com/iwbc/website-coding-kit/commit/ebf280341eeafddd3aadc24c790e391a59cd70bc))
+
 ### [3.0.1](https://github.com/iwbc/website-coding-kit/compare/3.0.0...3.0.1) (2020-02-11)
 
 
