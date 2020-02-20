@@ -1,94 +1,96 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no, email=no, address=no" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="description" content="Description" />
 
-  <meta name="description" content="Description">
+    <meta property="og:site_name" content="Site name" />
+    <meta property="og:title" content="Title" />
+    <meta property="og:type" content="website or article" />
+    <meta property="og:description" content="Description" />
+    <meta property="og:image" content="http://pladehold.jp/1200x630.png" />
+    <meta property="og:url" content="http://example.com/" />
 
-  <meta property="og:site_name" content="Site name">
-  <meta property="og:title" content="Title">
-  <meta property="og:type" content="website or article">
-  <meta property="og:description" content="Description">
-  <meta property="og:image" content="http://pladehold.jp/1200x630.png">
-  <meta property="og:url" content="http://example.com/">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@twitterid" />
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@twitterid">
+    <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Website Coding Kit</title>
 
-  <title>Website Coding Kit</title>
-
-  <style>
-    table {
-      text-align: left;
-    }
-    caption {
-      font-weight: bold;
-      text-align: left;
-      background-color: #ccc;
-      padding: 5px 10px;
-    }
-    th, td {
-      border-bottom: 1px solid #ccc;
-      padding: 5px 10px;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
-
-</head>
-<body>
-
-  <table>
-    <caption>EJS 環境変数</caption>
-    <tr>
-      <th>変数名</th>
-      <th>出力例</th>
-      <th>説明</th>
-    </tr>
-    <tr>
-      <td>__env</td>
-      <td><%- __env %></td>
-      <td>build実行時の--envオプションの値</td>
-    </tr>
-    <tr>
-      <td>__filePath</td>
-      <td><%- __filePath %></td>
-      <td>このファイルのファイルパス<br>※ includeされたファイルの場合、include元のファイルが対象となる</td>
-    </tr>
-    <tr>
-      <td>__dirPath</td>
-      <td><%- __dirPath %></td>
-      <td>このファイルのディレクトリパス<br>※ includeされたファイルの場合、include元のファイルが対象となる</td>
-    </tr>
-    <tr>
-      <td>__fileName</td>
-      <td><%- __fileName %></td>
-      <td>ファイル名</td>
-    </tr>
-    <tr>
-      <td>__baseName</td>
-      <td><%- __baseName %></td>
-      <td>拡張子を除いたファイル名</td>
-    </tr>
-    <tr>
-      <td>__extName</td>
-      <td><%- __extName %></td>
-      <td>拡張子</td>
-    </tr>
-    <tr>
-      <td>__relativePath</td>
-      <td><%- __relativePath %></td>
-      <td>srcディレクトリへの相対パス</td>
-    </tr>
-  </table>
-
-</body>
+    <style>
+      table {
+        text-align: left;
+      }
+      caption {
+        font-weight: bold;
+        text-align: left;
+        background-color: #ccc;
+        padding: 5px 10px;
+      }
+      th,
+      td {
+        border-bottom: 1px solid #ccc;
+        padding: 5px 10px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        EJS 環境変数
+      </caption>
+      <tr>
+        <th>変数名</th>
+        <th>出力例</th>
+        <th>説明</th>
+      </tr>
+      <tr>
+        <td>__env</td>
+        <td><%- __env %></td>
+        <td>build実行時の--envオプションの値</td>
+      </tr>
+      <tr>
+        <td>__filePath</td>
+        <td><%- __filePath %></td>
+        <td>このファイルのファイルパス<br />※ includeされたファイルの場合、include元のファイルが対象となる</td>
+      </tr>
+      <tr>
+        <td>__dirPath</td>
+        <td><%- __dirPath %></td>
+        <td>このファイルのディレクトリパス<br />※ includeされたファイルの場合、include元のファイルが対象となる</td>
+      </tr>
+      <tr>
+        <td>__fileName</td>
+        <td><%- __fileName %></td>
+        <td>ファイル名</td>
+      </tr>
+      <tr>
+        <td>__baseName</td>
+        <td><%- __baseName %></td>
+        <td>拡張子を除いたファイル名</td>
+      </tr>
+      <tr>
+        <td>__extName</td>
+        <td><%- __extName %></td>
+        <td>拡張子</td>
+      </tr>
+      <tr>
+        <td>__relativePath</td>
+        <td><%- __relativePath %></td>
+        <td>srcディレクトリへの相対パス</td>
+      </tr>
+    </table>
+  </body>
 </html>
