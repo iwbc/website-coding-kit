@@ -66,6 +66,14 @@ const server = {
 };
 
 /**
+ * ejs タスク
+ */
+
+const ejs = {
+  dataFile: 'ejs.data.js'
+};
+
+/**
  * style タスク
  */
 
@@ -128,7 +136,7 @@ const path = {
   // EJS
   ejs : {
     src   : [ `${src}/**/*.ejs`, `!${src}/**/_*.ejs` ],
-    watch : `${src}/**/*.ejs`,
+    watch : [ `${src}/**/*.ejs`, 'ejs.data.js' ],
     dest  : dest,
   },
   // Sass
@@ -186,6 +194,7 @@ module.exports = {
   dest   : dest,
   build  : build,
   server : server,
+  ejs    : ejs,
   style  : style,
   image  : image,
   path   : path

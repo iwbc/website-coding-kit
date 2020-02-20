@@ -10,6 +10,10 @@ const $      = require('../load');
  */
 
 gulp.task('ejs', () => {
+  const dataFile = path.join(global.projectPath, config.ejs.dataFile)
+  delete require.cache[dataFile];
+  const data = require(dataFile);
+
   return gulp.src(config.path.ejs.src)
     .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
     .pipe($.data((file) => {
@@ -28,7 +32,7 @@ gulp.task('ejs', () => {
         __relativePath : relative ? relative.replace(/\\/g, '/') + '/' : './'
       }
     }))
-    .pipe($.ejs({}, {}, { ext : '.html' })).on('error', function() { this.emit('end'); })
+    .pipe($.ejs(data, {}, { ext : '.html' })).on('error', function() { this.emit('end'); })
     .pipe(gulp.dest(config.path.ejs.dest))
     .pipe($.browser.stream());
 });
