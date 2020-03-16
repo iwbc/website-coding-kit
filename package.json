@@ -50,7 +50,7 @@
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^7.0.0",
     "merge-stream": "^1.0.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.2",
     "mocha": "^5.2.0",
     "postcss-easings": "^2.0.0",
     "prettier": "^1.19.1",
