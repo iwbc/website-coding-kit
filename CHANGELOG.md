@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.3](https://github.com/iwbc/website-coding-kit/compare/3.0.2...3.0.3) (2020-05-14)
+
+
+### Bug Fixes
+
+* caniuse-liteモジュールを更新 ([0732b20](https://github.com/iwbc/website-coding-kit/commit/0732b202b6c635760bf89b2d392572a293271dea))
+
 ### [3.0.2](https://github.com/iwbc/website-coding-kit/compare/3.0.1...3.0.2) (2020-02-20)
 
 
