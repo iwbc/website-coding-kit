@@ -20,7 +20,7 @@ $_z-indexes: (
   'modal': 10000,
 );
 
-@import 'true';
+@use 'true' as *;
 
 @import '../../src/assets/sass/configs/functions/_breakpoint.scss';
 @import '../../src/assets/sass/configs/functions/_list.scss';
@@ -29,7 +29,6 @@ $_z-indexes: (
 @import '../../src/assets/sass/configs/functions/_unit.scss';
 @import '../../src/assets/sass/configs/functions/_utility.scss';
 
-@import '../../src/assets/sass/configs/mixins/_grid.scss';
 @import '../../src/assets/sass/configs/mixins/_media.scss';
 @import '../../src/assets/sass/configs/mixins/_sprite.scss';
 @import '../../src/assets/sass/configs/mixins/_utility.scss';
@@ -43,7 +42,6 @@ $_z-indexes: (
 @import 'specs/function-unit.scss';
 @import 'specs/function-utility.scss';
 
-@import 'specs/mixin-grid.scss';
 @import 'specs/mixin-media.scss';
 @import 'specs/mixin-sprite.scss';
 @import 'specs/mixin-utility.scss';

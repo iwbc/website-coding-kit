@@ -7,6 +7,5 @@ sassTrue.runSass(
   {
     file: path.join(__dirname, 'test.scss'),
   },
-  describe,
-  it
+  { describe, it }
 )

@@ -19,7 +19,7 @@
 
   @include test('vh') {
     $actual: vh(32px);
-    $expect: 2.8169vh;
+    $expect: 2.8169014085vh;
     @include assert-equal($actual, $expect, null, true);
   }
 
