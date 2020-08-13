@@ -1,16 +1,16 @@
-'use strict';
+'use strict'
 
 /**
  * ソースディレクトリパス
  */
 
-const src  = 'src';
+const src = 'src'
 
 /**
  * 出力先ディレクトリパス
  */
 
-const dest = 'public';
+const dest = 'public'
 
 /**
  * build タスク
@@ -18,35 +18,35 @@ const dest = 'public';
 
 const build = {
   // 開発用ビルド
-  default : {
+  default: {
     // Minify
-    minify : {
-      css : false,
-      js  : false
+    minify: {
+      css: false,
+      js: false,
     },
     // SourceMapの出力
-    sourcemaps : {
-      css : true,
-      js  : 'source-map' // webpack Devtool -> https://webpack.js.org/configuration/devtool/#devtool
+    sourcemaps: {
+      css: true,
+      js: 'source-map', // webpack Devtool -> https://webpack.js.org/configuration/devtool/#devtool
     },
     // 画像の最適化
     // 特定の拡張子の画像だけを処理対象にする場合は、配列で記述する
     // ex) optimizeImages : ['.jpg', '.png']
-    optimizeImages : false
+    optimizeImages: false,
   },
   // 本番用ビルド
-  production : {
-    minify : {
-      css : true,
-      js  : true
+  production: {
+    minify: {
+      css: true,
+      js: true,
     },
-    sourcemaps : {
-      css : false,
-      js  : false
+    sourcemaps: {
+      css: false,
+      js: false,
     },
-    optimizeImages : true
-  }
-};
+    optimizeImages: true,
+  },
+}
 
 /**
  * server タスク
@@ -55,23 +55,23 @@ const build = {
 const server = {
   // Browsersync
   // Options -> https://www.browsersync.io/docs/options/
-  browsersync : {
-    notify    : false,
-    ghostMode : false,
-    directory : false
+  browsersync: {
+    notify: false,
+    ghostMode: false,
+    directory: false,
     // 動的サイトの場合は、別途XAMPP等でサーバーを用意し、以下のproxyにドメインを記述する
     // 静的サイトの場合は、コメントアウトまたは削除する
     // proxy     : 'example.com',
-  }
-};
+  },
+}
 
 /**
  * ejs タスク
  */
 
 const ejs = {
-  dataFile: 'ejs.data.js'
-};
+  dataFile: 'ejs.data.js',
+}
 
 /**
  * style タスク
@@ -80,24 +80,21 @@ const ejs = {
 const style = {
   // PostCSS
   // https://github.com/postcss/postcss
-  postcss : [
-    require('postcss-easings'),
-    require('autoprefixer')
-  ],
+  postcss: [require('postcss-easings'), require('autoprefixer')],
   // sassdoc
   // http://sassdoc.com/configuration/
-  sassdoc : {
-    sort    : [ 'group<', 'access<', 'line<' ],
-    display : {
-      access    : [ 'public' ],
-      alias     : false,
-      watermark : false
+  sassdoc: {
+    sort: ['group<', 'access<', 'line<'],
+    display: {
+      access: ['public'],
+      alias: false,
+      watermark: false,
     },
-    privatePrefix    : '^__',
-    noUpdateNotifier : true,
-    verbose          : true
-  }
-};
+    privatePrefix: '^__',
+    noUpdateNotifier: true,
+    verbose: true,
+  },
+}
 
 /**
  * image タスク
@@ -107,19 +104,17 @@ const image = {
   // imagemin-svgo
   // https://www.npmjs.com/package/imagemin-svgo
   // Options -> https://www.npmjs.com/package/svgo
-  svgo : {
-    plugins : [
-      { collapseGroups: false }
-    ]
+  svgo: {
+    plugins: [{ collapseGroups: false }],
   },
   // imagemin-jpeg-recompress
   // Options -> https://github.com/imagemin/imagemin-jpeg-recompress
-  jpegrecompress : {
-    quality : 'high',
-    max     : 95,
-    min     : 60
-  }
-};
+  jpegrecompress: {
+    quality: 'high',
+    max: 95,
+    min: 60,
+  },
+}
 
 /**
  * パスの設定
@@ -127,68 +122,70 @@ const image = {
 
 const path = {
   // EJS
-  ejs : {
-    src   : [ `${src}/**/*.ejs`, `!${src}/**/_*.ejs` ],
-    watch : [ `${src}/**/*.ejs`, 'ejs.data.js' ],
-    dest  : dest,
+  ejs: {
+    src: [`${src}/**/*.ejs`, `!${src}/**/_*.ejs`],
+    watch: [`${src}/**/*.ejs`, 'ejs.data.js'],
+    dest: dest,
   },
   // Sass
-  style : {
-    src   : `${src}/assets/sass/**/*.scss`,
-    watch : `${src}/assets/sass/**/*.scss`,
-    dest  : {
-      css     : `${dest}/assets/css`,
-      sassdoc : 'docs/sass'
-    }
+  style: {
+    src: `${src}/assets/sass/**/*.scss`,
+    watch: `${src}/assets/sass/**/*.scss`,
+    dest: {
+      css: `${dest}/assets/css`,
+      sassdoc: 'docs/sass',
+    },
   },
   // 画像
-  image : {
-    src   : `${src}/assets/images/**/*`,
-    watch : `${src}/assets/images/**/*`,
-    dest  : `${dest}/assets/images`
+  image: {
+    src: `${src}/assets/images/**/*`,
+    watch: `${src}/assets/images/**/*`,
+    dest: `${dest}/assets/images`,
   },
   // Sprite
-  sprite : {
-    png : {
-      src   : `${src}/assets/sprites/png/*`,
-      watch : `${src}/assets/sprites/png/**/*`,
-      dest  : {
-        style : `${src}/assets/sass/foundations/sprites`,
-        image : `${dest}/assets/images/sprites/png`
-      }
+  sprite: {
+    png: {
+      src: `${src}/assets/sprites/png/*`,
+      watch: `${src}/assets/sprites/png/**/*`,
+      dest: {
+        style: `${src}/assets/sass/foundations/sprites`,
+        image: `${dest}/assets/images/sprites/png`,
+      },
     },
-    svg : {
-      src   : `${src}/assets/sprites/svg/*`,
-      watch : `${src}/assets/sprites/svg/**/*`,
-      dest  : `${dest}/assets/images/sprites/svg`
-    }
+    svg: {
+      src: `${src}/assets/sprites/svg/*`,
+      watch: `${src}/assets/sprites/svg/**/*`,
+      dest: `${dest}/assets/images/sprites/svg`,
+    },
   },
   // 処理せずdestへコピーするファイル
-  copy : [
+  copy: [
     {
-      src  : [ `${src}/**/*.{html,php}`, `!${src}/assets/js/**/*` ],
-      dest : dest
-    }, {
-      src  : `${src}/assets/vendors/**/*`,
-      dest : `${dest}/assets/vendors`
-    }, {
-      src  : [ `${src}/*.{png,svg,ico,xml,json,txt}`, `!${src}/jsconfig.json` ],
-      dest : dest
-    }
-  ]
-};
+      src: [`${src}/**/*.{html,php}`, `!${src}/assets/js/**/*`],
+      dest: dest,
+    },
+    {
+      src: `${src}/assets/vendors/**/*`,
+      dest: `${dest}/assets/vendors`,
+    },
+    {
+      src: [`${src}/*.{png,svg,ico,xml,json,txt}`, `!${src}/jsconfig.json`],
+      dest: dest,
+    },
+  ],
+}
 
 /**
  * Configs
  */
 
 module.exports = {
-  src    : src,
-  dest   : dest,
-  build  : build,
-  server : server,
-  ejs    : ejs,
-  style  : style,
-  image  : image,
-  path   : path
-};
+  src: src,
+  dest: dest,
+  build: build,
+  server: server,
+  ejs: ejs,
+  style: style,
+  image: image,
+  path: path,
+}

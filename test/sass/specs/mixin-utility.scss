@@ -1,6 +1,5 @@
-@include test-module("mixin/_utility.scss") {
-
-  @include test("clearfix") {
+@include test-module('mixin/_utility.scss') {
+  @include test('clearfix') {
     @include assert {
       @include output {
         .element {
@@ -8,9 +7,10 @@
         }
       }
       @include expect {
-        .element::before, .element::after {
+        .element::before,
+        .element::after {
           display: table;
-          content: " ";
+          content: ' ';
         }
         .element::after {
           clear: both;
@@ -18,5 +18,4 @@
       }
     }
   }
-
 }

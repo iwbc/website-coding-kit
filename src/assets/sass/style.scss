@@ -2,50 +2,49 @@
 // Config
 //
 
-@import "configs/_config.scss";
-@import "configs/_variable.scss";
-@import "configs/functions/_*.scss";
-@import "configs/mixins/_*.scss";
+@import 'configs/_config.scss';
+@import 'configs/_variable.scss';
+@import 'configs/functions/_*.scss';
+@import 'configs/mixins/_*.scss';
 
 //
 // Foundation
 //
 
-@import "foundations/_reset.scss";
-@import "foundations/_tag.scss";
+@import 'foundations/_tag.scss';
 
 //
 // Layout
 //
 
-@import "layouts/_*.scss";
+@import 'layouts/_*.scss';
 
 //
 // Object / Module
 //
 
-@import "objects/modules/_*.scss";
+@import 'objects/modules/_*.scss';
 
 //
 // Object / Component
 //
 
-@import "objects/components/_*.scss";
+@import 'objects/components/_*.scss';
 
 //
 // Object / Package
 //
 
-@import "objects/packages/_*.scss";
+@import 'objects/packages/_*.scss';
 
 //
 // Page
 //
 
-@import "pages/_*.scss";
+@import 'pages/_*.scss';
 
 //
 // Utility
 //
 
-@import "utilities/_*.scss";
+@import 'utilities/_*.scss';

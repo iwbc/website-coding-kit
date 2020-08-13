@@ -115,10 +115,10 @@
 
     @if str-length($string) >= 1 and $str == null {
       $list: append($list, $string);
-      $string: "";
+      $string: '';
     }
 
-    @if type-of($str) == "number" {
+    @if type-of($str) == 'number' {
       $each: str-slice($string, 0, ($str - 1));
       $list: append($list, $each);
       $string: str-slice($string, ($str + 1), $sum);
@@ -165,17 +165,16 @@
 ///   @debug has($list, ("A" "Z"), "OR"); // true
 ///   @debug has($list, ("Y" "Z"), "OR"); // false
 
-@function has($list, $values, $operation: "AND") {
+@function has($list, $values, $operation: 'AND') {
   $operation: to-upper-case($operation);
-  @if ($operation == "AND") {
+  @if ($operation == 'AND') {
     @each $value in $values {
       @if index($list, $value) == null {
         @return false;
       }
     }
     @return true;
-  }
-  @elseif ($operation == "OR") {
+  } @else if ($operation == 'OR') {
     @each $value in $values {
       @if index($list, $value) {
         @return true;

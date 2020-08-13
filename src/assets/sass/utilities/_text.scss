@@ -1,10 +1,22 @@
 @each $color-class, $color-code in $_colors {
-  .u_t-#{$color-class} { color: $color-code !important; }
+  .u_t-#{$color-class} {
+    color: $color-code !important;
+  }
 }
 
-.u_t-left   { text-align: left !important; }
-.u_t-center { text-align: center !important; }
-.u_t-right  { text-align: right !important; }
+.u_t-left {
+  text-align: left !important;
+}
+.u_t-center {
+  text-align: center !important;
+}
+.u_t-right {
+  text-align: right !important;
+}
 
-.u_t-smaller { font-size: smaller !important; }
-.u_t-larger  { font-size: larger !important; }
+.u_t-smaller {
+  font-size: smaller !important;
+}
+.u_t-larger {
+  font-size: larger !important;
+}

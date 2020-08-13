@@ -21,11 +21,11 @@ $_grid-gutter: 2%;
 /// ブレークポイント
 
 $_breakpoints: (
-  "xs": 0,
-  "sm": 480px,
-  "md": 769px,
-  "lg": 1024px,
-  "xl": 1440px
+  'xs': 0,
+  'sm': 480px,
+  'md': 769px,
+  'lg': 1024px,
+  'xl': 1440px,
 );
 
 /// 印刷対象にするメディアクエリの最低幅<br>
@@ -36,7 +36,8 @@ $_print-min-width: 769px;
 
 /// フォントファミリー
 
-$_font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+$_font-family: '游ゴシック体', yugothic, '游ゴシック Medium', 'Yu Gothic Medium', 'ヒラギノ角ゴ ProN',
+  'Hiragino Kaku Gothic ProN', 'メイリオ', meiryo, sans-serif;
 
 /// フォントサイズ
 /// - 16px (一般的なブラウザのデフォルトフォントサイズ)を推奨
@@ -65,27 +66,27 @@ $_text-link-visited-color: #04c;
 
 /// マウスオーバー時などの不透明度
 
-$_opacity: .75;
+$_opacity: 0.75;
 
 /// アニメーションスピード
 
-$_transition-duration: .15s;
+$_transition-duration: 0.15s;
 
 /// サイトでの使用色<br>
 /// キーに識別名、値にカラーコードを指定する
 
 $_colors: (
-  "text":              $_text-color,
-  "text-link":         $_text-link-color,
-  "text-link-hover":   $_text-link-hover-color,
-  "text-link-visited": $_text-link-visited-color,
-  "white":             #fff,
-  "black":             #000
+  'text': $_text-color,
+  'text-link': $_text-link-color,
+  'text-link-hover': $_text-link-hover-color,
+  'text-link-visited': $_text-link-visited-color,
+  'white': #fff,
+  'black': #000,
 );
 
 /// z-index管理用変数<br>
 /// キーに識別名、値にz-index値を指定する
 
 $_z-indexes: (
-  "example": 100
+  'example': 100,
 );
