@@ -59,7 +59,7 @@
     "postcss-easings": "^2.0.0",
     "prettier": "^2.0.5",
     "require-dir": "^1.2.0",
-    "sass-true": "^4.0.0",
+    "sass-true": "^6.0.0",
     "sassdoc": "^2.1.20",
     "standard-version": "^7.0.0",
     "style-loader": "^0.23.1",
