@@ -12,13 +12,13 @@ body {
 }
 
 figure {
-  margin-left: 0;
   margin-right: 0;
+  margin-left: 0;
 }
 
 figcaption {
   &:not(:first-child) {
-    margin-top: .5em;
+    margin-top: 0.5em;
   }
 }
 
@@ -26,8 +26,8 @@ img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
-  backface-visibility: hidden;
-  -ms-backface-visibility: visible; // for IE11 transition bug
+  -ms-backface-visibility: visible;
+  backface-visibility: hidden; // for IE11 transition bug
 }
 
 a {
@@ -48,6 +48,9 @@ a {
   }
 }
 
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   font-family: inherit;
 }

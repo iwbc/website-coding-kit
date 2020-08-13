@@ -1,33 +1,31 @@
-@include test-module("functions/_unit.scss") {
-
-  @include test("rem") {
+@include test-module('functions/_unit.scss') {
+  @include test('rem') {
     $actual: rem(16px);
     $expect: 1rem;
     @include assert-equal($actual, $expect);
   }
 
-  @include test("per") {
+  @include test('per') {
     $actual: per(100px, 1000px);
     $expect: 10%;
     @include assert-equal($actual, $expect);
   }
 
-  @include test("vw") {
+  @include test('vw') {
     $actual: vw(32px);
     $expect: 5vw;
     @include assert-equal($actual, $expect);
   }
 
-  @include test("vh") {
+  @include test('vh') {
     $actual: vh(32px);
     $expect: 2.8169vh;
     @include assert-equal($actual, $expect, null, true);
   }
 
-  @include test("strip-unit") {
+  @include test('strip-unit') {
     $actual: strip-unit(12px);
     $expect: 12;
     @include assert-equal($actual, $expect);
   }
-
 }

@@ -17,17 +17,15 @@
 ///   @debug capitalize("hello world"); // helloWorld
 ///   @debug capitalize("hello world", true); // HelloWorld
 
-@function capitalize($words, $pascalcase: false, $separators: (" ", "-", "_")) {
-
-  $capitalized: "";
+@function capitalize($words, $pascalcase: false, $separators: (' ', '-', '_')) {
+  $capitalized: '';
   $capital: $pascalcase;
 
   @for $i from 1 through str-length($words) {
     $letter: str-slice($words, $i, $i);
     @if (has($separators, $letter)) {
       $capital: true;
-    }
-    @else {
+    } @else {
       $capitalized: $capitalized + if($capital, to-upper-case($letter), $letter);
       $capital: false;
     }
