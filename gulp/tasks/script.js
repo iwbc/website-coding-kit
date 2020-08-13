@@ -1,11 +1,11 @@
-'use strict';
+'use strict'
 
-const gulp    = require('gulp');
-const webpack = require('webpack');
-const config  = require('../../webpack.config');
-const $       = require('../load');
+const gulp = require('gulp')
+const webpack = require('webpack')
+const config = require('../../webpack.config')
+const $ = require('../load')
 
-let watch = false;
+let watch = false
 
 /**
  * JSのモジュール依存解決、ES5へのトランスパイル
@@ -13,26 +13,27 @@ let watch = false;
 
 gulp.task('script', async () => {
   await new Promise((resolve) => {
-    const wp = webpack(config);
+    const wp = webpack(config)
     const callback = (err, stats) => {
       if (err) {
-        reject(new $.util.PluginError('script', err.message));
+        reject(new $.util.PluginError('script', err.message))
+      } else {
+        console.log(
+          stats.toString({
+            chunks: false,
+            modules: false,
+            colors: true,
+          })
+        )
+        $.browser.reload()
+        resolve()
       }
-      else {
-        console.log(stats.toString({
-          chunks  : false,
-          modules : false,
-          colors  : true
-        }));
-        $.browser.reload();
-        resolve();
-      }
-    };
-    watch ? wp.watch(200, callback) : wp.run(callback);
-  });
-});
+    }
+    watch ? wp.watch(200, callback) : wp.run(callback)
+  })
+})
 
 gulp.task('script:watch', async () => {
-  watch = true;
-  await gulp.task('script')();
-});
+  watch = true
+  await gulp.task('script')()
+})
