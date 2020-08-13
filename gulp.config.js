@@ -84,13 +84,6 @@ const style = {
     require('postcss-easings'),
     require('autoprefixer')
   ],
-  // gulp-sass
-  // Options -> https://github.com/sass/node-sass#options
-  sass : {
-    outputStyle : 'expanded',
-    indentType  : 'space',
-    indentWidth : 2
-  },
   // sassdoc
   // http://sassdoc.com/configuration/
   sassdoc : {

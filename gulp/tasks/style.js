@@ -19,7 +19,7 @@ gulp.task('style', () => {
   const css = gulp.src(config.path.style.src, { sourcemaps: config.build.sourcemaps.css })
     .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
     .pipe($.sassGlob())
-    .pipe($.sass(config.style.sass))
+    .pipe($.dartSass({fiber: require('fibers')}))
     .pipe($.postcss(config.style.postcss))
     .pipe($.if(config.build.minify.css, $.csso()))
     .pipe(gulp.dest(config.path.style.dest.css, { sourcemaps: '.' }))
