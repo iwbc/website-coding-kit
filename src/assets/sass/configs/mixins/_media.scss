@@ -51,25 +51,22 @@
 @mixin mq-min($key, $type: null) {
   $min: breakpoint-min($key);
   @if $min {
-    @if $type and $type != "all" and $type != "" {
+    @if $type and $type != 'all' and $type != '' {
       @media #{$type} and (min-width: $min) {
         @content;
       }
-    }
-    @else {
-      @if $min < $_print-min-width or $type == "all" or $type == "" {
+    } @else {
+      @if $min < $_print-min-width or $type == 'all' or $type == '' {
         @media (min-width: $min) {
           @content;
         }
-      }
-      @else {
+      } @else {
         @media print, screen and (min-width: $min) {
           @content;
         }
       }
     }
-  }
-  @else {
+  } @else {
     @content;
   }
 }
@@ -123,25 +120,22 @@
 @mixin mq-max($key, $type: null) {
   $max: breakpoint-max($key);
   @if $max {
-    @if $type and $type != "all" and $type != "" {
+    @if $type and $type != 'all' and $type != '' {
       @media #{$type} and (max-width: $max) {
         @content;
       }
-    }
-    @else {
-      @if $max < $_print-min-width or $type == "all" or $type == "" {
+    } @else {
+      @if $max < $_print-min-width or $type == 'all' or $type == '' {
         @media (max-width: $max) {
           @content;
         }
-      }
-      @else {
+      } @else {
         @media print, screen and (max-width: $max) {
           @content;
         }
       }
     }
-  }
-  @else {
+  } @else {
     @content;
   }
 }
@@ -167,13 +161,12 @@
 ///     }
 ///   }
 
-@mixin mq-res($x, $type: "screen") {
-  @if $type and $type != "all" and $type != "" {
+@mixin mq-res($x, $type: 'screen') {
+  @if $type and $type != 'all' and $type != '' {
     @media #{$type} and (min-resolution: #{$x}dppx) {
       @content;
     }
-  }
-  @else {
+  } @else {
     @media (min-resolution: #{$x}dppx) {
       @content;
     }
@@ -219,22 +212,19 @@
 ///     }
 ///   }
 
-@mixin mq-ori($orientation, $type: "screen") {
-  @if $orientation == "ls" {
+@mixin mq-ori($orientation, $type: 'screen') {
+  @if $orientation == 'ls' {
     $orientation: landscape;
-  }
-  @else if $orientation == "pr" {
+  } @else if $orientation == 'pr' {
     $orientation: portrait;
   }
-  @if $type and $type != "all" and $type != "" {
+  @if $type and $type != 'all' and $type != '' {
     @media #{$type} and (orientation: $orientation) {
       @content;
     }
-  }
-  @else {
+  } @else {
     @media (orientation: $orientation) {
       @content;
     }
   }
-
 }

@@ -1,2 +1,4 @@
-/test/**/*
-src/assets/vendors/**/*
+node_modules
+docs/
+public/
+src/assets/vendors

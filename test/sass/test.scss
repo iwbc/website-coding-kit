@@ -1,49 +1,47 @@
-$_viewport-width:  640px;
+$_viewport-width: 640px;
 $_viewport-height: 1136px;
 $_grid-columns: 24;
 $_grid-gutter: 2%;
 $_breakpoints: (
-  "xs": 0,
-  "sm": 480px,
-  "md": 769px,
-  "lg": 1024px,
-  "xl": 1440px
+  'xs': 0,
+  'sm': 480px,
+  'md': 769px,
+  'lg': 1024px,
+  'xl': 1440px,
 );
 $_print-min-width: 769px;
 $_font-size: 16px;
 $_colors: (
-  "white": #fff,
-  "black": #000
+  'white': #fff,
+  'black': #000,
 );
 $_z-indexes: (
-  "header": 1000,
-  "modal":  10000
+  'header': 1000,
+  'modal': 10000,
 );
 
-@import "true";
+@use 'true' as *;
 
-@import "../../src/assets/sass/configs/functions/_breakpoint.scss";
-@import "../../src/assets/sass/configs/functions/_list.scss";
-@import "../../src/assets/sass/configs/functions/_map.scss";
-@import "../../src/assets/sass/configs/functions/_string.scss";
-@import "../../src/assets/sass/configs/functions/_unit.scss";
-@import "../../src/assets/sass/configs/functions/_utility.scss";
+@import '../../src/assets/sass/configs/functions/_breakpoint.scss';
+@import '../../src/assets/sass/configs/functions/_list.scss';
+@import '../../src/assets/sass/configs/functions/_map.scss';
+@import '../../src/assets/sass/configs/functions/_string.scss';
+@import '../../src/assets/sass/configs/functions/_unit.scss';
+@import '../../src/assets/sass/configs/functions/_utility.scss';
 
-@import "../../src/assets/sass/configs/mixins/_grid.scss";
-@import "../../src/assets/sass/configs/mixins/_media.scss";
-@import "../../src/assets/sass/configs/mixins/_sprite.scss";
-@import "../../src/assets/sass/configs/mixins/_utility.scss";
+@import '../../src/assets/sass/configs/mixins/_media.scss';
+@import '../../src/assets/sass/configs/mixins/_sprite.scss';
+@import '../../src/assets/sass/configs/mixins/_utility.scss';
 
-@import "sprites/test@2x.scss";
+@import 'sprites/test@2x.scss';
 
-@import "specs/function-breakpoint.scss";
-@import "specs/function-list.scss";
-@import "specs/function-map.scss";
-@import "specs/function-string.scss";
-@import "specs/function-unit.scss";
-@import "specs/function-utility.scss";
+@import 'specs/function-breakpoint.scss';
+@import 'specs/function-list.scss';
+@import 'specs/function-map.scss';
+@import 'specs/function-string.scss';
+@import 'specs/function-unit.scss';
+@import 'specs/function-utility.scss';
 
-@import "specs/mixin-grid.scss";
-@import "specs/mixin-media.scss";
-@import "specs/mixin-sprite.scss";
-@import "specs/mixin-utility.scss";
+@import 'specs/mixin-media.scss';
+@import 'specs/mixin-sprite.scss';
+@import 'specs/mixin-utility.scss';

@@ -1,2 +1,6 @@
-.u_cf        { overflow: hidden; }
-.u_cf-legacy { @include clearfix; }
+.u_cf {
+  overflow: hidden;
+}
+.u_cf-legacy {
+  @include clearfix;
+}

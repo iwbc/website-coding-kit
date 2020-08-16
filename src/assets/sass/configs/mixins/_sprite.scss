@@ -25,8 +25,8 @@
 
 @mixin sprite($key) {
   $sprite: map-get($_sprites, $key);
-  $properties: map-get($sprite, "properties");
-  $scale: 1 / map-get($sprite, "scale");
+  $properties: map-get($sprite, 'properties');
+  $scale: 1 / map-get($sprite, 'scale');
   $image: nth($properties, 9);
   $offset-x: nth($properties, 3) * $scale;
   $offset-y: nth($properties, 4) * $scale;
@@ -34,13 +34,14 @@
   $sheet-height: nth($properties, 8) * $scale;
   $width: nth($properties, 5) * $scale;
   $height: nth($properties, 6) * $scale;
-  background-image: url("#{$image}");
+
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background-image: url('#{$image}');
   background-repeat: no-repeat;
   background-position: $offset-x $offset-y;
   background-size: $sheet-width $sheet-height;
-  width: $width;
-  height: $height;
-  display: inline-block;
 }
 
 /// スプライト画像情報の参照用変数

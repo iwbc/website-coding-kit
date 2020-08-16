@@ -48,35 +48,34 @@
 ///   }
 
 @mixin truncate($lines, $bgcolor, $lheight: $_line-height, $fixed: false) {
+  position: relative;
+  padding-right: 1em;
+  overflow: hidden;
   line-height: $lheight;
   background-color: $bgcolor;
   @if $fixed {
     height: 1em * $lheight * $lines;
-  }
-  @else {
+  } @else {
     max-height: 1em * $lheight * $lines;
   }
-  padding-right: 1em;
-  overflow: hidden;
-  position: relative;
   &::before {
-    content: "…";
-    font-weight: normal;
-    width: 1em;
-    display: inline-block;
     position: absolute;
     right: 0;
     bottom: 0;
+    display: inline-block;
+    width: 1em;
+    font-weight: normal;
+    content: '…';
   }
   &::after {
-    content: "";
-    background-color: inherit;
+    position: absolute;
+    right: 0;
+    float: right;
     width: 1em;
     height: 1em * $lheight * $lines;
     margin-left: -1em;
-    float: right;
-    position: absolute;
-    right: 0;
+    content: '';
+    background-color: inherit;
   }
 }
 
@@ -100,7 +99,7 @@
   &::before,
   &::after {
     display: table;
-    content: " ";
+    content: ' ';
   }
   &::after {
     clear: both;

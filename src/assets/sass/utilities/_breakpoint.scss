@@ -1,5 +1,4 @@
 @each $key, $breakpoint in $_breakpoints {
-
   $block: block inline inline-block;
 
   .u_bp-hide-#{$key} {
