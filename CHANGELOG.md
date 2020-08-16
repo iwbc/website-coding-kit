@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/iwbc/website-coding-kit/compare/3.0.3...3.1.0) (2020-08-16)
+
+
+### Features
+
+* node-sassをdart-sassに変更 ([6b10307](https://github.com/iwbc/website-coding-kit/commit/6b103078ac0cf0f297e27965b5b69d0303f6163c))
+* sassのgrid mixinを削除（廃止） ([49bffa2](https://github.com/iwbc/website-coding-kit/commit/49bffa286f32c5e597479e42aab0844a6b4eacbf))
+* sassのgrid mixinを削除（廃止） ([e2cda08](https://github.com/iwbc/website-coding-kit/commit/e2cda08102c6bf66362e9d2800e104f9bba391c2))
+* サポートするnodeバージョンを10.x-12.xに変更 ([54ce538](https://github.com/iwbc/website-coding-kit/commit/54ce538fa7d590066596d029782c0d2119a6b303))
+
 ### [3.0.3](https://github.com/iwbc/website-coding-kit/compare/3.0.2...3.0.3) (2020-05-14)
 
 
