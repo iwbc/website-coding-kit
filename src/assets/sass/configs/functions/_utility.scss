@@ -47,8 +47,8 @@
 ///   @debug absolute-to-relative(10, 100, true); // 10
 
 @function absolute-to-relative($abs, $basis, $percentage: false) {
-  $abs:      strip-unit($abs);
-  $basis:    strip-unit($basis);
+  $abs: strip-unit($abs);
+  $basis: strip-unit($basis);
   $relative: $abs / $basis;
   @return if($percentage, $relative * 100, $relative);
 }

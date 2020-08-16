@@ -1,5 +1,5 @@
-'use strict';
+'use strict'
 
-require('./gulp/run');
+require('./gulp/run')
 
-global.projectPath = __dirname;
+global.projectPath = __dirname

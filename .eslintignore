@@ -1,4 +1,10 @@
-/gulp/**/*
-/test/**/*
-/*.js
-src/assets/vendors/**/*
+node_modules/
+docs/
+public/
+src/assets/vendors
+
+!.babelrc.js
+!.eslintrc.js
+!.prettierrc.js
+!.sassrc.js
+!.stylelint.config.js
