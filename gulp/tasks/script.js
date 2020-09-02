@@ -18,6 +18,7 @@ gulp.task('script', async () => {
       if (err) {
         reject(new $.util.PluginError('script', err.message))
       } else {
+        // eslint-disable-next-line no-console
         console.log(
           stats.toString({
             chunks: false,
