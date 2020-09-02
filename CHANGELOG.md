@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.1](https://github.com/iwbc/website-coding-kit/compare/3.1.0...3.1.1) (2020-09-02)
+
+
+### Bug Fixes
+
+* Lintエラー修正 ([4444d7d](https://github.com/iwbc/website-coding-kit/commit/4444d7d0033ba5edf0bd7343ba7dfe7615b948f7))
+
 ## [3.1.0](https://github.com/iwbc/website-coding-kit/compare/3.0.3...3.1.0) (2020-08-16)
 
 
