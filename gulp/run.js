@@ -15,8 +15,7 @@ gulp.task('watch', () => {
   gulp.watch(config.path.ejs.watch, gulp.series('ejs'))
   gulp.watch(config.path.style.watch, gulp.series('style'))
   gulp.watch(config.path.image.watch, gulp.series('image'))
-  gulp.watch(config.path.sprite.png.watch, gulp.series('sprite:png'))
-  gulp.watch(config.path.sprite.svg.watch, gulp.series('sprite:svg'))
+  gulp.watch(config.path.sprite.watch, gulp.series('sprite'))
 })
 
 /**
