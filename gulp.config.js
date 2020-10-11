@@ -129,11 +129,11 @@ const path = {
   },
   // Sass
   style: {
-    src: `${src}/assets/sass/**/*.scss`,
-    watch: `${src}/assets/sass/**/*.scss`,
+    src: `${src}/assets/scss/**/*.scss`,
+    watch: `${src}/assets/scss/**/*.scss`,
     dest: {
       css: `${dest}/assets/css`,
-      sassdoc: 'docs/sass',
+      sassdoc: 'docs/scss',
     },
   },
   // 画像
@@ -148,7 +148,7 @@ const path = {
       src: `${src}/assets/sprites/png/*`,
       watch: `${src}/assets/sprites/png/**/*`,
       dest: {
-        style: `${src}/assets/sass/foundations/sprites`,
+        style: `${src}/assets/scss/foundations/sprites`,
         image: `${dest}/assets/images/sprites/png`,
       },
     },

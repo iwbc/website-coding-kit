@@ -29,7 +29,7 @@ Website Coding Kitの動作設定は、`/gulp.config.js`に記述されていま
 以下のビルドを一括して行います。
 
 - PNG/SVGスプライトシートの生成
-- EJS/Sass/JSのコンパイル
+- EJS/SCSS/JSのコンパイル
 - 画像の最適化
 - 公開用データディレクトリへのファイルのコピーなど
 
@@ -72,11 +72,11 @@ yarn dev
 
 #### PNGスプライトシート
 
-`/src/assets/sprites/png`直下のディレクトリごとに、スプライトシートとスプライトシート用のSassファイルを出力します。
+`/src/assets/sprites/png`直下のディレクトリごとに、スプライトシートとスプライトシート用のSCSSファイルを出力します。
 
 ##### 例
 
-`/src/assets/sprites/png`ディレクトリに`sample@2x`ディレクトリを作成し、この中に`down.png`と`up.png`を入れた場合は、`/public/assets/images/sprites/png`ディレクトリに`sample2x.png`というスプライトシートと、`/src/assets/sass/foundations/sprites`ディレクトリに`_sample@2x.scss`ファイルが出力されます。
+`/src/assets/sprites/png`ディレクトリに`sample@2x`ディレクトリを作成し、この中に`down.png`と`up.png`を入れた場合は、`/public/assets/images/sprites/png`ディレクトリに`sample2x.png`というスプライトシートと、`/src/assets/scss/foundations/sprites`ディレクトリに`_sample@2x.scss`ファイルが出力されます。
 
 Retina用のスプライトシートを生成する場合は、スプライトシートのディレクトリ名の末尾に`@2x`を付与してください。  
 `@2x`を`@3x`のようにすることで、更に高解像度なディスプレイにも対応可能です。
@@ -133,7 +133,7 @@ Retina用のスプライトシートを生成する場合は、スプライト�
 
 ```sh
 ┣ docs/
-┃  ┗ sass/ # 組込済Sassファイルについてのドキュメントディレクトリ。
+┃  ┗ scss/ # 組込済SCSSファイルについてのドキュメントディレクトリ。
 ┣ public/ # 公開用データディレクトリ。
 ┣ src/ # ソースデータディレクトリ。
 ┃  ┣ assets/
@@ -143,7 +143,7 @@ Retina用のスプライトシートを生成する場合は、スプライト�
 ┃  ┃  ┃  ┗ NotoSansCJKjp-* # 第一水準漢字までのサブセット化済みのNoto Sans JPのWebフォントファイル。
 ┃  ┃  ┣ images/
 ┃  ┃  ┣ js/
-┃  ┃  ┣ sass/ # 以下、FLOCSSベースのCSS設計ガイドラインに準拠しています。
+┃  ┃  ┣ scss/ # 以下、FLOCSSベースのCSS設計ガイドラインに準拠しています。
 ┃  ┃  ┃  ┣ foundations/
 ┃  ┃  ┃  ┣ layouts/
 ┃  ┃  ┃  ┣ objects/
@@ -162,10 +162,10 @@ Retina用のスプライトシートを生成する場合は、スプライト�
 
 ## ドキュメント
 
-### SassDoc
+### SCSS
 
-Website Coding Kitに組込済Sassファイルの仕様については、`/docs/sass/index.html`を確認してください。
+Website Coding Kitに組込済SCSSファイルの仕様については、`/docs/scss/index.html`を確認してください。
 
 ### FLOCSS
 
-Website Coding Kitに組込済のSassファイル構成は、[FLOCSSベースのCSS設計ガイドライン](https://github.com/iwbc/guide-css-design)に準拠しています。
+Website Coding Kitに組込済のSCSSファイル構成は、[FLOCSSベースのCSS設計ガイドライン](https://github.com/iwbc/guide-css-design)に準拠しています。
