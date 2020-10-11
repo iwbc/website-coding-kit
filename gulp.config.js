@@ -142,21 +142,11 @@ const path = {
     watch: `${src}/assets/images/**/*`,
     dest: `${dest}/assets/images`,
   },
-  // Sprite
+  // SVG Sprite
   sprite: {
-    png: {
-      src: `${src}/assets/sprites/png/*`,
-      watch: `${src}/assets/sprites/png/**/*`,
-      dest: {
-        style: `${src}/assets/scss/foundations/sprites`,
-        image: `${dest}/assets/images/sprites/png`,
-      },
-    },
-    svg: {
-      src: `${src}/assets/sprites/svg/*`,
-      watch: `${src}/assets/sprites/svg/**/*`,
-      dest: `${dest}/assets/images/sprites/svg`,
-    },
+    src: `${src}/assets/sprites/*`,
+    watch: `${src}/assets/sprites/**/*`,
+    dest: `${dest}/assets/images/sprites`,
   },
   // 処理せずdestへコピーするファイル
   copy: [

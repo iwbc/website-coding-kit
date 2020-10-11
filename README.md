@@ -28,7 +28,7 @@ Website Coding Kitの動作設定は、`/gulp.config.js`に記述されていま
 
 以下のビルドを一括して行います。
 
-- PNG/SVGスプライトシートの生成
+- SVGスプライトシートの生成
 - EJS/SCSS/JSのコンパイル
 - 画像の最適化
 - 公開用データディレクトリへのファイルのコピーなど
@@ -68,52 +68,13 @@ yarn build --env=production
 yarn dev
 ```
 
-### PNG/SVGスプライトシートの生成
+### SVGスプライトシートの生成
 
-#### PNGスプライトシート
-
-`/src/assets/sprites/png`直下のディレクトリごとに、スプライトシートとスプライトシート用のSCSSファイルを出力します。
+`/src/assets/sprites`直下のディレクトリごとに、スプライトシートを出力します。
 
 ##### 例
 
-`/src/assets/sprites/png`ディレクトリに`sample@2x`ディレクトリを作成し、この中に`down.png`と`up.png`を入れた場合は、`/public/assets/images/sprites/png`ディレクトリに`sample2x.png`というスプライトシートと、`/src/assets/scss/foundations/sprites`ディレクトリに`_sample@2x.scss`ファイルが出力されます。
-
-Retina用のスプライトシートを生成する場合は、スプライトシートのディレクトリ名の末尾に`@2x`を付与してください。  
-`@2x`を`@3x`のようにすることで、更に高解像度なディスプレイにも対応可能です。
-
-###### Mixinを使用してスプライト画像を表示する
-
-```scss
-// @include sprite("{スプライトシート名}-{倍率}-{スプライト名}");
-
-.element {
-	@include sprite("sample-down");
-}
-
-// Retina用
-.element-2x {
-	@include sprite("sample-2x-down");
-}
-```
-
-###### Classを使用してスプライト画像を表示する
-
-```html
-<!-- m_sprite-{スプライトシート名}-{倍率}-{スプライト名} -->
-
-<span class="m_sprite-sample-down"></span>
-
-<!-- Retina用 -->
-<span class="m_sprite-sample-2x-down"></span>
-```
-
-#### SVGスプライトシート
-
-`/src/assets/sprites/svg`直下のディレクトリごとに、スプライトシートを出力します。
-
-##### 例
-
-`/src/assets/sprites/svg`ディレクトリに`sample`ディレクトリを作成し、この中に`down.svg`と`up.svg`を入れた場合は、`/public/assets/images/sprites/svg`ディレクトリに`sample.svg`というSVGスプライトシートファイルが出力されます。
+`/src/assets/sprites`ディレクトリに`sample`ディレクトリを作成し、この中に`down.svg`と`up.svg`を入れた場合は、`/public/assets/images/sprites`ディレクトリに`sample.svg`というSVGスプライトシートファイルが出力されます。
 
 ###### SVGスプライト画像を表示する
 
@@ -123,7 +84,7 @@ Retina用のスプライトシートを生成する場合は、スプライト�
 
 <svg>
   <title>Image title</title>
-  <use xlink:href="/public/assets/images/sprites/svg/sample.svg#down" />
+  <use xlink:href="/public/assets/images/sprites/sample.svg#down" />
 </svg>
 ```
 
@@ -137,10 +98,6 @@ Retina用のスプライトシートを生成する場合は、スプライト�
 ┣ public/ # 公開用データディレクトリ。
 ┣ src/ # ソースデータディレクトリ。
 ┃  ┣ assets/
-┃  ┃  ┣ css/
-┃  ┃  ┃  ┗ sanitize.css
-┃  ┃  ┣ fonts/ # Webフォントディレクトリ。
-┃  ┃  ┃  ┗ NotoSansCJKjp-* # 第一水準漢字までのサブセット化済みのNoto Sans JPのWebフォントファイル。
 ┃  ┃  ┣ images/
 ┃  ┃  ┣ js/
 ┃  ┃  ┣ scss/ # 以下、FLOCSSベースのCSS設計ガイドラインに準拠しています。
@@ -149,9 +106,8 @@ Retina用のスプライトシートを生成する場合は、スプライト�
 ┃  ┃  ┃  ┣ objects/
 ┃  ┃  ┃  ┣ vendors/ # ライブラリなど第三者制作のスタイルはここに保存します。
 ┃  ┃  ┃  ┗ style.scss
-┃  ┃  ┣ sprites/
-┃  ┃  ┃  ┣ png/
-┃  ┃  ┃  ┗ svg/
+┃  ┃  ┣ sprites/ # SVGスプライトシートの元ファイル。
+┃  ┃  ┃  ┗ {任意のディレクトリ名} # グループごとにディレクトリする。
 ┃  ┃  ┗ vendors/ # ライブラリなど第三者制作のJSはここに保存します。
 ┃  ┗ index.ejs
 ┗ gulp.config.js # Website Coding Kitの動作設定ファイル。

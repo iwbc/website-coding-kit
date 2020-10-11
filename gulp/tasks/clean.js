@@ -8,7 +8,4 @@ const config = require('../config')
  * 指定ディレクトリ以下を削除する
  */
 
-gulp.task(
-  'clean',
-  del.bind(null, [`${config.dest}/*`, `!${config.dest}/.git*`, config.path.sprite.png.dest.style], { dot: true })
-)
+gulp.task('clean', del.bind(null, [`${config.dest}/*`, `!${config.dest}/.git*`], { dot: true }))
