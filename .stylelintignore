@@ -1,5 +1,5 @@
 node_modules
 docs/
 public/
-src/assets/sass/foundations/sprites
+src/assets/scss/foundations/sprites
 src/assets/vendors

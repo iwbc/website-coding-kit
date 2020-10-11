@@ -5,7 +5,7 @@
   "author": "VANQ",
   "license": "WTFPL",
   "scripts": {
-    "test": "mocha ./test/sass/test.js",
+    "test": "mocha ./test/scss/test.js",
     "setup": "yarn install --prefer-offline",
     "dev": "gulp",
     "build": "gulp build",
