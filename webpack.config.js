@@ -13,7 +13,7 @@ const dest = path.join(__dirname, `${config.dest}/assets/js`)
  */
 
 const entry = {
-  main: ['babel-polyfill', path.join(src, 'main.js')],
+  main: path.join(src, 'main.js'),
 }
 
 /**
