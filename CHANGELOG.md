@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/iwbc/website-coding-kit/compare/3.1.1...3.2.0) (2020-10-13)
+
+
+### Features
+
+* PNGスプライトシート生成機能の廃止 ([f14c705](https://github.com/iwbc/website-coding-kit/commit/f14c70554c07e3afb9c8f3b0896db4d6db9ff72a))
+
 ### [3.1.1](https://github.com/iwbc/website-coding-kit/compare/3.1.0...3.1.1) (2020-09-02)
 
 
