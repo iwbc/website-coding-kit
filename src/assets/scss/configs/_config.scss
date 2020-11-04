@@ -4,19 +4,11 @@
 
 /// pxからvwへ変換する際の基準値
 
-$_viewport-width: 640px;
+$_viewport-width: 750px;
 
 /// pxからvhへ変換する際の基準値
 
-$_viewport-height: 1136px;
-
-/// グリッドのカラム数
-
-$_grid-columns: 24;
-
-/// グリッドアイテム間のスペースの幅
-
-$_grid-gutter: 2%;
+$_viewport-height: 1334px;
 
 /// ブレークポイント
 
