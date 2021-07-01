@@ -59,7 +59,7 @@
     "require-dir": "^1.2.0",
     "sass-true": "^6.0.0",
     "sassdoc": "^2.1.20",
-    "standard-version": "^7.0.0",
+    "standard-version": "^8.0.1",
     "style-loader": "^0.23.1",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
