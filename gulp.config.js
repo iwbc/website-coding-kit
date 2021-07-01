@@ -123,8 +123,8 @@ const image = {
 const path = {
   // EJS
   ejs: {
-    src: [`${src}/**/*.ejs`, `!${src}/**/_*.ejs`],
-    watch: [`${src}/**/*.ejs`, 'ejs.data.js'],
+    src: [`${src}/**/*.ejs`, `${src}/**/*.ejs.php`, `!${src}/**/_*.ejs`, `!${src}/**/_*.ejs.php`],
+    watch: [`${src}/**/*.ejs`, `${src}/**/*.ejs.php`, 'ejs.data.js'],
     dest: dest,
   },
   // Sass
@@ -151,7 +151,7 @@ const path = {
   // 処理せずdestへコピーするファイル
   copy: [
     {
-      src: [`${src}/**/*.{html,php}`, `!${src}/assets/js/**/*`],
+      src: [`${src}/**/*.{html,php}`, `!${src}/**/*.ejs.php`, `!${src}/assets/js/**/*`],
       dest: dest,
     },
     {
@@ -160,6 +160,10 @@ const path = {
     },
     {
       src: [`${src}/*.{png,svg,ico,xml,json,txt}`, `!${src}/jsconfig.json`],
+      dest: dest,
+    },
+    {
+      src: `${src}/**/.{htaccess,htpasswd}`,
       dest: dest,
     },
   ],

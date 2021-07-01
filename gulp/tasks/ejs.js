@@ -21,21 +21,33 @@ gulp.task('ejs', () => {
       $.data((file) => {
         const src = path.join(global.projectPath, config.src)
         const filePath = file.path.replace(src, '')
-        const dirPath = path.dirname(filePath)
-        const extName = path.extname(filePath)
-        const relative = path.relative(dirPath, '/')
+        const dirname = path.dirname(filePath)
+        const extname = path.extname(filePath)
+        const relative = path.relative(dirname, '/')
         return {
           __env: config.ENV,
-          __filePath: filePath,
-          __dirPath: dirPath,
-          __fileName: path.basename(filePath),
-          __baseName: path.basename(filePath, extName),
-          __extName: extName,
-          __relativePath: relative ? relative.replace(/\\/g, '/') + '/' : './',
+          __file: {
+            path: filePath,
+            dirname: dirname,
+            name: path.basename(filePath),
+            basename: path.basename(filePath, extname),
+            extname: extname,
+          },
+          __src: relative ? relative.replace(/\\/g, '/') + '/' : './',
         }
       })
     )
-    .pipe($.ejs(data, {}, { ext: '.html' }))
+    .pipe($.ejs(data, {}))
+    .pipe(
+      $.rename((file) => {
+        if (file.extname === '.php') {
+          file.basename = file.basename.replace('.ejs', '')
+          file.extname = '.php'
+        } else {
+          file.extname = '.html'
+        }
+      })
+    )
     .on('error', function () {
       this.emit('end')
     })

@@ -68,6 +68,28 @@ yarn build --env=production
 yarn dev
 ```
 
+### EJS
+
+#### 環境変数
+
+| 変数名          | 説明                              | 
+| --------------- | --------------------------------- | 
+| __env           | build実行時の--envオプションの値  | 
+| __file.path     | パス                              | 
+| __file.dirname  | ディレクトリパス                  | 
+| __file.name     | ファイル名                        | 
+| __file.basename | 拡張子を除いたファイル名          | 
+| __file.extname  | 拡張子                            | 
+| __src           | srcディレクトリへの相対パス       | 
+
+#### PHPで出力する
+
+拡張子を`.ejs.php`とする。
+
+##### 例
+
+`index.ejs.php` → `index.php`
+
 ### SVGスプライトシートの生成
 
 `/src/assets/sprites`直下のディレクトリごとに、スプライトシートを出力します。
