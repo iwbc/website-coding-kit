@@ -59,33 +59,33 @@
         <td>build実行時の--envオプションの値</td>
       </tr>
       <tr>
-        <td>__filePath</td>
-        <td><%- __filePath %></td>
-        <td>このファイルのファイルパス<br />※ includeされたファイルの場合、include元のファイルが対象となる</td>
+        <td>__file.path</td>
+        <td><%- __file.path %></td>
+        <td>ファイルパス</td>
       </tr>
       <tr>
-        <td>__dirPath</td>
-        <td><%- __dirPath %></td>
-        <td>このファイルのディレクトリパス<br />※ includeされたファイルの場合、include元のファイルが対象となる</td>
+        <td>__file.dirname</td>
+        <td><%- __file.dirname %></td>
+        <td>ディレクトリパス</td>
       </tr>
       <tr>
-        <td>__fileName</td>
-        <td><%- __fileName %></td>
+        <td>__file.name</td>
+        <td><%- __file.name %></td>
         <td>ファイル名</td>
       </tr>
       <tr>
-        <td>__baseName</td>
-        <td><%- __baseName %></td>
+        <td>__file.basename</td>
+        <td><%- __file.basename %></td>
         <td>拡張子を除いたファイル名</td>
       </tr>
       <tr>
-        <td>__extName</td>
-        <td><%- __extName %></td>
+        <td>__file.extname</td>
+        <td><%- __file.extname %></td>
         <td>拡張子</td>
       </tr>
       <tr>
-        <td>__relativePath</td>
-        <td><%- __relativePath %></td>
+        <td>__src</td>
+        <td><%- __src %></td>
         <td>srcディレクトリへの相対パス</td>
       </tr>
     </table>
