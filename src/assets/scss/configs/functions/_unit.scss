@@ -35,7 +35,10 @@
 
 /// px単位の値をvw単位の値に変換する
 ///
-/// @param {number} $px - 変換対象値 (単位は省略可)
+/// @param {number} $px
+///   変換対象値 (単位は省略可)
+/// @param {number} $basis
+///   変換基準値 (単位は省略可)
 ///
 /// @return {number}
 ///
@@ -43,13 +46,16 @@
 ///   $_viewport-width: 640px;
 ///   @debug vw(32px); // 5vw
 
-@function vw($px) {
-  @return absolute-to-relative($px, $_viewport-width, true) * 1vw;
+@function vw($px, $basis: $_viewport-width) {
+  @return absolute-to-relative($px, $basis, true) * 1vw;
 }
 
 /// px単位の値をvh単位の値に変換する
 ///
-/// @param {number} $px - 変換対象値 (単位は省略可)
+/// @param {number} $px
+///   変換対象値 (単位は省略可)
+/// @param {number} $basis
+///   変換基準値 (単位は省略可)
 ///
 /// @return {number}
 ///
@@ -57,8 +63,8 @@
 ///   $_viewport-height: 1136px;
 ///   @debug vh(32px); // 2.8169vh
 
-@function vh($px) {
-  @return absolute-to-relative($px, $_viewport-height, true) * 1vh;
+@function vh($px, $basis: $_viewport-height) {
+  @return absolute-to-relative($px, $basis, true) * 1vh;
 }
 
 /// 数値から単位を取り除く
