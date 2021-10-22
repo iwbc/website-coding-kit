@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.3](https://github.com/iwbc/website-coding-kit/compare/3.2.2...3.2.3) (2021-10-22)
+
+
+### Feature Updates
+
+* **css:** sanitize.cssをアップデート ([8fbfdd1](https://github.com/iwbc/website-coding-kit/commit/8fbfdd1441ed12ed0acee2f848a5b3ac314827e3))
+* **ejs:** EJSでPHPが使えるよう改修 ([f6ebc95](https://github.com/iwbc/website-coding-kit/commit/f6ebc95c2d5c7e81b88bd55cda4367a77acf6c52))
+* **scss:** vw,vh関数の第2引数に変換基準値を渡せるよう改修 ([bb1aa18](https://github.com/iwbc/website-coding-kit/commit/bb1aa1845457f0a0d4d376c75de07de9890b502b))
+
 ### [3.2.2](https://github.com/iwbc/website-coding-kit/compare/3.2.1...3.2.2) (2021-06-23)
 
 ### [3.2.1](https://github.com/iwbc/website-coding-kit/compare/3.2.0...3.2.1) (2020-11-04)
