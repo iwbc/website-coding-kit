@@ -12,7 +12,8 @@
     "build:prod": "gulp build --env=production",
     "lint": "eslint './**/*.{js,ts,vue}' && stylelint '**/*.{css,scss,vue}'",
     "lint:fix": "eslint --fix './**/*.{js,ts,vue}' && stylelint --fix '**/*.{css,scss,vue}'",
-    "release": "standard-version -t ''"
+    "release": "standard-version -t ''",
+    "update-caniuse-lite": "npx browserslist@latest --update-db"
   },
   "dependencies": {
     "jquery": "^3.5.1"
