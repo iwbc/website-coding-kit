@@ -1,0 +1,12 @@
+{
+  "path-autocomplete.pathMappings": {
+    "/": ["${folder}", "${folder}/src"]
+  },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ]
+}

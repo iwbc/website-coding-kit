@@ -4,6 +4,9 @@
   "description": "Gulpによるフロントエンド開発の効率化キット",
   "author": "VANQ",
   "license": "WTFPL",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1"
+  },
   "scripts": {
     "test": "mocha ./test/scss/test.js",
     "setup": "yarn install --prefer-offline",
@@ -16,7 +19,7 @@
     "update-caniuse-lite": "npx browserslist@latest --update-db"
   },
   "dependencies": {
-    "jquery": "^3.5.1"
+    "jquery": "^3.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.1",
@@ -56,19 +59,20 @@
     "merge-stream": "^1.0.0",
     "minimist": "^1.2.0",
     "mocha": "^5.2.0",
+    "postcss": "^8.3.11",
     "postcss-easings": "^2.0.0",
+    "postcss-scss": "^4.0.2",
     "prettier": "^2.0.5",
     "require-dir": "^1.2.0",
     "sass-true": "^6.0.0",
     "sassdoc": "^2.1.20",
     "standard-version": "^7.0.0",
     "style-loader": "^0.23.1",
-    "stylelint": "^13.6.1",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-recess-order": "^2.1.0",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-prettier": "^1.1.2",
-    "stylelint-scss": "^3.18.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-prettier": "^2.0.0",
     "url-loader": "^1.1.2",
     "vinyl-buffer": "^1.0.0",
     "webpack": "^3.12.0"

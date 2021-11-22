@@ -5,9 +5,9 @@
 Website Coding Kitの実行には以下のツールが必要です。  
 実行環境にインストールされていない場合は、各ツールのWebサイトからインストールしてください。
 
-- [Node.js](https://nodejs.org/ja/) v10.x - 12.x `必須`
-- [Yarn](https://yarnpkg.com/) v1.13 - `必須`
-- [Gulp](http://gulpjs.com/) v4.0
+- [Node.js](https://nodejs.org/ja/) ^12.20.0 || ^14.13.1 `必須`
+- [Yarn](https://yarnpkg.com/) ^1.22.5 `必須`
+- [Gulp](http://gulpjs.com/) ^4.0
 
 ## セットアップ
 
@@ -146,4 +146,4 @@ Website Coding Kitに組込済SCSSファイルの仕様については、`/docs/
 
 ### FLOCSS
 
-Website Coding Kitに組込済のSCSSファイル構成は、[FLOCSSベースのCSS設計ガイドライン](https://github.com/iwbc/guide-css-design)に準拠しています。
+Website Coding Kitに組込済のSCSSファイル構成は、[FLOCSSベースのCSS設計ガイドライン](https://github.com/iwbc/styles/blob/master/README.md)に準拠しています。
