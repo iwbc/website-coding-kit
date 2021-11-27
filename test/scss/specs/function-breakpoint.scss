@@ -1,7 +1,7 @@
 @include test-module('functions/_breakpoint.scss') {
   @include test('breakpoint-min') {
     $actual: breakpoint-min('md');
-    $expect: 769px;
+    $expect: 768px;
     @include assert-equal($actual, $expect);
   }
 
@@ -13,7 +13,7 @@
 
   @include test('breakpoint-max') {
     $actual: breakpoint-max('md');
-    $expect: 1023px;
+    $expect: 1023.98px;
     @include assert-equal($actual, $expect);
   }
 

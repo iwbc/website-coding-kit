@@ -14,8 +14,8 @@ $_viewport-height: 1334px;
 
 $_breakpoints: (
   'xs': 0,
-  'sm': 480px,
-  'md': 769px,
+  'sm': 375px,
+  'md': 768px,
   'lg': 1024px,
   'xl': 1440px,
 );
@@ -24,7 +24,7 @@ $_breakpoints: (
 /// mq-minまたはmq-maxミックスインの第1引数に渡したブレークポイントに対応する値がここで指定する値以上の場合、メディアタイプにprintを追加して出力する<br>
 /// ただし、第2引数（メディアタイプ）を渡した場合はそれが優先される
 
-$_print-min-width: 769px;
+$_print-min-width: 768px;
 
 /// フォントファミリー
 

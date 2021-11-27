@@ -99,19 +99,19 @@
 ///   }
 ///
 ///   // CSS Output
-///   @media (max-width: 767px) {
+///   @media (max-width: 767.98px) {
 ///     .element {
 ///       width: 100%;
 ///     }
 ///   }
 ///
-///   @media print, screen and (max-width: 1023px) {
+///   @media print, screen and (max-width: 1023.98px) {
 ///     .mediatype {
 ///       width: 100%;
 ///     }
 ///   }
 ///
-///   @media print, screen and (max-width: 1023px) {
+///   @media print, screen and (max-width: 1023.98px) {
 ///     .print-min-width {
 ///       width: 100%;
 ///     }

@@ -5,11 +5,11 @@ $_grid-gutter: 2%;
 $_breakpoints: (
   'xs': 0,
   'sm': 480px,
-  'md': 769px,
+  'md': 768px,
   'lg': 1024px,
   'xl': 1440px,
 );
-$_print-min-width: 769px;
+$_print-min-width: 768px;
 $_font-size: 16px;
 $_colors: (
   'white': #fff,

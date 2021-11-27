@@ -47,7 +47,7 @@
         }
       }
       @include expect {
-        @media print, screen and (min-width: 769px) {
+        @media print, screen and (min-width: 768px) {
           .element {
             width: 100%;
           }
@@ -66,7 +66,7 @@
         }
       }
       @include expect {
-        @media (min-width: 769px) {
+        @media (min-width: 768px) {
           .element {
             width: 100%;
           }
@@ -85,7 +85,7 @@
         }
       }
       @include expect {
-        @media (max-width: 768px) {
+        @media (max-width: 767.98px) {
           .element {
             width: 100%;
           }
@@ -104,7 +104,7 @@
         }
       }
       @include expect {
-        @media print, screen and (max-width: 768px) {
+        @media print, screen and (max-width: 767.98px) {
           .element {
             width: 100%;
           }
@@ -123,7 +123,7 @@
         }
       }
       @include expect {
-        @media print, screen and (max-width: 1023px) {
+        @media print, screen and (max-width: 1023.98px) {
           .element {
             width: 100%;
           }
@@ -142,7 +142,7 @@
         }
       }
       @include expect {
-        @media (max-width: 1023px) {
+        @media (max-width: 1023.98px) {
           .element {
             width: 100%;
           }
@@ -197,6 +197,7 @@
             width: 100%;
           }
         }
+
         .element2 {
           @include mq-ori('landscape') {
             width: 100%;
@@ -226,6 +227,7 @@
             width: 100%;
           }
         }
+
         .element2 {
           @include mq-ori('portrait') {
             width: 100%;
